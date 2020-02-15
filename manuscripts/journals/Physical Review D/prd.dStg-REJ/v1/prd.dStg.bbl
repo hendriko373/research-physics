@@ -1,0 +1,293 @@
+%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (-1) disabled
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{26}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Aldrovandi}\ and\ \citenamefont
+  {Pereira}(2012)}]{aldrovandi:2012tele}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Aldrovandi}}\ and\ \bibinfo {author} {\bibfnamefont {J.~G.}\ \bibnamefont
+  {Pereira}},\ }\href@noop {} {\emph {\bibinfo {title} {Teleparallel Gravity:
+  An Introduction}}}\ (\bibinfo  {publisher} {Springer},\ \bibinfo {address}
+  {Dordrecht},\ \bibinfo {year} {2012})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Aldrovandi}\ \emph {et~al.}(2004)\citenamefont
+  {Aldrovandi}, \citenamefont {Pereira},\ and\ \citenamefont
+  {Vu}}]{Aldrovandi:2003pa}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Aldrovandi}}, \bibinfo {author} {\bibfnamefont {J.~G.}\ \bibnamefont
+  {Pereira}}, \ and\ \bibinfo {author} {\bibfnamefont {K.~H.}\ \bibnamefont
+  {Vu}},\ }\href {\doibase 10.1023/B:GERG.0000006696.98824.4d} {\bibfield
+  {journal} {\bibinfo  {journal} {Gen. Rel. Grav.}\ }\textbf {\bibinfo {volume}
+  {36}},\ \bibinfo {pages} {101} (\bibinfo {year} {2004})},\ \Eprint
+  {http://arxiv.org/abs/gr-qc/0304106} {arXiv:gr-qc/0304106 [gr-qc]}
+  \BibitemShut {NoStop}%
+%%CITATION = GR-QC/0304106;%%
+\bibitem [{\citenamefont {Peebles}\ and\ \citenamefont
+  {Ratra}(2003)}]{Peebles:2003cc}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~J.~E.}\
+  \bibnamefont {Peebles}}\ and\ \bibinfo {author} {\bibfnamefont
+  {B.}~\bibnamefont {Ratra}},\ }\href {\doibase 10.1103/RevModPhys.75.559}
+  {\bibfield  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf
+  {\bibinfo {volume} {75}},\ \bibinfo {pages} {559} (\bibinfo {year} {2003})},\
+  \Eprint {http://arxiv.org/abs/astro-ph/0207347} {arXiv:astro-ph/0207347
+  [astro-ph]} \BibitemShut {NoStop}%
+%%CITATION = ASTRO-PH/0207347;%%
+\bibitem [{\citenamefont {Weinberg}(2008)}]{Weinberg:2008bc}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Weinberg}},\ }\href@noop {} {\emph {\bibinfo {title} {Cosmology}}}\
+  (\bibinfo  {publisher} {Oxford University Press},\ \bibinfo {year}
+  {2008})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Aldrovandi}\ \emph {et~al.}(2007)\citenamefont
+  {Aldrovandi}, \citenamefont {Beltran~Almeida},\ and\ \citenamefont
+  {Pereira}}]{Aldrovandi:2006vr}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Aldrovandi}}, \bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Beltran~Almeida}}, \ and\ \bibinfo {author} {\bibfnamefont {J.~G.}\
+  \bibnamefont {Pereira}},\ }\href {\doibase 10.1088/0264-9381/24/6/002}
+  {\bibfield  {journal} {\bibinfo  {journal} {Class. Quantum Grav.}\ }\textbf
+  {\bibinfo {volume} {24}},\ \bibinfo {pages} {1385} (\bibinfo {year}
+  {2007})},\ \Eprint {http://arxiv.org/abs/gr-qc/0606122} {arXiv:gr-qc/0606122
+  [gr-qc]} \BibitemShut {NoStop}%
+%%CITATION = GR-QC/0606122;%%
+\bibitem [{\citenamefont {Wise}(2010)}]{Wise:2010sm}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~K.}\ \bibnamefont
+  {Wise}},\ }\href {\doibase 10.1088/0264-9381/27/15/155010} {\bibfield
+  {journal} {\bibinfo  {journal} {Class. Quantum Grav.}\ }\textbf {\bibinfo
+  {volume} {27}},\ \bibinfo {pages} {155010} (\bibinfo {year} {2010})},\
+  \Eprint {http://arxiv.org/abs/gr-qc/0611154} {arXiv:gr-qc/0611154}
+  \BibitemShut {NoStop}%
+%%CITATION = GR-QC/0611154;%%
+\bibitem [{\citenamefont {Jennen}(2014)}]{Jennen:2014mba}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Jennen}},\ }\href {\doibase 10.1103/PhysRevD.90.084046} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume}
+  {D90}},\ \bibinfo {pages} {084046} (\bibinfo {year} {2014})},\ \Eprint
+  {http://arxiv.org/abs/1406.2621} {arXiv:1406.2621 [gr-qc]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1406.2621;%%
+\bibitem [{\citenamefont {Alekseevsky}\ and\ \citenamefont
+  {Michor}(1995)}]{Alekseevsky:1995cc}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~V.}\ \bibnamefont
+  {Alekseevsky}}\ and\ \bibinfo {author} {\bibfnamefont {P.~W.}\ \bibnamefont
+  {Michor}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Publ.
+  Math. Debrecen}\ }\textbf {\bibinfo {volume} {47}},\ \bibinfo {pages} {349}
+  (\bibinfo {year} {1995})},\ \Eprint {http://arxiv.org/abs/math/9412232}
+  {arXiv:math/9412232 [math.DG]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sharpe}(1997)}]{sharpe1997diff_geo}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~W.}\ \bibnamefont
+  {Sharpe}},\ }\href@noop {} {\emph {\bibinfo {title} {Differential Geometry:
+  {C}artan's Generalization of {K}lein's {E}rlangen Program}}}\ (\bibinfo
+  {publisher} {Springer},\ \bibinfo {address} {New York},\ \bibinfo {year}
+  {1997})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wise}(2009)}]{Wise:2009fu}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~K.}\ \bibnamefont
+  {Wise}},\ }\href {\doibase 10.3842/SIGMA.2009.080} {\bibfield  {journal}
+  {\bibinfo  {journal} {SIGMA}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo
+  {pages} {080} (\bibinfo {year} {2009})},\ \Eprint
+  {http://arxiv.org/abs/0904.1738} {arXiv:0904.1738 [math.DG]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:0904.1738;%%
+\bibitem [{\citenamefont {Westman}\ and\ \citenamefont
+  {Zlosnik}(2014)}]{Westman:2014yca}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~F.}\ \bibnamefont
+  {Westman}}\ and\ \bibinfo {author} {\bibfnamefont {T.~G.}\ \bibnamefont
+  {Zlosnik}},\ }\href@noop {} {\  (\bibinfo {year} {2014})},\ \Eprint
+  {http://arxiv.org/abs/1411.1679} {arXiv:1411.1679 [gr-qc]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1411.1679;%%
+\bibitem [{\citenamefont {Husem{\"o}ller}(1966)}]{husemoller:1966fibre}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Husem{\"o}ller}},\ }\href@noop {} {\emph {\bibinfo {title} {Fibre
+  Bundles}}}\ (\bibinfo  {publisher} {Springer},\ \bibinfo {address} {New
+  York},\ \bibinfo {year} {1966})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stelle}\ and\ \citenamefont
+  {West}(1980)}]{stelle.west:1980ds}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~S.}\ \bibnamefont
+  {Stelle}}\ and\ \bibinfo {author} {\bibfnamefont {P.~C.}\ \bibnamefont
+  {West}},\ }\href {\doibase 10.1103/PhysRevD.21.1466} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {D21}},\
+  \bibinfo {pages} {1466} (\bibinfo {year} {1980})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {de~Andrade}\ and\ \citenamefont
+  {Pereira}(1997)}]{deAndrade:1997qt}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.~C.}\ \bibnamefont
+  {de~Andrade}}\ and\ \bibinfo {author} {\bibfnamefont {J.~G.}\ \bibnamefont
+  {Pereira}},\ }\href {\doibase 10.1103/PhysRevD.56.4689} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {D56}},\
+  \bibinfo {pages} {4689} (\bibinfo {year} {1997})},\ \Eprint
+  {http://arxiv.org/abs/gr-qc/9703059} {arXiv:gr-qc/9703059 [gr-qc]}
+  \BibitemShut {NoStop}%
+%%CITATION = GR-QC/9703059;%%
+\bibitem [{\citenamefont {Carroll}(2004)}]{carroll:sg}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Carroll}},\ }\href@noop {} {\emph {\bibinfo {title} {Spacetime and Geometry:
+  an Introduction to General Relativity}}}\ (\bibinfo  {publisher} {Addison
+  Wesley},\ \bibinfo {address} {San Francisco},\ \bibinfo {year}
+  {2004})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Maluf}(2013)}]{Maluf:2013gaa}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~W.}\ \bibnamefont
+  {Maluf}},\ }\href {\doibase 10.1002/andp.201200272} {\bibfield  {journal}
+  {\bibinfo  {journal} {Ann. Phys. (Berlin)}\ }\textbf {\bibinfo {volume}
+  {525}},\ \bibinfo {pages} {339} (\bibinfo {year} {2013})},\ \Eprint
+  {http://arxiv.org/abs/1303.3897} {arXiv:1303.3897 [gr-qc]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1303.3897;%%
+\bibitem [{\citenamefont {Brans}\ and\ \citenamefont
+  {Dicke}(1961)}]{Brans:1961sx}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Brans}}\ and\ \bibinfo {author} {\bibfnamefont {R.~H.}\ \bibnamefont
+  {Dicke}},\ }\href {\doibase 10.1103/PhysRev.124.925} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {124}},\
+  \bibinfo {pages} {925} (\bibinfo {year} {1961})}\BibitemShut {NoStop}%
+%%CITATION = PHRVA,124,925;%%
+\bibitem [{\citenamefont {Dicke}(1962)}]{Dicke:1961gz}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~H.}\ \bibnamefont
+  {Dicke}},\ }\href {\doibase 10.1103/PhysRev.125.2163} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {125}},\
+  \bibinfo {pages} {2163} (\bibinfo {year} {1962})}\BibitemShut {NoStop}%
+%%CITATION = PHRVA,125,2163;%%
+\bibitem [{\citenamefont {Bergmann}(1968)}]{Bergmann:1968ve}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~G.}\ \bibnamefont
+  {Bergmann}},\ }\href {\doibase 10.1007/BF00668828} {\bibfield  {journal}
+  {\bibinfo  {journal} {Int. J. Theor. Phys.}\ }\textbf {\bibinfo {volume}
+  {1}},\ \bibinfo {pages} {25} (\bibinfo {year} {1968})}\BibitemShut {NoStop}%
+%%CITATION = IJTPB,1,25;%%
+\bibitem [{\citenamefont {Sotiriou}\ and\ \citenamefont
+  {Faraoni}(2010)}]{Sotiriou:2008rp}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~P.}\ \bibnamefont
+  {Sotiriou}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Faraoni}},\ }\href {\doibase 10.1103/RevModPhys.82.451} {\bibfield
+  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume}
+  {82}},\ \bibinfo {pages} {451} (\bibinfo {year} {2010})},\ \Eprint
+  {http://arxiv.org/abs/0805.1726} {arXiv:0805.1726 [gr-qc]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:0805.1726;%%
+\bibitem [{\citenamefont {Tsujikawa}(2010)}]{Tsujikawa:2010zza}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Tsujikawa}},\ }\href {\doibase 10.1007/978-3-642-10598-2_3} {\bibfield
+  {journal} {\bibinfo  {journal} {Lect. Notes Phys.}\ }\textbf {\bibinfo
+  {volume} {800}},\ \bibinfo {pages} {99} (\bibinfo {year} {2010})},\ \Eprint
+  {http://arxiv.org/abs/1101.0191} {arXiv:1101.0191 [gr-qc]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1101.0191;%%
+\bibitem [{\citenamefont {Geng}\ \emph {et~al.}(2011)\citenamefont {Geng},
+  \citenamefont {Lee}, \citenamefont {Saridakis},\ and\ \citenamefont
+  {Wu}}]{Geng:2011aj}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.-Q.}\ \bibnamefont
+  {Geng}}, \bibinfo {author} {\bibfnamefont {C.-C.}\ \bibnamefont {Lee}},
+  \bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont {Saridakis}}, \ and\
+  \bibinfo {author} {\bibfnamefont {Y.-P.}\ \bibnamefont {Wu}},\ }\href
+  {\doibase 10.1016/j.physletb.2011.09.082} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Lett.}\ }\textbf {\bibinfo {volume} {B704}},\ \bibinfo
+  {pages} {384} (\bibinfo {year} {2011})},\ \Eprint
+  {http://arxiv.org/abs/1109.1092} {arXiv:1109.1092 [hep-th]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1109.1092;%%
+\bibitem [{\citenamefont {Geng}\ \emph {et~al.}(2012)\citenamefont {Geng},
+  \citenamefont {Lee},\ and\ \citenamefont {Saridakis}}]{Geng:2011ka}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.-Q.}\ \bibnamefont
+  {Geng}}, \bibinfo {author} {\bibfnamefont {C.-C.}\ \bibnamefont {Lee}}, \
+  and\ \bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont {Saridakis}},\
+  }\href {\doibase 10.1088/1475-7516/2012/01/002} {\bibfield  {journal}
+  {\bibinfo  {journal} {JCAP}\ }\textbf {\bibinfo {volume} {1201}},\ \bibinfo
+  {pages} {002} (\bibinfo {year} {2012})},\ \Eprint
+  {http://arxiv.org/abs/1110.0913} {arXiv:1110.0913 [astro-ph.CO]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1110.0913;%%
+\bibitem [{\citenamefont {Xu}\ \emph {et~al.}(2012)\citenamefont {Xu},
+  \citenamefont {Saridakis},\ and\ \citenamefont {Leon}}]{Xu:2012jf}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Xu}}, \bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont {Saridakis}}, \
+  and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Leon}},\ }\href
+  {\doibase 10.1088/1475-7516/2012/07/005} {\bibfield  {journal} {\bibinfo
+  {journal} {JCAP}\ }\textbf {\bibinfo {volume} {1207}},\ \bibinfo {pages}
+  {005} (\bibinfo {year} {2012})},\ \Eprint {http://arxiv.org/abs/1202.3781}
+  {arXiv:1202.3781 [gr-qc]} \BibitemShut {NoStop}%
+%%CITATION = ARXIV:1202.3781;%%
+\bibitem [{\citenamefont {Otalora}(2014)}]{Otalora:2014aoa}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Otalora}},\ }\href@noop {} {\  (\bibinfo {year} {2014})},\ \Eprint
+  {http://arxiv.org/abs/1402.2256} {arXiv:1402.2256 [gr-qc]} \BibitemShut
+  {NoStop}%
+%%CITATION = ARXIV:1402.2256;%%
+\bibitem [{\citenamefont {Mansouri}(2002)}]{Mansouri:2002cg}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Mansouri}},\ }\href {\doibase 10.1016/S0370-2693(02)02022-1} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Lett.}\ }\textbf {\bibinfo {volume}
+  {B538}},\ \bibinfo {pages} {239} (\bibinfo {year} {2002})},\ \Eprint
+  {http://arxiv.org/abs/hep-th/0203150} {arXiv:hep-th/0203150 [hep-th]}
+  \BibitemShut {NoStop}%
+%%CITATION = HEP-TH/0203150;%%
+\end{thebibliography}%

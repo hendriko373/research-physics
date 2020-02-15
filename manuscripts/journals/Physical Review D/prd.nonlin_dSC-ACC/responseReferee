@@ -1,0 +1,38 @@
+I  .’d like to thank the Referee for the thorough reading of the manuscript, and for the helpful comments. Below I will address each one of them and detail the changes of the revised version of the manuscript.
+
+----------
+
+1) "But large parts of the Introduction and the whole Sec.II represent just a review of material that can be found in Refs.[7,16] and that is illustrated extensively in Refs.[6,9,17]. A repetition is unwarranted, in my opinion."
+
+This is a correct observation, which I addressed by condensing the Introduction (from 1,5 to 1 page) and removing the content of Sec.II altogether, instead referring to the relevant literature at the beginning of the next section.
+
+----------
+
+2) "The author's main results are in Sec.IV, but also here is a lot of dead would. The well-known paper of MacDowell and Mansouri, which the author praises, has not quite 4 pages in a letter journal. The authors paper with the idea of the cosmological function (which is not quite new) and of the deSitter-Cartan geometry is at least 3 times longer that the MacDowell-Mansouri article. Also in Sec.IV, the author should concentrate on the essentials."
+
+I must agree that the text can be condensed to some extent. In the first version of the manuscript, Sec.III and Sec.IV consisted out of 4 pages in total. By leaving out nonessential parts, the total amount of pages is reduced to 2 in the revised version (now being Sec.II and Sec.III).
+
+----------
+
+3) "The author's application of the nonlinear realization technique reminds me of similar considerations of Tresguerres, see, e.g., arXiv:0804.1129, arXiv:0707.0296 and references given there. Also in the reprint volume of Blagojevic and Hehl, Gauge Theories of Gravitation, London 2013, there is material discussed that is related to the MacDowell-Mansouri theory. We suggest to the author to cite this reprint volume."
+
+In response to this remark, Refs.[16,17,18] have been added in the revised version, see the first paragraph of Sec. III.
+
+----------
+
+"However, the paper is (i) overly verbose and repetitive"
+
+The revised version is just over 5 pages, compared to an original 8,5 pages.
+
+----------
+
+"and, moreover, (ii) the coupling of this geometrical framework to matter is completely left in the dark. What is a gravitational theory good for if it is left without the source of gravity, namely matter?"
+
+This is a valid observation, with which in principle I must agree. The main objective of the paper has been, however, the geometrical framework and how a cosmological function can be fit into it. Since a proper discussion on constructing gravitational actions within the framework, coupled to matter fields, would take us too far, I have included the following lines in the second paragraph of the concluding section:
+
+<<<To determine the value of the cosmological function along spacetime, an adequate action for the gravitational field coupled to matter will have to be defined. By including invariants of the torsion tensor on the gravitational side, the first derivative of the cosmological function will automatically be present. Matter fields can be coupled both minimally to the gravitational field or in another non-minimal way. The analysis of such models that make use of the framework outlined in this paper is an interesting and important subject of future research.>>>
+
+----------
+
+I hope the changes make the revised manuscript appropriate for publication.
+

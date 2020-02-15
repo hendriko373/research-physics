@@ -1,0 +1,173 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{aldrovandi:2012tele}
+R.~Aldrovandi, J.~G. Pereira, Teleparallel Gravity: An Introduction, Springer,
+  Dordrecht, 2012.
+
+\bibitem{Aldrovandi:2003pa}
+R.~Aldrovandi, J.~G. Pereira, K.~H. Vu, Gravitation without the equivalence
+  principle, Gen. Rel. Grav. 36 (2004) 101--110.
+\newblock \href {http://arxiv.org/abs/gr-qc/0304106}
+  {\path{arXiv:gr-qc/0304106}}, \href
+  {http://dx.doi.org/10.1023/B:GERG.0000006696.98824.4d}
+  {\path{doi:10.1023/B:GERG.0000006696.98824.4d}}.
+
+\bibitem{Peebles:2003cc}
+P.~J.~E. Peebles, B.~Ratra, The cosmological constant and dark energy, Rev.
+  Mod. Phys. 75 (2003) 559--606.
+\newblock \href {http://arxiv.org/abs/astro-ph/0207347}
+  {\path{arXiv:astro-ph/0207347}}, \href
+  {http://dx.doi.org/10.1103/RevModPhys.75.559}
+  {\path{doi:10.1103/RevModPhys.75.559}}.
+
+\bibitem{Weinberg:2008bc}
+S.~Weinberg, Cosmology, Oxford University Press, 2008.
+
+\bibitem{Aldrovandi:2006vr}
+R.~Aldrovandi, J.~P. Beltran~Almeida, J.~G. Pereira, {d}e {S}itter special
+  relativity, Class. Quantum Grav. 24 (2007) 1385--1404.
+\newblock \href {http://arxiv.org/abs/gr-qc/0606122}
+  {\path{arXiv:gr-qc/0606122}}, \href
+  {http://dx.doi.org/10.1088/0264-9381/24/6/002}
+  {\path{doi:10.1088/0264-9381/24/6/002}}.
+
+\bibitem{Wise:2010sm}
+D.~K. Wise, {M}ac{D}owell-{M}ansouri gravity and {C}artan geometry, Class.
+  Quantum Grav. 27 (2010) 155010.
+\newblock \href {http://arxiv.org/abs/gr-qc/0611154}
+  {\path{arXiv:gr-qc/0611154}}, \href
+  {http://dx.doi.org/10.1088/0264-9381/27/15/155010}
+  {\path{doi:10.1088/0264-9381/27/15/155010}}.
+
+\bibitem{Jennen:2014mba}
+H.~Jennen, {Cartan geometry of spacetimes with a nonconstant cosmological
+  function $\Lambda$}, Phys. Rev. D90~(8) (2014) 084046.
+\newblock \href {http://arxiv.org/abs/1406.2621} {\path{arXiv:1406.2621}},
+  \href {http://dx.doi.org/10.1103/PhysRevD.90.084046}
+  {\path{doi:10.1103/PhysRevD.90.084046}}.
+
+\bibitem{Alekseevsky:1995cc}
+D.~V. Alekseevsky, P.~W. Michor, Differential geometry of {C}artan connections,
+  Publ. Math. Debrecen 47 (1995) 349--375.
+\newblock \href {http://arxiv.org/abs/math/9412232}
+  {\path{arXiv:math/9412232}}.
+
+\bibitem{sharpe1997diff_geo}
+R.~W. Sharpe, Differential Geometry: {C}artan's Generalization of {K}lein's
+  {E}rlangen Program, Springer, New York, 1997.
+
+\bibitem{Wise:2009fu}
+D.~K. Wise, Symmetric space {C}artan connections and gravity in three and four
+  dimensions, SIGMA 5 (2009) 080.
+\newblock \href {http://arxiv.org/abs/0904.1738} {\path{arXiv:0904.1738}},
+  \href {http://dx.doi.org/10.3842/SIGMA.2009.080}
+  {\path{doi:10.3842/SIGMA.2009.080}}.
+
+\bibitem{Westman:2014yca}
+H.~F. Westman, T.~G. Zlosnik, An introduction to the physics of {C}artan
+  gravity, Ann. Phys. 361 (2015) 330--376.
+\newblock \href {http://arxiv.org/abs/1411.1679} {\path{arXiv:1411.1679}},
+  \href {http://dx.doi.org/10.1016/j.aop.2015.06.013}
+  {\path{doi:10.1016/j.aop.2015.06.013}}.
+
+\bibitem{husemoller:1966fibre}
+D.~Husem{\"o}ller, Fibre Bundles, Springer, New York, 1966.
+
+\bibitem{stelle.west:1980ds}
+K.~S. Stelle, P.~C. West, Spontaneously broken de~{S}itter symmetry and the
+  gravitational holonomy group, Phys. Rev. D21 (1980) 1466--1488.
+\newblock \href {http://dx.doi.org/10.1103/PhysRevD.21.1466}
+  {\path{doi:10.1103/PhysRevD.21.1466}}.
+
+\bibitem{deAndrade:1997qt}
+V.~C. de~Andrade, J.~G. Pereira, Gravitational lorentz force and the
+  description of the gravitational interaction, Phys. Rev. D56 (1997)
+  4689--4695.
+\newblock \href {http://arxiv.org/abs/gr-qc/9703059}
+  {\path{arXiv:gr-qc/9703059}}, \href
+  {http://dx.doi.org/10.1103/PhysRevD.56.4689}
+  {\path{doi:10.1103/PhysRevD.56.4689}}.
+
+\bibitem{carroll:sg}
+S.~Carroll, Spacetime and Geometry: an Introduction to General Relativity,
+  Addison Wesley, San Francisco, 2004.
+
+\bibitem{Maluf:2013gaa}
+J.~W. Maluf, The teleparallel equivalent of general relativity, Ann. Phys.
+  (Berlin) 525 (2013) 339--357.
+\newblock \href {http://arxiv.org/abs/1303.3897} {\path{arXiv:1303.3897}},
+  \href {http://dx.doi.org/10.1002/andp.201200272}
+  {\path{doi:10.1002/andp.201200272}}.
+
+\bibitem{Brans:1961sx}
+C.~Brans, R.~H. Dicke, {M}ach's principle and a relativistic theory of
+  gravitation, Phys. Rev. 124 (1961) 925--935.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.124.925}
+  {\path{doi:10.1103/PhysRev.124.925}}.
+
+\bibitem{Dicke:1961gz}
+R.~H. Dicke, {M}ach's principle and invariance under transformation of units,
+  Phys. Rev. 125 (1962) 2163--2167.
+\newblock \href {http://dx.doi.org/10.1103/PhysRev.125.2163}
+  {\path{doi:10.1103/PhysRev.125.2163}}.
+
+\bibitem{Bergmann:1968ve}
+P.~G. Bergmann, Comments on the scalar tensor theory, Int. J. Theor. Phys. 1
+  (1968) 25--36.
+\newblock \href {http://dx.doi.org/10.1007/BF00668828}
+  {\path{doi:10.1007/BF00668828}}.
+
+\bibitem{Sotiriou:2008rp}
+T.~P. Sotiriou, V.~Faraoni, $f(r)$ theories of gravity, Rev. Mod. Phys. 82
+  (2010) 451--497.
+\newblock \href {http://arxiv.org/abs/0805.1726} {\path{arXiv:0805.1726}},
+  \href {http://dx.doi.org/10.1103/RevModPhys.82.451}
+  {\path{doi:10.1103/RevModPhys.82.451}}.
+
+\bibitem{Tsujikawa:2010zza}
+S.~Tsujikawa, Modified gravity models of dark energy, Lect. Notes Phys. 800
+  (2010) 99--145.
+\newblock \href {http://arxiv.org/abs/1101.0191} {\path{arXiv:1101.0191}},
+  \href {http://dx.doi.org/10.1007/978-3-642-10598-2_3}
+  {\path{doi:10.1007/978-3-642-10598-2_3}}.
+
+\bibitem{Geng:2011aj}
+C.-Q. Geng, C.-C. Lee, E.~N. Saridakis, Y.-P. Wu, 'teleparallel' dark energy,
+  Phys. Lett. B704 (2011) 384--387.
+\newblock \href {http://arxiv.org/abs/1109.1092} {\path{arXiv:1109.1092}},
+  \href {http://dx.doi.org/10.1016/j.physletb.2011.09.082}
+  {\path{doi:10.1016/j.physletb.2011.09.082}}.
+
+\bibitem{Geng:2011ka}
+C.-Q. Geng, C.-C. Lee, E.~N. Saridakis, Observational constraints on
+  teleparallel dark energy, JCAP 1201 (2012) 002.
+\newblock \href {http://arxiv.org/abs/1110.0913} {\path{arXiv:1110.0913}},
+  \href {http://dx.doi.org/10.1088/1475-7516/2012/01/002}
+  {\path{doi:10.1088/1475-7516/2012/01/002}}.
+
+\bibitem{Xu:2012jf}
+C.~Xu, E.~N. Saridakis, G.~Leon, Phase-space analysis of teleparallel dark
+  energy, JCAP 1207 (2012) 005.
+\newblock \href {http://arxiv.org/abs/1202.3781} {\path{arXiv:1202.3781}},
+  \href {http://dx.doi.org/10.1088/1475-7516/2012/07/005}
+  {\path{doi:10.1088/1475-7516/2012/07/005}}.
+
+\bibitem{Otalora:2014aoa}
+G.~Otalora, A novel teleparallel dark energy model\href
+  {http://arxiv.org/abs/1402.2256} {\path{arXiv:1402.2256}}.
+
+\bibitem{Mansouri:2002cg}
+F.~Mansouri, Nonvanishing cosmological constant $\lambda$, phase transitions,
+  and $\lambda$-dependence of high-energy processes, Phys. Lett. B538 (2002)
+  239--245.
+\newblock \href {http://arxiv.org/abs/hep-th/0203150}
+  {\path{arXiv:hep-th/0203150}}, \href
+  {http://dx.doi.org/10.1016/S0370-2693(02)02022-1}
+  {\path{doi:10.1016/S0370-2693(02)02022-1}}.
+
+\end{thebibliography}

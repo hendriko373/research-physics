@@ -1,0 +1,96 @@
+-----------
+Corrections to be made to the PDF proof DT11385
+-----------
+
+1)
+At 3 places, there are equations which should be corrected. The errors seem to have appeared
+by converting the original manuscript to XML, so that the correct equations can be found in
+the manuscript I submitted. The corrections to be done:
+
+The first 2 are to be corrected in Eq. (12a): in the first line $Acb$ should
+become $A^b_{~c}$, while in the second line $Aca$ should be $A^a_{~c}$.
+
+The third correction is to be made at the end of the sentence that begins at line
+312, “Because the exterior covariant…”: In the last equation, $\omega ba$ should be
+corrected for $\omega_b^{~a}$.
+
+2)
+At line 242, there appears to be too much whitespace around the inline equations. Is this normal
+behavior?
+
+3)
+In Eq. (14b), in the second term of the rhs, there should be more whitespace between `cosh z’ and `F^a’. 
+
+4)
+The author affiliation needs some slight modifications, see. item 1 below.
+
+5)
+The same author Sidney R. Coleman is written in different ways in Refs. [19] and [20]. Both
+references should state `S. Coleman’.
+
+-----------
+Answers to numbered items
+-----------
+
+-1-
+
+The author affiliation should become and look exactly as:
+
+Instituto de Física Teórica, Universidade Estadual Paulista, Rua Dr. Bento Teobaldo Ferraz 271,
+01140-070, São Paulo, São Paulo, Brazil
+
+There should be two lines (as shown above) and the reference to which Block can be omitted.
+
+-2-
+
+In response to this item, the relevant sentence (line 19 to 22) can be replaced by the following:
+
+Since the laws that govern special relativistic physics are covariant with respect to the Poincaré
+group $ISO(1,3)$, i.e., the semidirect product of the Lorentz group $SO(1,3)$ and the Poincaré
+displacements, the corresponding spacetime is the affine Minkowski space $M$.
+
+-3, 5, 6, 7, 8, 9, 10, 11-
+
+Yes, the outher parantheses should be set in boldface type.
+
+-4-
+
+Yes, `SO’ should be set in italics.
+
+-12, 13-
+
+OK
+
+-14-
+
+Refs. [1] and [7] are still only available as e-prints; the e-print info is correct. Ref. [4] is not an e-print, and the reference in the PDF is pointing correctly to the published article.
+
+-15-
+
+OK
+
+-16-
+
+CAPES should be replaced by:
+
+Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES).
+
+-17-
+
+I confirm that the funding agency has been properly identified.
+
+-18-
+
+The references [8,9,10,16,21] are correct. There are DOI links available for:
+
+Ref. [9] has DOI http://dx.doi.org/10.3842/SIGMA.2009.080
+Ref. [10] has DOI http://dx.doi.org/10.1090/S0002-9904-1893-00147-X
+
+-19-
+
+The links are directing to the correct references.
+
+-20-
+
+OK, the change from ‘5’ to ’05’ is correct.
+
