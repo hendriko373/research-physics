@@ -1,0 +1,411 @@
+\documentclass[11pt]{amsart}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+
+\usepackage[all]{xy}
+\usepackage{breqn}
+
+\title{Cartan geometry}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+	In this document, Cartan geometry is reviewed and discussed 
+	explicitly for a geometry based on the Klein geometry of a de 
+	Sitter spacetime. Then, we try to generalize for a spacetime 
+	depending cosmological function, and check consistency with 
+	the Bianchi identities. This leads to postulating modified 
+	Einstein's equations.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+In de Sitter special relativity it is postulated that in the 
+absence of gravitational fields, all physical laws are to be 
+invariant under de Sitter transformations, that is the 
+pseudo--orthogonal group $SO(4,1)$ [{\blu REF}]. Of course, this 
+is a generalization of ordinary special relativity in the sense 
+that the vanishing cosmological constant is allowed to take a 
+non-zero and positive value. Which value one should be using is a 
+question to be answered outside special relativity, more 
+precisely in an adequately adapted general relativistic theory of 
+gravity.\footnote{At first sight it might seem contradictary to 
+	postulate de Sitter special relativity in the absence of 
+	gravity, while its cosmological constant is to be determined 
+	by the general relativistic theory. {\blu The resolution will 
+		be found in allowing for a cosmological function on 
+		spacetime in the presence of gravity. Note also that the 
+		special case $\Lambda = 0$ is still allowed.}}  
+Conceptually, this adaptation will find its expression in 
+modifying the equivalence principle in such a way to be 
+consistent with de Sitter special relativity [{\blu REF}]. The 
+equivalence principle may then be formulated as: \emph{at every	
+	spacetime point in the presence of gravity it is possible to 
+	change reference frame, so that the laws of nature take the 
+	same form as in de Sitter special relativity}. This brings up 
+the image of spacetime to be described locally by de Sitter 
+spaces of possibly varying cosmological constant. Clearly, this 
+image is not allowed by the standard formulation of general 
+relativity in terms of a Riemannian manifold with a torsionless 
+affine metric connection, where the local Minkowskian nature is 
+exactly what the equivalence principle for ordinary general 
+relativity prescribes. The question then arises, how to account 
+for the modified equivalence principle?
+
+An answer may be found in Cartan geometry [{\blu REF to original 
+	work}]. This may be illustrated by the following commutative 
+diagram, which is adapted from the generic one given in
+\cite{sharpe1997diff_geo,Wise:2010sm}.
+
+%\begin{displaymath}
+%	\xymatrix@!C=4cm{
+%		*+\txt\footnotesize{Minkowskian\\geometry}
+%				\ar[r]^-{\mathcal{P} \to SO(4,1)}
+%				\ar[d]^-{R_{\mu\nu\rho\sigma} \neq 0}
+%				&*+\txt\footnotesize{de Sitter\\Klein geometry}
+%				\ar[d]^-{\hat{R}_{\mu\nu\rho\sigma} \neq 0}
+%			\\
+%		*+\txt\footnotesize{Lorentzian\\geometry}
+%				\ar[r]^-{\mathcal{P} \to SO(4,1)}
+%				&*+\txt\footnotesize{Cartan geometry\\modelled on dS}
+%		}
+%\end{displaymath}
+Going from left to right 
+
+
+\section{From Klein to Cartan geometry}
+
+\subsection{Klein geometry}
+
+\subsection{Cartan geometry}
+
+Let us start by writing down the formal definition of a Cartan 
+geometry as given in \cite{sharpe1997diff_geo}.
+
+\begin{definition}[Cartan geometry]
+	\label{def:cartan_geo}
+	A \textbf{Cartan geometry $(P,\tilde{\omega})$ modeled on 		
+		$(\mathfrak{g},\mathfrak{h})$} consists of a principal 
+	bundle $P(M,H)$ together with a $\mathfrak{g}$-valued 1-form 
+	$\tilde{\omega}$ on $P$, satisfying the following properties:
+	\begin{itemize}
+		\item[(i)] for each $u \in P$, the linear map 
+			$\tilde{\omega}_u : T_uP \to \mathfrak{g}$ is an 
+			isomorphism;
+		\item[(ii)] $\tilde{\omega}(A^\dagger) = A$, for each 
+			fundamental vector field $A^\dagger$ corresponding to $A 
+			\in \mathfrak{h}$;
+		\item[(iii)] $R_h^\ast \tilde{\omega} = 
+			\mathrm{Ad}_{h^{-1}} \tilde{\omega}$ for each $h \in H$.
+	\end{itemize}
+	The 1-form $\tilde{\omega}$ is called a \textbf{Cartan 
+		connection}.
+\end{definition}
+
+Since $\tilde{\omega} : TP \to \mathfrak{g}$ defines an 
+isomorphism at any $u \in P$, it follows that $\dim M = \dim 
+G/H$.  Furthermore, the second property implies that the Cartan 
+connection $\tilde{\omega}$ restricts to the Maurer-Cartan form 
+$\omega_H$ on the fibers of $P$ \cite{sharpe1997diff_geo}.
+
+The \textbf{curvature} $\tilde{\Omega}$ of a Cartan connection is 
+the $\mathfrak{g}$-valued 2-form on $P$ defined by
+\begin{displaymath}
+	\tilde{\Omega} = d\tilde{\omega} + 
+	\frac{1}{2}[\tilde{\omega},\tilde{\omega}]~.
+\end{displaymath}
+This 2-form is horizontal, in the sense that it vanishes when any 
+of its arguments is tangent to the fiber. This is understood by 
+noting that $\tilde{\omega}$ restricts to $\omega_H$ on the 
+fibers for which the curvature is just the structure equation 
+\cite{kob1996found}.
+
+The \textbf{torsion} $\Theta$ of the Cartan connection is a 
+$\mathfrak{g}/\mathfrak{h}$-valued 2-form on $P$ obtained by 
+composing the curvature form with the canonical projection 
+$\mathfrak{g} \to \mathfrak{g}/\mathfrak{h}$, that is 
+%\begin{displaymath}
+%	\xymatrix{
+%		T^{(2,0)}P
+%			\ar[r]^-{\tilde{\Omega}}
+%			\ar@/_15pt/[rr]_-{\Theta}
+%				&\mathfrak{g}\ar[r] &\mathfrak{g}/\mathfrak{h}
+%	}~.
+%\end{displaymath}
+
+By taking the exterior derivative of the curvature, one finds the 
+\textbf{Bianchi identity}
+\begin{displaymath}
+	d\tilde{\Omega} + [\tilde{\omega},\tilde{\Omega}] = 0~.
+\end{displaymath}
+
+\subsection{Reductive Cartan geometry}
+
+A Cartan geometry $(P,\tilde{\omega})$ modeled on $(G,H)$ is 
+reductive if there is an $H$-module decomposition $\mathfrak{g} = 
+\mathfrak{h} \oplus \mathfrak{p}$, i.e.~a splitting of 
+$\mathfrak{g}$ in $\mathrm{Ad}(H)$-invariant subspaces.  
+Corresponding to this decomposition, one can break up the Cartan 
+connection in an $\mathfrak{h}$-valued and a 
+$\mathfrak{p}$-valued part
+%
+\begin{displaymath}
+	\tilde{\omega} = \omega + \theta~;\quad
+	\omega \in \Omega^1(P,\mathfrak{h}),~
+	\theta \in \Omega^1(P,\mathfrak{p})~.
+\end{displaymath}
+Since the splitting is reductive, the 1-form $\omega$ is an 
+Ehresmann connection on $P(M,H)$. This follows from the 
+definition\footnote{More precisely, from the second property.} of 
+a Cartan connection and because the reductive splitting implies 
+$R^\ast_h \omega = \mathrm{Ad}_{h^{-1}}\omega$. The 
+$\mathfrak{p}$-valued 1-form $\theta$ is called the 
+\textbf{coframe field}.
+
+In the same manner, the curvature form $\tilde{\Omega}$ can be 
+written as
+%
+\begin{displaymath}
+	\tilde{\Omega} = \hat{\Omega} + \Theta~;\quad
+	\hat{\Omega} \in \Omega^2(P,\mathfrak{h}),~
+	\Theta \in \Omega^2(P,\mathfrak{p})~.
+\end{displaymath}
+%
+Seperating the different contributions to $\tilde{\Omega}$ for a 
+reductive Lie algebra $\mathfrak{g}$: 
+%
+\begin{displaymath}
+	\tilde{\Omega} = \underbrace{d\omega + 
+		\tfrac{1}{2}[\omega,\omega]}_{\mathfrak{h}\text{-valued}}
+	+ \underbrace{d\theta + 
+		[\omega,\theta]}_{\mathfrak{p}\text{-valued}} + 
+	\underbrace{\tfrac{1}{2}[\theta,\theta]}_{\mathfrak{g}\text{-valued}}
+\end{displaymath}
+In the case that $\mathfrak{g}$ is a \emph{symmetric Lie 
+	algebra}, $[\theta,\theta] \in \Omega^2(P,\mathfrak{h})$ so 
+that
+\begin{displaymath}
+	\hat{\Omega} = \Omega + \tfrac{1}{2}[\theta,\theta]~,\quad
+	\Theta = d\theta + [\omega,\theta]\quad
+	(\text{symmetric}~\mathfrak{g})~.
+\end{displaymath}
+Here, $\Omega = d\omega + \tfrac{1}{2}[\omega,\omega]$ is the 
+curvature of the Ehresmann connection $\omega$. A reductive 
+Cartan geometry for which $\Theta$ vanishes is said to be 
+\textbf{torsion-free}.
+
+Going on in the same way, the Bianchi identity is decomposed in a 
+$\mathfrak{h}$-valued and a $\mathfrak{p}$-valued part. This 
+results in two Bianchi identities:
+%
+\begin{alignat*}{2}
+	&d^2_\omega\theta + [\theta,\Omega] = 0&\qquad\quad&(\text{1st 
+		identity})~,\\
+	&d_\omega \Omega = 0&&(\text{2nd identity})~.
+\end{alignat*}
+Here, $d_\omega \cdot \equiv d\cdot + [\omega,\cdot]$ denotes the 
+exterior covariant derivative. 
+
+\section{de Sitter geometry}
+
+In this section, we apply to above formalism for the a Cartan 
+geometry modeled on a de Sitter spacetime, which we will denote 
+by a \emph{de Sitter Cartan geometry}. In this case, the model 
+Klein geometry is $(\mathfrak{o}(4,1)/\mathfrak{o}(3,1))$, which 
+is well known to be symmetric:
+%
+\begin{equation}
+	\label{eq:comm_relations_SO(4,1)}
+  \begin{split}
+		[L_{ab},L_{kl}] &= \eta_{al}L_{bk} + \eta_{bk}L_{al} - 
+		\eta_{ak}L_{bl} - \eta_{bl}L_{ak} \\
+		[L_{a4},L_{kl}] &= \eta_{al}L_{4k} - \eta_{ak}L_{4l} \\
+		[L_{a4},L_{b4}] &= \eta_{44}L_{ba}
+  \end{split}
+\end{equation}
+where indices run from $0$ to $3$. The generators $L_{ab}$ span 
+$\mathfrak{h} = \mathfrak{o}(3,1)$, while $L_{a4}$ span 
+$\mathfrak{p}$, the generators of de Sitter translations.  
+Introducing some length scale $l$ for the translations, that is 
+let $P_a\equiv L_{4a}/l$, the commutation relations 
+\eqref{eq:comm_relations_SO(4,1)} can re-expressed as
+%
+\begin{equation}
+	\label{eq:comm_relations_SO(4,1)_length}
+  \begin{split}
+		[L_{ab},L_{kl}] &= \eta_{al}L_{bk} + \eta_{bk}L_{al} - 
+		\eta_{ak}L_{bl} - \eta_{bl}L_{ak} \\
+		[L_{kl},P_a] &= \eta_{al}P_k- \eta_{ak}P_l\\
+		[P_a,P_b] &= \frac{\eta_{44}}{l^2}L_{ba}
+  \end{split}
+\end{equation}
+
+A de Sitter Cartan geometry then consists of the bundle of 
+orthonormal frames\linebreak[4] $OM(M,SO(3,1))$ over spacetime 
+$M$ and a Cartan connection of type 
+$(\mathfrak{o}(4,1),\mathfrak{o}(3,1))$ on $OM$, that locally on 
+$M$ can be expanded as\footnote{The same symbol is used for a 
+	Cartan connection on $P$ and its pulled back version on $M$.}
+%
+\begin{equation}
+	\label{eq:cartan_conn_dS}
+	\tilde{\omega}_\mu dx^\mu = 
+	\tfrac{1}{2}\omega^{ab}_{~~\mu}L_{ab} dx^\mu + \theta^a_{~\mu} 
+	P_a dx^\mu~.
+\end{equation}
+
+The curvature $2$-form on the other hand, is expanded 
+as\footnote{The local versions of $\hat{\Omega}$ and $\Omega$ are 
+	given the symbols $\hat{R}$ and $R$, respectively.}
+%
+\begin{displaymath}
+	\hat{R} = \tfrac{1}{4} \hat{R}^{ab}_{~~\mu\nu} L_{ab}\, dx^\mu 
+	\wedge dx^\nu~.
+\end{displaymath}
+Given the definition of $\hat{R} = d\omega + 
+\tfrac{1}{2}[\omega,\omega] + \tfrac{1}{2}[\theta,\theta]$ and 
+due to the commutation relations 
+\eqref{eq:comm_relations_SO(4,1)_length}, the curvature of the 
+Cartan connection is equal to
+%
+\begin{displaymath}
+	\begin{split}
+		\hat{R}^{ab}_{~~\mu\nu} &= \pd_\mu \omega^{ab}_{~~\nu} - 
+		\pd_\nu \omega^{ab}_{~~\mu} + 
+		\omega^a_{~c\mu}\omega^{cb}_{~~\nu} - 
+		\omega^a_{~c\nu}\omega^{cb}_{~~\mu} - l^{-2} \eta_{44} 
+		(\theta^a_{~\mu}\theta^b_{~\nu} - 
+		\theta^a_{~\nu}\theta^b_{~\mu}) \\
+		&= R^{ab}_{~~\mu\nu} - 
+		l^{-2}\eta_{44}(\theta^a_{~\mu}\theta^b_{~\nu} - 
+		\theta^a_{~\nu}\theta^b_{~\mu})
+	\end{split}
+\end{displaymath}
+where $R^{ab}_{~~\mu\nu}$ is the curvature of the spin 
+connection. The second contribution to the curvature is due to 
+the commutation relations of the translations. This term is a 
+crucial difference with the usual affine connection (modeled on 
+Minkowski space). In the latter the corresponding commutator 
+vanishes and the curvature of the metric affine connection equals 
+the curvature of the spin connection. Note that a \emph{flat} 
+geometry $(\hat{R} = 0)$ with respect to the Cartan connection 
+implies a constantly curved geometry with respect to the spin 
+connection. {\blu [Work out argument. In fact, maybe it is a 
+	better idea to first translate objects into spacetime language 
+	and then discuss this matter.]}
+
+The torsion 2-form is locally given by
+%
+\begin{displaymath}
+	T = \tfrac{1}{2} T^a_{~\mu\nu} P_a dx^\mu \wedge dx^\nu~.
+\end{displaymath}
+Since the torsion equals $T = d\theta + [\omega,\theta]$, it 
+follows that
+%
+\begin{displaymath}
+	T^a_{~\mu\nu} = \pd_\mu\theta^a_{~\nu} - 
+	\pd_\nu\theta^a_{~\mu} + \omega^a_{~b\mu}\theta^b_{~\nu} - 
+	\omega^a_{~b\nu}\theta^b_{~\mu}~.
+\end{displaymath}
+As one would expect, the torsion equals the one associated with a 
+metric affine connection---since the commutation relations 
+involved are identical.
+
+The Bianchi identities for this geometry are as follows. The 
+first identity is locally expressed as\footnote{The covariant 
+	derivative with respect to the spin connection $\omega$ is 
+	denoted by $D$.}
+%
+\begin{displaymath}
+	D_\rho T^a_{\mu\nu} + D_\nu T^a_{\rho\mu} + D_\mu 
+	T^a_{\nu\rho} = \theta^b_{~\rho}R^a_{~b\mu\nu} + 
+	\theta^b_{~\nu}R^a_{~b\rho\mu} + 
+	\theta^b_{~\mu}R^a_{~b\nu\rho}~,
+\end{displaymath}
+while the second identity is written out as
+%
+\begin{displaymath}
+	D_\rho R^a_{~b\mu\nu} + D_\nu R^a_{~b\rho\mu} + D_\mu 
+	R^a_{~b\nu\rho} = 0~.
+\end{displaymath}
+
+
+
+
+\section{de Sitter geometry with spacetime dependent length 
+	scale}
+
+In this section we try to generalize de Sitter Cartan geometry 
+where the length scale, which was introduced in the de Sitter 
+translations, is allowed to vary over spacetime. The reason for 
+this, is that this length scale fixes the local cosmological 
+constant of the tangent de Sitter space \cite{Wise:2010sm}. A 
+spacetime dependent length scale then induces a cosmological 
+function.  Of course, whether this can be made consistent 
+with---possibly modified---Einstein's equations remains to be 
+shown.
+
+More precisely, the generalization is done by $l \to l(x)$ in 
+\eqref{eq:cartan_conn_dS}, so that
+%
+\begin{equation}
+	\tilde{\omega}_\mu dx^\mu = 
+	\tfrac{1}{2}\omega^{ab}_{~~\mu}L_{ab} dx^\mu + 
+	l^{-1}(x)\theta^a_{~\mu} L_{4a} dx^\mu~.
+\end{equation}
+Of course the commutation relations are not to be affected by 
+this change, since de Sitter Klein geometry is still to be the 
+model.  What is affected by changing the length scale is the 
+size---pseudo-radius---of the corresponding de Sitter space, see 
+e.g.~\cite{Wise:2010sm}.
+
+The resulting curvature and torsion tensors are then
+%
+\begin{displaymath}
+	\hat{R}^{ab}_{~~\mu\nu} = R^{ab}_{~~\mu\nu} - l^{-2}(x) 
+	\eta_{44}(\theta^a_{~\mu}\theta^b_{~\nu} - 
+	\theta^a_{~\nu}\theta^b_{~\mu})
+\end{displaymath}
+and\footnote{Note, $T = \tfrac{1}{2}l^{-1}(x) 
+	T^a_{~\mu\nu}L_{4a}dx^\mu\wedge dx^\nu$.}
+\begin{multline}
+	l^{-1}(x) T^a_{~\mu\nu} = l^{-1}(x) (\pd_\mu\theta^a_{~\nu} - 
+	\pd_\nu\theta^a_{~\mu} + \omega^a_{~b\mu}\theta^b_{~\nu} - 
+	\omega^a_{~b\nu}\theta^b_{~\mu}) \\
+	- l^{-2}(x)( \pd_\mu l(x) \theta^a_{~\nu} - \pd_\nu l(x) 
+	\theta^a_{~\mu})~.
+\end{multline}
+We conclude that the torsion is affected by a spacetime dependent 
+length scale. {\blu [This does possibly make sense.  Torsion is a 
+	measure for the amount the point of tangency of our model 
+	spacetime (dS) with spacetime $M$ has been ``translated", 
+	after moving along a closed path on $M$ \cite{Wise:2010sm}.  
+	This amount will be influenced rather directly if this model 
+	spacetime has a changing cosmological constant!]}.  On the 
+other hand, the curvature $(\hat{R})$ has changed in a rather 
+passive way. It now shows that our spacetime is locally 
+\emph{flat} for a constant spin curvature $(R)$ for the given 
+length scale.  Finally, the spin curvature is unchanged.  {\blu 
+	[Again a possible interpretation is that the amount to which 
+	our frame has rotated after moving along a closed path is 
+	independent of the length scale of our model spacetime.]}
+
+\section{Einstein's equations}
+
+In case we consider a de Sitter Cartan geometry with vanishing 
+torsion, it seems we are led to the Einstein's equations, for 
+which the left hand side would take the form {\blu [Check this!]}
+%
+\begin{equation}
+	G_{\mu\nu} + \Lambda(x)g_{\mu\nu}~.
+\end{equation}
+
+\bibliographystyle{plain}
+\bibliography{../../References/All.bib}
+\end{document}

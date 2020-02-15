@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+
+\usepackage{mathtools}
+
+\usepackage[all]{xy}
+
+\title{Equivalence Bianchi identities GR - TG}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	In this document we show that the Bianchi identities for 
+	Teleparallel Gravity, as they are derived 
+	in~\cite{aldrovandi:2012tele}, i.e., from the Bianchi 
+	identities for General Relativity together with the dictionary 
+	$\omega = \mathring{\omega} + K$, are just the Bianchi 
+	identities for a Riemann-Cartan geometry for the connection 
+	$\omega$.
+\end{abstract}
+
+A generic connection $\omega$ can be written as the sum (see 
+e.g.~\cite{kob1996found})
+\begin{equation}
+	\label{eq:decomp_contortion}
+	\omega = \mathring{\omega} + K~,
+\end{equation}
+where $K \in \Omega^1(M,\mathfrak{so}(1,3))$ is called the 
+\emph{contortion} of $\omega$. This connection fulfills the 
+Bianchi identities
+\begin{subequations}
+\label{eq:bianchiISO_hp}
+\begin{alignat}{3}
+	\label{eq:bianchiISO_h}
+	dR + [\omega,R] &\equiv 0
+		&\quad&\text{or}
+		&\quad
+		dR^{ab} + \omega\ind{^a_c} \wedge R^{cb} + \omega\ind{^b_c} 
+		\wedge R^{ac} &\equiv 0~, \\
+	\label{eq:bianchiISO_p}
+	dT + [\omega,T] + [e,R] &\equiv 0
+		&\quad&\text{or}
+		&\quad
+		dT^a + \omega\ind{^a_b} \wedge T^b + e^c \wedge R\ind{_c^a} 
+		&\equiv 0~.
+\end{alignat}
+\end{subequations}
+We next show explicitely that the decomposition in 
+Eq.~\eqref{eq:decomp_contortion} is consistent with the overal 
+structure of the Cartan geometry and derive the geometry of $A = 
+\omega + e$ from the geometry of $\mathring{A} = 
+\mathring{\omega} + e$ by use of the dictionary 
+$\mathring{\omega} = \omega - K$. Consider therefore first the 
+curvature and torsion of $\mathring{\omega}$:
+\begin{align*}
+	\mathring{R} &= d\mathring{\omega} + \frac{1}{2} 
+	[\mathring{\omega},\mathring{\omega}] \\
+	&= d\omega - dK + \frac{1}{2} [\omega,\omega] - [\omega,K] + 
+	\frac{1}{2}[K,K] \\
+	&= R - Q~,
+\end{align*}
+where we denoted $Q \coloneqq dK + [\omega,K] - 
+\tfrac{1}{2}[K,K]$. For the torsion one finds
+\begin{displaymath}
+	0 \equiv \mathring{T} = de + [\omega,e] - [K,e]~,
+\end{displaymath}
+which implies that the torsion and the contortion of $\omega$ are 
+related by
+\begin{equation}
+	T = [K,e]~.
+\end{equation}
+Let us then turn attention to the Bianchi identities. The one for 
+the curvature leads to
+\begin{align*}
+	0 &\equiv d\mathring{R} + [\mathring{\omega},\mathring{R}] \\
+	&= dR - dQ + [\omega,R] - [\omega,Q] - [K,R] + [K,Q] \\
+	&= dR + [\omega,R] - [K,R] - [d\omega,K] + [\omega,dK] + 
+	[dK,K] - [\omega,dK] \\
+	&\nla{} - [\omega,[\omega,K]] + \tfrac{1}{2} [\omega,[K,K]] + 
+	[K,dK] + [K,[\omega,K]] - \tfrac{1}{2} [K,[K,K]] \\
+	&= dR + [\omega,R] - [K,R] - [d\omega,K] + \tfrac{1}{2} 
+	[K,[\omega,\omega]] + \tfrac{1}{2} [\omega,[K,K]] - 
+	\tfrac{1}{2} [\omega,[K,K]] \\
+	&= dR + [\omega,R]~.
+\end{align*}
+The Bianchi identity for the torsion gives result to
+\begin{align*}
+	0 &\equiv [e,\mathring{R}] \\
+	&= [e,R] - [e,Q] \\
+	&= [e,R] - [e,dK] - [e,[\omega,K]] + \tfrac{1}{2} [e,[K,K]] \\
+	&= [e,R] + d[e,K] - [de,K] - [[K,e],\omega] - [[e,\omega],K] + 
+	[[e,K],K] \\
+	&= [e,R] + dT - [T,K] - [T,\omega] + [T,K] \\
+	&= dT + [\omega,T] + [e,R]~.
+\end{align*}
+These results indeed are identical to the Bianchi identities of 
+$\omega$.
+
+
+\bibliography{/home/hendrik/research/drafts/references/All.bib}
+\bibliographystyle{plain}
+
+\end{document}
+

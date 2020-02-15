@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: cartan_geo.aux
+The style file: plain.bst
+Database file #1: ../../References/All.bib.bib
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            518 strings with 4388 characters,
+and the built_in function-call counts, 789 in all, are:
+= -- 77
+> -- 27
+< -- 1
++ -- 11
+- -- 8
+* -- 45
+:= -- 144
+add.period$ -- 11
+call.type$ -- 3
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 35
+empty$ -- 70
+format.name$ -- 8
+if$ -- 166
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 5
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 15
+preamble$ -- 1
+purify$ -- 10
+quote$ -- 0
+skip$ -- 19
+stack$ -- 0
+substring$ -- 33
+swap$ -- 4
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 0
+while$ -- 7
+width$ -- 4
+write$ -- 35

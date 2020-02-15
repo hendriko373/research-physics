@@ -1,0 +1,558 @@
+\documentclass[11pt]{article}
+
+%Package declarations
+%--------------------
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{setspace}
+\setstretch{1.1}
+\usepackage[a4paper]{geometry}
+\geometry{left=3.5cm,right=3.5cm,top=3cm,bottom=3cm}
+
+\usepackage[english]{babel}
+\usepackage{color}
+
+\usepackage{../Tex_files/preamble_one}
+
+\title{de Sitter space as a homogeneous space}
+\date{}
+
+\begin{document}
+\maketitle
+
+Throughout this document, let $G$ be a connected Lie group and 
+$H$ a closed subgroup.
+
+\section{Introduction: Klein geometries}
+
+In this section \emph{Klein geometries} are introduced. We 
+discuss the relation between geometry and a corresponding Lie 
+group structure, after which the relation to homogeneous spaces 
+becomes evident.
+
+Felix Klein realized that a geometry can be understood as 
+consisting of a connected manifold $M$ together with a Lie group 
+$G$ of ``motions" acting transitively on $M$ and which leaves all 
+the ``properties of the figures" studied in the geometry 
+invariant.  Being the simplest example, Euclidean geometry is 
+given by the manifold (as an affine space) $M = \mbb{R}^n$ on 
+which the group $G = \mbb{R}^n \rtimes SO(n)$ acts effectively 
+and transitively, that leaves invariant the properties angle and 
+length of figures (sets of points).  Since from Klein's point of 
+view geometry is the study of the properties of the figures being 
+invariant under the action of $G$, it is possible to shift 
+emphasis from the space $M$ to the group $G$ in the following 
+rigorous manner.
+
+Fix a point $p$ in $M$. Then one may define a map $\lambda_p : G 
+\to M : g \mapsto gp$. Since $G$ acts transitively on $M$, this 
+mapping is surjective---however not necessarily 
+one-to-one.\footnote{This would require a free action.}  
+Furthermore, we assume in the remainder of the text that $G$ acts 
+effectively on $M$. Consider the subset $H_p \subset G$ that maps 
+into $p$ under $\lambda_p$, i.e.\
+%
+\begin{equation}
+	H_p \equiv \lambda^{-1}_p(p) = \{g \in G~|~gp = p \}
+\end{equation}
+%
+and which is called the \emph{stabilizer of $p$}. It is easily 
+verified that $H_p$ is a closed subgroup of $G$. Let $q \in M$ 
+and consider $\lambda^{-1}_p(q) = \{ g \in G~|~gp = q \}$. It 
+follows that $\lambda^{-1}_p(q) = g_0 H_p$ where $g_0 \in 
+\lambda^{-1}_p(q)$ is arbitrary. Different points in $M$ are the 
+image of elements in $G$ that are not connected by $H$. Hence, 
+$\lambda_p : G/H_p \to M$ is an isomorphism.  If another origin 
+$\tilde{p} = g_1 p$ were chosen, $H_{\tilde{p}} = \{ g \in 
+	G~|~gg_1p= g_1p \}$ and $H_{\tilde{p}} = \mrm{Ad}_{g_1}H_p$.  
+Choosing different origins gives rise to conjugate stabilizers, 
+implying they are isomorphic to eachother. Therefore it is common 
+to just talk about \emph{the} stabilizer $H$, although a 
+calculation will force you to pick any of them. It becomes 
+evident that the choice of origin is arbitrary which explains why 
+all the points in a Klein geometry are said to be equivalent. The 
+above considerations have established the isomorphism between 
+$G/H$ and $M$, where $H$ is the maximal isotropy group of a point 
+in $M$.
+
+Let us remark that while $M$ has no preferred origin, since the 
+space is transitive under the symmetry group $G$, $G/H$ does have 
+a preferred basepoint by picking out the identity coset. This is 
+of course not a contradiction, since an element in $M$ was 
+promoted to origin in order to establish the isomorphism.  As 
+already mentioned, any other point could have been chosen which 
+would correspond to a stabilizer conjugate to $H$. The knowledge 
+that this choice is arbitrary restores this hidden symmetry in 
+$G/H$. 
+
+To recapitulate, a Klein geometry is defined.
+%
+\begin{definition}
+	A \emph{Klein geometry} is a pair $(G,H)$, where $G$ is a Lie 
+	group and $H$ a closed subgroup such that $G/H \equiv \{gH\}$ 
+	is connected. The connected coset space $M \equiv G/H$ is 
+	called \emph{the space of the Klein geometry}.
+
+	A Klein geometry is called reductive if there is an 
+	$\mrm{Ad}(H)$-module decomposition $\mfrak{g} = \mfrak{h} 
+	\oplus \mfrak{p}$, where $\mfrak{g}$ and $\mfrak{h}$ are the 
+	Lie algebras of $G$ and $H$, respectively.
+   
+	A metric Klein geometry is a reductive Klein geometry equipped 
+	with an $\mathrm{Ad}(H)$-invariant metric $\eta$ on 
+	$\mfrak{g}/\mfrak{h}$.
+\end{definition}
+The power of this definition is that the starting point is the 
+Lie group structure, rather than a space. Given a Lie group $G$, 
+a different Klein space is given for any closed subgroup 
+$H$.\footnote{Here we mean of course subgroups that are not 
+	isomorphic to eachother.}
+The \emph{points} are the coset elements and their actual 
+interpretation will depend on the subgroup $H$.
+
+Since a homogeneous space $(X,G)$ is a space $X$ that is 
+transitive under a symmetry group $G$, it is now clear that the 
+Klein coset spaces are homogeneous.\footnote{Since the transitive 
+	action of $G$ on a Klein space preserves the properties of the 
+	geometry, it is impossible to distinguish a point from any 
+	other by means of these properties of the geometry.}
+The converse is not true in general, since $X$ and $G$ may have 
+less structure than the objects defined above. In the remainder 
+we will not make the distinction and assume a homogeneous space 
+to have the mathematical structure of a Klein space, so that both 
+terms may be used interchangeably.
+
+\section{Symmetric homogeneous spaces}
+
+\section{Example: de Sitter space in four dimensions}
+
+\subsection{$dS$ as a Klein geometry}
+
+In this section, de Sitter space will be studied from the 
+algebraic point of view.
+
+Consider the $n+1$-dimensional vector space $\mbb{R}^{n+1}$ with 
+basis $(e_0,\ldots,e_n)$ and a metric structure, defined through 
+the symmetric bilinear form
+\begin{equation}
+	F(x,y) = x^\tau \eta y
+	\quad\mrm{with}~
+	\eta =
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & -\mbb{I}_n
+	\end{pmatrix}
+\end{equation}
+for $x$ and $y$ column vectors in $\mbb{R}^{n+1}$.
+The orthogonal group $O(n,1)$ leaving invariant $F$ is a subgroup 
+of the general linear group, namely
+%
+\begin{equation}
+	O(n,1) = \{ A \in Gl(n+1,\mbb{R})~|~ A^\tau \eta A = \eta\}
+\end{equation}
+The componenent connected to the identity has determinant 1, and 
+is denoted by $SO(n,1)$.  The elements of the Lie algebra 
+$\mfrak{o}(n,1)$ are the tangent vectors at the identity of 
+$SO(n,1)$. Therefore, consider a curve $A(t)$ through the 
+identity $\mbb{I}$, such that $A(t) = \mbb{I} + tX + O(t^2)$ 
+where $X = \dot{A}(0)$. A-priori, $X \in \mfrak{gl}(n+1,\mbb{R})$ 
+but given the restriction that $A \in SO(n,1)$, it is directly 
+found that  $X^\tau \eta + \eta X = 0$ and $\mrm{Tr}~X = 0$.
+
+Let us make the isomorphism between $SO(n,1)/SO(n-1,1)$ and 
+$n$-dimensional de Sitter space $dS_n$ manifest. The latter is 
+the hypersurface in $\mbb{R}^{n+1}$ fulfilling
+%
+\begin{equation}
+	dS_n : x^\tau \eta x = -l^2
+\end{equation}
+Consider $o = le_n \in dS_n$ and let $H$ be the isotropy group of 
+$o$, that is all matrices $A \in SO(n,1)$ of the form $(Ae_n = 
+e_n)$
+%
+\begin{displaymath}
+	A =
+	\begin{pmatrix}
+		B & 0 \\
+		0 & 1
+	\end{pmatrix}
+\end{displaymath}
+and where $B \in SO(n-1,1)$ since we rotated around a spacelike 
+axis. Let $\lambda_o$ be the mapping such that for $A \in 
+SO(n,1)$, $\lambda_o(\pi(A)) = Ae_n$, where $\pi : SO(n,1) \to 
+SO(n,1)/SO(n-1,1)$ is the natural projection. Since $SO(n,1)$ 
+acts transitively on $dS_n$, $\lambda_o$ constitutes an 
+isomorphism between $SO(n,1)/SO(n-1,1)$ and the $n$-dimensional 
+de Sitter space $dS_n$.\footnote{Note how it is the transitivity 
+	of $dS_n$ under $G$ which guarantees the isomorphism between 
+	$G/H$ and $dS_n$: $gH$ acts transitivily on $dS_n$. This does 
+	not seem to imply that ``pure translations" act transitively on 
+	$dS_n$.}
+
+An involutive automorphism $\sigma$ on $SO(n,1)$ is given by
+\begin{displaymath}
+	\sigma(A) = SAS^{-1}\quad\mrm{with}~
+	S =
+	\begin{pmatrix}
+		\mbb{I}_n & 0 \\
+		0 & -1
+	\end{pmatrix}
+\end{displaymath}
+So $(SO(n,1),SO(n-1,1),\sigma)$ is a symmetric space and the 
+canonical decomposition of the Lie algebra is given by 
+$\mfrak{o}(n,1) = \mfrak{o}(n-1,1) \oplus \mfrak{p}$.
+
+In the following let us focus on the four-dimensional case $dS 
+\simeq SO(4,1)/SO(3,1)$. A generic element of $\mfrak{o}(4,1)$ in 
+its fundamental representation is canonically decomposed with 
+respect to $\sigma$ as
+\begin{displaymath}
+	\underbrace{\begin{pmatrix}
+		0				& x_{01}	& x_{02}	& x_{03}	& x_{04} \\
+		x_{01}	& 0				& x_{12}	& x_{13}	& x_{14} \\
+		x_{02}	&	-x_{12}	& 0				& x_{23}	& x_{24} \\
+		x_{03}	&	-x_{13}	& -x_{23}	& 0				& x_{34} \\
+		x_{04}	&	-x_{14}	& -x_{24}	& -x_{34}	& 0	
+	\end{pmatrix}}_{\mfrak{o}(4,1)}
+	=
+	\underbrace{\begin{pmatrix}
+		B & 0 \\
+		0 & 0
+	\end{pmatrix}}_{\mfrak{o}(3,1)}
+	+
+	\underbrace{\begin{pmatrix}
+		0								& \xi \\
+		\bar{\xi}^\tau	& 0
+	\end{pmatrix}}_{\mfrak{p}}
+\end{displaymath}
+where $\xi^a \in \mbb{R}^{4}$ and we used the shorthand notation 
+$\bar{\xi} = \eta\xi$ with $\eta = (+,-,-,-)$. A generic element 
+of $\mfrak{p}$ is written as $\xi = \xi^a P_a$ with $P_a$ the 
+generators of de Sitter translations. We now use the Killing form 
+on $\mfrak{g}$ to define a non-degenerate bilinear symmetric 
+metric on the Lie algebra. We then define a metric
+%
+\begin{equation}
+	\langle \xi,\eta \rangle := \tfrac{1}{2} \mathrm{tr}\, 
+	(\xi\eta)~,\quad \xi,\eta \in \mfrak{g}~.
+\end{equation}
+The restriction of this metric on the $\mfrak{p}$-subspace gives 
+a metric on $\mfrak{p}$. A quick calculation shows that $\langle 
+\xi,\eta \rangle = \xi^a \eta^b \eta_{ab}$, for $\xi,\eta \in 
+\mfrak{p}$.
+
+The isomorphism $G/H \simeq dS$ induces an isomorphism between 
+the corresponding tangent spaces, i.e.~an isomorphism $\mfrak{p} 
+\simeq T_odS$. Let us make this manifest. Consider de Sitter 
+space $dS$ with radius $\sqrt{3/\Lambda}$ and choose the origin 
+$o = \sqrt{3/\Lambda}\,e_4 = (0,0,0,0,\sqrt{3/\Lambda})$.  Given 
+this origin, the above introduced isomomorphism $\lambda_o : G/H 
+\to dS$ was defined by $\lambda_o(\pi(A)) = Ao$ for any $A \in 
+G$.  Let $\tfrac{1}{l}\xi^a P_a \in \mfrak{p}$ and 
+$\exp(\tfrac{t}{l}\xi^a P_a)$ the corresponding one-parameter 
+subgroup of $G$, where $l$ is a yet to be fixed length scale 
+\cite{Wise:2006sm}. An isomorphism between $\mfrak{p}$ and 
+$T_odS$ is then induced by $\lambda_o$, namely by considering its 
+differential
+%
+\begin{displaymath}
+	\lambda_{o\ast}\tfrac{d}{dt}f[\exp\Big(\frac{t}{l}\xi^a 
+	P_a\Big)]|_{t=0} = \tfrac{d}{dt}[\exp\Big(\frac{t}{l}\xi^a 
+	P_a\Big)o]^\mu \pd_\mu f = 
+	\frac{1}{l}\sqrt{\frac{3}{\Lambda}}\xi^\mu\pd_\mu f
+\end{displaymath}
+for an arbitrary function $f$. Fixing the length scale 
+\cite{Wise:2006sm}
+\begin{displaymath}
+	l = \sqrt{\frac{3}{\Lambda}}
+\end{displaymath}
+gives
+%
+\begin{equation}
+	\lambda_{o\ast} : \mfrak{p} \to T_odS : \frac{1}{l}\xi^a P_a 
+	\mapsto \xi^\mu \pd_\mu~.
+\end{equation}
+This mapping explains the choice for the length scale and not 
+surpisingly is related to the fact that $G/H$ is a Klein 
+geometry. Given an element $\xi^a P_a \in \mfrak{p}$, a length 
+scale is introduced such that it may be identified with $\xi^\mu 
+\pd_\mu$ on the tangent space of $dS$. In this case, the metric 
+defined through the Killing form $\eta_{ab}\xi^a\xi^b$ equals the 
+de Sitter metric applied to the corresponding elements in its 
+tangent space at the origin, i.e.\ $\eta_{\mu\nu}\xi^\mu\xi^\nu$.  
+
+\subsection{Geodesics: completeness but no connectedness}
+
+The geodesics with respect to the canonical connection through 
+the point $p=-le_4$ are given by the orbits of $p$ under $\exp 
+\mfrak{p}$. More precisely, considering the isomorphism between 
+$\mfrak{p}$ and $\mbb{R}^4$ given by
+%
+\begin{displaymath}
+	X=
+	\begin{pmatrix}
+		0								& \xi \\
+		\bar{\xi}^\tau	& 0
+	\end{pmatrix}\leftrightarrow
+	\xi
+\end{displaymath}
+the geodesic through $o \in G/H$ in the direction $\xi \in 
+T_oG/H$ is the curve $\exp (tX) o$.
+
+We construct these geodesics for $dS_4$ through $-le_4$ as 
+parametrized curves in $\mbb{R}^5$. In fact, given $\xi \in 
+T_0G/H$, $\exp (tX)$ is a rotation in the plane $P$ spanned by 
+the the orthogonal basis $e_\ast = \xi^\mu e_\mu$ and $e_4$ $(\mu 
+= 0\ldots 3)$.  It is then clear that the orbit through $p$ is 
+the intersection of $P = \{a e_\ast + b e_4~|~a,b \in \mbb{R}\}$ 
+and $dS_4$.  Since $e_4$ is spacelike $(F(e_4,e_4) = -1)$, there 
+are three cases possible. Namely, $e_\ast$ timelike, spacelike or 
+lightlike.
+%
+\begin{enumerate}
+	\item $F(e_\ast,e_\ast) = -\alpha^2$. In this case, all 
+		elements in $P$ are spacelike. The intersection $P \cap dS_4$ 
+		is given by the elements in $P$ that satisfy $F(a e_\ast + b 
+		e_4, a e_\ast + b e_4) = -l^2$, that is $\alpha^2 a^2 + b^2 = 
+		l^2$. It is clear that $a= \pm l\alpha^{-1} \sin t$ and $b= 
+		\pm l\cos t$. Given the fact that the curve goes through $p = 
+		-le_4$ we find the family of geodesics
+		%
+		\begin{equation}\label{eq:geo_space}
+			\gamma(t) = \alpha^{-1}l\sin t~e_\ast - l \cos t~e_4~,
+			\quad \forall t \in \mbb{R}
+		\end{equation}
+		which are spacelike ellipses, since 
+		$F(\dot{\gamma},\dot{\gamma}) = -l^2$.
+		%
+	\item $F(e_\ast,e_\ast) = \alpha^2$. In this case, part of the 
+		elements in $P$ are timelike. The curves sought-after satisfy 
+		$F(a e_\ast + b e_4, a e_\ast + b e_4) = -l^2$, hence 
+		$-\alpha^2 a^2 + b^2 = l^2$. Given the hyperbolic identity 
+		$-\sinh^2t + \cosh^2t = 1$, it follows that $a= \pm 
+		l\alpha^{-1} \sinh t$ and $b= \pm l\cosh t$. The intersection 
+		are thus hyperbolae.  The branch going through $p$ is the 
+		geodesic that we looked for, i.e.\
+		%
+		\begin{equation}\label{eq:geo_time}
+			\gamma(t) = \alpha^{-1}l\sinh t~e_\ast - l\cosh t~e_4~,
+			\quad \forall t \in \mbb{R}
+		\end{equation}
+		%
+		It is directly verified that these are timelike everywhere, 
+		$F(\dot{\gamma},\dot{\gamma}) = l^2$.
+	\item $F(e_\ast,e_\ast) = 0$. This case is the degenerate limit 
+		of the first two $(\alpha \to 0)$. The intersection of $P$ 
+		with $dS_4$ are the elements of $P$ for which $0a^2 - b^2 = 
+		-l^2$. The solutions are $a \in \mbb{R}$ and $b = \pm l$.  
+		Again choosing the ones through $p$ singles out the family
+		%
+		\begin{equation}\label{eq:geo_null}
+			\gamma(t) = t~e_\ast - le_4~,\quad \forall t \in \mbb{R}
+		\end{equation}
+\end{enumerate}
+These three cases exhaust all posibilities. Note also that these 
+geodesics are manifestly complete. However, as we will prove now, 
+$dS_4$ is not geodesically connected. Therefore, we consider 
+again the orbits of ``pure" de Sitter translations through $p = 
+-le_4$ and check whether these connect with any point $q \in 
+dS_4$. First, let us assume $p$ and $q$ are non-antipodal, that 
+is $p \neq -q$. We discuss the mutually exclusive cases for which 
+the vector $q-p$ is timelike, null-like or spacelike.
+
+\begin{enumerate}
+	\item $p,q$ timelike seperated. This means that $F(q-p,q-p) > 
+		0$ or
+		\begin{equation}
+			F(p,q) < -l^2
+		\end{equation}
+		%
+		In this case, only timelike geodesics through $p$ could 
+		connect with $q$. Therefore consider a generic timelike 
+		geodesic \eqref{eq:geo_time} and the inner product 
+		$F(p,\gamma(t)) = -l^2 \cosh t,~\forall t \in \mbb{R}$.  
+		Hence, all timelike seperated points $q$ can be connected by 
+		a	timelike geodesic, for some choice $e_\ast \in \mbb{R}^4$.
+		%
+	\item $p,q$ lightlike seperated. In this case $F(q-p,q-p) = 0$ 
+		or
+		\begin{equation}
+			F(p,q) = -l^2
+		\end{equation}
+		%
+		The inner product $F(p,\gamma(t)) = -l^2$ for lightlike 
+		geodesics \eqref{eq:geo_null} through $p$. Hence, they 
+		connect with all lightlike seperated points $q$.
+		%
+	\item $p,q$ spacelike seperated. For $q-p$ to be spacelike one 
+		has that
+		\begin{equation}
+			F(p,q) > -l^2
+		\end{equation}
+		Again consider the inner product $p$ and spacelike seperated 
+		points, connected by spacelike geodesics 
+		\eqref{eq:geo_space}, that is $F(p,\gamma(t)) = -l^2 \cos 
+		t,~\forall t \in \mbb{R}$. It follows that these spacelike 
+		geodesics only will be able to connect with points $q$ for 
+		which $-l^2 < F(p,q) < l^2$.
+\end{enumerate}
+From this it follows that one can only connect points $p,q \in 
+dS_4$ with pure de Sitter translations if $F(p,q) < l^2$. Note 
+that this means that de Sitter space is not transitive under the 
+exponentiation of $\mfrak{p}$, $\Pi = \exp \mfrak{p}$. It is 
+transitive under a finite composition of such group elements 
+$\Pi$.  However, this in general will not be a pure de Sitter 
+translation--and it will be certainly \emph{not} a de Sitter 
+translation if it connects to the above excluded region.  
+Therefore, de Sitter space is transitive under elements of the 
+full de Sitter group only.
+
+\subsection{Geodesics in stereographic coordinates}
+
+Let us project the above constructed geodesics on $dS$ into the 
+stereographic hyperplane $\chi^4 = -l$. Before deducing their 
+explicit form, one may understand that these geodesics through 
+the origin are straight lines for the stereographic observer.  
+Remember that the orbits of pure de Sitter translations are the 
+intersections of the two-planes through the origin and the south 
+pole with the embedded de Sitter space in $\mbb{R}^5$ and take 
+notice that the stereographic projection of a point of $dS$ is 
+given by the intersection of the line through this point and the 
+north pole with the stereographic hyperplane. Since all points of 
+any given geodesic lie in a same plane that also goes through the 
+north pole, the stereographic projection of such a geodesic is 
+just the intersection of the respective plane with the 
+stereographic hyperplane---that is, a straight line.
+
+As we are to derive the explicit form of these geodesics through 
+the origin $x^\mu = 0 \leftrightarrow \chi^4 = -l$, let us remind 
+that the stereographic projection onto the hyperplane $\chi^4 = 
+-l$ through the south pole is given by $x^\mu = 
+\Omega^{-1}\chi^\mu$, where $\Omega = -\tfrac{1}{2} (\chi^4/l 
+-1)$.
+
+The parametrized curves representing timelike geodesics 
+containing the south pole were shown to be given by $\gamma(t) = 
+\alpha^{-1}l\sinh t~e_\ast - l\cosh t~e_4$ or explicitly in 
+Cartesian coordinates,
+%
+\begin{displaymath}
+	\chi^A(t) = l
+	\begin{pmatrix}
+		\alpha^{-1}\xi^\mu \sinh t \\
+		-\cosh t
+	\end{pmatrix}~,
+	\quad \alpha^2 = \xi^\mu \xi_\mu \equiv \eta_{\mu\nu} \xi^\mu 
+	\xi^\nu~.
+\end{displaymath}
+%
+Projecting this family of geodesics onto $\chi^4 = -l$ gives 
+their form in stereographic coordinates, that is
+%
+\begin{equation}
+	x^\mu(t) = 2l \frac{\xi^\mu}{\sqrt{\xi^\lambda\xi_\lambda}}
+	\frac{\sinh t}{1 + \cosh t}~,
+\end{equation}
+which is clearly a straight line through the origin.  Regarding 
+these curves some remarks are in place. Note that the function
+%
+\begin{displaymath}
+	\frac{\sinh t}{1 + \cosh t}
+\end{displaymath}
+monotonically increases from $-1 \to 1$ for $t$ going from 
+$-\infty \to \infty$. Hence, the curves $x^\mu(t)$ are finite 
+straight lines through the origin. More precisely, they start and 
+stop at
+%
+\begin{displaymath}
+	x^\mu(\pm \infty) = \pm 2l \frac{\xi^\mu}{\sqrt{\xi^\lambda 
+			\xi_\lambda}}
+\end{displaymath}
+Considering all possible timelike directions $\xi^\mu$, the sets 
+of start and end point gives the two-sheeted hyperboloid 
+$\eta_{\mu\nu} x^\mu x^\nu = 4l^2$. Keeping in mind the singular 
+character of the stereographic projection, this is consistent 
+behaviour.  Indeed, the infinite branches of the hyperbolae in 
+$dS$ get projected onto finite lines in stereographic coordinates 
+as future and past null infinity get projected onto the given 
+surfaces $(\sigma^2 = 4l^2)$.  Notwithstanding the finite 
+coordinate range, these timelike geodesics have infinite length 
+and it takes an infinite amount of proper time for the free 
+particle to reach the above defined hyperboloid. To see this, let 
+us consider the proper time along the geodesic
+%
+\begin{displaymath}
+	\tau(t) = \int_0^t \sqrt{g_{\mu\nu} \dot{x}^\mu \dot{x}^\nu} dt 
+	= lt
+\end{displaymath}
+The result follows since $t \to \infty$ in approaching the given 
+hyperboloid.
+
+In the case of spacelike geodesics $\gamma(t) = \alpha^{-1}l\sin 
+t~e_\ast - l \cos t~e_4$, the parametrization for Cartesian 
+coordinates is given by
+%
+\begin{displaymath}
+	\chi^A(t) = l
+	\begin{pmatrix}
+		\alpha^{-1}\xi^\mu \sin t \\
+		-\cos t
+	\end{pmatrix}~,
+	\quad \alpha^2 = -\xi^\mu \xi_\mu \equiv -\eta_{\mu\nu} \xi^\mu 
+	\xi^\nu~.
+\end{displaymath}
+%
+In stereographic coordinates these curves are represented by
+%
+\begin{equation}
+	x^\mu(t) = 2l \frac{\xi^\mu}{\sqrt{-\xi^\lambda\xi_\lambda}}
+	\frac{\sin t}{1 + \cos t}~,
+\end{equation}
+which again are straight lines through the origin. Here, singular 
+behaviour seems to appear for $t = \pi$. However, a quick look to 
+the Cartesian system shows that this corresponds to the north 
+pole, the point discarded for the stereographic projection to be 
+well-defined. In this case, we are confronted with a finite range 
+of the parameter $t \in ]-\pi, \pi[$ and an infinite range for 
+$x^\mu(t)$, since
+%
+\begin{displaymath}
+	\lim_{t \to \pm \pi} \frac{\sin t}{1 + \cos t} = \pm \infty~.
+\end{displaymath}
+As it turns out, the (finite) ellipses are projected onto 
+infinite straight lines.\footnote{In a sense, they are cut open 
+	at the north pole after which the conformal factor stretches 
+	them out infinitely.} Let us emphasize that the proper length 
+of these geodesics is finite.  Indeed, since
+%
+\begin{displaymath}
+	\sigma(t) = \int_0^t \sqrt{g_{\mu\nu} \dot{x}^\mu \dot{x}^\nu} 
+	dt = lt
+\end{displaymath}
+the proper length of the curve originating at the origin $(t=0)$ 
+and ending at infinity $(t=\pi)$ is given by $\sigma(\pi) = 
+l\pi$. Consistently, this is the arclength between the south pole 
+and the north pole of $dS$ embedded in $\mbb{R}^5$.
+
+Lightlike geodesics were found to be given by straight lines in 
+$\mbb{R}^5$, i.e.\ $\gamma(t) = \xi^\mu t~e_\mu - le_4$. In 
+Cartesian coordinates,
+%
+\begin{displaymath}
+	\chi^A(t) =
+	\begin{pmatrix}
+		\xi^\mu t \\
+		-l
+	\end{pmatrix}~,
+	\quad \xi^\mu\xi_\mu = \eta_{\mu\nu} \xi^\mu \xi^\nu = 0~.
+\end{displaymath}
+In stereographic coordinates these are also a straight lines, 
+because
+%
+\begin{equation}
+	x^\mu(t) = \xi^\mu t~.
+\end{equation}
+
+\bibliographystyle{plain}
+\bibliography{../../References/All.bib}
+\end{document}
+

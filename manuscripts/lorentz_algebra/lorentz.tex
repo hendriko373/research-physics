@@ -1,0 +1,198 @@
+\documentclass[10pt]{amsart}
+
+\usepackage[english]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage[all]{xy}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage[a4paper]{geometry}
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+\usepackage{cite}
+\usepackage{bbold} %Symbol identity matrix
+
+\usepackage{thmtools}
+\declaretheorem[numberwithin=section]{definition}
+\declaretheorem[numberwithin=section]{proposition}
+\let\proof\relax
+\declaretheorem[style=remark,numbered=no,qed=\qedsymbol]{proof}
+
+\numberwithin{equation}{section}
+\usepackage{color}
+
+%\usepackage{/Volumes/DATA/research/drafts/Tex_files/preamble_one}
+\usepackage{../Tex_files/preamble_one}
+
+\title{The special orthogonal algebras and groups}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+	We bundle our conventions on the special orthogonal groups and 
+	algebras and on some of its special cases, e.g.~the Lorentz 
+	algebra.
+\end{abstract}
+
+\maketitle
+
+\section{The general case}
+
+\subsection{Definition}
+
+The special orthogonal group $SO(p,q)$ can be defined as a set of 
+matrices acting on $\mathbb{R}^{p,q}$ that leave invariant the 
+metric tensor $\eta$ of signature $(p,q)$. In this defining $n = 
+p+q$-dimensional representation, elements $\Lambda$ of $SO(p,q)$ 
+are the non-singular matrices that satisfy 
+%
+\begin{equation}\label{eq:def_so(p,q)}
+	\eta_{cd}\Lambda^c_{~a}\Lambda^d_{~b} = \eta_{ab}~;
+	\quad \det\Lambda = 1~.
+\end{equation}
+Only the component connected to the identity element will be 
+considered. This implies that any element of the group can be 
+obtained by exponentiation of some element of the Lie algebra 
+$\mathfrak{so}(p,q)$, the tangent vectors at the identity.  
+Consider therefore the elements infinitesimally close to this 
+identity, that is $\Lambda^a_{~b} = \delta^a_b + \omega^a_{~b}$.  
+Since $\Lambda^a_{~b}$ satisfies \eqref{eq:def_so(p,q)}, one 
+finds for the elements $\omega_{ab} \in \mathfrak{so}(p,q)$ that 
+$\omega_{ab} = -\omega_{ba}$.\footnote{Indices are lowered or 
+	raised by contraction with $\eta$.} This implies that the 
+algebra is of dimension $n(n-1)/2$.
+
+Let us denote by $M_{ab}$ the set of generators of 
+$\mathfrak{so}(p,q)$ in some representation, i.e.~they act as 
+matrices $[M_{ab}]^{A}_{~B}$ on some $d$-dimensional vector 
+space.\footnote{The indices $ab$ a-priori are not representation 
+	indices; rather they enumerate the generators of the algebra.} 
+Any element of the special orthogonal group can be obtained by 
+exponentiation of some element of the algebra. For a given 
+representation $D$ of the group this means
+%
+\begin{equation}
+	D(\omega) = \exp(\tfrac{i}{2} \omega^{ab} M_{ab}) \equiv 
+	\exp(\tfrac{i}{2}\omega\cdot M)~,
+\end{equation}
+where one half has been introduced because of double counting 
+(antisymmetry in $ab$). The numbers $\omega_{ab}$ are the group 
+parameters and as mentioned before, the generators are the 
+elements tangent to the identity
+%
+\begin{displaymath}
+	M_{ab} = -i \left.\frac{\pd}{\pd \omega^{ab}}\right|_0 
+	D(\omega)~.
+\end{displaymath}
+An element of $\mathfrak{so}(p,q)$ is then given by 
+$\tfrac{i}{2}\omega\cdot M$ for some choice of $\omega$.
+
+As an example, the $n$-dimensional or defining representation is 
+recovered if the generators are chosen to be $[M_{cd}]^a_{~b} = 
+-i(\eta_{db} \delta^a_c - \eta_{cb} \delta^a_d)$. A generic 
+element of the algebra is denoted by $\tfrac{i}{2} 
+\omega^{cd}[M_{cd}]^a_{~b} = \omega^a_{~b}$, of course recovering 
+our previous result.  Furthermore, it explains the double use of 
+the letter $\omega$ for both group parameters and elements of the 
+Lie algebra in the defining representation. 
+
+\subsection{Commutation relations}
+
+Characteristic for a Lie algebra are its commutations relations.  
+In the following the latter are calculated for an arbitrary 
+representation of $\mathfrak{so}(p,q)$. To do this one considers 
+two arbitrary Lorentz transformations $\Lambda$ and 
+$\tilde{\Lambda}$ and the composition $\Lambda 
+\circ\tilde{\Lambda} \circ\Lambda^{-1} 
+\circ\tilde{\Lambda}^{-1}$. This group element equals the 
+identity if and only if elements of $SO(p,q)$ commute. On the 
+other hand, since the orthogonal group is not Abelian, such a 
+sequence generally will not give the identity. The generating 
+vector of this composition will be the definition of the 
+commutator. Consider%
+\begin{equation}\label{eq:comm_group}
+	D(\omega) \circ D(\tilde{\omega}) \circ D(\omega)^{-1} \circ 
+	D(\tilde{\omega})^{-1} = D(\omega\, \tilde{\omega}\, 
+	\omega^{-1}\, \tilde{\omega}^{-1})
+\end{equation}
+for an arbitrary representation.
+To evaluate this, it is sufficient to consider group elements up 
+to second order in the group parameters, that is
+%
+\begin{gather*}
+	\Lambda = \delta^a_b + \omega^a_{~b} + \tfrac{1}{2} 
+	\omega^a_{~c}\omega^c_{~b} \\
+	D(\omega) = \mathbb{1} + \tfrac{i}{2}\omega\cdot M + 
+	\tfrac{1}{2}(\tfrac{i}{2}\omega\cdot M)^2
+\end{gather*}
+from which one is able to compute
+%
+\begin{displaymath}
+	D(\omega) \circ D(\tilde{\omega}) \circ D(\omega)^{-1} \circ 
+	D(\tilde{\omega})^{-1} = \mathbb{1} + (\tfrac{i}{2})^2 
+	[\omega\cdot M,\tilde{\omega}\cdot M] + \mathcal{O}(3)
+\end{displaymath}
+and
+\begin{displaymath}
+	\Lambda \circ\tilde{\Lambda} \circ\Lambda^{-1} 
+	\circ\tilde{\Lambda}^{-1} = \delta^a_b + 
+	\omega^a_{~c}\tilde{\omega}^c_{~b} - 
+	\tilde{\omega}^a_{~c}\omega^c_{~b} + \mathcal{O}(3)~.
+\end{displaymath}
+Combing these results together with \eqref{eq:comm_group} we get
+%
+\begin{displaymath}
+	(\tfrac{i}{2})^2 \omega^{ab}\tilde{\omega}^{cd}[M_{ab},M_{cd}] 
+	= \tfrac{i}{2}( \omega^a_{~c}\tilde{\omega}^{cb} - 
+	\tilde{\omega}^a_{~c}\omega^{cb})M_{ab}
+	= \tfrac{i}{2}\omega^{ab}\tilde{\omega}^{cd} (\eta_{bc}M_{ad} 
+	- \eta_{ad}M_{cb})~.
+\end{displaymath}
+This result does not depend yet on any information, typical for 
+the orthogonal group. Recall that for the latter $M_{ab} = 
+-M_{ba}$ so that
+%
+\begin{displaymath}
+	\tfrac{i}{2}\omega^{ab}\tilde{\omega}^{cd}[M_{ab},M_{cd}] = 
+	\tfrac{1}{2}\omega^{ab}\tilde{\omega}^{cd} (\eta_{bc}M_{ad} - 
+	\eta_{bd}M_{ac} - \eta_{ad}M_{cb} + \eta_{ac}M_{db})~.
+\end{displaymath}
+Since \eqref{eq:comm_group} should be true for any group 
+parameters considered, we find the commutation relations for 
+$\mathfrak{so}(p,q)$, namely
+%
+\begin{equation}\label{eq:comm_rel_so(p,q)}
+	-i[M_{ab},M_{cd}] = \eta_{ac}M_{bd} - \eta_{ad}M_{bc} + 
+	\eta_{bd}M_{ac} - \eta_{bc}M_{ad}~.
+\end{equation}
+	
+\section{The de Sitter algebra}
+
+In this section the specific case where the orthogonal algebra is 
+denoted by $\mathfrak{so}(1,4)$ is discussed in more detail.  
+Naturally, its commutation relations are those described 
+in~\eqref{eq:comm_rel_so(p,q)}.\footnote{We let $A = 0\ldots 4$ 
+	and $a = 0\ldots 3$.} The de Sitter algebra is symmetric, 
+which means that there is a reductive splitting 
+$\mathfrak{so}(1,4) = \mathfrak{so}(1,3) \oplus \mathfrak{p}$ so 
+that the adjoint action of the Lorentz subalgebra on 
+$\mathfrak{p}$ is an automorphism. Explicitely this goes as 
+follows. Denote by $M_{AB}$ a set of basis elements of the de 
+Sitter algebra. Let then $\mathfrak{so}(1,3) = 
+\mathrm{span}\{M_{ab}\}$ and $\mathfrak{p} = 
+\mathrm{span}\{M_{a4}\}$. Introducing a length scale $P_a \equiv 
+l^{-1} M_{a4}$, the commutation 
+relations~\eqref{eq:comm_rel_so(p,q)} are rewritten as
+%
+\begin{equation}
+\label{eq:comm_relations_so(1,4)}
+\begin{split}
+	-i[M_{ab},M_{cd}] &= \eta_{ac}M_{bd} - \eta_{ad}M_{bc} + 
+	\eta_{bd}M_{ac} - \eta_{bc}M_{ad} \\
+	-i[M_{ab},P_c] &= \eta_{ac}P_b- \eta_{bc}P_a\\
+	-i[P_a,P_b] &= \frac{\mathfrak{s}}{l^2}M_{ab}~,
+  \end{split}
+\end{equation}
+from which it becomes manifest that the algebra is symmetric.
+\end{document}
+

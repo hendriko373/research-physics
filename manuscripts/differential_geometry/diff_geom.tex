@@ -1,0 +1,2809 @@
+\documentclass[10pt,reqno]{amsart}
+
+%Package declarations
+%--------------------
+
+\usepackage[english]{babel}
+\usepackage{color}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage[all]{xy}
+\usepackage{setspace}
+\setstretch{1.10}
+\usepackage[a5paper]{geometry}
+\geometry{left=1.8cm,right=1.8cm,top=3cm,bottom=3cm}
+
+\usepackage{thmtools}
+\declaretheorem[numberwithin=section]{definition}
+\declaretheorem[numberwithin=section]{proposition}
+\let\proof\relax
+\declaretheorem[style=remark,numbered=no,qed=\qedsymbol]{proof}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{concmath}
+\usepackage{fix-cm}
+
+\usepackage{../Tex_files/preamble_one}
+%\newcommand{\mcA}{\mcal{A}} %Local connection 1-from
+%\newcommand{\mfg}{\mfrak{g}} %Lie algebra
+
+\numberwithin{equation}{section}
+
+\author{Hendrik}
+\title{Differential geometry: a survey}
+\date{\today}
+
+\begin{document}
+\begin{abstract}
+In this file notes on differential geometry in general will be 
+put; we will try to be sufficiently abstract and leave physical 
+applications for other notes.  However, it should be done in such 
+a way that these applications are fairly easy obtained.
+\end{abstract}
+
+\maketitle
+
+\noindent Books used: \cite{nakahara2003geometry}, 
+\cite{o1983semi}, \cite{kob1996found}, 
+\cite{ruben1995introduction}.
+
+\tableofcontents
+
+\newpage
+
+\section{Preliminaries}
+
+\subsection{Topological spaces}
+
+\begin{definition}[Topological space]
+	Let $S$ be a set and denote by $\mcal{J} = \{U_i | i \in I\}$ a 
+	collection of subsets of $S$. The pair $(S,\mcal{J})$ is called 
+	a \emph{topological space} if the following is true.
+	\begin{itemize}
+		\item[(1)] Both the empty set and $S$ are in $\mcal{J}$, 
+			i.e.\ $\emptyset, S \in \mcal{J}$.
+		\item[(2)] Any (possibly infinite) union of subsets of $S$ 
+			which are in $\mcal{J}$ is also in $\mcal{J}$, i.e.\ 
+			$\cup_{j} U_j \in \mcal{J}$,
+			where $j \in J \subset I$.
+		\item[(3)] Any finite intersection of subsets of $S$ which 
+			are in $\mcal{J}$ is also in $\mcal{J}$, i.e.\ $\cap_{j} 
+			U_j \in \mcal{J}$, where $j \in J \subset I$.
+	\end{itemize}
+\end{definition}
+%
+The $U_i$ are called \emph{open sets} and $\mcal{J}$ gives a 
+\emph{topology} to $S$. If $\mcal{J}$ is the collection of all 
+subsets of $S$, it follows directly from the definition that it 
+is a topology---the \emph{discrete} topology. Another extreme 
+example is the topology given by $\emptyset$ and $S$ only, which 
+is called the trivial topology.
+%
+
+\begin{example}
+	The open intervals $(a,b)$ on $\mbb{R}$ define a topology. Note 
+	that if one required an infinite intersection of open sets to 
+	be an open set, the open intervals would not give a topology to 
+	$\mbb{R}$, indeed for example
+  %
+	\begin{displaymath}
+		\bigcap_n^\infty \left( -\frac{1}{n}, 1-\frac{1}{n} \right) = 
+		[0,1]
+	\end{displaymath}
+  %
+	The closed intervals $[a,b]$ do not define a topology as an 
+	infinite union of them is generally not closed.
+\end{example}
+%
+
+Let us call the elements of $S$ points. A subset $N$ of $S$ is a 
+\emph{neighborhood} of a point $x$ if it contains an open set 
+$U_i$ to which $x$ belongs. If $N$ is open it is an \emph{open 
+	neighborhood}. 
+
+If for any arbitrary pair of points of a topological 
+space\footnote{We will abuse terminology: let us refer to $S$ 
+	also as the topological space, although strictly speaking the 
+	term should be reserved for the pair $(S,\mcal{J})$.} there 
+exist disjoint neighborhoods, the topological space is a 
+\emph{Hausdorff space}.
+
+\begin{example}
+	The real line with the usual topology is a Hausdorff space.  
+	Indeed for any two points $x_1$ and $x_2$, choose neighborhoods 
+	$(x_i-\delta,x_i+\delta)$ with $\delta \leqslant |x_1 - 
+	x_2|/2$.
+\end{example}
+
+\subsection{Homotopy}
+
+\begin{definition}[Paths and loops]
+	Let $S$ be a topological space and denote the interval $[0,1]$ 
+	by $I$. A \emph{path} is a continuous map $\mu : I \to S : t 
+	\mapsto \mu_t$, with initial point $p = \mu_0$ and end point 
+	$q = \mu_1$.
+	If $p = \mu_0 = \mu_1$, then $\mu$ is called a \emph{loop} 
+	with \emph{base point} $p$.
+\end{definition}
+A rather trivial but nonetheless important case is the 
+\emph{constant path}, i.e.\ $c_t = p$ $(0 \leq t \leq 1)$. One 
+endows the set of paths in $S$ with an algebraic structure by 
+introducing the following operation.
+%
+\begin{definition}[Product and inverse]
+	Let $\mu$ and $\tau$ be paths in $S$, for which $\mu_1 = 
+	\tau_0$. The \emph{product} $\mu\cdot\tau$ ($\tau$ after 
+	$\mu$) is the path in $S$ defined by
+	\begin{equation}
+		(\mu\cdot\tau)_t \equiv
+		\begin{cases}
+			\mu_{2t} & ;\quad 0 \leq t \leq \tfrac{1}{2}~, \\
+			\tau_{2t-1} & ;\quad \frac{1}{2} \leq t \leq 1~.
+		\end{cases}
+	\end{equation}
+	The \emph{inverse path} $\mu^{-1}$ of $\mu$ is the path 
+	defined by
+	\begin{equation}
+		\mu^{-1}_t \equiv \mu_{1-t}~.
+	\end{equation}
+\end{definition}
+Note that the inverse path $\mu^{-1}$ begins at the end point and 
+ends at the begin point of $\mu$. It follows that 
+$\mu\cdot\mu^{-1}$ is not a constant path.
+
+\begin{definition}[Homotopy]
+	Let $\mu$ and $\tau$ be loops at $p$ in $S$. The loops $\mu$ 
+	and $\tau$ are said to be \emph{homotopic} with each other if 
+	there exists a \emph{continuous} mapping $f : I \times I \to 
+	S$ such that $f(t,0) = \mu_t$ and $f(t,1) = \tau_t$, while 
+	$f(0,s) = f(1,s) = p$. One calls $f$ a homotopy between $\mu$ 
+	and $\tau$ and writes $\mu \sim \tau$.
+\end{definition}
+Intuitively, two loops are homotopic if they can be deformed 
+smoothly into each other.
+
+\begin{proposition}
+	The homotopy relation is an equivalence relation.
+\end{proposition}
+\begin{proof}
+	\emph{Reflectivity}: $\mu \sim \mu$. Any loop is homotopic 
+	with itself; choose $f(t,s) \equiv \mu_t$.
+	\emph{Symmetry}: $\mu \sim \tau \Rightarrow \tau \sim \mu$.  
+	Let $f$ be the homotopy $\mu \sim \tau$. Then $g : I \times I 
+	\to S$ defined by $g(t,s) \equiv f(t,s-1)$ is a homotopy $\tau 
+	\sim \mu$.
+	\emph{Transitivity}: $\mu \sim \tau$ and $\tau \sim \rho
+	\Rightarrow \mu \sim \rho$. Let $f$ be the homotopy between 
+	$\mu$ and $\tau$, and $g$ the homotopy between $\tau$ and 
+	$\rho$. Then
+	\begin{displaymath}
+		h(t,s) =
+		\begin{cases}
+			f(t,2s) &;\quad 0 \leq s \leq \tfrac{1}{2} \\
+			g(t,2s-1) &;\quad \tfrac{1}{2} \leq s \leq 1
+		\end{cases}
+	\end{displaymath}
+	is a homotopy $\mu \sim \rho$.
+\end{proof}
+
+Given this equivalence relation, one can define corresponding 
+equivalence classes. Let $\mu$ be a loop at $p \in S$. The set of 
+all loops at $p$ homotopic with $\mu$ is denoted by $[\mu]$.
+
+%%% SECTION %%%
+\section{Manifolds}
+
+\subsection{Smooth manifolds}
+
+Before introducing manifolds we define the concept of an 
+\emph{atlas}.
+
+\begin{definition}[Atlas]
+	A differentiable atlas $\mcal{A}$ of dimension $m$ of a 
+	topological space $S$ is a family of pairs 
+	$\left(U_i,\phi_i\right)$---the \emph{charts}---such that
+	\begin{itemize}
+		\item[(a)] Each $U_i$ is an open set of $S$ and $\cup_i U_i = 
+			S$
+		\item[(b)] Each $\phi_i$ is a homeomorphism from of $U_i$ 
+			onto an open subset of $\mbb{R}^m$
+		\item[(c)] Whenever $U_i \cap U_j$ is non-empty the map 
+			$\phi_j \circ \phi_i^{-1}$ from $\phi_i(U_i \cap U_j)$ to 
+			$\phi_j(U_i \cap U_j)$ is 
+			differentiable.\footnote{Differentiable or smooth: the 
+				mapping is infinitely differentiable.}
+	\end{itemize}
+\end{definition}
+%
+The following then introduces \emph{differentiable manifolds}.
+%
+\begin{definition}[Manifold]
+	An $m$-dimensional differentiable manifold $M$ is a Hausdorff 
+	space equipped with an $m$-dimensional differentiable atlas.
+\end{definition}
+%
+Given two manifolds $M$ and $N$, a mapping $f : M \rightarrow N$ 
+is differentiable if for every chart $(U_i,\phi_i)$ of $M$ and 
+every chart $(V_j,\psi_j)$ of $N$ such that $f(U_i) \subset V_j$, 
+the mapping $\psi_j \circ f \circ \phi_i^{-1} : \mbb{R}^m 
+\rightarrow \mbb{R}^n$ is differentiable. If the inverse mapping 
+$f^{-1}$ exists and is differentiable, the mapping is called a 
+\emph{diffeomorphism} and $M$ and $N$ are said to be 
+diffeomorphic. They are of the same dimension. If $M$ and $N$ are 
+the same manifold, the diffeomorphism is also an 
+\emph{automorphism}.
+
+A special case of a mapping is given by a curve $c: [a,b] 
+\rightarrow M$, which maps a closed interval of $\mbb{R}$ into a 
+manifold $M$. Another interesting example are the functions $f : 
+M \rightarrow \mbb{R}$, which assign to each point of a manifold 
+a real number. We will denote the algebra of smooth functions on 
+$M$ by $\mfrak{F}(M)$.
+
+\blankline
+Consider then a curve $c(t)$ on a manifold such that $c(t_0) = 
+p$. A \emph{tangent vector} $X_p$ to $c(t)$ at the point $p$ is 
+the directional derivative of functions along the curve at $p$, 
+i.e.
+\begin{equation}
+	X_p f \equiv \left. \frac{df(c(t))}{dt}\right|_{t=t_0}
+\end{equation}
+%
+
+\begin{definition}\emph{(Tangent vector)}
+	Let $p$ be a point on a manifold $M$. A tangent vector to $M$ 
+	at $p$ is a real-valued function $X_p : \mfrak{F}(M) 
+	\rightarrow \mbb{R}$ that is
+	\begin{itemize}
+		\item[(1)] $\mbb{R}$-linear, i.e. $X_p(af+bg) = aX_p(f) + 
+			bX_p(g)$, and
+		\item[(2)] Leibnizian, i.e. $X_p(fg) = X_p(f)g(p) + 
+			f(p)X_p(g)$
+	\end{itemize}
+	for all $a,b \in \mbb{R}$ and $f,g \in \mfrak{F}(M)$.
+\end{definition}
+The set of tangent vectors at the point $p$ forms a vector space, 
+the \emph{tangent space} $T_p M$.
+
+\blankline
+A \emph{vector field} $X$ on a manifold $M$ is an assignment of a 
+vector $X_p$ to each point $p$ on $M$.
+\begin{equation}
+	(Xf)(p) = X_p(f) \quad \text{for all}\spc p \in M
+\end{equation}
+We call $X$ differentiable if the function $Xf$ is differentiable 
+for every differentiable function $f$. Denote the set of all 
+differentiable vector fields on $M$ by $\mfrak{X}(M)$. Then, 
+$\mfrak{X}(M)$ forms a module over the algebra $\mfrak{F}(M)$. It 
+follows immediately that it also is a vector space over the 
+reals---as the latter are just constant elements in 
+$\mfrak{F}(M)$. This infinite dimensional vector space also is a 
+Lie algebra over the reals, as the commutator of two vector 
+fields is a vector field.
+%
+\begin{equation}
+	[X,Y]f = (X^j \pd_j Y^i - Y^j \pd_j X^i) \pd_i f
+\end{equation}
+%
+If one has a \emph{frame} $X_a$ over $M$, i.e.\ a set of $n$ 
+vector fields such that at each point $p$ they form a basis for 
+$T_p M$ we can write
+%
+\begin{equation}\label{eq:GenStrucEqs}
+	[X_a,X_b] = c_{ab}^{\spc\spc c}(p) X_c
+\end{equation}
+%
+Note that the \emph{structure functions} depend on $p$ since 
+there is no reason to assume that the commutator of two frame 
+fields is a linear combination of frame fields. The commutator 
+will be a generic vector field, an element of an 
+infinitedimensional vector space, for which the frame fields are 
+\emph{not} a basis.
+
+\blankline
+A \emph{1-form} $\omega$ on a manifold $M$ is defined as an 
+$\mfrak{F}(M)$-linear mapping of the module $\mfrak{X}(M)$ into 
+$\mfrak{F}(M)$.
+Hence, at each point $p$ they are the duals of the tangent 
+vectors and the space spanned by them is called the 
+\emph{cotangent space} $T^\ast_p M$. A 1-form $\omega$ is 
+differentiable if $\omega(X)$ is differentiable for all $X \in 
+\mfrak{X}(M)$. The set of all 1-forms $\mfrak{X}^\ast(M)$ then 
+also is a module over the algebra $\mfrak{F}(M)$. The \emph{total 
+	differential} of $f \in \mfrak{F}(M)$ at $p$ is defined by the 
+1-form $df_p$ for which
+\begin{equation}
+	(df(X))_p = X_p(f) \quad \text{for all}\spc X \in \mfrak{X}(M)
+\end{equation}
+%
+
+Let $\varphi : M \rightarrow N$ be a mapping. It is possible to 
+consider the following induced mappings. First let us consider 
+the \emph{pullback} of a generic function $f$, that is
+%
+\begin{equation}
+	\varphi^\ast : \mfrak{F}(N) \to \mfrak{F}(M) : f \mapsto 
+	\varphi^\ast f \quad \mathrm{with} \quad \varphi^\ast f \equiv 
+	f \circ \varphi~.
+\end{equation}
+%
+This allows one to define the \emph{differential map} or 
+\emph{pushforward} of a vector field, the linear mapping 
+%
+\begin{equation}
+	\varphi_\ast : TM \rightarrow TN : X \mapsto \varphi_\ast X
+\end{equation}
+such that for every function $f \in \mfrak{F}(N)$, we have
+\begin{equation}
+	(\varphi_\ast X) f \equiv X (\varphi^\ast f)
+\end{equation}
+%
+Given the notion of a pushforward of a vectorfield, one defines 
+the pullback of a 1-form $\omega$ by
+\begin{equation}
+	\varphi^\ast : T^\ast N \rightarrow T^\ast M : \omega \mapsto 
+	\varphi^\ast \omega
+\end{equation}
+such that for all vectors $X \in T_p M$
+\begin{equation}
+	(\varphi^\ast \omega) (X) \equiv \omega (\varphi_\ast X)
+\end{equation}
+%
+These definitions are readily extended to incorporate the 
+pushforward and pullback of respectively complete contravariant 
+and covariant tensors. Indeed, we define
+%
+\begin{equation}
+	\varphi_\ast : T_{(r,0)}M \to T_{(r,0)}N : t \mapsto 
+	\varphi_\ast t
+	\quad \text{with} \quad
+	(\varphi_\ast t)(\omega_1,\ldots,\omega_r) \equiv 
+	t(\varphi^\ast\omega_1,\ldots,\varphi^\ast\omega_r)
+\end{equation}
+and
+%
+\begin{equation}
+	\varphi^\ast : T_{(0,r)}N \to T_{(0,r)}M : t \mapsto 
+	\varphi^\ast t
+	\quad \text{with} \quad
+	(\varphi^\ast t)(X_1,\ldots,X_r) \equiv t(\varphi_\ast 
+	X_1,\ldots,\varphi_\ast X_r)~.
+\end{equation}
+
+Let us consider the effect of these mappings in some coordinate 
+system $x^i(p)$ on $M$ and $y^i(\varphi(p))$ on $N$. A vector 
+field $X = X^i(x(p))\pd_i|_p$ transforms according to
+%
+\begin{displaymath}
+	\begin{split}
+		(\varphi_\ast X)^i(y)\pd_i|_{\varphi(p)} f &\equiv 
+		X^i(x)\pd_i|_p f\circ\varphi \\
+		&= X^j(x) \frac{\pd y^i}{\pd x^j} \pd_i|_{\varphi(p)} f
+	\end{split}
+\end{displaymath}
+A 1-form $\omega = \omega_i(y(\varphi(p)))dy^i(\varphi(p))$ 
+transforms as
+%
+\begin{displaymath}
+	\begin{split}
+		(\varphi^\ast \omega)_i(x)dx^i(p) (X^j(x)\pd_j|_p) &\equiv 
+		\omega_i(y) dy^i(\varphi(p)) (\underbrace{X^j(x) \frac{\pd 
+				y^k}{\pd x^j} \pd_k|_{\varphi(p)}}_{\phi_\ast x})\\
+		(\phi^\ast\omega)_i(x)X^i(x) &= \omega_j(y) \frac{\pd 
+			y^j}{\pd x^i} X^i(x)
+	\end{split}
+\end{displaymath}
+%
+These kind of calculations can be done straightforwardly for any 
+completely contravariant or covariant tensor.
+
+Note how the differential map works in the same direction as the 
+mapping $\varphi$, while the pullback goes the other way around.  
+Therefore, a mixed type tensor cannot be transported in the above 
+defined manner. However, if the mapping $\varphi$ is a 
+diffeomorphism one can extend the definition of a pushforward 
+(pullback) by noting that the inverse mapping exists. Indeed, 
+given the fact that the pullback \emph{pulls the tensor back}, we 
+can push it along $\varphi$ by considering the pullback of the 
+inverse of $\varphi$. In other words, given the diffeomorphism 
+$\phi$ and the pushforward $\varphi_\ast$ of a vector, we map a 
+form $\omega$ in the same direction as $\varphi$ by invoking 
+$\varphi^{-1\ast} \omega$.
+
+\begin{definition}[Differential map]
+Let $\varphi : M \to M$ be a diffeomorphism. The pushforward of 
+an arbitrary tensorfield, induced by the diffeomorphism $\varphi$ 
+is the linear mapping
+\begin{equation}
+	\varphi_\ast : T_{(r,s)}M \to T_{(r,s)}M : t \mapsto 
+	\varphi_\ast t
+\end{equation}
+such that for any set of 1-forms and vector fields
+\begin{equation}
+	(\varphi_\ast t)(\omega_1,\ldots,\omega_r,X_1,\ldots,X_s) 
+	\equiv t(\varphi^\ast\omega_1, \ldots, \varphi^\ast\omega_r, 
+	\varphi^{-1}_\ast X_1, \ldots, \varphi^{-1}_\ast X_s)~.
+\end{equation}
+\end{definition}
+One could define also the pullback for a generic tensor field, 
+but the above considerations show that $\phi^\ast = 
+\phi^{-1}_\ast$ to be consistent.
+
+Let $x^i(p)$ be a coordinate system on $M$. Under a the 
+pushforward of a diffeomorphism, a generic tensor field 
+transforms as (we omit the coordinate basis elements)
+%
+\begin{equation}
+	(\varphi_\ast t)^{i_1\cdots i_r}_{j_1\cdots j_s}(x(\varphi(p))
+	= t^{k_1\cdots k_r}_{l_1\cdots l_s} \frac{\pd 
+		x^{i_1}(\varphi(p))}{\pd x^{k_1}(p)} \cdots \frac{\pd 
+		x^{i_r}(\varphi(p))}{\pd x^{k_r}(p)} \frac{\pd 
+		x^{l_1}(p)}{\pd x^{j_1}(\varphi(p))} \cdots \frac{\pd 
+		x^{l_s}(p)}{\pd x^{j_s}(\varphi(p))}
+\end{equation}
+
+The resemblence with the transformation law under general 
+coordinate transformations is not a coincidence. Given a 
+diffeomorphism $\varphi$ and a coordinate system $x^i$, a 
+coordinate transformation can be defined by pulling back the 
+coordinate functions, i.e.\ $y^i(p) := (\varphi^\ast x^i)(p) = 
+x^i(\varphi(p))$. Instead of performing the diffeomorphism on 
+$M$---the \emph{active} point of view---one can leave $M$ as it 
+is and perform the coordinate transformation by pulling back the 
+coordinate functions---the \emph{passive} point of view. The 
+transformation laws of tensors under change of coordinates are 
+then identified with the pushforwards/pullbacks of the given 
+diffeomorphism. It is then a matter of taste if one thinks of it 
+as an active or passive transformation.
+
+\blankline
+Let $M$ be an $m$-dimensional manifold with atlas $\{(U_i, 
+\phi_i)\}$ and $N$ an $n$-dimensional manifold with atlas 
+$\{(V_i, \psi_i)\}$. The \emph{product manifold} $M \times N$ is 
+defined as the manifold with atlas $\{(U_i \times V_j), 
+(\phi_i,\psi_j)\}$. A point $(p,q)$ of $M \times N$ has 
+coordinates $(\phi_i,\psi_j)(p,q) = (\phi_i(p),\psi_j(q)) \in 
+\mathbb{R}^{m+n}$, from which it is clear that the dimension of 
+$M \times N$ is $m + n$. For every $(p,q) \in M \times N$, the 
+tangent space $T_{(p,q)} M \times N$ can be identified with the 
+direct sum $T_p M + T_q N$ as follows. Let $X \in T_p M$ and $Y 
+\in T_q N$ be the tangent vectors to the curves $\mu_t$ and 
+$\nu_t$, at $p = \mu_0$ and $q = \nu_0$ respectively. We identify 
+$(X,Y) \in T_p M + T_q N$ with $Z \in T_{(p,q)} M \times N$, the 
+tangent vector to $(\mu_t,\nu_t)$ at $(p,q) = (\mu_0,\nu_0)$.  
+Consider the mappings $\imath_q : M \to M \times N : p' \mapsto 
+(p',q)$ and $\imath_p : N \to M \times N : q' \mapsto (p,q')$. It 
+follows that $Z = \imath_{q\ast}X + \imath_{p\ast}Y$. To see 
+this, consider
+%
+\begin{displaymath}
+	Zf = \tfrac{d}{dt}f(\mu_t,\nu_t)|_0 = 
+	\tfrac{d}{dt}f(\mu_t,q)|_0 + \tfrac{d}{dt}f(p,\nu_t)|_0 = 
+	(\imath_{q\ast}X)f + (\imath_{p\ast}Y)f~.
+\end{displaymath}
+\begin{proposition}[Leibniz's formula]
+	Let $\varphi : M \times N \to K$ be a mapping and consider the 
+	compositions
+	%
+	\begin{align*}
+		\varphi_1 &\equiv \varphi\circ\imath_q : M \to K : p' 
+		\mapsto (p',q) \\
+		\varphi_2 &\equiv \varphi\circ\imath_p : N \to K : q' 
+		\mapsto (p,q')~.
+	\end{align*}
+	The differential $\varphi_\ast$ can be expressed in the 
+	following manner. If $Z \in T_{(p,q)} M \times N$ corresponds 
+	to $(X,Y) \in T_p M + T_q N$, then
+	\begin{equation}
+		\varphi_\ast(Z) = \varphi_{1\ast}(X) + \varphi_{2\ast}(Y)~.
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Since $Z = \imath_{q\ast}X + \imath_{p\ast}Y$, it follows 
+	that
+	\begin{displaymath}
+		\varphi_\ast(Z) = \varphi_\ast(\imath_{q\ast}X + 
+		\imath_{p\ast}Y) = \varphi_{1\ast}(X) + 
+		\varphi_{2\ast}(Y)~.
+	\end{displaymath}
+\end{proof}
+
+\subsection{Differential forms}
+
+\begin{definition}[Differential form]
+	A differential form $\omega$ of degree $r$ is a $(0,r)$-type 
+	tensor field which is skew symmetric, that is
+	\begin{equation}
+		\omega(X_{\pi(1)},\ldots,X_{\pi(r)}) = 
+		\varepsilon(\pi)\cdot \omega(X_1,\ldots,X_r)~,
+	\end{equation}
+	where $\pi$ is an element of the group of permutations of 
+	$(1,\ldots,r)$ and $\epsilon(\pi)$ the corresponding sign.
+\end{definition}
+%
+In other words, a differential form is a multilinear 
+skew-symmetric mapping of $\mfrak{X}(M) \times \ldots \times 
+\mfrak{X}(M)$ into $\mfrak{F}(M)$. We denote the module of 
+differential $r$-forms on $M$ by $\Omega^r(M)$.
+
+Given an arbitrary tensor $(0,r)$-type tensor $t$, the 
+\emph{antisymmetrizer} $A$ is defined as follows,
+%
+\begin{equation}
+	(At)(X_1,\ldots,X_r) := \frac{1}{r!} \sum_\pi \varepsilon(\pi) 
+	\cdot t(X_{\pi(1)},\ldots,X_{\pi(r)})~.
+\end{equation}
+%
+From the definition of differential forms it follows that these 
+are eigenstates of $A$, as can be seen from
+%
+\begin{displaymath}
+	\begin{split}
+		(A\omega)(X_1,\ldots,X_r) &= \frac{1}{r!} \sum_\pi 
+		\varepsilon(\pi)^2 \cdot \omega(X_1,\ldots,X_r) \\
+		&= \omega(X_1,\ldots,X_r)~.
+	\end{split}
+\end{displaymath}
+On the other hand, if $\omega = A\omega$ then it is a 
+differential form--being completely skew-symmetric in its 
+arguments. We conclude that a $(0,r)$-type tensor is a $r$-form 
+if and only if it an eigenstate of the antisymmetrizer operator.  
+Furthermore, since $A$ is a projection operator, i.e.~$A^2=A$, 
+any $(0,r)$-tensor is mapped into a differential form under $A$.
+
+Given the antisymmetrizer operator $A$, the \emph{exterior} or 
+\emph{wedge product} of two differential forms is defined as 
+$(\omega \in \Omega^r(M)~,~\xi \in \Omega^s(M))$
+%
+\begin{equation}
+	\omega \wedge \xi \equiv \tfrac{(r+s)!}{r!s!} A(\omega \otimes 
+	\xi)
+\end{equation}
+which is an element of $\Omega^{r+s}(M)$.
+
+Every differential $r$-form $\omega$ may be obtained from some 
+$(0,r)$-tensor $t$ by invoking $A$, that is $\omega = At$. Since, 
+$A$ is a linear operator and considering a local coordinate basis 
+of $M$ we have $\omega = t_{i_1\cdots i_r} A(dx^{i_1}\otimes 
+\cdots dx^{i_r})$. It follows that\footnote{Note that this is 
+	consistent with the definition of the wedge product, since 
+	$\omega \wedge \xi \wedge \eta = \tfrac{(r+s+q)!}{r!s!q!} 
+	A(\omega \otimes \xi \otimes \eta)$, for $\omega \in 
+	\Omega^r(M)$, $\xi \in \Omega^s(M)$ and $\eta \in 
+	\Omega^q(M)$.}
+%
+\begin{displaymath}
+	dx^{i_1}\wedge\cdots dx^{i_r} = r!  A(dx^{i_1}\otimes\cdots 
+	dx^{i_r})
+\end{displaymath}
+form a basis for the vector spaces $\Omega^r_p(M)$. Hence any 
+differential form $\omega$ may be written as $\omega = 
+\tfrac{1}{r!}\omega_{i_1\cdots i_r} dx^{i_1}\wedge\cdots 
+dx^{i_r}$. Note that this is equivalent to
+%
+\begin{equation}
+	\omega = \tfrac{1}{r!} \omega_{i_1\cdots i_r} \sum_\pi 
+	\varepsilon(\pi)\cdot dx^{\pi(i_1)}\otimes\cdots dx^{\pi(i_r)} 
+	= \omega_{[i_1\cdots i_r]} dx^{i_1}\otimes\cdots dx^{i_r}~.  
+\end{equation}
+Hence, the a differential form is just a tensor with 
+antisymmetric component functions. This means also that the 
+possible symmetric part in $\omega_{i_1\dots i_r}$ may be 
+omitted. We state without derivation that the wedge product of 
+two differential forms is expressed in local coordinates as
+%
+\begin{equation}
+	\omega \wedge \xi = \frac{1}{r!s!} \omega_{i_1\cdots i_r} 
+	\xi_{i_{r+1}\cdots \xi_{r+s}} dx^{i_1}\wedge \ldots 
+	dx^{i_{r+s}}~.
+\end{equation}
+
+This explicit construction reveals some interesting properties 
+regarding differential forms. For example, the dimension of the 
+vector space $\Omega^r_p(M)$ is given by $\binom{m}{r}$. Also, 
+there are no $r$-forms for $r > m$. Given this information the 
+reader may understand that the \emph{exterior 
+	algebra}\footnote{We remark that $\Omega^0(M) := 
+	\mfrak{F}(M)$.}
+\begin{equation}
+	\Omega(M) \equiv \Omega^0(M) \oplus \cdots \oplus \Omega^m(M)
+\end{equation}
+of differential forms on $M$ is closed under the exterior 
+product.
+
+\begin{definition}[Exterior differentiation]
+	\emph{Exterior differentiation} is the unique linear mapping
+	\begin{displaymath}
+		d : \Omega^{r}(M) \to \Omega^{r+1}(M)
+	\end{displaymath}
+	satisfying the properties:
+	\begin{enumerate}
+		\item for any function $f \in \Omega^0(M)$, $df$ is the 
+			total differential
+		\item $d \circ d \equiv 0$
+		\item for any $\omega \in \Omega^r(M)$ and $\xi \in 
+			\Omega^s(M)$,
+			\begin{displaymath}
+				d(\omega \wedge \xi) = d\omega \wedge \xi + (-1)^r 
+				\omega \wedge d\xi
+			\end{displaymath}
+	\end{enumerate}
+\end{definition}
+In local coordinates the action of this operator is given by 
+\begin{displaymath}
+	d\omega = \frac{1}{r!} \pd_i \omega_{i_1\cdots i_r} dx^i 
+	\wedge dx^{i_1} \wedge \cdots dx^{i_r}~.
+\end{displaymath}
+
+\begin{definition}[Interior product]
+	The \emph{interior product} of a differential form with 
+	respect to a vector field $X$ is the mapping
+	%
+	\begin{equation}
+		i_X : \Omega^r(M) \to \Omega^{r-1}(M)
+	\end{equation}
+	such that
+	%
+	\begin{enumerate}
+		\item $i_X f = 0$ where $f \in \mfrak{F}(M)$,
+		\item $(i_X \omega)(X_1,\ldots,X_{r-1}) = 
+			\omega(X,X_1,\ldots,X_{r-1})$ for $\omega \in 
+			\Omega^r(M)$.
+	\end{enumerate}
+\end{definition}
+
+In local coordinates, $(i_X\omega)_{[i_2\cdots i_r]} = 
+X^i\omega_{[ii_2\cdots i_r]}$ such that
+\begin{equation}
+	i_X\omega = \frac{1}{(r-1)!} X^i\omega_{ii_2\cdots i_r} 
+	dx^{i_2} \wedge \ldots dx^{i_r}
+\end{equation}
+%
+This can be rewritten in a form that is useful for future 
+reference. Namely, let $i_X\omega = \tfrac{1}{(r-1)!}  
+X^{i_1}\omega_{i_1\cdots i_r} d\hat{x}^{i_1}\wedge 
+dx^{i_2}\wedge\ldots dx^{i_r} = \tfrac{(-1)^{s-1}}{(r-1)!}  
+X^{i_s}\omega_{i_1\cdots i_s\cdots i_r} dx^{i_1}\wedge \ldots 
+d\hat{x}^{i_s} \wedge \ldots dx^{i_r}$, where a hat on top 
+denotes that differential underneath is omitted and where we used 
+the antisymmetry of $\omega$. It then follows that
+%
+\begin{equation}
+	i_X\omega = \frac{1}{r!}\sum_s (-1)^{s-1} X^{i_s} 
+	\omega_{i_1\cdots i_s \cdots i_r} dx^{i_1} \wedge \ldots 
+	d\hat{x}^{i_s} \wedge \ldots dx^{i_r}~.
+\end{equation}
+
+%%%SECTION%%%
+\subsection{1-parameter groups of differentiable manifolds}
+%%%%%%%%%%%%%
+
+Let $X$ be a vector field on a manifold $M$. An \emph{integral 
+	curve} of $X$ is a curve $x(t)$ on $M$ such that for each $t$, 
+$X_{x(t)}$ is tangent to the curve. This means that for each $t$ 
+one has
+%
+\begin{equation}
+	\frac{df(x(t))}{dt} = X_{x(t)}f \quad \mathrm{for\spc all}\spc 
+	f \in \mfrak{F}(M)
+\end{equation}
+%
+which can be rephrased in a local coordinate basis as
+%
+\begin{equation}\label{eq:IntCur-ode}
+	\frac{dx^i(t)}{dt} \frac{\pd f}{\pd x^i} = X^i(x(t)) \frac{\pd 
+		f}{\pd x^i}
+\end{equation}
+%
+where we used the same notation for the coordinate system and the 
+coordinates of the curve.\footnote{To make the distinction 
+	somewhat clearer, the integral curve coordinates keep an 
+	explicit dependence on the parameter in the notation.}
+
+Solving the system of ODEs \eqref{eq:IntCur-ode} for given 
+initial conditions $x_0^i = x^i(0)$ gives one a unique integral 
+curve on the manifold.
+%
+\begin{example}
+	Consider the vector field in $\mbb{R}^2$
+  %
+	\begin{equation}
+		X = x\frac{\pd}{\pd y} - y \frac{\pd}{\pd x} 
+		\quad\mathrm{i.e.}\spc X^i = (-y,x).
+	\end{equation}
+  %
+	The components of \eqref{eq:IntCur-ode} then give two ODEs for 
+	the integral curve $(x(t),y(t))$,
+  %
+	\begin{displaymath}
+		\frac{dx(t)}{dt} = -y(t)\spc,\quad \frac{dy(t)}{dt} = x(t)
+	\end{displaymath}
+  %
+	and we denote initial values as $x_0,y_0$.
+	This system has the unique solution
+  %
+	\begin{equation}
+		\begin{split}
+			x(t) &= x_0 \cos t - y_0 \sin t \\
+			y(t) &= y_0 \cos t - x_0 \sin t
+		\end{split}
+	\end{equation}
+  %
+	which is a circle centered around the origin with radius $r = 
+	[(x_0)^2 + (y_0)^2 ]^{1/2}$. Hence, the infinite set of these 
+	circles are the integral curves of the considered vector field.
+\end{example}
+%
+
+\begin{definition}[1-parameter group of transformations]
+	A 1-parameter group of transformations of $M$ is a mapping
+	\begin{displaymath}
+		\mbb{R} \times M \rightarrow M : (t,p) \mapsto \phi_t(p)
+	\end{displaymath}
+	which satisfies the conditions
+	\begin{itemize}
+		\item[(a)] for each $t \in \mbb{R}$, $\phi_t$ is a 
+			transformation of $M$
+		\item[(b)] for each $t,s \in \mbb{R}$ and $p \in M$, 
+			$\phi_{t+s} = \phi_t(\phi_s)$
+	\end{itemize}
+\end{definition}
+This abelian group of transformations naturally induces a vector 
+field $X$, i.e.\ the vector field for which $\phi_t(p)$ is the 
+integral curve for some point $p = \phi_0(p)$.
+
+One can also consider a local 1-parameter group of local 
+diffeomorphisms, where $t$ is in an open interval 
+$(-\veps,\veps)$ and $p$ lies in an open set of $M$.
+It can be proven that if a vector field $X$ is given, there is 
+for each point $p$ a local 1-parameter group of local 
+diffeomorphisms $\phi_t$ which induces $X$. See 
+\cite{kob1996found}, pg.\ 13. The vector field $X$ then is said 
+to be the generator of $\phi_t$ in the neighborhood of $p$. In 
+the remainder, it will be assumed that this correspondence holds 
+for ``big enough'' regions.
+
+This induced vector field will satisfy the ODE
+%
+\begin{equation}\label{eq:1parODE}
+	\frac{d\phi_t^i(x)}{dt} = X^i(\phi_t(x))
+\end{equation}
+%
+and the \emph{flow}---the integral curve---asociated with the 
+group $\phi_t(x)$ is generated by this vector field in the 
+following manner.
+%
+\begin{align*}
+	\phi_t^i(x) &= \sum_{n}^\infty \frac{t^n}{n!} \left( 
+		\frac{d}{dt} \right)^n \phi_t^i(x)|_{t=0} \\
+	&= \left[ 1 + \sum_{n=1}^\infty \frac{t^n}{n!} \left( 
+			\frac{d}{dt} \right)^n\right]\phi_t^i(x)|_{t=0} \\
+	&= \exp\left(t\frac{d}{dt}\right) \phi_t^i(x)|_{t=0}
+\end{align*}
+%
+This is of course the realization on the manifold of a finite 
+translation in parameter space. We can rewrite it formally as
+%
+\begin{equation}
+	\phi_t^i(x) = \exp\left(t X \right) x^i
+\end{equation}
+%
+
+Let $\phi$ be a transformation of a manifold. If a vector field 
+$X$ generates the 1-parameter group $\phi_t$, then the vector 
+field $\phi_\ast X$ generates the 1-parameter group $\phi\circ 
+\phi_t\circ \phi^{-1}$ (see \cite{kob1996found}, pg.\ 14). From 
+this it follows that $X$ is an ivariant vector field under $\phi$ 
+if and only if $[\phi, \phi_t] = 0$, because $X$ and $\phi_\ast 
+X$ then satisfy the same ordinary differential equation 
+\eqref{eq:1parODE} and the uniqueness of its solution.
+
+\subsection{Lie derivative}
+
+Let $X$ and $Y$ be vector fields on a manifold M and let 
+$\varphi_t$ be a 1-parameter group of transformations of $M$, 
+generated by $X$.
+%
+\begin{definition}[Lie derivative]
+	The Lie derivative of any tensor $t$ with respect to $X$ is 
+	given by
+   %
+	\begin{equation}
+		\mcal{L}_X t \equiv \lim_{\tau\to 0} \tfrac{1}{\tau} [t - 
+		\varphi_{\tau\ast} t]~,
+	\end{equation}
+   %
+	or more precisely
+   %
+	\begin{displaymath}
+		\mcal{L}_X t = \lim_{\tau\to 0} \tfrac{1}{\tau} [t_p - 
+		(\varphi_{\tau\ast} t)_p]~, \quad p \in M\spc.
+	\end{displaymath}
+\end{definition}
+
+Note that for a differential form $\omega$ the Lie derivative is 
+also given by
+%
+\begin{equation}
+	\mcal{L}_X \omega = \lim_{\tau\to 0} \tfrac{1}{\tau} [\omega - 
+	\varphi^\ast_{-\tau}\omega] = \lim_{\tau\to 0} \tfrac{1}{\tau} 
+	[\varphi^\ast_\tau \omega - \omega]
+\end{equation}
+
+It is clear that the Lie derivative acts linearly on the algebra 
+of tensor fields. Let us then show that it is also a Leibnizian 
+operator, that is
+%
+\begin{equation}
+	\mcal{L}_X(t_1 \otimes t_2) = \mcal{L}_X t_1 \otimes t_2 + t_1 
+	\otimes \mcal{L}_X t_2~.
+\end{equation}
+Indeed, one finds
+%
+\begin{align*}
+	\mcal{L}_X(t_1 \otimes t_2)
+	&= \lim_{\tau \to 0} \tfrac{1}{\tau} [t_1 \otimes t_2 - 
+	\varphi_{\tau\ast}(t_1 \otimes t_2)] \\
+	&= \lim_{\tau \to 0} \tfrac{1}{\tau} [t_1 \otimes t_2 - 
+	\varphi_{\tau\ast}t_1 \otimes \varphi_{\tau\ast}t_2 \\
+	&= \lim_{\tau \to 0} \tfrac{1}{\tau} [t_1 - 
+	\varphi_{\tau\ast}t_1] \otimes t_2 + \lim_{\tau \to 0} 
+	\tfrac{1}{\tau} \varphi_{\tau\ast} t_1 \otimes [t_2 - 
+	\varphi_{\tau\ast} t_2] \\
+	&= \mcal{L}_X t_1 \otimes t_2 + t_1 \otimes \mcal{L}_X t_2~.
+\end{align*}
+%%%SECTION%%%
+\section{Lie groups and Lie algebras}
+%%%%%%%%%%%%%
+
+%%%SUBSECTION%%%
+\subsection{Left invariant vector fields}
+%%%%%%%%%%%%%%%%
+
+\begin{definition}[Lie group]
+	A Lie group $G$ is a group which is at the same time a 
+	differentiable manifold such the group composition and the 
+	inverse operation are differentiable mappings. The dimension of 
+	the group is the dimension of the manifold.
+\end{definition}
+%
+
+Let $a$ and $g$ then be elements of a Lie group $G$. Denote the 
+\emph{left translation} $L_a$ of $G$ by $a$ as the automorphism
+%
+\begin{equation}
+	L_a : G \rightarrow G : g \mapsto ag\spc, \quad g \in G\spc.
+\end{equation}
+%
+The associated differential map is an invertible transformation 
+of vector fields on $G$, i.e.\ $L_a{}_\ast : T_g G \rightarrow 
+T_{ag}G$.
+
+This inherent automorphism acting on Lie group manifolds is a 
+very interesting feature of them. Given a Lie group this 
+automorphism singles out a particular class of vector fields on 
+$G$, namely those ones which are invariant under left 
+translations. We call them \emph{left invariant vector fields} 
+and they satisfy
+%
+\begin{equation}\label{eq:LIvector}
+	L_a{}_\ast X_g = X_{ag}\spc.
+\end{equation}
+%
+In a local coordinate system this is rephrased as
+%
+\begin{equation}\label{eq:LIvectorLC}
+	(L_a{}_\ast X)^i\pd_i|_{ag} f = X^i(g) \frac{\pd x^j(ag)}{\pd 
+		x^i(g)}\pd_j|_{ag} f \overset{LI}{=} X^i(ag)\pd_i|_{ag} f
+\end{equation}
+
+Denote the set of left invariant vector fields by $\mfrak{g}$.  
+They form a subset of the infinite dimensional Lie algebra 
+$\mfrak{X}(G)$ with the usual addition and scalar multiplication.  
+It inherits the bracket operation of $\mfrak{X}(G)$, under which 
+$\mfrak{g}$ is closed as is implied by the following.
+%
+\begin{equation}
+	L_a{}_\ast [X,Y]_g = [L_a{}_\ast X_g,L_a{}_\ast Y_g]
+	= [X_{ag},Y_{ag}]
+		= [X,Y]_{ag}
+\end{equation}
+%
+This shows that the Lie bracket of two left invariant vector 
+fields is a left invariant vector field. Hence, $\mfrak{g}$ is 
+closed and forms a subalgebra of $\mfrak{X}(G)$.
+
+As a vector space $\mfrak{g}$ is isomorphic to $T_e G$. Denote a 
+generic element of $T_e G$ by $X_e$. These elements can be 
+obtained by mapping a left invariant vector field $X$ to its 
+value at $e$. The other direction of the isomorphism then is 
+defined by the transformation $X_e \mapsto X$, as in 
+\eqref{eq:LIvector}. Hence, the dimension of $\mfrak{g}$  is $n = 
+\dim G$ and one refers to it as \emph{the Lie algebra of $G$}.
+
+\begin{example}
+	Consider the general linear group $Gl(n,\mbb{R})$, the group of 
+	all real non-singular $(n \times n)$-matrices. They form an 
+	open submanifold of $\mbb{R}^{n\cdot n}$ and a generic element 
+	$g$ will be specified by the coordinates $x^i_{\spc j}(g)$. The 
+	unit element $e$ has coordinates $\delta^i_j$. The left 
+	translation is then given in the following terms
+  %
+	\begin{equation}
+		(L_a g)^i_{\spc j} = x^i_{\spc j}(ag) = x^i_{\spc k}(a) 
+		x^k_{\spc j}(g)
+	\end{equation}
+
+	An element in the tangent space at the identity is a vector $V 
+	\in T_e G$
+  %
+	\begin{equation}
+		V = V^i_{\spc j} \left.\frac{\pd}{\pd x^i_{\spc j}}\right|_e 
+		\spc.
+	\end{equation}
+  %
+	We use \eqref{eq:LIvector} and \eqref{eq:LIvectorLC} to 
+	construct a left invariant vector field $X$ by left translating 
+	$V$ over $Gl(n,\mbb{R})$,
+  %
+	\begin{displaymath}
+		\begin{split}
+			X_g = L_g{}_\ast V &= (L_g{}_\ast V)^i_{\spc j} 
+			\pd_{x^i_{\spc j}}|_g \\
+			&= V^i_{\spc j} \frac{\pd x^k_{\spc l}(ge)}{\pd x^i_{\spc 
+					j}(e)} \pd_{x^k_{\spc l}}|_g \\
+			&= V^i_{\spc j} x^k_{\spc m}(g) \frac{\pd x^m_{\spc 
+					l}(e)}{\pd x^i_{\spc j}(e)} \pd_{x^k_{\spc l}}|_g \\
+			&= V^i_{\spc j} x^k_{\spc m}(g) \delta^m_i \delta^l_j 
+			\pd_{x^k_{\spc l}}|_g \\
+			&= V^i_{\spc j} x^k_{\spc i}(g) \pd_{x^k_{\spc j}}|_g
+			= (gV)^i_{\spc j} \pd_{x^i_{\spc j}}|_g
+		\end{split}
+	\end{displaymath}   
+  %
+	The vector field $X_g = (gV)^i_{\spc j} \pd_{x^i_{\spc j}}|_g$ 
+	is said to be generated by $V \equiv X_e \in T_e 
+	G$.\footnote{The notation $(gV)^i_{\spc j}$ is to be understood 
+		as the matrix product of the coordinates of $g$ with the 
+		components of $V$, i.e.\ $x^i_{\spc k}(g)V^k_{\spc j}$.}
+	It is clearly left invariant since $L_a{}_\ast X_g = 
+	(agV)^i_{\spc j} \pd_{x^i_{\spc j}}|_{ag} = X_{ag}$.  These 
+	vector fields form the Lie algebra of $Gl(n,\mbb{R})$.  
+	However, we will show that not only there is a Lie algebra 
+	isomorphism between these vector fields and their vectors at 
+	the identity, but that the \emph{components} of the vectors at 
+	the identity also are isomorphic with $\mfrak{g}$.  Therefore, 
+	we first compute the commutator of two left invarant vector 
+	fields $X = (gV)^i_{\spc j} \pd_{x^i_{\spc j}}|_g$ and $Y = 
+	(gW)^i_{\spc j} \pd_{x^i_{\spc j}}|_g$.
+  %
+	\begin{displaymath}
+		\begin{split}
+			[X,Y]|_g &= [x^i_{\spc j}(g)V^j_{\spc k} \pd_{x^i_{\spc 
+					k}}|_g, x^a_{\spc b}(g)W^b_{\spc d} \pd_{x^a_{\spc 
+					d}}|_g] \\
+	&= x^i_{\spc j}(g)V^j_{\spc k} \delta^a_i \delta^k_b W^b_{\spc 
+		d} \pd_{x^a_{\spc d}}|_g - [V \leftrightarrow W] \\
+	&= x^a_{\spc b}(g) (V^b_{\spc j} W^j_{\spc d} - W^b_{\spc j} 
+	V^j_{\spc d} \pd_{x^a_{\spc d}}|_g \\
+	&= x^a_{\spc b}(g) [V,W]^b_{\spc d} \pd_{x^a_{\spc d}}|_g \\
+	&= (g[V,W])^i_{\spc j} \pd_{x^i_{\spc j}}|_g
+			\end{split}
+	\end{displaymath}
+  %
+	One concludes that the commutator of two left invariant vector 
+	fields is given by left translating the vector at the identity 
+	with components $V^i_{\spc k}W^k_{\spc j} - W^i_{\spc 
+		k}V^k_{\spc j}$.
+	This is a very interesting result, as it means that the Lie 
+	algebra structure can be understood completely by considering 
+	the components only of the left invariant vector fields at the 
+	identity. These components are \emph{arbitrary} $(n \times 
+	n)$-matrices. The Lie algebra of $Gl(n\mbb{R})$ is then to be 
+	understood as these matrices together with the standard matrix 
+	commutator $[\cdot,\cdot]$ and is denoted by 
+	$\mfrak{gl}(n,\mbb{R})$.
+  
+	We repeat that this is only true for matrix Lie groups. For 
+	generic Lie groups, the components of the left invariant vector 
+	fields at the identity do not have a structure to preserve the 
+	Lie algebra commutator and one needs the \emph{vector} (field), 
+	not only its components.
+
+	In the remainder, we will both use $V$ and $V^i_{\spc j}$ to 
+	denote an element of $\mfrak{gl}(n,\mbb{R})$, although in the 
+	above introduced notation, $V$ is a vector of $T_e 
+	Gl(n,\mbb{R})$ whereas only its components are considered an 
+	element of the matrix Lie algebra $\mfrak{gl}(n,\mbb{R})$.
+\end{example}
+
+
+
+%%%SUBSECTION%%%
+\subsection{Frames and structure equations}
+%%%%%%%%%%%%%%%%
+
+Let $E_a (a = 1\ldots n)$ be a set of linearly independent left 
+invariant vector fields on $G$. They form a basis for $\mfrak{g}$ 
+and at each point $g$ they are a basis for the tangent space $T_g 
+G$, hence a frame.
+    
+Since $\mfrak{g}$ is closed under the Lie bracket operation, we 
+can write \eqref{eq:GenStrucEqs} with constant structure 
+functions
+%
+\begin{equation}\label{eq:LAStructEqs}
+	[E_a,E_b] = c_{ab}^{\spc\spc c}E_c
+\end{equation}
+%
+The $c$ are then referred to as \emph{the structure constants of 
+	the Lie algebra}.
+
+Let us introduce a dual basis $\theta^a$ to the basis of 
+$\mfrak{g}$, i.e.\
+%
+\begin{equation}
+	\theta^a (E_b) \equiv \delta^a_b\spc,\quad\mathrm{for\spc 
+		all}\spc g\in G
+\end{equation}
+%
+which are a basis for the set of left invariant 1-forms 
+$\mfrak{g}^\ast$.  These are indeed left-invariant since
+%
+\begin{displaymath}
+	L^\ast_g \theta^a(E_b) = \theta^a(L_g{}_\ast E_b) = 
+	\theta^a(E_b)\spc
+	\quad\mathrm{for\spc all}\spc E_b \in \mfrak{g}\spc.
+\end{displaymath}
+%
+We now derive the \emph{Maurer-Cartan's structure equations}, see 
+also \cite{kob1996found}, pg.\ 36.\footnote{We use another 
+	convention compared with \cite{kob1996found}, where an overal 
+	factor $1/2$ is present. The result, i.e.\ the Maurer-Cartan 
+	equations are interestingly the same, due to another---or maybe 
+	consistent?---difference in conventions: the definition of the 
+	wedge product in the exterior algebra. To be complete, we 
+	adhere to $\theta^d \wedge \theta^e(E_b,E_c) = 
+	\theta^d(E_b)\theta^e(E_c) - \theta^d(E_d)\theta^e(E_c)$.}
+%
+\begin{align*}
+	d\theta^a(E_b,E_c) &= \left[E_b(\theta^a(E_c)) - 
+		E_c(\theta^a(E_b)) - \theta^a([E_b,E_c])
+		 \right] \\
+	 &= \theta^a([E_b,E_c]) \\
+	 &= -c_{bc}^{\spc\spc f} \theta^a(E_f) \\
+	 &= -\tfrac{1}{2} c_{de}^{\spc\spc a} 2\delta^d_{[b} 
+	 \delta^e_{c]} \\
+	 &= -\tfrac{1}{2} c_{de}^{\spc\spc a} \theta^d \wedge \theta^e
+	(E_b,E_c)
+\end{align*}
+%
+In the second to last step we used the fact that the structure 
+constants are antisymmetric in the lower indices.
+Since the found result is true for arbitrary $E_a$ we obtain the 
+Maurer-Cartan's structure equations, the dual expression of 
+\eqref{eq:LAStructEqs}, i.e.\
+%
+\begin{equation}\label{eq:MCeqs}
+	d\theta^a = -\tfrac{1}{2} c_{bc}^{\spc\spc a} \theta^b \wedge 
+	\theta^c
+\end{equation}
+%
+
+The \emph{canonical 1-form} $\omega$ is a left invariant 
+Lie-algebra valued 1-form. This means it maps elements of 
+$\mfrak{g}$ into its vectors in the tangent space at $e$,
+%
+\begin{equation}
+	\omega(X) = L_{g^{-1}}{}_\ast X
+\end{equation}
+%
+Hence, it can be expanded as $\omega_g = E_{e,a}\cdot\theta^a_g$, 
+where $\theta^a_g$ is the dual basis of $T^\ast_g G$. Indeed, let 
+$X = X^a E_a$ be an element of $\mfrak{g}$. It follows that
+%
+\begin{displaymath}
+	\omega_g(X_g) = \omega_g(X^a E_{g,a}) = X^a E_{e,b} \cdot 
+	\theta^b_{g}(E_{g,a}) = E_{e,b}X^a \delta^b_a = X^a E_{e,a}
+\end{displaymath}
+%
+By noting that $\omega \wedge \omega \equiv \tfrac{1}{2} 
+[E_{e,a}, E_{e,b}] \cdot \theta^a \wedge \theta^b$, it directly 
+follows from \eqref{eq:MCeqs} that
+%
+\begin{equation}\label{eq:MCeqsCanForm}
+	d\omega + \omega \wedge \omega = 0
+\end{equation}
+%
+
+\begin{example}
+	Let us take a look what this means for the general linear group 
+	and algebra. The canonical 1-form is to be a map $T_g 
+	Gl(n,\mbb{R}) \rightarrow \mfrak{gl}(n,\mbb{R})$, sending a 
+	left invariant vector field into the Lie algebra 
+	$\mfrak{gl}(n,\mbb{R})$. Remember that a left invariant vector 
+	field on $Gl(n,\mbb{R})$ is given by $X_g = (gV)^i_{\spc j} 
+	\pd_{x^i_{\spc j}}|_g$ and that the matrix of components 
+	$V^i_{\spc j}$ is the corresponding element of 
+	$\mfrak{gl}(n,\mbb{R})$. We show that
+  %
+	\begin{equation}
+		\omega^i_{\spc j} \equiv x^i_{\spc k}(g^{-1}) dx^k_{\spc 
+			j}(g)
+	\end{equation}
+  %
+	is the (matrix valued) 1-form sought after and that it 
+	satisfies \eqref{eq:MCeqsCanForm}.
+  %
+	\begin{displaymath}
+		\begin{split}
+			\omega^i_{\spc j}(X_g) &= x^i_{\spc k}(g^{-1}) dx^k_{\spc 
+				j}(g)
+	\left[ (gV)^a_{\spc b} \pd_{x^a_{\spc b}}|_g \right] \\
+	&= x^i_{\spc k}(g^{-1})x^a_{\spc c}(g) V^c_{\spc b} \delta^k_a 
+	\delta^b_j \\
+	&= x^i_{\spc a}(g^{-1})x^a_{\spc c}(g) V^c_{\spc j} \\
+	&= \delta^i_c V^c_{\spc j} = V^i_{\spc j}
+		\end{split}
+	\end{displaymath}
+  %
+	Furthermore does it satisfy \eqref{eq:MCeqsCanForm}. Since
+  %
+	\begin{displaymath}
+		\begin{split}
+			d\omega^i_{\spc j} &= dx^i_{\spc k}(g^{-1}) dx^k_{\spc     
+				j}(g) \\
+			&= - x^i_{\spc m}(g^{-1}) dx^m_{\spc l}(g)
+			x^l_{\spc k}(g^{-1}) dx^k_{\spc j}(g)
+		\end{split}
+	\end{displaymath}
+  %
+	and
+  %
+	\begin{displaymath}
+		\begin{split}
+			(\omega \wedge \omega)^i_{\spc j} &=
+			\tfrac{1}{2} 2x^i_{\spc [m}(g^{-1}) x^l_{\spc k]}(g^{-1})
+	dx^m_{\spc l}(g) \wedge dx^k_{\spc j}(g) \\
+			&= x^i_{\spc m}(g^{-1}) x^l_{\spc k}(g^{-1})
+	dx^m_{\spc l}(g)dx^k_{\spc j}(g)
+		\end{split}
+	\end{displaymath}
+  %
+	It then follows that
+  %
+	\begin{equation}
+		d\omega^i_{\spc j} + (\omega \wedge \omega)^i_{\spc j} = 0
+	\end{equation}
+  
+	The matrix valued 1-form $\omega^i_{\spc j}$ is often denoted 
+	by the shorthand ``$g^{-1}dg$'', which as a canonical 1-form 
+	does only make sense for matrix groups. The definition of 
+	$\omega$ for matrix groups maps a left invariant vector field 
+	into the \emph{components} of the corresponding vector in $T_e 
+	Gl(n,\mbb{R})$.  For a generic Lie group $\omega$ maps the left 
+	invariant vector field into the vector in the tangent space at 
+	the identity.
+\end{example}
+
+%%%SUBSECTION%%%
+
+\subsection{1-parameter subgroups}
+%%%%%%%%%%%%%%%%
+
+Let $\phi_t$ be a 1-parameter group of transformations of $G$, 
+generated by a left invariant vector field $X \in \mfrak{g}$. 
+%
+\begin{equation}
+	\frac{d\phi_t^i(g)}{dt} = X^i(\phi_t(g))
+\end{equation}
+%
+Since $X$ is left invariant we have $[L_a , \phi_t] = 0$ for any 
+$a \in G$.
+
+Set $a_t \equiv \phi_t(e): \mbb{R} \rightarrow {G}$. We have that 
+$a_0 = e$ and
+%
+\begin{displaymath}
+	\begin{gathered}
+		a_{t+s} = \phi_{t+s}(e) = \phi_{s+t}(e) = \phi_s \circ 
+		\phi_t(e)
+		= \phi_s \circ L_{a_t}(e) = L_{a_t} \circ \phi_s(e) = 
+		L_{a_t}(a_s)
+		= a_t a_s \spc,\\
+		a_t^{-1} = \phi_t^{-1}(e) = \phi_{-t}(e) = a_{-t}
+	\end{gathered}
+\end{displaymath}
+%
+The curve $a_t$ is a \emph{1-parameter subgroup of G generated by 
+	X}. The action of $\phi_t$ on $G$ is given by the right action 
+of $a_t$ since
+%
+\begin{displaymath}
+	\phi_t(g) = \phi_t \circ L_g(e) = L_g \circ \phi_t(e) = L_g 
+	\circ a_t = ga_t
+\end{displaymath}
+%
+such that $\phi_t(g) = R_{a_t}(g)$. From this it follows that the 
+Lie derivative $L_X Y = [X,Y]$ on $G$ is given by
+%
+\begin{equation}
+	L_X Y = \lim_{t\rightarrow 0} [Y - (\phi_t)_\ast Y]
+	=\lim_{t\rightarrow 0} [Y - R_{a_t}{}_\ast Y]
+\end{equation}
+%
+
+To conclude this section the exponential map is defined. Set 
+$\exp X \equiv a_1$. From this it follows that $a_t = \exp tX$.  
+Indeed, consider first the 1-parameter subgroup $a_{st}$ at the 
+identity,
+%
+\begin{equation}
+	\left.\frac{d a^i_{st}}{dt}\right|_{t=0} = s\left.\frac{d 
+		a^i_u}{du}\right|_{u=0} = s X^i_e
+\end{equation}
+%
+which implies that $a_{st}$ is generated by $sX$. But we also 
+have that there exists a one-parameter group which is generated 
+by $sX$,
+%
+\begin{equation}
+	\frac{db^i_t}{dt} = sX^i_{b_t}
+\end{equation}
+%
+By uniqueness of solutions this means that $b_t = a_{st}$. Hence, 
+$\exp sX \equiv b_1 = a_s$. The desired result is found by 
+replacing $s$ by $t$.
+
+%%%SUBSECTION%%%
+
+\subsection{The adjoint action}
+%%%%%%%%%%%%%%%%
+
+Every automorphism $\phi$ of a Lie group $G$ induces an 
+automorphism $\phi_\ast$ on its Lie algebra $\mfrak{g}$. This can 
+be seen as follows.  Let $X$ be an element of $\mfrak{g}$.
+%
+\begin{displaymath}
+	L_a{}_\ast (\phi_\ast X)(f) = L_a{}_\ast X(f\circ \phi) \\
+		= X(f\circ \phi) = (\phi_\ast X) (f)
+\end{displaymath}
+%
+
+Consider the mapping $\mrm{adj}$ which relates to each element 
+$a$ of a Lie group an automorphism,
+%
+\begin{equation}
+	\mrm{adj} : G \rightarrow \mrm{Aut}(G) : a \mapsto
+	\mrm{adj}_a \spc.
+\end{equation}
+%
+The automorphism $\mrm{adj}_a$ introduced is called the 
+\emph{inner automorphism} of $G$ and for a given element $a \in 
+G$ it is defined as
+%
+\begin{equation}
+	\mrm{adj}_a : G \rightarrow G : g \mapsto a g a^{-1}
+\end{equation}
+%
+It is obvious that $\mrm{adj}_a = L_a \circ R_{a^{-1}} = 
+R_{a^{-1}} \circ L_a$. Furthermore, $\mrm{adj}_a \circ 
+\mrm{adj}_b = \mrm{adj}_{ab}$, hence $\mrm{adj}$ is a group 
+homomorphism.
+
+The automorphism $\mrm{adj}_a$ induces an automorphism 
+$\mrm{adj}_a{}_\ast$ on the Lie algebra $\mfrak{g}$. Define the 
+mapping $\mrm{Ad}_a$ then as the differential map 
+$\mrm{adj}_a{}_\ast$ at the identity $e$ of $G$, i.e.\
+%
+\begin{equation}
+	\mrm{Ad}_a : \mfrak{g} \rightarrow \mfrak{g} : X \mapsto 
+	\mrm{Ad}_a X
+\end{equation}
+%
+What does $\mrm{Ad}_a X$ looks like? For an element $X$ of the 
+Lie algebra we have that
+%
+\begin{displaymath}
+	\mrm{Ad}_a X = (R_{a^{-1}} \circ L_a)_\ast X = 
+	R_{a^{-1}}{}_\ast X
+\end{displaymath}
+%
+since $X$ is left invariant. Let us give a concrete example for 
+matrix groups.
+%
+%
+\begin{example}
+	Let $X$ be a left invariant vector field on $Gl(n,\mbb{R})$, 
+	generated by the $V^i_{\spc j}$. The adjoint action is given
+  %
+	\begin{equation}
+		\mrm{Ad}_a X_g = (agVa^{-1})^i_{\spc j} \pd_{x^i_{\spc j}}|_g 
+		\quad(= R_{a^{-1}}{}_\ast X_{ag})
+	\end{equation}
+  %
+	One way to find the corresponding generator in 
+	$\mfrak{gl}(n,\mbb{R})$ is to apply the Maurer-Cartan form to 
+	$\mrm{Ad}_a X$, i.e.\
+  %
+	\begin{displaymath}
+		\begin{split}
+			\omega(\mrm{Ad}_a X)^i_{\spc j} &=
+	\omega((agVa^{-1})^i_{\spc j} \pd_{x^i_{\spc j}}|_g)^i_{\spc j} 
+	\\
+	&= x^i_{\spc k}([aga^{-1}]^{-1}) dx^k_{\spc j}(aga^{-1}) \left[ 
+		x^a_{\spc b}(ag)V^b_{\spc c} x^c_{\spc d}(a^{-1})
+		\pd_{x^a_{\spc d}}|_{aga^{-1}} \right] \\
+	&= x^i_{\spc l}(a) x^l_{\spc k}([ag]^{-1}) \delta^k_a
+		x^a_{\spc b}(ag) V^b_{\spc c} x^c_{\spc d}(a^{-1}) \delta^d_j 
+		\\
+	&= x^i_{\spc l}(a) \delta^l_b V^b_{\spc c} x^c_{\spc
+		d}(a^{-1}) \\
+	&= x^i_{\spc k}(a) V^k_{\spc l} x^l_{\spc j}(a^{-1})
+		\end{split}
+	\end{displaymath}
+  %
+	This implies that the adjoint representation of $Gl(n,\mbb{R})$ 
+	on $\mfrak{gl}(n,\mbb{R})$ is given by
+  %
+	\begin{equation}\label{eq:AdjRepMatrixLA}
+		\mrm{Ad}_a V = aVa^{-1}
+	\end{equation}
+
+	Note that although the adjoint representation on left invariant 
+	vector fields is given by $R_{a^{-1}}{}_\ast$ only, the 
+	corresponding action on the components at the identity is given 
+	by \eqref{eq:AdjRepMatrixLA}.
+\end{example}
+Note that $\mrm{Ad}$ is a mapping of $G$ into the automorphisms 
+of its Lie algebra,
+%
+\begin{equation}
+	\mrm{Ad} : G \rightarrow \mrm{Aut}(\mfrak{g}) : a \mapsto 
+	\mrm{Ad}_a
+\end{equation}
+%
+Since $\mrm{adj}$ is a group homomorphism, $\mrm{Ad}$ is a 
+representation on $\mfrak{g}$, called the \emph{adjoint 
+	representation} of $G$.
+%
+
+Last but not least let us consider the differential map 
+$\mrm{Ad}_\ast$ at the identity and define this as $\mrm{ad}$,
+%
+\begin{equation}
+	\mrm{ad} : \mfrak{g} \rightarrow \mrm{Der}(\mfrak{g}) : X 
+	\mapsto \mrm{ad}_X
+\end{equation}
+%
+We can now calculate how this operator works on an element $Y$ of 
+$\mfrak{g}$. Let $a_t = \exp tX$ be the curve in $G$ generated by 
+$X$. By definition we have
+%
+\begin{displaymath}
+	\begin{split}
+		\mrm{ad}_X Y &= (\mrm{Ad}_{\ast e})_X Y \\
+		&= \lim_{t \rightarrow 0}\frac{1}{t} (\mrm{Ad}_{a_t} Y - 
+		\mrm{Ad}_e Y) \\
+		&= \lim_{t \rightarrow 0}\frac{1}{t} (R_{a_{t}^{-1}}{}_\ast Y 
+		- Y) \\
+		&= L_X Y = [X,Y]
+	\end{split}
+\end{displaymath}
+
+
+%%%SUBSECTION
+
+\subsection{Action of Lie groups on manifolds}
+%%%%%%%%%%%%%
+
+\begin{definition}[Lie transformation group]
+\end{definition}
+%
+Let $G$ act on $M$ on the right and consider a left invariant 
+vector field $X \in \mfrak{g}$. The \emph{fundamental vector 
+	field} $X^\star$ on $M$ corresponding to $X$ is the vector 
+field induced by the right action of the 1-parameter subgroup 
+$a_t = \exp(tX)$ on $M$. In other words, $X^\star$ is the 
+generator of $R_{a_t}$ on $M$ while $X$ is the generator of $a_t$ 
+on $G$.  Hence, we have defined a mapping
+%
+\begin{equation}
+	\rho : \mfrak{g} \rightarrow \mfrak{X}(M) : X \mapsto X^\star
+\end{equation}
+%
+
+Let us define the mapping $\rho$ more carefully as follows.  
+Consider first a mapping $\rho_p$ for any $p \in M$ such that
+%
+\begin{equation}
+		\rho_p : G \rightarrow M : g \mapsto pg
+\end{equation}
+%
+The differential map $\rho_p{}_\ast : T_g G \rightarrow T_{pg} M$ 
+is at the identity given by the following. Remember that $X \in 
+\mfrak{g}$ is the generator of $a_t$.
+%
+\begin{displaymath}
+	\begin{split}
+		(\rho_p{}_\ast X_e)_p f &= X_e (f \circ \rho_p) \\
+		&= \frac{d}{dt}(f \circ \rho_p(a_t))|_{t=0} \\
+		&= \frac{d}{dt}(f(R_{a_t}(p))|_{t=0} \\
+		&= A_p^\star f
+	\end{split}
+\end{displaymath}
+%
+An element of the Lie algebra of $G$ is mapped onto the 
+corresponding fundamental vector field at the point $p$ on $M$.  
+The desired result is then found in defining $\rho$ implicitly by 
+$(\rho X)_p \equiv \rho_p{}_\ast X = X_p^\star$ for all $p \in 
+M$.
+
+The mapping $\rho$ is a Lie algebra homomorphism, i.e.\ 
+$\rho([X,Y]) = [\rho(X),\rho(Y)]$. Let us proof this proposition.
+%
+\begin{align*}
+	[A^\star_p,B^\star_p] &= \lim_{t\rightarrow 0} \frac{1}{t} 
+	\left[B_p^\star - (R_{a_t\ast} B^\star)_p \right] \\
+		&= \lim_{t\rightarrow 0}\frac{1}{t} \left[(\rho B)_p - 
+			R_{a_t\ast} (\rho B)_{pa_t^{-1}} \right] \\
+		&= \lim_{t\rightarrow 0}\frac{1}{t} \left[\rho_{p\ast} B - 
+			R_{a_t\ast}\circ \rho_{pa_t^{-1}\ast}B \right]
+\end{align*}
+%
+To continue, note that $R_{a_t} \circ \rho_{pa_t^{-1}}(c) = 
+R_{a_t}(p a_t^{-1}c) = p\spc \mrm{adj}_{a_t^{-1}}(c) = \rho_p 
+\circ \mrm{adj}_{a_t^{-1}} (c)$.  Hence, we find
+%
+\begin{align*}
+	[A^\star_p,B^\star_p] &= \lim_{t\rightarrow 0}\frac{1}{t} 
+	\left[\rho_{p\ast}B - (\rho_p \circ \mrm{adj}_{a_t^{-1}})_\ast 
+		B \right]\\
+		&= \lim_{t\rightarrow 0}\frac{1}{t} \left[ \rho_{p\ast}B - 
+			\rho_{p\ast} R_{a_t\ast} B \right] \\
+		&= \rho_{p\ast} \lim_{t\rightarrow 0}\frac{1}{t} [B - 
+		R_{a_t\ast}B] \\
+		&= \rho_{p\ast}[A,B] = [A,B]^\star_p
+\end{align*}
+%
+Hence, $\rho$ defines a Lie algebra homomorphism of $\mfrak{g}$ 
+into $\mfrak{X}(M)$.
+
+
+
+%%%SECTION%%%
+
+\section{(Principal) Fibre bundles}
+%%%%%%%%%%%%%
+
+\subsection{Fibre bundles}
+%%%%%%%%%%%%%
+
+\begin{definition}[Fibre bundle]
+	\label{def:fibre_bundle}
+	A differentiable fibre bundle $(E,\pi,M,F,G)$ consists of the 
+	following elements;
+  %
+	\begin{itemize}
+		\item[(a)] a manifold $E$, the \emph{bundle space}; a 
+			manifold $M$, the \emph{base space}; and a manifold $F$, 
+			the (typical) \emph{fibre}.
+		\item[(b)] a surjection $\pi : E \rightarrow M$ which maps 
+			any point $u$ of the bundle space into a point $p = \pi(u)$ 
+			on the base space.  Note that information is lost under 
+			this \emph{projection}.  Its inverse image $\pi^{-1}(p) = 
+			F_p$ is diffeomorphic to $F$ (see local trivialization) and 
+			is called the \emph{fibre at $p$}.
+		\item[(c)] a Lie group $G$ acting on $F$ on the left. It is 
+			called the \emph{structure group} of the bundle.
+		\item[(d)] a \emph{local trivialization} $(U_i,\phi_i)$ where 
+			$\{U_i\}$ is an open covering of $M$ and $\phi_i$ a 
+			diffeomorphism
+			\begin{equation}
+	\phi_i : U_i \times F \rightarrow \pi^{-1}(U_i)
+			\end{equation}
+			such that $\pi \circ \phi_i = \mrm{id}_{U_i}$, i.e.\ 
+			$\pi\phi_i(p,f) = p$.
+		\item[(e)] a set $\{t_{ij}\}$ of \emph{transition functions}, 
+			defined as follows. Let $\phi_{i,p}(f) \equiv \phi_i(p,f)$ 
+			be the mapping $\phi_{i,p} : F \rightarrow F_p$ which sends 
+			an element $f \in F$ into an element of the fibre $F_p 
+			\subset E$ at $p \in M$. On an overlapping region $U_i \cap 
+			U_j \neq \emptyset$, require that
+      %
+			\begin{equation}
+	t_{ij}(p) \equiv \phi_{i,p}^{-1} \phi_{j,p} : F \rightarrow F :
+	f \mapsto t_{ij}(p)f
+			\end{equation}
+      %
+			be an element of the structure group $G$. This implies that 
+			the local trivializations $\phi_i$ and $\phi_j$ are related 
+			by the map $t_{ij} : U_i \cap U_j \rightarrow G$ in the 
+			sense that
+      %
+			\begin{equation}
+	\phi_j(p,f) = \phi_i(p,t_{ij}(p)f)\spc .
+			\end{equation}
+	\end{itemize}
+\end{definition}
+%
+Note that $\phi_i^{-1}$ maps $\pi^{-1}(U_i)$ into a direct 
+product structure, hence a fibre bundle is \emph{locally} 
+diffeomorphic to this direct product. For a given $p$ this 
+defines a diffeomorphism between $F$ and $F_p$, which rectifies 
+why both are being referred to as fibres.  Although a fibre 
+bundle is locally a direct product, this is not to be expected 
+globally. Indeed, the concept of transition functions allows one 
+to construct a rich variety of manifolds. Since overlapping 
+charts of $M$ will refer to a same element of the fibre bundle, 
+using different elements of $F$ in their direct product 
+descriptions, reconstructing a global picture forces one to 
+\emph{glue}, i.e.\ identify the respective elements in $F$ 
+together by using the transition functions corresponding to the 
+same element in the bundle.  This spoils the direct product 
+structure on a \emph{global} level, which is exactly where the 
+interest of fibre bundles has to be found. Of course, this 
+glueing procedure will only make sense if the transition 
+functions satisfy the consistency conditions
+%
+\begin{subequations}
+	\begin{align}
+		t_{ii}(p) &= e & p \in& U_i \\
+		t_{ij}(p) &= t_{ji}^{-1}(p) & p \in& U_i \cap U_j \\
+		t_{ij}(p) \circ t_{jk}(p) &= t_{ik}(p) & p \in& U_i \cap U_j 
+		\cap U_k \end{align}
+\end{subequations}
+%
+
+The trivial limit, where $t_{ij} = e$ for all overlapping 
+regions, allows one to let the local direct product structure to 
+be meaningful globally.  This is nothing else then saying that 
+the fibre bundle $E$ is diffeomorphic with the direct product $M 
+\times F$.
+
+Let $E$ be a fibre bundle. A \emph{cross section} of $E$ is 
+mapping $\sigma$ of the base space into bundle such that $\pi 
+\circ \sigma = \mrm{id}_M$, i.e.\
+%
+\begin{equation}
+	\sigma : M \rightarrow E : p \mapsto \sigma(p) \in 
+	\pi^{-1}(p)\spc.
+\end{equation}
+%
+Note that it is because $\pi \circ \sigma$ is the identity on $M$ 
+that a point gets mapped into a point on the bundle which is an 
+element of its fibre $F_p$. A section may not be defined globally 
+on the fibre bundle. A \emph{local section} is a section defined 
+on a subset $U_i \subset M$ of the base manifold.
+
+
+\subsection{Principal bundles}
+%%%%%%%%%%%%%
+
+A principal bundle $(P,\pi,M,G)$ is a fibre bundle where the 
+fibre is identical with the structure group, i.e.\ $F \equiv G$.  
+One defines the \emph{right action} of $G$ on the bundle $P$ as 
+follows. Consider a point $u \in P$ such that $\pi(u) = p$. A 
+local trivialization then gives $\phi_i^{-1}(u) = (p,g_i)$ where 
+$g_i \in G$. The right action of $G$ on $\pi^{-1}(U_i)$ is then 
+defined by $\phi_i^{-1}(ua) \equiv (p,g_ia)$, or equivalently
+%
+\begin{equation}
+	ua \equiv \phi_i(p,g_i a)
+\end{equation}
+%
+for all $a \in G, u \in F_p$. It is easily shown that the 
+definition is in fact independent of the local trivialization 
+chosen. For consider a point $p \in U_i \cap U_j$ and let $u$ be 
+in the fibre at $p$:
+%
+\begin{displaymath}
+	ua = \phi_j(p,g_j a) = \phi_j(p,t_{ji}(p)g_i a) = \phi_i(p,g_i 
+	a)\spc.
+\end{displaymath}
+The right action is thus defined as a mapping $P \times G 
+\rightarrow P : (u,a) \mapsto ua$, without the need of making 
+reference to a specific local trivialization.
+
+From its definition it is clear that the right action of $G$ on 
+any fibre $F_p \equiv \pi^{-1}(p)$ is transitive, since $G$ acts 
+transitively on itself on the right. Furthermore, the action is 
+free. Let $ua = u$ for some  $u \in P$ and $a \in G$. We then 
+have that $ua = \phi_i(p,g_i a) = \phi_i(p,g_i)a = u = 
+\phi_i(p,g_i)$, such that $\phi_i(p,g_i a) = \phi_i(p,g_i)$.  
+Since $\phi_i$ is a bijection, $g_i a = g_i$ and it follows that 
+$a = e$.
+
+\blankline
+Given a local section $\sigma_i(p)$ over $U_i$, a \emph{canonical 
+	local trivialization} $\phi_i : U_i \times G \rightarrow 
+\pi^{-1}(U_i)$ is defined as follows.  Let $u$ be a point in the 
+fibre at $p \in U_i$.  Because $G$ acts transitively on 
+$\pi^{-1}(p)$, there is a unique $g_u \in G$ such that $u = 
+\sigma_i(p) g_u$. Define $\phi_i$ such that $\phi_i^{-1}(u) = 
+(p,g_u)$. This is the canonical local trivialization.
+Note that $\phi_i^{-1}(\sigma_i(p)) = (p,e)$ and that 
+$\phi_i(p,g) = \phi_i(p,e)g = \sigma_i(p)g$. If $p \in U_i \cap 
+U_j$, two sections $\sigma_i(p)$ and $\sigma_j(p)$ are related by 
+$\sigma_j(p) = \sigma_i(p)t_{ij}(p)$, since
+%
+\begin{displaymath}
+	\sigma_j(p) = \phi_j(p,e) = \phi_i(p,t_{ij}(p)e) = 
+	\phi_i(p,e)t_{ij}(p) = \sigma_i(p)t_{ij}(p)
+\end{displaymath}
+%
+
+\begin{example}
+	A widely used instance of principal bundles is the \emph{bundle 
+		of linear frames}, which will be discussed in this example.
+
+	Let $M$ be a manifold of dimension $n$. A linear frame $u$ at a 
+	point $p \in M$ is an ordered basis $\{X_a\} \spc (a=1\ldots 
+	n)$ of the tangent space at $p$, i.e.\ $T_pM$.  Let $L_pM$ be 
+	the set of all frames at $p$. If $x^i$ is a local coordinate 
+	system on $U_i \subset M$, the frame $u = \{X_a\}$ can be 
+	expressed as
+  %
+	\begin{equation}
+		X_a = X^i_{\spc a} \left. \frac{\pd}{\pd x^i}\right|_{p} 
+		\spc,
+	\end{equation}
+  %
+	where $X^i_{\spc a}$ is a non-singular matrix, since the 
+	elements of a frame are linearly independent. This implies that 
+	$X^i_{\spc a} \in Gl(n,\mbb{R})$ and $L_pM \simeq 
+	Gl(n,\mbb{R})$.
+
+	Let $LM$ be the set of all frames at all points $p \in M$ and 
+	define $\pi : LM \rightarrow M$ as the projection which maps a 
+	frame $u$ at $p$ into $p$. It is shown that this defines a 
+	principal bundle as follows. Define a local trivialization 
+	$\phi_i : U_i \times Gl(n,\mbb{R}) \rightarrow \pi^{-1}(U_i)$ 
+	by $\phi_i^{-1}(u) = (p,X^i_a)$, i.e.\
+  %
+	\begin{equation}
+		u = \phi_i(p, X^i_{\spc a})\spc.
+	\end{equation}
+  %
+	This implies that $LM$ is a differentiable manifold (of 
+	dimension $m + m^2$), since $M$ and $Gl(n,\mbb{R})$ are smooth 
+	manifolds and $\phi_i$ is a smooth diffeomorphism. The right 
+	action of the fibre $Gl(n,\mbb{R})$ on $LM$ is given as 
+	follows. For $a \in Gl(n,\mbb{R})$ and $u \in LM, \pi(u) = p$,
+  %
+	\begin{equation}
+		ua = \phi_i(p,X^i_{\spc b}) a = \phi_i(p, X^i_{\spc 
+			b}x^b_{\spc a}(a)) = \phi_i(p, Y^i_{\spc a})
+	\end{equation}
+  %
+	where the frame $\{X_i\}$ at $p$ is transformed into a new 
+	frame $\{Y_a = X_b x^b_{\spc a}(a)\}$ at $p$. Note that this 
+	action is free and transitive on the fibre. One concludes that 
+	$LM(M,Gl(n,\mbb{R}))$ is a principal fibre bundle: the bundle 
+	of linear frames.
+\end{example}
+
+\subsection{Associated bundles}
+
+Let $P(M,G)$ be a principal bundle and $F$ a manifold on which 
+$G$ acts on the left. The manifolds $G$ and $F$ do not have to be 
+of the same dimension. Consider the product manifold $P \times 
+F$. The right action of $G$ on $P \times F$ is defined as
+%
+\begin{equation}
+	R_a : P \times F \rightarrow P \times F : (u,f) \mapsto 
+	(ua,a^{-1}f) \spc, \quad a \in G
+\end{equation}
+We use this operation to define the space $E$ of equivalence 
+classes as
+%
+\begin{equation}
+	E \equiv P \times_G F \equiv \frac{P \times F}{G}\spc.
+\end{equation}
+Hence, the equivalence relation is given by the right action, 
+i.e.\
+%
+\begin{displaymath}
+	(u,f) \sim (ua,a^{-1}f)\spc, \quad a \in G\spc,
+\end{displaymath}
+and elements of $E$ are denoted by $[u,f]_\sim$.
+
+A projection $\pi_E$ of $E$ onto $M$ is defined as
+%
+\begin{equation}
+	\pi_E : E \rightarrow M : (u,f)_\sim \mapsto \pi(u)
+\end{equation}
+where $\pi(u)$ is the projection in $P$. Note that this 
+definition is consistent with the equivalence relation since 
+$\pi(ua) = \pi(u)$. For each $p \in M$, the set of points 
+$\pi^{-1}_E(p) = \{(u,f)_\sim | \pi(u) = p\}$ is called the fibre 
+of $E$ over $p$.
+
+Let us now define a differentiable structure in $E$ such that it 
+is turned into a smooth manifold. From the definition of a 
+principal bundle it follows that every $p \in M$ has an open 
+neighborhood $U_i$ such that it is locally a direct product, 
+i.e.\ $\pi^{-1}(U_i) \simeq U_i \times G$. Locally then, the 
+right action of $G$ on $P \times F$ goes as $(p,g,f) \mapsto 
+(p,ga,a^{-1}f)$. Since this right action leaves the equivalent 
+classes $E$ invariant and because $G$ is transitive under its own 
+right action, the equivalence classes $[u,f]_\sim$ are locally 
+described by a couple $(p,f)$ ($\pi(u)=p$). It follows that 
+$\pi^{-1}_E(U_i) \simeq U_i \times F$. A differentiable structure 
+in $E$ is obtained by demanding that $\pi^{-1}_E(U_i)$ be an open 
+submanifold of $E$. 
+
+Finally, we show that the above given local trivialization for 
+$E$ has the same transition functions as the the local 
+trivialization for $P$. The local trivialization for $E$ can be 
+written down as (on $U_i \cap U_j \subset M$)
+%
+\begin{gather*}
+	\psi_i^{-1}([u,f]_\sim) = (p,g,f)_\sim = (p,e,gf)_\sim \\
+	\psi_j^{-1}([u,f]_\sim) = (p,t_{ji}(p)g,f)_\sim = 
+	(p,e,t_{ji}(p)gf)_\sim \quad
+\end{gather*}
+This implies that on any overlapping region
+%
+\begin{equation}
+	\psi_j(p,f) = \psi_i(p,t_{ij}(p)f)
+\end{equation}
+
+As such, we have constructed a fibre bundle $(E,\pi_E,M,F,G;P)$ 
+associated with the principal bundle $P$. In fact, it is just a 
+fibre bundle $(E,\pi,M,F,G)$ as in definition 
+\ref{def:fibre_bundle}.
+
+\blankline
+Given a principal bundle $P(M,G)$ and an associated bundle $E$ 
+with fibre $F$, one can define the following mapping. For each $u 
+\in P$ and $f \in F$, denote by $uf$ the image of $(u,f) \in P 
+\times F$ under the natural projection $P \times F \rightarrow 
+E$, i.e.\ $uf = [u,f]_\sim$. One has for each $u \in P$ a mapping 
+$u : F \rightarrow F_p = \pi^{-1}_E(p)$, where $p = \pi(u)$.  
+Since for any $a \in G$, $[ua,f]_\sim = [u,af]_\sim$, it follows 
+that $(ua)f = u(af)$.
+
+Let $F_p = \pi^{-1}_E(p)$ and $F_q = \pi^{-1}_E(q)$, $p,q \in M$.  
+An isomorphism of a fibre $F_p$ onto another fibre $F_q$ is a 
+diffeomorphism that can be written as $v \circ u^{-1}$, where $u 
+\in \pi^{-1}(p)$ and $v \in \pi^{-1}(q)$ are considered mappings 
+of $F$ onto $F_p$ and $F_q$ respectively. An automorphism of 
+$F_p$ is a mapping of the form $v \circ u^{-1}$, where $u$ and 
+$v$ are in the same fibre $\pi^{-1}(p)$. Since the fibre $G_p$ is 
+transitive under its own right action, $v = ua$ for some $a \in 
+G$. It follows that any automorphism of $F_p$ is of the form $u 
+\circ a \circ u^{-1}$, for an arbitrarily \emph{fixed} $u \in 
+G_p$.  Hence, the group of automorphisms of $F_p$ is isomorphic 
+with the structure group $G$.
+
+\begin{example}
+	*Tangent bundle*
+\end{example}
+
+\subsection{Reduction of principal bundles}
+
+A \emph{homomorphism} $f : Q(M',H) \to P(M,G)$ between principal 
+fibre bundles consists of a mapping $f' : Q \to P$ and a group 
+homomorphism $f'' : H \to G$, such that $f'(qh) = f'(q)f''(h)$ 
+for any $q \in Q$ and $h \in H$. In the remainder we denote these 
+mappings all by the same letter $f$ and assume that its meaning 
+is clear from the element it is acting on. Every homomorphism $f$ 
+preserves the fibre structure of the bundles. For let $H_{p'} = 
+\{qh~|~h \in H\}$ and $q \in H_{p'}$ arbitrary. Denote $u = f(q)$ 
+where $u \in G_p$. It follows that $f(qh) = f(q)f(h)$ with $f(h) 
+\in G$. Then $\pi(uf(h)) = \pi(u)$ so that $f(H_{p'}) \subset 
+G_p$. Since $f$ maps each fibre of $Q$ into a fibre of $P$, this 
+induces a mapping $f: M' \to M$.
+
+The homomorphism $f$ is called an \emph{injection} if $f : Q \to 
+P$ is an injection and $f : H \to G$ a group monomorphism. It 
+follows that $f : M' \to M$ also is an injection. Given an 
+injection, we can identify $Q \equiv f(Q)$, $H \equiv f(H)$ and 
+$M' \equiv f(M')$. Then $Q(M',H)$ is said to be a 
+\emph{subbundle} of $P(M,G)$. If moreover $M' = M$ and $f : M' 
+\to M$ is the identity transformation of $M$, $f : Q(M,H) \to 
+P(M,G)$ is said to be a \emph{reduction} of the structure group 
+$G$ of $P(M,G)$ to $H$. The subbundle $Q(M,H)$ is a \emph{reduced 
+	bundle} of $P(M,G)$.
+
+\blankline
+Let $H$ be a closed subgroup of $G$ and consider the coset space 
+$G/H$. There is the natural left action $\tau_a : G/H \to G/H : 
+gH \mapsto (ag)H$. Let then $E = P \times_G G/H$ be the 
+associated bundle with standard fibre $G/H$. Furthermore, denote 
+by $P/H$ the space of equivalence classes with equivalence 
+relation $u \sim uh$ for $h \in H$. We identify $E$ with $P/H$ by 
+mapping each element $[u,gH] = [ug,eH] \in E$ into $[ug] \in P$.  
+Lastly, we define the projection $\mu : P \to E : u \mapsto u(eH) 
+= [u,eH]$, where we considered the mapping $u : G/H \to 
+\pi^{-1}_E(p)$ with $\pi(u) = p$. Note that the projection 
+preserves fibres and that it is a submersion by the transitivity 
+of $G$ on $G/H$. To conclude we summarize things in the following 
+diagram:
+\begin{displaymath}
+	\xymatrix@R=1.5cm@C=1.3cm{
+		Q(M,H)
+			\ar[r]^-*{f}
+			\ar[dr]^-*{\pi'}
+		& P(M,G)
+			\ar[r]^-*{\mu}
+			\ar[d]^-*{\pi}
+		& E = P/H
+			\ar[dl]_-*{\pi_E}
+		\\
+		& M &
+	}
+\end{displaymath}
+
+\begin{proposition}
+	The structure group $G$ of $P(M,G)$ is reducible to a closed 
+	subgroup $H$ if and only if the associated bundle $E = P 
+	\times_G G/H$ admits a globally defined section $\sigma : M 
+	\to E$.
+\end{proposition}
+\begin{proof}
+	Let $f : Q(M,H) \to P(M,G)$ be a reduction of $G$ to a closed 
+	subgroup $H$ and let $\mu : P \to E$ be the projection $u 
+	\mapsto [u,eH]$. If $q$ and $q'$ are in the same fibre 
+	$\pi'^{-1}(p)$, then there exists some $h \in H$ so that 
+	$q=q'h$. One then has $\mu(f(q)) = \mu(f(q)f(h)) = \mu(f(q))$ 
+	so that $\mu\circ f$ is a constant function on each fibre of 
+	$Q$. This induces a mapping $\sigma : M \to E$ by $\sigma(p) = 
+	\mu(f(q))$ with $q \in \pi'^{-1}(p)$. As $\pi(f(q)) = 
+	\pi_E(\mu(f(q))) = p$, we have $\pi_E \circ \sigma = 
+	\mathrm{id}$ and $\sigma$ is a section.
+
+	Conversely, let $\sigma$ be a section of $E$. Denote by $Q$ 
+	the subset of $P$ such that $\mu(u) = \sigma(\pi(u))$. In 
+	other words, $Q = \mu^{-1}(\sigma(M))$.
+\end{proof}
+
+
+\section{Connections}
+
+\subsection{Ehresmann connections}
+
+Let $P(M,G)$ be a principal bundle, $u \in P$ and $p = \pi(u) \in 
+M$, such that the fibre at $p$ is $G_p \equiv \pi^{-1}(p)$.
+
+The \emph{vertical subspace} $V_u P$ at a point $u$ is the space 
+tangent to the fibre through $u$. It is a subspace of the tangent 
+space $T_u P$ at $u$. Note that given a $u \in P$ and $\pi(u) = 
+p$, the fibre $G_p$ through $u$ is sweeped out by the right 
+action of $G$ on $u$ (because $G_p$ is transitive under this 
+action). For any 1-parameter subgroup $a_t$ of $G$, a curve 
+$R_{a_t}(u)$ is traced out in the fibre $G_p$.  The generating 
+vector field for the latter curve is the fundamental vector field 
+$A^\star$ corresponding to the generator $A \in \mfrak{g}$ of 
+$a_t$. It follows that $V_u P$ is spanned by $n = \dim G$ 
+linearly independent $A^\star _u$, at any $u \in P$.  The 
+vertical subspace is thus canonically given for a principal 
+bundle. By definition $A^\star_{ug} = R_g{}_\ast A^\star_u$ and 
+one concludes that the vertical subspace at $ug$ is given by 
+right translating the vertical subspace at $u$, i.e.\ $V_{ug}P = 
+R_g{}_\ast V_u P$.\footnote{This does \emph{not} imply that a 
+	generic vertical vector field $X$ is right invariant, since 
+	such a vector field may not be a linear combination of the 
+	fundamental vector fields $A^\star$.}
+Furthermore, since a curve $R_{a_t}(u)$ in the fibre $G_p$ will 
+be projected into the same point $p \in M$, an element of $V_u P$ 
+will be anihilated under this projection: $\pi_\ast X^V_u(f) = 
+X^V_u (f \circ \pi) = 0$ because $f \circ \pi$ is a constant 
+function.
+
+As mentioned in the last paragraph, a principal fibre bundle 
+canonically picks out the vertical subspace of dimension $n = 
+\dim G$ from the tangent space, at any point in the bundle. This 
+implies directly that at any point a subspace of dimension $m = 
+\dim P - \dim G$ is left over: the \emph{horizontal subspace} 
+$H_u P$. Unfortunately, the mere observation that at any point 
+the horizontal subspace should be the linear complement of the 
+vertical subspace does not give one a unique manner to smoothly 
+assign one at each $u \in P$. Introducing extra structure into 
+the picture by defining an \emph{Ehresmann 
+	connection}\footnote{An Ehresmann connection will be called 
+	just a connection} does allow one to have such an assignment.
+
+\begin{definition}[Connection]\label{def:connection1}
+	Let $P(M,G)$ be a principal bundle. A connection is a unique 
+	seperation of the tangent space $T_u P$ at each $u \in P$ into 
+	the vertical subspace $V_u P$ and the horizontal subspace $H_u 
+	P$, such that
+  %
+	\begin{itemize}
+		\item[(a)] $T_u P = V_u P \oplus H_u P$
+		\item[(b)] A smooth vector field $X$ on $P$ is seperated into 
+			smooth vector fields $X^V$ and $X^H$ such that $X = X^V + 
+			X^H$ and for any $u \in P$, $X^V_u \in V_u P$ and $X^H_u 
+			\in H_u P$
+		\item[(c)] $H_{ug}P = R_g{}_\ast H_u P$ for any $u \in P, g 
+			\in G$
+	\end{itemize}
+\end{definition}
+%
+Consider the pushforward of the projection, i.e.\ $\pi_\ast : T_u 
+P \rightarrow T_p M$. From item (a) it follows that $\pi_\ast 
+T_uP = \pi_\ast V_uP \oplus \pi_\ast H_uP$. Since $V_uP$ gets 
+annihilated under this projection one concludes that $\dim 
+\pi_\ast H_uP = \dim T_pM$. This means that once a connection is 
+given, $H_uP$ is projected isomorphically onto $T_pM$. Let us 
+mention that $\dim H_uP = \dim T_pM$, since $\dim P = \dim G + 
+\dim M$.
+
+\blankline
+As we have seen, a connection basically splits up smoothly the 
+tangent spaces along a principal bundle in vertical and 
+horizontal subspaces. This splitting up effectively defines a 
+projection of a tangent vector onto the vertical subspace. The 
+latter is spanned by the fundamental vector fields corresponding 
+to $\mfrak{g}$, hence isomorphic to $T_e G$. A connection thus 
+defines an operator which takes an element of $T_uP$ as its  
+input, mapping it into $T_e G \simeq \mfrak{g}$. This operator is 
+a $\mfrak{g}$-valued 1-form on $P$ and it is called the 
+\emph{connection 1-form}. Its definition is an equivalent 
+starting point for discussing connections on principal bundles 
+and will be used for applications.
+
+\begin{definition}[Connection 1-form]\label{def:connection2}
+	A connection 1-form $\omega$ on a principal bundle $P$ is 
+	$\mfrak{g}$-valued 1-form, i.e.\ a projection of $T_uP$ onto 
+	the vertical component $V_uP \simeq \mfrak{g}$, for any $u \in 
+	P$; the projection property is summarized by the following 
+	requirements:
+  %
+	\begin{itemize}
+		\item[(a)] $\omega(A^\star) = A$, where $A \in \mfrak{g}$
+		\item[(b)] $R_g^\ast \omega = \mrm{Ad}_{g^{-1}} \omega$, 
+			where $\mrm{Ad}_{g^{-1}}$ acts on the $\mfrak{g}$ in 
+			$\omega \in \mfrak{g} \otimes T^\ast P$.
+	\end{itemize}
+  %
+	The horizontal subspace $H_uP$ is the kernel of $\omega$:
+  %
+	\begin{equation}\label{def:horsubspace}
+		H_uP \equiv \{ X \in T_uP | \omega(X) = 0 \}
+	\end{equation}
+\end{definition}
+%
+At any point $u \in P$ and for every $X \in T_uP$, $\omega(X)$ is 
+the unique $A \in \mfrak{g}$ such that $A^\star_u$ is equal to 
+the vertical component of $X$.
+
+Consider requirement (b) again. Taking a closer look at the 
+equation,
+%
+\begin{displaymath}
+	(R_g^\ast\omega)_{u}(X) = \omega_{ug}(R_g{}_\ast X_u) 
+	\overset{def}{=} \mrm{Ad}_{g^{-1}}\omega_u(X) = R_g{}_\ast 
+	\omega_u(X)
+\end{displaymath}
+%
+shows that it basically tells the following. The projection of 
+$R_g{}_\ast X$ in $ug \in P$ gives the same result as right 
+translating the projection of $X$ in $u \in P$. This is the dual 
+statement of item (c) in definition \ref{def:connection1} which 
+states that the horizontal space at $ug$ is the right translation 
+of the horizontal space at $u$. Indeed, the space defined in 
+\eqref{def:horsubspace} satisfies $H_{ug}P = R_g{}_\ast H_uP$ as 
+we prove now. Let $X_u \in H_uP$, i.e.\ $\omega_u(X) = 0$. It 
+then follows that $\omega_{ug}(R_g{}_\ast X) = R_g^\ast 
+\omega_{ug}(X) = R_g{}_\ast \omega_u(X) = 0$, hence $R_g{}_\ast X 
+\in H_{ug}P$. In the other direction, since right translation in 
+$P$ is an invertible linear map, any element in $H_{ug}P$ can be 
+written as $R_g{}_\ast X$, for some $X \in H_uP$.
+
+\blankline
+In the following, the above introduced connection will be 
+expressed by a family of forms defined on open subsets of the 
+base manifold $M$. Therefore, let $\{U_i\}$ be an open covering 
+of $M$ and consider a family of local sections $\sigma_i : U_i 
+\rightarrow \pi^{-1}(U_i)\subset P$. The associated canonical 
+local trivializations are isomorphisms $\phi_i$ such that 
+$\phi_i(p,g) = \sigma_i(p)g$ and thus $\phi_i(p,e) = 
+\sigma_i(p)$, for any $p \in M, g \in G$. Remember that 
+$\sigma_j(p) = \sigma_i(p) t_{ij}(p)$, where $t_{ij} : U_i \cup 
+U_j \rightarrow G$ are the transition functions. Let $\theta: 
+T_gG \rightarrow T_eG$ be the Maurer-Cartan form on $G$.
+
+Define on each non-empty intersection $U_i \cap U_j$ the 
+$\mfrak{g}$-valued 1-form
+%
+\begin{equation}
+	\theta_{ij} \equiv t_{ij}^\ast \theta : T_pM \rightarrow T_eG 
+	\simeq \mfrak{g} \spc.
+\end{equation}
+%
+To understand this definition, consider its action on an element 
+$X$, i.e.\ $\theta_{ij}(X) = \theta(t_{ij}{}_\ast X)$. Since 
+$t_{ij}{}_\ast: T_pM \rightarrow T_gG$ where $g = t_{ij}(p)$, $X$ 
+is a vector field on $M$. The Maurer-Cartan form then left 
+translates the resulting vector into the tangent space at the 
+identity, i.e.\ $\theta_{ij}(X) = L_{g^{-1}}{}_\ast 
+(t_{ij}{}_\ast X_p)_g$, $(g = t_{ij}(p))$.
+
+The \emph{local connection forms} then are defined by pulling 
+back the connection 1-form $\omega$ onto the open covering 
+$\{U_i\}$,
+%
+\begin{equation}
+	\mcal{A}_i \equiv \sigma_i^\ast \omega
+\end{equation}
+%
+Its action on an element $X$ is given by $\mcal{A}_i (X) = 
+\omega(\sigma_i{}_\ast X)$. Remember that $\sigma_i{}_\ast : 
+T_pU_i \rightarrow T_uP$ and $u = \sigma_i(p)$. It is clear that 
+$\mcal{A}_i : T_pU_i \rightarrow V_uP \simeq \mfrak{g}$ is a 
+$\mfrak{g}$-valued 1-form on $U_i$, i.e.\ $\mcal{A}_i \in 
+\mfrak{g} \otimes T^\ast U_i$.  Note that $\omega$ maps 
+$(\sigma_i{}_\ast X)_u$ into an $A \in \mfrak{g}$ such that 
+$A_u^\star$ is the vertical component of $(\sigma_i{}_\ast X)_u$.
+
+On a region $U_i \cap U_j \neq \emptyset$, two local connection 
+forms $\mcal{A}_i$ and $\mcal{A}_j$ are related by
+%
+\begin{equation}\label{eq:GaugeTrafo_A}
+	\mcal{A}_j = \mrm{Ad}_{t_{ij}^{-1}} \mcal{A}_i + 
+	\theta_{ij}\spc,
+\end{equation}
+%
+a proof of which can be found in \cite{kob1996found}, pg.\ 66. We 
+note without proof that although the connection forms 
+$\mcal{A}_i$ are defined only locally on regions of the base 
+manifold, the whole set of them together with the transformation 
+rule \eqref{eq:GaugeTrafo_A} do capture all the information 
+related to the global definition of $\omega$ on the principal 
+bundle, i.e.\ the separation of the tangent bundle $TP$ in its 
+vertical and horizontal components.
+
+\begin{example}
+	Consider a principal bundle $P(M,Gl(n,\mbb{R}))$. Since 
+	$\mcal{A}_i \in \mfrak{g} \otimes T^\ast U_i$ and for 
+	$Gl(n,\mbb{R})$ the Lie algebra $\mfrak{g} \simeq 
+	\mfrak{gl}(n,\mbb{R})$, the arbitrary $n\times n$-matrices, one 
+	concludes that the local connection forms will be of the form 
+	$\mcal{A}^a_{i,b} = \mcal{A}^a_{i,b\mu} dx^\mu$.\footnote{The 
+		``low'' Latin indices a, b, c, \dots are Lie-algebra indices.  
+		The Greek indices are indices refering to the base manifold 
+		coordinates.} The transition functions $t_{ij}^{-1}(p)$ are 
+	elements of $Gl(n,\mbb{R})$. Since $\mrm{Ad}_{t_{ij}^{-1}}$ act 
+	on the Lie algebra one has that $\mrm{Ad}_{t_{ij}^{-1}} 
+	(\mcal{A}_i) \in \mrm{Ad}_{t_{ij}^{-1}} \mfrak{gl}(n,\mbb{R}) 
+	\otimes T^\ast U_i$, hence (let $g(p) \equiv 
+	t_{ij}^{-1}(p)$),\footnote{We will omit for simplicity the 
+		$p$-dependence. However, this fact should
+	not be forgotten in the following.}
+  %
+	\begin{equation}
+		\begin{split}
+			\mrm{Ad}_{g}(\mcal{A}^a_{i,b})
+			&= x^a_{\spc c}(g) \mcal{A}^c_{i,d\mu} x^d_{\spc b}(g^{-1}) 
+			dx^\mu \\
+			&\approx g \mcal{A}_i g^{-1}
+		\end{split}
+	\end{equation}
+  %
+
+	Next, we compute $\theta_{ij} \equiv t_{ij}^\ast \theta \in 
+	\mfrak{g} \otimes T^\star M$ explicitly. One has that $\left[
+	\theta_{ij}(X_p) \right]^a_{\spc b} = \theta(t_{ij}{}_\ast 
+X_p)^a_{\spc b}$, where $X_p \in T_pM$. Since
+  %
+	\begin{displaymath}
+		t_{ij\ast} X^\mu \pd_\mu|_p f = X^\mu \pd_\mu|_p 
+		f(g^{-1}(p)) = X^\mu \frac{\pd x^c_{~d}(g^{-1})}{\pd 
+			x^\mu(p)} \pd_{x^c_{~d}}|_{g^{-1}} f
+	\end{displaymath}
+  %
+  and $\theta^a_{~b} = x^a_{~c}(g) dx^c_{~b}(g^{-1})$, one finds 
+  that
+  %
+	\begin{displaymath}
+		\begin{split}
+			\theta_{ij}(X_p)^a_{\spc b}
+			&= x^a_{~c}(g) dx^c_{~b}(g^{-1}) \left[ X^\mu \pd_\mu 
+				x^e_{~d}(g^{-1}) \pd_{x^e_{~d}}|_{g^{-1}}\right] \\
+			&= x^a_{~e}(g) X^\mu \pd_\mu x^e_{~d}(g^{-1})
+	\delta^e_c \delta^d_b \\
+			&= x^a_{~c}(g) \pd_\mu x^c_{~b}(g^{-1})
+	X^\nu dx^\mu(\pd_\nu|_p) \\
+			&= x^a_{~c}(g) \pd_\mu x^c_{~b}(g^{-1})
+	dx^\mu(X_p)
+		\end{split}
+	\end{displaymath}
+  %
+	From this it is clear that
+  %
+	\begin{equation}
+		\begin{split}
+			[\theta_{ij}]^a_{\spc b} &= x^a_{\spc c}(t_{ij}^{-1}(p)) 
+			\pd_\mu x^c_{\spc b}(t_{ij}(p)) dx^\mu \\
+			&\approx t_{ij}^{-1}(p) dt_{ij}(p)
+		\end{split}
+	\end{equation}
+
+	To conclude, these results are used to rewrite eq.\ 
+	\eqref{eq:GaugeTrafo_A} for a general matrix group fibre bundle 
+	$P(M,Gl(n,\mbb{R}))$,
+  %
+	\begin{equation}
+		\begin{split}
+			\mcal{A}^a_{i,b\mu} dx^\mu &= x^a_{\spc c}(t_{ij}^{-1}) 
+			\mcal{A}^c_{i,d\mu} x^d_{\spc b}(t_{ij}) dx^\mu + x^a_{\spc 
+				c}(t_{ij}^{-1}) \pd_\mu x^c_{\spc b}(t_{ij}) dx^\mu \\
+			&\approx t_{ij}^{-1} \mcal{A}_i t_{ij} + t_{ij}^{-1} 
+			dt_{ij}
+		\end{split}
+	\end{equation}
+\end{example}
+
+\subsection{Horizontal lift and parallelism}
+
+Let $P(M,G)$ be a principal fibre bundle. \emph{The horizontal 
+	lift} of a vector field $X$ on $M$ is a vector field $X^h$ on 
+$P$ which is horizontal and projects onto $X$, i.e.\ 
+$\omega_u(X^h) = 0$ and $\pi_\ast(X^h_u) = X_{\pi(u)}$ for all $u 
+\in P$.
+
+Given a connection in $P$, the horizontal lift exists and is 
+unique, because the projection $\pi$ gives a linear isomorphism 
+between $H_uP$ and $T_uM$. The horizontal lift $X^h$ is right 
+invariant, because (1) the horizontal subspace is right invariant 
+and (2) the projection acts the same on the whole fibre $(\pi 
+\circ R_a = \pi)$. Conversely, given a right invariant horizontal 
+vector field $X^h$ on $P$, it is the lift of a vector field $X$ 
+on $M$.
+
+Let $\gamma_t$ ($0 \leq t \leq 1$) be a curve in $M$.  \emph{A 
+	horizontal lift} of $\gamma_t$ is a curve $\gamma_t^h$ ($0 \leq 
+t \leq 1$) in $P$ such that for any $t$ it projects onto 
+$\gamma_t$ , i.e.\ $\pi(\gamma_t^h) = \gamma_t$, and its tangent 
+vector field is horizontal.
+
+The notions of the lift of a vector field and a lift of a curve 
+are related to eachother. If $X^h$ on $P$ is the lift of $X$ on 
+$M$, then the integral curve $u_t$ of $X^h$ through a point $u_0$ 
+is a lift of the integral curve $\gamma_t$ of $X$ through 
+$\gamma_0 = \pi(\gamma_0^h)$. Indeed, let $u_t$ be the integral 
+curve of $X^h$ through $u_0$.  Then,
+%
+\begin{displaymath}
+	\pi_\ast X^h_{u_t} f = \pi_\ast\tfrac{d}{dt}f(u_t) = 
+	\tfrac{d}{dt} f(\pi(u_t)) \overset{!}{=} X_{\gamma_t}f = 
+	\tfrac{d}{dt}f(\gamma_t)
+\end{displaymath}
+%
+Since $X^h$ is horizontal and because the last equality implies 
+$\pi(u_t) = \gamma_t$, $\gamma^h_t \equiv u_t$ is a lift of 
+$\gamma_t$.  Note that the set of all horizontal lifts of a curve 
+are the integral curves of the lift of the corresponding vector 
+field.
+
+Let $\gamma_t$ ($0 \leq t \leq 1$) be a curve in $M$ and let $u_0 
+\in \pi^{-1}(\gamma_0)$. There exists a unique lift $\gamma_t^h$, 
+such that $\gamma^h_0 = u_0$. A proof can be found in 
+\cite{kob1996found}, pg.\ 69. Because the lift is unique, there 
+is a unique $u_1 = \gamma^h_1 \in \pi^{-1}(\gamma_1)$. This point 
+$u_1$ is called the \emph{parallel displacement along the curve 
+	$\gamma^h$} of $u_0$. In this way, a mapping is defined
+%
+\begin{equation}
+	\Gamma(\gamma^h) : G_{\gamma_0} \rightarrow G_{\gamma_1} : u = 
+	\gamma^h_0 \mapsto \gamma^h_1
+\end{equation}
+%
+Since the horizontal lift $X^h$ is right invariant, a lifted 
+curve is mapped into another one of the same vector field under 
+the right action of $G$. Hence, one has that
+%
+\begin{equation}
+	\Gamma(\gamma^h) \circ R_g = R_g \circ \Gamma(\gamma^h)\spc.
+\end{equation}
+%
+This then implies that the parallel displacement 
+$\Gamma(\gamma^h)$ is an isomorphism between $G_{\gamma_0}$ and 
+$G_{\gamma_1}$. Indeed, if parallel displacement and right action 
+would not commute, the inverse of $\Gamma(\gamma^h)$ would not be 
+a well-defined mapping.
+
+\subsection{Curvature and the Bianchi identity}
+
+Let $P(M,G)$ be a principal bundle and $\rho$ a representation of 
+$G$ on a vector space $V$.
+%
+\begin{definition}[Pseudotensorial form]
+	A pseudotensorial form of degree $r$ on $P$ of type $(\rho,V)$ 
+	is a $V$-valued $r$-form $\phi$ on $P$ such that
+  %
+	\begin{equation}
+		R_g^\ast \phi = \rho(g^{-1}) \phi \spc, \quad g \in G
+	\end{equation}
+  %
+	The form $\phi$ is called tensorial if it is horizontal, i.e.\
+  %
+	\begin{equation}
+		\phi(X_1,\ldots\,X_r) = 0
+	\end{equation}
+  %
+	whenever at least one of the $X_i$ is vertical.
+\end{definition}
+%
+
+\begin{example}\label{ex:tensorial_skewsymm}
+	Let $\vphi$ be a tensorial form of degree $r$ of type 
+	$(\rho,V)$ on $P$ and let $E$ be the associated bundle 
+	$P\times_G V$. In this example we show that $\vphi$ can be 
+	regarded as an assignment of a multilinear skew-symmetric 
+	mapping
+	%
+	\begin{equation}\label{eq:skewsymm_tens}
+		\tilde{\vphi} : T^{(r,0)}_p M \rightarrow \pi^{-1}_E(p)
+	\end{equation}
+	to each $p \in M$. Namely, define for $X_i \in T_pM$
+	%
+	\begin{equation}
+		\tilde{\vphi}(X_1,\ldots,X_r) \equiv 
+		u(\vphi(X^\ast_1,\ldots,X^\ast_r))
+	\end{equation}
+	where $u \in \pi^{-1}(p)$ and $X^\ast_i \in T_uP$ such that 
+	$\pi_\ast(X^\ast_i) = X_i$. Since $\vphi$ takes its values in 
+	$V$ and $u$ maps elements of $V$ into $\pi^{-1}_E(p)$,  
+	$\tilde{\vphi}(X_i)$ is indeed as proposed. We now show that 
+	this definition is independent of the choice $u \in 
+	\pi^{-1}(p)$ and $X^\ast_i \in T_uP$. Therefore, consider $ua$ 
+	with $a \in G$. We then have $\tilde{\vphi}(X_i) = 
+	(ua)(\vphi_{ua}(Y^\ast_i))$. Since $\vphi$ is a tensorial form 
+	we can forget about vertical components and assume $Y^\ast_i 
+	\in H_{ua}P$. Horizontal subspaces are invariant under the 
+	right $G$-action, so that there exists a $Z^\ast_i = 
+	R_{a^{-1}\ast} Y^\ast_i$ in $H_uP$. By construction 
+	$\pi_\ast(Z^\ast_i) = X_i$ and since $\pi_\ast$ constitutes an 
+	isomorphism between $H_uP$ and $T_pM$, we have $Z^\ast_i = 
+	X^\ast_i$ or $Y^\ast_i = R_{a\ast}X^\ast_i$. This gives us
+	%
+	\begin{displaymath}
+		\tilde{\vphi}(X_i) = (ua)(\vphi(R_{a\ast}X^\ast_i) = 
+		(ua)\rho(a^{-1})\cdot\vphi(X^\ast_i) = u(\phi(X^\ast_i))
+	\end{displaymath}
+	where we used that $(ua)(V) = u(aV)$.
+
+	Conversely, given a skew-symmetric mapping 
+	\eqref{eq:skewsymm_tens} for each $p \in M$, a tensorial form 
+	$\vphi$ of degree $r$ of type $(\rho,V)$ can be defined by
+	%
+	\begin{equation}
+		\vphi(X^\ast_i) \equiv 
+		u^{-1}(\tilde{\vphi}(\pi_\ast(X^\ast_i)))
+	\end{equation}
+	It is easy to check that this is indeed the right tensorial 
+	form.
+\end{example}
+
+Denote by $h : T_uP \rightarrow H_uP : X_u \mapsto hX_u \equiv 
+X^H_u$ the projection operator, which maps a vector field into 
+its horizontal component. If $\phi$ is a pseudotensorial $r$-form 
+on $P$ of type $(\rho,V)$, then one has the following.
+%
+\begin{itemize}
+	\item[(a)] The form $\phi h$ defined by
+		\begin{equation}
+			(\phi h)(X_i) \equiv \phi(hX_i)
+		\end{equation}
+    %
+		is a tensorial $r$-form of type $(\rho,V)$.
+
+		To prove this we first note that $R_g \circ h = h \circ R_g$.  
+		Therefore,
+    %
+		\begin{displaymath}
+			\begin{split}
+	R_g^\ast(\phi h)(X_i) &= (\phi h)(R_g{}_\ast X_i) \\
+	&= \phi(R_g{}_\ast hX_i) \\
+	&= R^\ast_g \phi(hX_i) \\
+	&= \rho(g^{-1}) \phi(hX_i) \\
+	&= \rho(g^{-1}) (\phi h)(X_i)
+			\end{split}
+		\end{displaymath}
+    %
+		Furthermore, since $hX_i = 0$ whenever $X_i$ vertical, one 
+		has the desired result.
+    %
+	\item[(b)] The form $d\phi$ is a pseudotensorial $(r+1)$-form 
+		of type $(\rho,V)$.
+
+		This is shown to be true, by calculating the following.
+    %
+		\begin{displaymath}
+			\begin{split}
+				R_g^\ast(d\phi)(X_i) &= d(R_g^\ast \phi)(X_i) \\
+				&= d(\rho(g^{-1}) \phi)(X_i) \\
+				&= \rho(g^{-1})d\phi(X_i)
+			\end{split}
+		\end{displaymath}
+    %
+		where we used $f^\ast \circ d = d \circ f^\ast$.
+    %
+	\item[(c)] The \emph{exterior covariant derivative} of $\phi$ 
+		is the form $D\phi$ defined by
+    %
+		\begin{equation}
+			D\phi(X_i) \equiv (d\phi h)(X_i) = d\phi(hX_i)
+		\end{equation}
+    %
+		is a tensorial form of type $(\rho,V)$. Hence, $R_g^\ast 
+		D\phi = \rho(g^{-1}) D\phi$ and $D\phi(X_i)=0$ whenever one 
+		of the $X_i$ vertical. This result follows directly from (a) 
+		and (b).
+\end{itemize}
+
+Note that by construction, $\phi \in V \otimes \Omega^r(P)$ and 
+$D\phi \in V \otimes \Omega^{r+1}(P)$ belong to the same 
+representation of $G$: they transform covariantly.
+
+\blankline
+From the definition of a connection $1$-form $\omega \in 
+\mfrak{g} \otimes \Omega(P)$, it is clear that it is a 
+pseudotensorial 1-form of type $(\mrm{Ad},\mfrak{g})$, or simply 
+of type $\mrm{Ad}\spc G$. More precisely it is a consequence of 
+$R_g^\ast \omega = \mrm{Ad}_{g^{-1}} \omega$. It then follows 
+that the exterior derivative $D\omega$ is a tensorial $2$-form of 
+type $\mrm{Ad}\spc G$. It is called the \emph{curvature} of 
+$\omega$ and it is awarded the symbol $\Omega \equiv D\omega$.
+%
+\begin{gather*}
+	\Omega \in \mfrak{g} \otimes \Omega^2(P) \\
+	R_g^\ast \Omega = \mrm{Ad}_{g^{-1}} \Omega
+\end{gather*}
+
+Let $X,Y \in TP$. The \emph{Cartan structure equations} are given 
+by\footnote{For a proof see e.g.\ \cite{kob1996found}, pg.\ 77.
+}
+%
+\begin{equation}\label{eq:StrucEqCurv}
+	d\omega(X,Y) + \tfrac{1}{2}[\omega,\omega](X,Y) = \Omega(X,Y)
+\end{equation}
+which can be rewritten concisely as
+%
+\begin{equation}
+	d\omega + \omega \wedge \omega = \Omega \spc.
+\end{equation}
+%
+Since the connection and curvature forms are $\mfrak{g}$-valued 
+differential forms they can be expanded in a frame $E_a$ as 
+$\omega = E_a \cdot \omega^a$ and $\Omega = E_a \cdot \Omega^a$.  
+By noting that $[\omega,\omega] \equiv [E_a,E_b]\cdot \omega^a 
+\wedge \omega^b$, the structure equations \eqref{eq:StrucEqCurv} 
+are expanded in the same frame as
+%
+\begin{equation}\label{eq:StrucEqCurvComp}
+	d\omega^a + \tfrac{1}{2} c_{bc}^{\spc\spc a} \omega^b \wedge 
+	\omega^b = \Omega^a
+\end{equation}
+
+Taking the exterior derivative of the curvature form and using 
+equation \eqref{eq:StrucEqCurvComp}, one obtains
+%
+\begin{displaymath}
+	d\Omega = E_a \cdot \Omega^a
+	= E_a \cdot \tfrac{1}{2} c_{bc}^{\spc\spc a}
+	(d\omega^b \wedge \omega^c - \omega^b \wedge d\omega^c)
+\end{displaymath}
+%
+Since, $\omega(hX) = 0$ for any vector field $X$ on $P$, we find 
+the \emph{Bianchi identity}
+%
+\begin{equation}
+	D\Omega(X,Y,Z) \equiv 0
+\end{equation}
+for any three vector fields $X, Y, Z$ on $P$.
+
+\blankline
+To conclude this section, the curvature form will be be pulled 
+back onto the base manifold $M$. Remember that given an open 
+covering $\{U_i\}$ of $M$, the local connection forms were given 
+by $\mcal{A}_i \equiv \sigma_i^\ast \omega$. Analogously, the 
+local curvature forms are defined by
+%
+\begin{equation}
+	\mcal{F}_i \equiv \sigma_i^\ast \Omega \spc.
+\end{equation}
+%
+From Cartan's structure equations it follows that
+%
+\begin{equation}\label{eq:LocalStrucEqCurv}
+	\mcal{F}_i = d\mcal{A}_i + \mcal{A}_i \wedge \mcal{A}_i \spc.
+\end{equation}
+%
+On overlapping regions $U_i \cap U_j \neq \emptyset$ two local 
+curvature forms, pulled back by different section $\sigma_i(p)$ 
+and $\sigma_j(p) = \sigma_i(p)t_{ij}(p)$, are related by
+%
+\begin{equation}\label{eq:GaugeTrafo_F}
+	\mcal{F}_j = \mrm{Ad}_{t_{ij}^{-1}} \mcal{F}_i \spc.
+\end{equation}
+%
+This result follows basically from the proof for the 
+transformation behaviour of the local connection forms, i.e.\ see 
+\cite{kob1996found}, pg. 66 and by noting that the curvature form 
+$\Omega$ is horizontal. The local version of the Bianchi identity 
+is found by taking the exterior derivation of 
+\eqref{eq:LocalStrucEqCurv}, i.e.\
+%
+\begin{displaymath}
+	d\mcal{F}_i = d\mcal{A}_i \wedge \mcal{A}_i - \mcal{A}_i \wedge 
+	d\mcal{A}_i
+\end{displaymath}
+%
+Since $d\mcal{A}_i$ is a (Lie algebra valued) $2$-form, the RHS 
+is just the bracket $[d\mcal{A}_i,\mcal{A}_i]$ and it behaves as 
+a commutator. Hence, $[d\mcal{A}_i,\mcal{A}_i] = -[\mcal{A}_i,
+d\mcal{A}_i] = [\mcal{A}_i, \mcal{A}_i \wedge \mcal{A}_i] - 
+[\mcal{A}_i, \mcal{F}_i]$. Since
+%
+\begin{displaymath}
+	[\mcal{A}_i, \mcal{A}_i \wedge \mcal{A}_i]
+	= \mcal{A}_i \wedge \mcal{A}_i \wedge \mcal{A}_i -
+	\mcal{A}_i \wedge \mcal{A}_i \wedge \mcal{A}_i = 0
+\end{displaymath}
+%
+the well known form of the Bianchi identity is found, i.e.\
+%
+\begin{equation}
+	d\mcal{F}_i + [\mcal{A}_i, \mcal{F}_i] = 0 \spc.
+\end{equation}
+%
+That this is in a way the pulled back version of the Bianchi 
+identity introduced before for the curvature form on the 
+principal bundle is not too difficult to understand. In deriving 
+the Bianci identity for a principal bundle, the crucial 
+ingredient was considering the exterior derivative of Cartan's 
+structure equations.  It is an easy exercise to check that 
+pulling these back on the base manifold gives you the local 
+Bianchi identities.
+
+From now on, the index $i$ will be omitted. Note that this index 
+refers to the section $\sigma_i$ which is used to pullback the 
+connection and curvature form onto a region $U_i$ of $M$. One 
+changes index $i \rightarrow j$ with the given transformation 
+rules \eqref{eq:GaugeTrafo_A} and \eqref{eq:GaugeTrafo_F}. This 
+is the transformation behaviour when a section is transformed 
+into another section (using the transition functions) and it does 
+not change the principal bundle at all. This transformation is 
+governed by the right action of the structure group on the fibre 
+and we call them \emph{gauge transformations}. The connection 
+form $\mcal{A}$ is called the gauge field and $G$ the gauge 
+group. So although we do ``forget'' about the index we do 
+remember its existence: different but equivalent sections are 
+related by gauge transformations and $\mcal{A}$ and $\mcal{F}$ 
+transform as prescribed.
+
+\subsection{Induced connection on associated bundles}
+
+Let $P(M,G)$ be a principal bundle and $\Gamma$ a connection on 
+$P$. Denote by $E$ the associated fibre bundle with fibre $F$, 
+i.e.\ $E = P \times_G F$. Consider then the element $w = [u,\xi] 
+\in E$ that lies in the fibre $F_p$, hence $\pi_E(w) = \pi(u) = 
+p$. The vertical subspace $V_wE \subset T_wE$ is defined as the 
+vector space that is tangent to the fibre $F_p$. Since at any 
+point $w \in E$ the fibre $F_p$ is a manifold of dimension $\dim 
+F$, one has that $\dim V_wE = \dim F$.
+
+Let us now define the horizontal subspaces of $TE$. Consider the 
+natural projection $P \times F \rightarrow E$, i.e.\ $(u,\xi) 
+\mapsto [u,\xi]$. Fixing $\xi \in F$ then defines a mapping
+\begin{equation}
+	\xi : P \rightarrow E : u \mapsto [u,\xi]
+\end{equation}
+Any two elements $v,u \in G_p$ can be connected by an element $a 
+\in G$, i.e.\ $v = ua$. This implies that they will be mapped 
+into the same fibre $F_p$; $\xi(G_p) \subset F_p$. On the other 
+hand, for elements $u,v$ belonging to different fibres in $P$ 
+there does not exist an $a \in G$ connecting them and they will 
+get mapped in different fibres of $E$. The horizontal subspace 
+$H_wE$ is then defined as the image of $H_uP$ under $\xi$, i.e.\ 
+$H_wE \equiv \xi_\ast H_uP$ ($w=\xi(u)$). This definition is 
+clearly independent of the choice $(u,\xi) \in P \times F$.  
+Indeed, choose another pair $(v,\eta)$, such that $\eta(v) = w$.  
+This means that $[v,\eta] = [u,\xi]$, hence there exists some $a 
+\in G$ such that $(v,\eta) = (ua, a^{-1}\xi)$. It follows that 
+$\eta(u) = [u,\eta] = [ua^{-1},\xi] = \xi(ua^{-1})$ or $\eta(ua) 
+= \xi(u)$. One then finds
+%
+\begin{displaymath}
+	T_wE \equiv \xi_\ast H_uP = \eta_\ast R_{a\ast} H_uP = 
+	\eta_\ast H_vP
+\end{displaymath}
+which proves our assertion.
+
+\blankline
+A curve in $E$ is said to be horizontal if its generating vector 
+field is horizontal at each point along the curve. Let $\gamma_t$ 
+be a curve in $M$. A curve $\gamma^h_t$ in $E$ is a horizontal 
+lift of $\gamma_t$ if it is horizontal and $\pi_E(\gamma^h_t) = 
+\gamma_t$. Consider again the mapping $\xi : P \rightarrow E : u 
+\mapsto [u,\xi]$ and let $u^h_t$ be the horizontal lift of 
+$\gamma_t$ in $P$. By definition, $\xi_\ast$ maps the generating 
+vector field of $u^h_t$ into a horizontal field in $TE$. It then 
+follows that the curve $\gamma^h_t \equiv [u^h_t, \xi]$ is a 
+horizontal lift of $\gamma_t$ in $E$. Because $\xi_\ast$ is an 
+isomorphism between $HP$ and $HE$, every horizontal lift in $E$ 
+can be obtained in this way.
+
+As in the case of principal bundles, parallel transport in 
+associated bundles is also governed by horizontal curves. Let 
+$\gamma_t$ be a curve in $M$ and let $\gamma^h_t = [u^h_t, \xi]$ 
+be the horizontal lift in $E$. Let $s(p)$ be a section in $E$ 
+such that $s(\gamma_0) = \gamma^h_0$. The parallel displacement 
+of $s(\gamma_0) \in F_{\gamma_0}$ along $\gamma_t$ is given by 
+$\gamma^h_t$, for any $t$. Also, a section $s(\gamma_t) = 
+[u^h_t,\xi(t)]$ is parallel transported if $\xi(t)$ is constant 
+along $\gamma_t$, as this means that $s(\gamma_t)$ will be a 
+horizontal lift of $\gamma_t$.
+
+\section{Linear connections}
+
+\subsection{Soldering}
+
+Let $P(M,G)$ be a principal fibre bundle with $G$ the general 
+linear group, so that $P$ is the bundle of linear frames $LM$.  
+Let $TM = LM \times_G \mbb{R}^n$. Remember that given a frame $u 
+\in P$ and $\pi(u) =p$, $u : \mbb{R}^n \rightarrow T_p M$ is a an 
+isomorphism.
+
+The \emph{canonical form} or \emph{solder form} $\theta$ on $LM$ 
+is the $\mbb{R}^n$-valued 1-form defined by
+%
+\begin{equation}
+	\theta(X) \equiv u^{-1}(\pi(X)) \quad \mathrm{for}\ X \in T_uLM
+\end{equation}
+Note that $(R^\ast_a \theta)(X) = \theta(R_{a\ast}X) = 
+a^{-1}u^{-1}(\pi(X)) = a^{-1} \theta(X)$. Since $\pi(X) = 0$ for 
+$X$ vertical, one concludes that the solder form is a tensorial 
+1-form of type $(Gl(n,\mbb{R}),\mbb{R}^n)$. Furthermore, in the 
+sense of example \ref{ex:tensorial_skewsymm}, it is the identity 
+transformation on $T_pM$. Indeed the associated mapping is given 
+by $\tilde{\theta}(X) = u(u^{-1}(\pi(X^\ast)) = X$, for $X \in 
+T_pM$.
+
+\subsection{Covariant derivative on associated vector bundles}
+
+In this subsection we focus on the cases where $F$ is a vector 
+space $V$ and $G$ a matrix group that acts on $F$ through a 
+representation $\rho$.
+
+[The sections of $E$ do form a vector space of infinite 
+dimension]
+
+Let $\vphi$ be a section of $E$ defined on $\gamma_t \in M$, so 
+that $\pi_E \circ \vphi(\gamma_t) = \gamma_t$. Denote by 
+$\dot{\gamma}_t$ the tangent vector field to $\gamma_t$. The 
+\emph{covariant derivative} of $\vphi$ in the direction of $X 
+\equiv \dot{\gamma}_t$ is given by
+%
+\begin{equation}
+	\nabla_{X} \vphi \equiv \lim_{h \rightarrow 0}
+	\tfrac{1}{h}[ \Gamma(\gamma^h)^{t+h}_t (\vphi(\gamma_{t+h}))
+	- \vphi(\gamma_t) ]
+\end{equation}
+%
+where $\Gamma(\gamma^h)^s_t : \pi^{-1}_E(\gamma_s) \rightarrow 
+\pi^{-1}_E(\gamma_t)$ is the parallel displacement of the fibre 
+at $\gamma_s$ onto the fibre at $\gamma_t$. This can be rewritten 
+in an equivalent form as follows. Let $\phi(\gamma_t) = 
+[\sigma(t), \eta(t)] = [u^h_t a(t), \eta(t)] = [u^h_t, \xi(t)]$, 
+where $u^h_t$ is a horizontal lift of $\gamma_t$ in $E$ and $a(t) 
+\in G$. Consider the horizontal lift of $\gamma_t$ through the 
+element $\vphi(\gamma_{t+h}) = [u^h_{t+h}, \xi(t+h)]$, i.e.\ 
+$[u^h_t, \xi|_{t+h}]$. It then follows that
+%
+\begin{displaymath}
+	\nabla_X \vphi = \lim_{h \rightarrow 0} \tfrac{1}{h} ([u^h_t, 
+	\xi|_{t+h}] - [u_t, \xi|_t]) = [u^h_t, \tfrac{d}{dt} \xi(t)]
+\end{displaymath}
+
+The covariant derivative is ultimately a sum between two elements 
+in the fibre $F_{\gamma_t}$, hence it is also an element of this 
+same fibre. This happens smoothly along the curve $\gamma_t$ and 
+one concludes that given a section $\phi$ in a vector bundle, its 
+covariant derivative is a section of the same type. Hence, given 
+the fact that $\phi$ transforms through the representation $\rho$ 
+under $G$, its covariant derivative transforms through the same 
+representation, i.e.\ \emph{covariant}.
+
+Note that the definition of a covariant derivative explicitely 
+assumes the sum operation, which is defined in vector bundles.
+
+\blankline
+The covariant derivative can be given a local expression as follows.  
+Consider therefore a section $\sigma(t) : U \rightarrow P$, such that the 
+horizontal lift of $\gamma_t$ in $P$ can be written as
+%
+\begin{displaymath}
+	u^h_t = \sigma(t) a_t
+\end{displaymath}
+%
+where $a_t$ is a curve in $G$. Define a section $e_a(p)$ of $E$ as
+%
+\begin{displaymath}
+	e_a(p) = [\sigma(p), \hat{e}_a]
+\end{displaymath}
+%
+where $\{\hat{e}_a\}$ is a basis for $F$, hence $(\hat{e}_a)^b = 
+\delta^a_b$. Then this section along the curve $\gamma_t$ is given by 
+$e_a(t) = [\sigma(t), \hat{e}_a] = [u^h_t a^{-1}_t, \hat{e}_a] = [u^h_t, 
+a^{-1}_t \hat{e}_a]$. The covariant derivative of $e_a$ in the direction 
+$X=\dot{\gamma}_t$ is given by (remember that $G$ acts through a matrix 
+representation on $F$)
+%
+\begin{align*}
+	\nabla_X e_a &= [u^h_t, \tfrac{d}{dt}(a_t \hat{e}_a)] \\
+	&= [u^h_t, -a^{-1}_t \dot{a}_t a^{-1}_t \hat{e}_a] \\
+	&= [u^h_t a^{-1}_t, -\dot{a}_t a^{-1}_t \hat{e}_a]
+\end{align*}
+%
+Since the curve $\sigma(t)a_t$ is horizontal, one has that 
+$\dot{a}_t a^{-1}_t = -\mcal{A}(\dot{\gamma}_t)$.\footnote{See 
+	\cite{nakahara2003geometry}, pg.\ 69.} This $\mfrak{g}$-valued 
+1-form can be explicitely written out as 
+$\mcal{A}(\dot{\gamma}_t) = \mcal{A}^a_{\spc b\mu} 
+dx^\mu(\dot{\gamma}^\nu \pd_\nu) = \mcal{A}^a_{\spc b\mu} 
+\dot{\gamma}^\mu$. Pluging this information into the definition 
+of the covariant derivative, one finds
+%
+\begin{equation}
+	\nabla_X e_a = [\sigma(t), \dot{\gamma}^\mu \mcal{A}^b_{\spc 
+		a\mu} \hat{e}_b ]=:\dot{\gamma}^\mu \mcal{A}^b_{\spc a\mu} 
+	e_b
+\end{equation}
+
+In the special case of $\gamma(t)$ being a coordinate curve, 
+i.e.\ $\gamma^\mu_t = x^\mu_t$ with $\mu$ a fixed number, $X = 
+\pd_\mu$ and covariant differentiation reduces to
+%
+\begin{displaymath}
+	\nabla_\mu e_a = \mcal{A}^b_{\spc a\mu} e_b
+\end{displaymath}
+
+Then let us consider a generic section of $E$, i.e.\ $\vphi(p) = 
+[\sigma(p), \xi^a(p) \hat{e}_a] = \xi^a(p) e_a$ with $\xi(p) = 
+\xi^a(p) \hat{e}_a \in F$.
+The covariant derivative along the curve $\gamma_t$ is then found 
+to be
+%
+\begin{displaymath}
+	\nabla_X \vphi = \nabla_X (\xi^a(t) e_a) = X(\xi^a(t))e_a + 
+	\xi^a(t) \nabla_X e_a
+\end{displaymath}
+where we used the chain rule for covariant differentiation and 
+noted that $\xi^a(p)$ is a set of functions on $M$. Using the 
+results obtained before, the covariant derivative is
+%
+\begin{equation}
+	\nabla_X \vphi = \dot{\gamma}^\mu (\pd_\mu \xi^a + 
+	\mcal{A}^b_{\spc a\mu} \xi^a) e_b
+\end{equation}
+
+The result can be extended to find the covariant differentiation 
+of tensor products of sections in $E$. Let $\psi(p) = [\sigma(p), 
+\xi^{ab}\hat{e}_a \otimes \hat{e}_b] = \xi^{ab} e_a \otimes e_b$, 
+an element of $E \otimes E$.\footnote{The tensor product of two 
+	fibre bundles that have the same base manifold is constructed 
+	by considering at each base point the tensor product of the 
+	fibres. See for example \cite{nakahara2003geometry}.} Then 
+invoking the chain rule, one finds
+%
+\begin{align*}
+	\nabla_X \psi &= \nabla_X (\xi^{ab} e_a \otimes e_b) \\
+	&= X(\xi^{ab})e_a \otimes e_b + \xi^{ab} \nabla_X e_a \otimes 
+	e_b + \xi^{ab} e_a \otimes \nabla_X e_b \\
+	&= X^\mu \pd_\mu\xi^{ab} e_a \otimes e_b + \xi^{ab} X^\mu 
+	\mcal{A}^c_{~a\mu} e_c \otimes e_b + \xi^{ab} X^\mu 
+	\mcal{A}^c_{~b\mu} e_a \otimes e_c~,
+\end{align*}
+so that
+%
+\begin{equation}
+	\nabla_X \psi = \dot{\gamma}^\mu (\pd_\mu\xi^{ab} + 
+	\mcal{A}^a_{~c\mu}\xi^{cb} + \mcal{A}^b_{~c\mu}\xi^{ac}) e_a 
+	\otimes e_b~.
+\end{equation}
+This is straightforwardly generalized for higher order tensor 
+products.
+
+Note that to obtain local expressions, one has to choose a 
+section in $P$. From the definition of the covariant derivative 
+however, it is clear that the latter is independent of the 
+section chosen: it is an intrinsic notion, once a connection in 
+$P$ is chosen.
+
+\begin{example}
+	Linear connection and spin connection
+\end{example}
+
+\appendix
+\section{Vector valued differential forms}
+
+Let $M$ be an $m$-dimensional manifold and $V$ a vector space 
+spanned by $n$ basis elements $E_a$. Let $\zeta$ and $\eta$ be 
+respectively a vector valued $p$-form and $q$-form, i.e.\ $\zeta 
+\in V \otimes \Omega^p(M)$ and $\eta \in V \otimes \Omega^q(M)$.  
+This can be expanded as follows,
+%
+\begin{gather*}
+	\zeta = E_a \cdot \zeta^a \spc;
+	\quad \zeta^a \in \Omega^p(M)\\
+	\eta = E_a \cdot \eta^a \spc;
+	\quad \eta^a \in \Omega^q(M)
+\end{gather*}
+%
+The wedge product of two vector valued differential forms is 
+defined as\footnote{The tensor product $E_a \otimes E_b$ will 
+	also be denoted as just $E_a E_b$.}
+%
+\begin{equation}
+	\zeta \wedge \eta \equiv
+	E_a \otimes E_b \cdot \zeta^a \wedge \eta^b
+\end{equation}
+%
+The exterior derivative is defined to be
+%
+\begin{equation}
+	d\zeta \equiv E_a \cdot d\zeta^a
+\end{equation}
+
+From this it follows that
+%
+\begin{equation}
+	\begin{split}
+		d(\zeta \wedge \eta) &= E_a \otimes E_b \cdot
+		d\zeta^a \wedge \eta^b + (-1)^p \zeta^a \wedge d\eta^b \\
+		&= d\zeta \wedge \eta + (-1)^p \zeta \wedge d\eta
+	\end{split}
+\end{equation}
+%
+Note that for vector valued differential forms, one does not have 
+a relation between $\zeta \wedge \eta$ and $\eta \wedge \zeta$ 
+because of the tensor product in $E_a \otimes E_b$.
+
+\blankline
+For the following, we consider the case when $V$ is a Lie algebra 
+$\mfrak{g}$, hence when $\zeta$ and $\eta$ are $\mfrak{g}$-valued 
+differential forms. A Lie bracket is defined as
+%
+\begin{equation}
+	[\zeta, \eta] \equiv [E_a,E_b] \cdot
+	\zeta^a \wedge \eta^b
+	= c_{ab}^{\spc\spc c}E_c \cdot
+	\zeta^a \wedge \eta^b
+\end{equation}
+%
+where $[E_a,E_b]$ denotes the usual Lie bracket on the algebra.
+From the definition of the wedge product one has that
+%
+\begin{equation}\label{App.eq:RelBraWedgeDF}
+	[\zeta, \eta] = \zeta \wedge \eta
+	-(-1)^{pq} \eta \wedge \zeta
+\end{equation}
+%
+This shows that the bracket $[\cdot, \cdot]$ is a graded 
+commutator. It is an anticommutator when $pq$ is odd, being a 
+commutator for $pq$ even.
+
+To conclude, consider the example of a Lie algebra valued 
+$1$-form $\omega$. From \eqref{App.eq:RelBraWedgeDF} it follows 
+that
+%
+\begin{equation}
+	[\omega,\omega] = 2 \omega \wedge \omega
+\end{equation}
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{../../References/All.bib}
+
+\end{document}

@@ -1,0 +1,196 @@
+% chktex-file 1
+%Font settings
+\usepackage{lmodern}	%latin computer modern
+
+%Encoding
+\usepackage[T1]{fontenc} % T1 default, LGR for greek
+\usepackage[utf8]{inputenc}
+
+%Language settings
+\usepackage[portuguese,main=english,shorthands=off]{babel}
+  %Shorthands are turned off to not interfere with tikzcd
+%\usepackage[greek]{babel}
+%\languageattribute{greek}{polutoniko} % see cbgreek.pdf
+
+%KOMA-script general settings
+%\flushbottom
+\addtokomafont{disposition}{%
+  \mathversion{bold}%
+  \fontfamily{lmr}\fontseries{b}\fontshape{n}\selectfont}
+\addtokomafont{subsection}{%
+  \fontseries{bx}\fontshape{it}\selectfont}
+\addtokomafont{caption}{\small}
+\setkomafont{captionlabel}{%
+  \fontfamily{lmss}\fontseries{sbc}\fontshape{n}\selectfont}
+\setcapindent{1em}
+\setcapwidth[c]{0.9\textwidth}
+\setcapmargin{0.05\textwidth}
+
+%KOMA-script headings
+\usepackage[autooneside=false,headsepline]{scrlayer-scrpage}
+\DeclareMathVersion{sansmath}
+\SetSymbolFont{letters}{sansmath}{OML}{cmbrm}{b}{it}
+\SetSymbolFont{symbols}{sansmath}{OMS}{cmbrs}{m}{n}
+\addtokomafont{pagehead}{%
+  \mathversion{sansmath}%
+  \fontfamily{lmss}\fontseries{b}\fontshape{sl}\selectfont\small}
+\pagestyle{scrheadings}
+\clearscrheadfoot%
+\automark[section]{chapter}
+\lehead{\headmark}
+\rohead{\headmark}
+%\ifoot{DRAFT:~\today}
+\ofoot{\pagemark}
+
+%Color
+\usepackage[dvipsnames]{xcolor}
+
+%KOMA-script chapter formatting
+\newcommand{\myrule}{\smash{\rule[-0.8pt]{1pt}{15.5pt}}}
+\renewcommand*{\chapterformat}{%
+  \thechapter\enskip\myrule\enskip}
+\renewcommand*{\chapterheadendvskip}{\vspace*{%
+  12\baselineskip plus 0.5\baselineskip minus 0.7\baselineskip}}
+
+%KOMA-script dictum formatting
+\renewcommand*{\dictumwidth}{0.618\textwidth}
+\setkomafont{dictumtext}{%
+  \fontfamily{lmss}\fontseries{m}\fontshape{sl}\selectfont\small}
+\newcommand*{\dictumgreek}{%
+  \fontencoding{LGR}\fontfamily{cmr}\fontseries{b}\fontshape{li}
+  \selectfont\small}
+\setkomafont{dictumauthor}{%
+  \fontfamily{lmr}\fontseries{m}\fontshape{scsl}
+  \selectfont\scriptsize}
+\renewcommand*{\dictumrule}{}
+\renewcommand*{\dictumauthorformat}[1]{---\ #1}
+\newcommand*{\dictumendskip}{\vspace*{%
+  3\baselineskip plus 0.15\baselineskip minus 0.2\baselineskip}}
+
+%Microtypographic extensions
+\usepackage[%
+  activate={true, nocompatibility},
+  tracking=true,
+  kerning=true
+]{microtype}
+    
+%AMS packages
+\usepackage{mathtools} %Includes amsmath
+
+%Math font settings
+%Default settings:
+\usepackage{amsfonts}
+\usepackage{mathabx} %Mathabx symbols - enhancement of font
+
+%Extra math stuff
+\usepackage{dsfont} %Blackboard symbols - use \mathds
+\usepackage{mathrsfs} %Script symbols - use \mathsc
+
+\usepackage{amsthm}
+\usepackage{thmtools}
+
+\declaretheoremstyle[
+  bodyfont=\normalfont%
+]{definition}
+\declaretheorem[
+  style=definition,
+  numbered=no
+]{definition}
+\declaretheorem[numberwithin=section]{proposition}
+\declaretheorem[style=remark,numberwithin=section,qed=$\lozenge$]{remark}
+\let\proof\relax
+\declaretheorem[style=remark,numbered=no,qed=$\square$]{proof}
+\declaretheoremstyle[
+  bodyfont=\normalfont%
+]{example}
+\declaretheorem[
+  style=example,
+  numbered=no
+]{example}
+
+%Math-related tweaking
+\allowdisplaybreaks% math envs. are broken up over pages
+\numberwithin{equation}{section} %numbering of equations
+\newcommand{\nla}{\mathrel{\hphantom{=}}}
+%nla = new line align
+%Ensures vertical alignment when breaking up a long equations 
+%in align/split environment. \mathrel is to assure consistent 
+%spacing around "=". Should be trailed by "{}" if next symbol 
+%is binary operator to have consistent spacing around this 
+%symbol.
+
+%Useful commands
+\newcommand{\blankline}{\vspace{\baselineskip}}
+
+%Tensor package - to facilitate index placement
+\usepackage{tensor}
+\newcommand{\ind}{\indices}
+
+%Tikz
+\usepackage{tikz}
+%Tikz-cd - Commutative diagrams (Tikz)
+\usetikzlibrary{cd}
+\tikzset{%document wide settings
+  %append settings to 'every label':
+  /tikz/commutative diagrams/labels={font=\normalsize},
+  %append options to the style 'every arrow'
+  /tikz/commutative diagrams/arrows={-stealth}
+}
+\usetikzlibrary{shapes}
+%\usetikzlibrary{backgrounds}
+%\tikzstyle{background grid}=[draw, black!50,step=0.75cm]
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{colorbrewer}
+
+%Line spread
+\usepackage{setspace}
+\setstretch{1.11}
+
+\usepackage{enumitem}
+\setlist[itemize]{%
+	noitemsep,
+	topsep=3pt
+}
+
+\usepackage{scalerel}
+
+%User-defined commands
+%---------------------
+
+%General stuff
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\csch}{csch}
+\newcommand{\1}{\mathds{1}}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\ip}{\rfloor}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\pd}{\partial}
+\newcommand{\mring}{\mathring}
+\newcommand{\dal}{\raisebox{-1.73pt}{%
+    \scaleobj{2.07}{\square}\hspace{-0.1111em}}}
+\newlength{\eqAlignWidth}
+\settowidth{\eqAlignWidth}{${}={}$}
+%---
+
+%Comment environment
+\usepackage{comment}
+
+%Natbib package - bibliography settings
+\usepackage[square,numbers,sort&compress]{natbib}
+\setlength{\bibsep}{6pt}
+
+\usepackage{bigfoot}
+
+%Hyperref
+%\usepackage[%
+%  hidelinks,
+%  hyperfootnotes=false%
+%]{hyperref}
+
+%Appendix package
+\usepackage[title,titletoc]{appendix}

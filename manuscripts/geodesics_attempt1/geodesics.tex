@@ -1,0 +1,180 @@
+\documentclass[10pt]{article}
+
+%Package declarations
+%--------------------
+\usepackage{setspace}
+\setstretch{1.2}
+\usepackage[a4paper]{geometry}
+\geometry{left=3.5cm,right=3.5cm,top=3cm,bottom=3cm}
+
+\usepackage[english]{babel}
+\usepackage{color}
+
+\usepackage{../Tex_files/preamble_one}
+
+\numberwithin{equation}{section}
+
+\author{}
+\title{Geodesics: an attempt}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Consider a homogeneous manifold $M = G/H = \{gH | g \in G\}$.  
+Assume that $M$ is reductive, i.e.\ there exists a subspace 
+$\mfrak{p} \simeq T_p M \in \mfrak{g}$ such that $\mfrak{g} = 
+\mfrak{h} \oplus \mfrak{p}$ and $[\mfrak{h},\mfrak{p}] \subset 
+\mfrak{p}$. Let $o = H$ be the origin of $M$. The left action of 
+$G$ on itself induces a left action of $G$ on $M$, that is
+%
+\begin{displaymath}
+	\lambda_g : M \rightarrow M : g_0 H \mapsto g g_0 H
+\end{displaymath}
+This action is transitive since the left action of $G$ on itself 
+is transitive. Lastly, consider the set of right invariant vector 
+fields $\{X_a\} (a = 1\ldots \dim G)$, which span the Lie algebra 
+$\mfrak{g}$. They generate the left action of $G$ on itself, 
+i.e., if $a_t$ is the integral curve of $\epsilon^a X_a$ through 
+$e$, $a_t = \exp (t \epsilon^a X_a)$.
+
+Then let us define the geodesics $\gamma(t)$ through $o \in M$ as 
+the curves obtained by considering the left action $G$ on $o$,
+%
+\begin{equation}
+	\gamma(t) = a_t(o) = \exp(t \epsilon^a X_a) o
+\end{equation}
+
+The tangent vector field to $\gamma(t)$ is left invariant under 
+the 1-parameter group $a_t$, as we show now. Consider
+this tangent vector field $\dot{\gamma}$
+%
+\begin{displaymath}
+	\dot{\gamma}(t)f = \tfrac{d}{dt} f(\gamma(t))
+\end{displaymath}
+where $f$ is an arbitrary function along $\gamma(t)$. Left 
+translating $\dot{\gamma}$ then results in
+%
+\begin{displaymath}
+	(\lambda_{a_s \ast} \dot{\gamma}(t))f = \dot{\gamma}(t)(f\circ 
+	\lambda_{a_s}) = \tfrac{d}{dt} f(a_{s+t}(o)) = 
+	\dot{\gamma}(s+t)
+\end{displaymath}
+
+\section{An attempt: de Sitter spacetime}
+
+Inspired by the introduction, we define a geodesic through $p$ as 
+a curve which is of the form $\gamma(t) = a_t (p)$. This implies 
+that parallel transport is defined through left translation, 
+canonically given for de Sitter spacetime.
+
+Let $Y=Y^\mu(x) \pd_\mu$ be a vector field defined on some open 
+subset of $dS$. We translate it from $x$ to $x' = g(x)$ where $g 
+= \exp(\epsilon^a \xi_a)$. For $f$ an arbitrary function on $dS$, 
+one has
+%
+\begin{displaymath}
+	Y^\mu(x)\pd_\mu \mapsto (\lambda_g Y)^\mu(x')\pd_\mu' f
+	= Y^\nu(x)\frac{\pd x'^\mu}{\pd x^\nu} \pd_\mu' f
+\end{displaymath}
+
+We are interested in finding differential equations to be 
+fulfilled by geodesics, hence we consider infinitesimal left 
+translations. i.e.\
+%
+\begin{equation}
+	(\lambda_g Y)^\mu(x + \Delta x) = Y^\lambda \pd_\lambda (x^\mu 
+	+ \Delta x^\rho \delta^a_\rho \xi^\mu_a(x))
+\end{equation}
+
+A covariant derivative is then defined in the usual way, that is
+%
+\begin{displaymath}
+	\nabla_\nu Y = \lim_{\Delta x^\nu} \tfrac{1}{\Delta x^\nu} 
+	(Y^\mu(x + \Delta x) - (\lambda_g Y)^\mu(x + \Delta x))\pd_\mu
+\end{displaymath}
+%
+which is found to be equal to
+%
+\begin{equation}
+	\nabla_\nu Y = (\pd_\nu Y^\mu(x) - Y^\lambda \pd_\lambda 
+	\xi^\mu_\nu(x)) \pd_\mu
+\end{equation}
+It is easily verified that the covariant derivative of $Y$ in the 
+direction of $Z$ is given by
+%
+\begin{equation}
+	\nabla_Z Y = Z^\nu \nabla_\nu Y = Z^\nu (\pd_\nu Y^\mu(x) - 
+	Y^\lambda \pd_\lambda \xi^\mu_\nu(x)) \pd_\mu
+\end{equation}
+%
+
+This leaves us in a position where we can define geodesics: 
+\emph{geodesics are curves $\gamma(t)$ such that its tangent 
+	vector field is parallel transported along the curve, under 
+	left de Sitter translations}. Let $x^\mu(t)$ be the coordinates 
+of $\gamma(t)$. Since the defining differential equation for a 
+geodesic is $\nabla_{\dot{\gamma}(t)} \dot{\gamma}(t) \equiv 0$, 
+we have in components that
+%
+\begin{equation}\label{eq:geod_ltrans_dS}
+	\ddot{x}^\mu - \dot{x}^\nu \dot{x}^\lambda \pd_\lambda 
+	\xi^\mu_a \delta^a_\nu = 0
+\end{equation}
+
+Before we compare this result with the usual geodesic equation, 
+i.e.\ when parallel transport is defined w.r.t.\ the Levi-Civita 
+connection, we make \eqref{eq:geod_ltrans_dS} explicit in 
+stereographic coordinates. Therefore we calculate the derivative 
+of $\xi^\mu_a = -\mathfrak{s} \delta^\mu_a - (4 l^2)^{-2} 
+(2\eta_{a\rho} x^\rho x^\mu - \sigma^2 \delta^\mu_a)$ w.r.t.\ the 
+coordinates, that is
+%
+\begin{displaymath}
+	\pd_\lambda \xi^\mu_a = -\tfrac{1}{4l^2} (2\eta_{a\lambda}x^\mu 
+	+ 2\eta_{a\rho}x^\rho\delta^\mu_\lambda - 
+	2\eta_{\lambda\sigma}x^\sigma\delta^\mu_a)
+\end{displaymath}
+%
+Substituting for \eqref{eq:geod_ltrans_dS}, then gives
+%
+\begin{equation}
+	\ddot{x}^\mu + \tfrac{1}{4l^2} \dot{x}^\nu \dot{x}^\lambda 
+	\eta_{\nu\lambda} x^\mu = 0
+\end{equation}
+According to our definition of parallel transport through (left) 
+de Sitter translations, these are the differential equations in 
+stereographic coordinates, whose solutions are geodesics on 
+$(A)dS$.
+
+\section{Comparison with the standard defintion}
+
+To compare with the usual definition of geodesics in 
+pseudo-Riemannian spacetimes, let us remind that the defining 
+differential equations are given by
+%
+\begin{equation}
+	\ddot{x}^\mu + \dot{x}^\nu \dot{x}^\lambda 
+	\Gamma^\mu_{\lambda\nu} = 0
+\end{equation}
+where, for $(A)dS$ and using stereographic coordinates, the 
+Levi-Civita connection is locally expressed as
+%
+\begin{displaymath}
+	\Gamma^\mu_{\lambda\nu} = (\delta^\mu_\nu \delta^\sigma_\lambda
+	+ \delta^\mu_\lambda \delta^\sigma_\nu - \eta^{\mu\sigma} 
+	\eta_{\lambda\nu}) \pd_\sigma \ln |\Omega|
+\end{displaymath}
+and $\Omega(x) = (1+\tfrac{\mathfrak{s}\sigma^2}{4l^2})^{-1}$.
+
+Some algebra then gives us the explicit differential equations,
+%
+\begin{equation}
+	\ddot{x}^\mu - \tfrac{\mathfrak{s}\Omega}{4l^2} (4\dot{x}^\mu 
+	\dot{x}^\sigma \eta_{\sigma\kappa} x^\kappa - \dot{x}^\nu 
+	\dot{x}^\lambda \eta_{\lambda\nu} x^\mu) = 0
+\end{equation}
+
+\end{document}

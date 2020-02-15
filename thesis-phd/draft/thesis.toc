@@ -1,0 +1,50 @@
+\select@language {english}
+\select@language {portuguese}
+\select@language {english}
+\contentsline {chapter}{\nonumberline Acknowledgments}{ix}
+\contentsline {chapter}{\numberline {1}Prolegomena}{1}
+\contentsline {chapter}{\numberline {2}Preliminaries}{5}
+\contentsline {section}{\numberline {2.1}Differentiable manifolds}{5}
+\contentsline {subsection}{\numberline {2.1.1}Topological spaces and differentiable atlases}{5}
+\contentsline {subsection}{\numberline {2.1.2}Tensor fields}{8}
+\contentsline {subsection}{\numberline {2.1.3}Differential forms}{12}
+\contentsline {subsection}{\numberline {2.1.4}One-parameter groups of transformations}{14}
+\contentsline {section}{\numberline {2.2}Lie groups and Lie algebras}{15}
+\contentsline {subsection}{\numberline {2.2.1}Generalities}{16}
+\contentsline {subsection}{\numberline {2.2.2}Matrix groups}{19}
+\contentsline {section}{\numberline {2.3}Principal fibre bundles}{21}
+\contentsline {section}{Appendix \numberline {2.A}Lie algebra-valued differential forms}{24}
+\contentsline {chapter}{\numberline {3}Cartan geometry}{27}
+\contentsline {section}{\numberline {3.1}Ehresmann connections}{28}
+\contentsline {section}{\numberline {3.2}Klein geometry}{32}
+\contentsline {section}{\numberline {3.3}Cartan geometry}{35}
+\contentsline {section}{\numberline {3.4}Relation between Ehresmann and Cartan connections}{40}
+\contentsline {subsection}{\numberline {3.4.1}Reduction of principal fibre bundles}{41}
+\contentsline {subsection}{\numberline {3.4.2}Restricting Ehresmann to Cartan connections}{43}
+\contentsline {chapter}{\numberline {4}Cartan geometry of spacetimes with a nonconstant cosmological function}{45}
+\contentsline {section}{\numberline {4.1}Klein geometry of de Sitter space}{46}
+\contentsline {section}{\numberline {4.2}de Sitter--Cartan geometry}{50}
+\contentsline {section}{\numberline {4.3}$SO(1,4)$ invariant de Sitter--Cartan geometry}{56}
+\contentsline {subsection}{\numberline {4.3.1}Nonlinear realizations of the de Sitter group}{57}
+\contentsline {subsection}{\numberline {4.3.2}Nonlinear de Sitter--Cartan geometry}{61}
+\contentsline {section}{Appendix \numberline {4.A}The Lorentz group $SO(1,d-1)$}{66}
+\contentsline {section}{Appendix \numberline {4.B}Nonlinear realizations}{66}
+\contentsline {chapter}{\numberline {5}Teleparallel gravity}{71}
+\contentsline {section}{\numberline {5.1}Introduction}{71}
+\contentsline {section}{\numberline {5.2}Riemann--Cartan geometry}{73}
+\contentsline {section}{\numberline {5.3}Fundamentals of teleparallel gravity}{76}
+\contentsline {section}{\numberline {5.4}Equations of motion}{79}
+\contentsline {subsection}{\numberline {5.4.1}Particle mechanics}{79}
+\contentsline {subsection}{\numberline {5.4.2}Gravitational field equations}{80}
+\contentsline {section}{\numberline {5.5}Equivalence with general relativity}{83}
+\contentsline {section}{Appendix \numberline {5.A}Calculation of gravitational field equations}{85}
+\contentsline {chapter}{\numberline {6}de Sitter teleparallel gravity}{87}
+\contentsline {section}{\numberline {6.1}Introduction}{87}
+\contentsline {section}{\numberline {6.2}Fundamentals of de Sitter teleparallel gravity}{89}
+\contentsline {section}{\numberline {6.3}Particle mechanics and kinematic effects}{92}
+\contentsline {section}{\numberline {6.4}Dynamics of the gravitational field and the cosmological function}{95}
+\contentsline {section}{\numberline {6.5}Concluding remarks}{98}
+\contentsline {section}{Appendix \numberline {6.A}Explicit calculation of a particle's equations of motion}{100}
+\contentsline {section}{Appendix \numberline {6.B}Verification of gravitational field equations}{102}
+\contentsline {chapter}{\numberline {7}Conclusions and outlook}{105}
+\contentsline {chapter}{\nonumberline Bibliography}{109}

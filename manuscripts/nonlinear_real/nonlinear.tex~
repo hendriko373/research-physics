@@ -1,0 +1,1536 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+\usepackage{mathtools}
+
+\usepackage[all]{xy}
+
+\title{Nonlinear de Sitter-Cartan geometry}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Motivation}
+{\blu \it [Should contain main motivation for using nonlinear 
+	realization of Cartan connection: we want reductive splitting 
+	(gravity) + local de Sitter invariance]}
+
+
+The geometric structure encoded in the above {\blu\it (SEC XXX)} 
+constructed de Sitter-Cartan connection is useful, since it 
+describes a generic spacetime with non-vanishing curvature and 
+torsion that locally reduces to de Sitter spaces. In particular 
+did the reductive splitting of the de Sitter-Cartan connection 
+result in a spin connection and vierbein, mandatory for any 
+theory of gravity.  Unfortunately is the situation at this point 
+not yet satisfactory. The shortcoming of the given setting is 
+that it incorporates only local Lorentz invariance. This follows 
+directly from the definition, where the $\mathfrak{g}$-valued de 
+Sitter-Cartan connection lives on a principal $H$-bundle.  
+Intuitively this can be understood by reconsidering the reduction 
+of an Ehresmann $G$-connection on $Q$ to a corresponding Cartan 
+connection on $P$. The reduction process consists in singling out 
+a section $\xi$ of the associated $G$-bundle of homogeneous de 
+Sitter spaces $dS$, namely
+\begin{displaymath}
+	\xi : M \to Q[dS] : x \mapsto \xi(x)~.
+\end{displaymath}
+Upon picking out such a global section one breaks the symmetry of 
+the de Sitter spaces at any point in spacetime $M$ to the 
+isotropy group of the singled out section over these points, 
+i.e.~$H_\xi$.
+
+Local Lorentz invariance is necessary but not good enough, for 
+the reason that we wish to construct theories that have the 
+larger de Sitter group as local symmetries. At first sight we 
+arrived at a seeming dead end: fixing a section $\xi$ implied the 
+existence of the required spin connection and vierbein but at the 
+same time necessarily broke the de Sitter group down to its 
+Lorentz subgroup. We would like to retain the existence of a spin 
+connection and vierbein but recover the full symmetry group of de 
+Sitter rotations. The way out of the apparent impasse is by 
+noting that the broken symmetries upon reduction are merely 
+hidden. This is so because the section has been chosen completely 
+\emph{arbitrary}, so that any section is as good as any other.  
+Different but equivalent sections are related by elements in 
+$\Omega^0(M,G)$ that are not in $\Omega^0(M,H_\xi)$, so that it 
+is readily seen that those local de Sitter transformations that
+relate different section are just the broken symmetries.
+
+These transformations can be incorporated in the principal 
+Lorentz bundle by nonlinearly realizing them as local Lorentz 
+transformations. In this manner, local de Sitter invariance is 
+restored while retaining a well-defined reductive splitting of 
+the Cartan connection, i.e.~the presence of a spin connection and 
+vierbein. Nonlinearly realizing the broken symmetries yields a 
+nonlinear de Sitter-Cartan geometry.  Why such a nonlinear Cartan 
+geometry is preferred over the geometry in the original 
+$SO(1,4)$-bundle will become clear later on in the text. As 
+mentioned in this introduction, the crucial reason is that 
+nonlinearly realizing the Cartan connection reconciles the 
+presence of local de Sitter invariance together with the 
+continuance of a well-defined spin connection and vierbein, as 
+well as a curvature and torsion.
+
+
+
+\section{Introducing nonlinear realizations}
+
+The theory of nonlinear realizations of Lie groups on homogeneous 
+manifolds was introduced in the context of spontaneous symmetry 
+breaking, see \cite{Coleman:1969sm,Callan:1969sn,Volkov:1973vd}.  
+A succinct review on the matter is also exposed in the appendices 
+of \cite{wess:1992ss}. In the following subsections we base our 
+discussion on these works to introduce the subject of nonlinear 
+realization.
+
+{\blu\it Expand this review of literature}
+
+
+\subsection{Reductive Lie algebra}
+
+In the following let $G$ be a Lie group of dimension $n$ and 
+denote by $H$ a $m$-dimensional closed subgroup. It is assumed 
+that there is a reductive splitting on the level of the Lie 
+algebras, i.e.~$\mathfrak{g} = \mathfrak{h} \oplus \mathfrak{p}$ 
+so that $[\mathfrak{h},\mathfrak{h}] \subset \mathfrak{h}$ and 
+$[\mathfrak{h},\mathfrak{p}] \subset \mathfrak{p}$.  Let $S$ be a 
+homogeneous space $S$ that is symmetric under the left action of 
+$G$,
+\begin{equation}
+	\tau_g : S \to S : p \mapsto gp~,
+\end{equation}
+and for which the isotropy group of a given point $o$ is given by 
+$H_o \simeq H$. Then there is an isomorphism between $S$ and 
+$G/H_o$, which comes from identifying $gH_o \in G/H_o$ with 
+$\tau_g(o) \in S$. Let the elements $P_a$ form a basis for the 
+($d = n - m$)-dimensional vector space 
+$\mathfrak{p}$.\footnote{The index $a$ runs from $0$ to $d-1$.}
+In some neighborhood of the identity, a group element of $G$ can 
+be decomposed uniquely in the form\footnote{This is so if a set 
+	of generators for $H$ and the $P_a$ are chosen orthonormal 
+	with respect to the Cartan inner product.}
+\begin{displaymath}
+	g = \exp(i\xi\cdot P) \tilde{h}~,
+\end{displaymath}
+where $\tilde{h}$ is an element of the stability subgroup $H$ and 
+$\xi\cdot P = \xi^a P_a$.  The $\xi^a$ parametrize the coset 
+space $G/H$---at least in some neigborhood of the identity---so 
+that it is sensible to interpret them constituting a coordinate 
+system on the homogeneous space $S$. Next let $g_0$ be some 
+element in $G$.  Because a Lie group is naturally closed under 
+its own action, the left action of $G$ on itself may equally be 
+written as
+\begin{displaymath}
+	g_0 g = \exp(i\xi'\cdot P)\tilde{h}'
+\end{displaymath}
+or
+\begin{equation}\label{eq:left_action_group}
+	g_0 \exp(i\xi\cdot P) = \exp(i\xi'\cdot P)h'~;
+	\qquad
+	h' := \tilde{h}'\tilde{h}^{-1}~,
+\end{equation}
+where $\xi'=\xi'(g_0,\xi)$ and $h'=h'(g_0,\xi)$ depend on the 
+indicated variables. In case $\lambda$ is a linear representation 
+of the subgroup $H$, as in
+\begin{displaymath}
+	h: \psi \mapsto \lambda(h)\psi~,
+\end{displaymath}
+a realization of $G$ is constructed through the joint 
+transformation law
+\begin{equation}\label{eq:nonlin_real}
+	g_0 :~\xi \mapsto \xi'~,~\psi \mapsto \lambda(h')\psi~.
+\end{equation}
+That this gives way to a realization of $G$ can be seen from the 
+consecutive action of two elements $g_0$ and $g_1$. The 
+transformation of $\xi$ and $h$ is given implicitely 
+by~\eqref{eq:left_action_group}, namely
+%
+\begin{displaymath}
+	g_0\exp(i\xi\cdot P) = \exp(i\xi'\cdot P) h' 
+	\quad\text{and}\quad
+	g_1\exp(i\xi'\cdot P) = \exp(i\xi''\cdot P) h''~.
+\end{displaymath}
+These transformations are then composed to yield 
+$g_1g_0\exp(i\xi\cdot P) = \exp(i\xi''\cdot P)h''h'$. But because 
+$g_1 \circ g_0$ also lies in $G$ one resultantly has
+\begin{displaymath}
+	(g_1g_0)\exp(i\xi\cdot P) = \exp(i\xi'''\cdot P) h'''~.
+\end{displaymath}
+Combining these considerations readily leads us to conclude that
+$h''' = h''h'$ and consequently that 
+%
+\begin{displaymath}
+	\lambda(h''') = \lambda(h'')\lambda(h')~,
+\end{displaymath}
+because $\lambda$ is a representation of $H$. Moreover has it 
+become clear that $\xi''' = \xi''$, from which we deduce the 
+equality $(g_1g_0)\xi = g_1(g_0\xi)$. This proves that the 
+transformation of $G$ on $\xi$ is a group realization as well.  
+Remark that the composition $h''h'$ depends on the transformation 
+of $\xi$ so that the realization \eqref{eq:nonlin_real} only is 
+meaningful together with the transformation properties of $\xi$.  
+Accordingly does the transformation of $\psi$ depends on $\xi$.  
+For these reason is the realization~\eqref{eq:nonlin_real} called 
+\emph{nonlinear}. In section~\ref{ssec:lin_to_nonlin} we will 
+show how any representation of $G$ can be nonlinearly realized in 
+the form of~\eqref{eq:nonlin_real}.
+
+Let us for a moment consider the subcase for which the left 
+action is given by an element of the isotropy group $H$, say 
+$h_0$. The general transformation 
+prescription~\eqref{eq:left_action_group} is rewritten in a 
+trivial way in the form
+%
+\begin{displaymath}
+	h_0 \exp(i\xi\cdot P) h_0^{-1}h_0 = \exp(i\xi'\cdot P) h'~.
+\end{displaymath}
+It is a well-known result for Lie groups that the exponential map 
+commutes with the adjoint action, by which it is meant that 
+\begin{displaymath}
+	h_0 \exp(i\xi\cdot P) h_0^{-1} = \exp( \Ad(h_0)(i\xi\cdot 
+	P))~.
+\end{displaymath}
+Owing to the reductive nature of the Lie algebra the adjoint 
+action leaves $\mathfrak{p}$ invariant so that
+\begin{displaymath}
+	\exp(i\xi'\cdot P) = h_0\exp(i\xi\cdot P)h_0^{-1}\quad
+	\text{and}\quad
+	h' = h_0~,
+\end{displaymath}
+and where the transformation of $\xi$ is explicitely given by
+\begin{displaymath}
+	h_{0}: i\xi\cdot P \mapsto i\xi\cdot \mathrm{Ad}(h_0)P =: 
+	i\xi'\cdot P~,
+\end{displaymath}
+The adjoint action being a linear automorphism, one easily 
+understands that the coset parameters transform linearly. In 
+addition to this we remark that $h'$ does not depend on these 
+parameters.  Upon restriction to the subgroup $H$, the 
+realization~\eqref{eq:nonlin_real} consequently reduces to a 
+linear representation.
+
+There is another subclass of transformations that will be of much 
+interest to us in the following subsections. These are the pure 
+de Sitter translations, namely elements that are of the form $g_0 
+= \exp(i\alpha\cdot P)$.  Acted upon by such translations, the 
+coordinates $\xi$ change according to
+\begin{equation}\label{eq:left_action_coset}
+	\exp(i\alpha\cdot P)\exp(i\xi\cdot P) = \exp(i\xi'\cdot P)h'~.
+\end{equation}
+
+\blankline\noindent
+To conclude this review of nonlinear realizations on reductive 
+Klein geometries, we take a look at the case for which the 
+transformation considered in Eq.~\eqref{eq:left_action_group} is 
+infinitesimal. Thence let $g_0$ be an element in $G$ that lies 
+infinitesimally close to the identity, so that $g_0 = e + \delta 
+g_0$ and $\delta g_0 \in \mathfrak{g}$. The coset coordinates 
+$\xi$ transform into
+\begin{displaymath}
+	\xi'(g_0) = \xi'(e) + \pd_g \xi'(g)|_e \delta g_0 + 
+	\mathcal{O}((\delta g_0)^2) \simeq \xi + \delta \xi~.
+\end{displaymath}
+Similarly, it is found up to first order in $\delta g_0$ that
+\begin{displaymath}
+	\exp(i\xi'\cdot P) = \exp(i\xi\cdot P) + \delta\exp(i\xi\cdot 
+	P)~,
+	\quad
+	h' = (\tilde{h} + \delta \tilde{h})\tilde{h}^{-1} = e + \delta 
+	h~.
+\end{displaymath}
+Note that the variation on the exponential comes from the 
+variation $\delta \xi$. Substituting these expansions into 
+\eqref{eq:left_action_group} and retaining terms up to first 
+order, one finds the equation that determines the infinitesimal 
+variations $\delta \xi$ and $\delta h$: 
+%
+\begin{displaymath}
+	\exp(-i\xi\cdot P) \delta g_0 \exp(i\xi\cdot P) - 
+	\exp(-i\xi\cdot P) \delta\exp(i\xi\cdot P) = \delta h~.
+\end{displaymath}
+
+If the elements are pure translations, hence of the form $g_0 = e 
++ i\epsilon\cdot P$, the transformation parameters satisfy the 
+equation
+\begin{equation}\label{eq:nonlin_trafo_inf}
+	\exp(-i\xi\cdot P) i\epsilon\cdot P \exp(i\xi\cdot P) - 
+	\exp(-i\xi\cdot P) \delta\exp(i\xi\cdot P) = \delta h~.
+\end{equation}
+
+
+\subsection{Symmetric Lie algebra}
+
+In this subsection it will be assumed that the Lie algebra 
+$\mathfrak{g}$ is not only reductive but also symmetric. This 
+means that there is an involutive automorphism $\sigma : 
+\mathfrak{g} \to \mathfrak{g}$ such that $\mathfrak{h}$ is an 
+eigenspace with eigenvalue $1$, while $\mathfrak{p}$ is an 
+eigenspace with eigenvalue $-1$. Group elements of $H$ that are 
+obtained by exponentiation of elements in $\mathfrak{h}$ are 
+invariant under $\sigma$, while elements generated by elements of 
+$\mathfrak{p}$ are mapped into their inverse. The automorphism 
+directly implies a third restriction on the commutation relations 
+of $\mathfrak{g}$, which is $[\mathfrak{p},\mathfrak{p}] \subset 
+\mathfrak{h}$. Then Eq.~\eqref{eq:left_action_group} implies
+\begin{displaymath}
+	\sigma(g_0) \exp(-i\xi\cdot P) = \exp(-i\xi'\cdot 
+	P)\sigma(h')~,
+\end{displaymath}
+after which $h' = \sigma(h')$ can be eliminated from 
+Eq.~\eqref{eq:left_action_group}. One obtains in consequence
+%
+\begin{equation}
+	g_0 \exp(2i\xi\cdot P) \sigma(g_0^{-1}) = \exp(2i\xi'\cdot 
+	P)~.
+\end{equation}
+Written this way, it is manifest that $g_0 : \xi \mapsto \xi'$ is 
+a group realization and, when restricted to $H$, this realization 
+becomes a linear representation.
+
+\blankline\noindent
+Then let us concentrate on the variation of the coset parameters 
+caused by infinitisimal transvections, that is to say elements of 
+the form $g_0 = e + i\epsilon\cdot P$. Such a variation 
+$\delta\xi$ is a solution to Eq.~\eqref{eq:nonlin_trafo_inf}. By 
+use of the involutive automorphism one eliminates $\delta h$, so 
+that
+\begin{displaymath}
+\begin{multlined}[b][\linewidth-\multlinegap]
+	\quad
+	\exp(-i\xi\cdot P)\delta\exp(i\xi\cdot P) - \exp(i\xi\cdot 
+	P)\delta\exp(-i\xi\cdot P) \\
+	= \exp(-i\xi\cdot P) i\epsilon\cdot P \exp(i\xi\cdot P) + 
+	\exp(i\xi\cdot P) i\epsilon\cdot P \exp(-i\xi\cdot P)~.
+	\quad
+\end{multlined}
+\end{displaymath}
+Using eqs.~\eqref{eq:Had} and~\eqref{eq:CP}, this is rewritten as 
+\begin{displaymath}
+\begin{multlined}[b][\linewidth-2\multlinegap]
+	\quad\quad
+	\frac{1-\exp(-i\xi\cdot P)}{i\xi\cdot P} \wedge 
+	i\delta\xi\cdot P - \frac{1-\exp(i\xi\cdot P)}{i\xi\cdot P} 
+	\wedge i\delta\xi\cdot P \\
+	= \exp(-i\xi\cdot P) \wedge i\epsilon\cdot P + \exp(i\xi\cdot 
+	P) \wedge i\epsilon\cdot P~.
+	\quad\quad
+\end{multlined}
+\end{displaymath}
+The expression can be solved for $i\delta\xi\cdot P$, leading to
+%
+\begin{equation}\label{eq:inftrafo_cosetpar}
+	i\delta\xi \cdot P = \frac{i\xi\cdot P\,\cosh(i\xi\cdot 
+		P)}{\sinh(i\xi\cdot P)} \wedge i\epsilon\cdot P~.
+\end{equation}
+This result gives the variation of coset parameters due to an 
+infinitesimal pure translation $i\epsilon\cdot P$. Remember that 
+this is only valid for symmetric Klein geometries. To explicitly 
+solve for $\delta \xi ^a$, one needs the specific commutation 
+relations of the underlying Lie algebra. In the next section such 
+a calculation will be worked for the de Sitter space.
+
+One is equally able to find an expression that relates the 
+infinitesimal element $h'(\xi,\epsilon) = e + \delta h$ to the
+corresponding transvection $g_0 = e + i\epsilon\cdot P$. The 
+element $\delta h = \tfrac{i}{2} \delta h \cdot M \in 
+\mathfrak{h}$ is given by Eq.~\eqref{eq:nonlin_trafo_inf}.  
+Invoking the identities~\eqref{eq:Had} and~\eqref{eq:CP} one 
+obtains\footnote{This result is not only true for symmetric Lie 
+	algebras, but for reductive algebras also.}
+\begin{equation}
+	\tfrac{i}{2} \delta h \cdot M = \exp(-i\xi\cdot P) \wedge 
+	i\epsilon\cdot P - \frac{1-\exp(-i\xi\cdot P)}{i\xi\cdot P} 
+	\wedge i\delta\xi \cdot P~.
+\end{equation}
+For symmetric Klein geometries we have already found an 
+expression for $\delta\xi$. Let us substitute 
+for~\eqref{eq:inftrafo_cosetpar}, after which one gets 
+sought-after relation
+\begin{equation}\label{eq:inftrafo_h}
+	\tfrac{i}{2}\delta h \cdot M = \frac{1-\cosh(i\xi\cdot 
+		P)}{\sinh(i\xi\cdot P)} \wedge i\epsilon\cdot P~.
+\end{equation}
+Upon use of an explicit set of cummutation relations, this 
+equation renders the nonlinear realization of an infinitesimal 
+transvection.
+
+
+\subsection{Construction of nonlinear realizations}
+\label{ssec:lin_to_nonlin}
+
+In conclusion of this section on nonlinear realizations, the 
+construction of such a realization out of a generic linear 
+representation of $G$ is established.
+Therefore let $V$ be a representation space of $G$ so that the 
+action of $G$ is linear and given by
+\begin{displaymath}
+	\sigma(g) : V \to V~,\quad \forall g  \in G~.
+\end{displaymath}
+Then consider a section of the associated bundle of $V$-spaces, 
+namely
+\begin{displaymath}
+	\psi : M \to Q[V] = Q \times_G V~.
+\end{displaymath}
+At any given point $x \in M$ the field $\psi$ transform according 
+to the representation $\sigma$,
+\begin{displaymath}
+	g : \psi(x) \mapsto \psi'(x) = \sigma(g) \psi(x)~.
+\end{displaymath}
+Next let $\xi$ be a section of the associated bundle of 
+homogeneous spaces $Q[G/H] = Q \times_G G/H$. The nonlinear 
+realization of $\psi$ is pointwise defined as
+\begin{equation}\label{eq:def_nonlinear_field}
+	\bar{\psi}(x) \equiv \sigma(\exp(-i\xi\cdot P))\psi(x)~.
+\end{equation}
+That the field $\bar{\psi}$ indeed transforms nonlinearly in the 
+sense of Eq.~\eqref{eq:nonlin_real} \emph{and only with respect 
+	to its $H$-indices} under the action of a generic element 
+$g_0$ of $G$, is verified as follows:
+%
+\begin{displaymath}
+\begin{split}
+	\bar{\psi}'(x) &= \sigma(\exp(-i\xi'\cdot P)) \psi'(x) \\
+	&= \sigma(\exp(-i\xi'\cdot P)g_0) \psi(x) \\
+	&= \sigma(\exp(-i\xi'\cdot P)g_0\exp(i\xi\cdot P)) 
+	\bar{\psi}(x) \\
+	&= \sigma(h'(\xi,g_0)) \bar{\psi}(x)~.
+\end{split}
+\end{displaymath}
+It follows that a linear irreducible representation of $G$ 
+becomes a nonlinear and reducible representation. The price to be 
+paid for getting irreducible $H$-representations is that they 
+transform in a nonlinear way. Nonetheless, when restricted to the 
+isotropy group $H$, the field~\eqref{eq:def_nonlinear_field} 
+transforms according to a linear representation.
+
+\section{An example: de Sitter space}
+
+\subsection{Transformation of group parameters}
+
+{\blu\it This subsection has to be reviewed and updated.}
+
+In this subsection, the change of the group parameters $\xi^a$ 
+and $\delta h^{ab}$ due to infinitesimal de Sitter translations 
+are calculated. Remember that the coordinates $\xi^a$ are defined 
+by the exponentiation of elements of $\mathfrak{p}$. They are 
+also referred to as Goldstone fields, because of the resemblance 
+of their role in the scheme of spontaneous symmetry breaking in 
+field theory. As we have reviewed in the last section, these 
+coordinates transform according to a nonlinear realization of the 
+full symmetry group $G$. On the other hand, they transform 
+linearly when the action is restricted to the subgroup $H$ of 
+unbroken symmetries.  One understands that the pure translations 
+are the set of transformations that are responsible for the 
+nonlinear behaviour.\footnote{In general these elements do not 
+	form a group.}
+
+Let us begin by recalling the de Sitter commutation relations 
+that involve translations, i.e.\footnote{An element of $SO(4,1)$ 
+	is given by $\exp(\tfrac{i}{2}\omega^{ab}M_{ab} + i\xi^a 
+	P_a)$.}
+%
+\begin{equation}\label{eq:comm_rels_dS}
+	\begin{split}
+		-i[M_{ab},P_c] &= \eta_{ac}P_b - \eta_{bc}P_a \\
+		-i[P_a,P_b] &= \mathfrak{s}l^{-2} M_{ab}
+	\end{split}
+\end{equation}
+with $\mathfrak{s} \equiv \eta_{44}$. The de Sitter translations 
+were introduced as $P_a \equiv l^{-1}(x)M_{a4}$, whilst the 
+$M_{ab}$ span the Lorentz subalgebra $\mathfrak{h} = 
+\mathfrak{so}(3,1)$.  It is manifest that the de Sitter algebra 
+is symmetric.  In what follows we adhere to the convention 
+$\mathfrak{s} = -1$ so that $\eta_{ab} = 
+\mathrm{diag}(1,-1,-1,-1)$.
+
+The transformation of the coset parameters~$\xi^a$ under an 
+infinitesimal de Sitter translation $\epsilon\cdot P$ is given by 
+\eqref{eq:inftrafo_cosetpar}. In the parametrization used in this 
+section, this can be rewritten as
+%
+\begin{equation}\label{eq:inftrafo_cosetpar_dS}
+	\delta\xi \cdot P = \frac{i\xi\cdot P\,\cosh(i\xi\cdot 
+		P)}{\sinh(i\xi\cdot P)} \wedge \epsilon\cdot P~.
+\end{equation}
+Recall that the left hand side should be understood as a
+power series in the adjoint action (see also Appendix 
+\ref{app:nested_comm.not}).  The power series of the relevant 
+hyperbolic functions have the form\footnote{The coefficients in 
+	the power series for the hyperbolic cosecant are $c_{2n} = 
+	2(1-2^{2n-1}) B_{2n}$ with $B_n$ the $n$-th Bernouilli 
+	number.}
+%
+\begin{align*}
+	\cosh(i\xi\cdot P) &= \sum_{n=0}^\infty \frac{(i\xi\cdot 
+		P)^{2n}}{(2n)!}~, \\
+	\mathrm{csch}(i\xi\cdot P) &= (i\xi\cdot P)^{-1} + 
+	\sum_{n=1}^\infty \frac{c_{2n}}{(2n)!} (i\xi\cdot P)^{2n-1}~.
+\end{align*}
+%
+Invoking the identity~\eqref{eq:id_dS_comm.1}, one is able to 
+work out the cosinus hyperbolicus, i.e.~ 
+%
+\begin{equation}\label{eq:cosh_transl_dS}
+\begin{split}
+	\cosh(i\xi\cdot P) \wedge \epsilon\cdot P
+	&= \epsilon\cdot P + \sum_{n=1}^\infty 
+	\frac{(l^{-1}\xi)^{2n}}{(2n)!} \wedge \left(\epsilon\cdot P - 
+		\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} \right) \\
+	&= \cosh(l^{-1}\xi) \left(\epsilon\cdot P - 
+		\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} \right) + 
+	\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2}~.
+\end{split}
+\end{equation}
+By equal means, the right hand side 
+of~\eqref{eq:inftrafo_cosetpar_dS} is found to be
+\begin{displaymath}
+\begin{split}
+	i\xi\cdot P \,\mathrm{csch}(i\xi\cdot P) &\wedge 
+	\cosh(i\xi\cdot P) \wedge \epsilon\cdot P \\
+	=& \bigg( \mathds{1} + \sum_{n=1}^\infty \frac{c_{2n}}{(2n)!} 
+	(i\xi\cdot P)^{2n} \bigg)\wedge \bigg[\cosh(l^{-1}\xi)
+	\bigg(\epsilon\cdot P -\frac{\xi\cdot\epsilon \xi\cdot 
+		P}{\xi^2}\bigg) + \frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} 
+	\bigg] \\
+	=& \cosh(l^{-1}\xi)\bigg(1 + \sum_{n=1}^\infty 
+	\frac{c_{2n}}{(2n)!}(l^{-1}\xi)^{2n} \bigg) 
+	\bigg(\epsilon\cdot P -\frac{\xi\cdot\epsilon \xi\cdot 
+		P}{\xi^2}\bigg) + \frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} 
+	\\
+	=& \cosh(l^{-1}\xi)(l^{-1}\xi)\,\mathrm{csch}(l^{-1}\xi) 
+	\bigg(\epsilon\cdot P -\frac{\xi\cdot\epsilon \xi\cdot 
+		P}{\xi^2}\bigg) + \frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} 
+	\\
+	=& \epsilon\cdot P + \frac{l^{-1}\xi	
+		\cosh(l^{-1}\xi)}{\sinh(l^{-1}\xi)} \bigg(\epsilon\cdot P - 
+	\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2}\bigg) + 
+	\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} - \epsilon\cdot P ~.
+\end{split}
+\end{displaymath}
+The introduction of the extra $\epsilon\cdot P$ terms in the last 
+line is just a matter of convention, which allows one to write 
+eq.~\eqref{eq:inftrafo_cosetpar_dS} as
+\begin{equation}\label{eq:sol_inftrafo_cosetpar_dS}
+	\delta\xi \cdot P = \epsilon\cdot P + 
+	\bigg(\frac{l^{-1}\xi\cosh(l^{-1}\xi)}{\sinh(l^{-1}\xi)} - 
+	1\bigg) \bigg(\epsilon\cdot P - \frac{\xi\cdot\epsilon 
+		\xi\cdot P}{\xi^2}\bigg)~.
+\end{equation}
+This implies that the infinitesimal change of the coset 
+parameters is given by
+%
+\begin{equation}
+	\delta\xi^a = \epsilon^a + \Big(\frac{z\cosh z}{\sinh z} - 
+	1\Big) \bigg(\epsilon^a - \frac{\xi^a \epsilon_b 
+		\xi^b}{\xi^2}\bigg)~,
+\end{equation}
+where $z = l^{-1}\xi$.
+
+A comment on the derivation of 
+eq.~\eqref{eq:sol_inftrafo_cosetpar_dS} is in place. The solution 
+was found after use of the power series for the hyperbolic 
+cosecant.  In the case of real numbers, the series is only 
+defined for values between $-\pi$ and $+\pi$. One could thus 
+wonder if this convergence issue inhibits us of trusting the 
+solution found above. Remember that 
+eq.~\eqref{eq:inftrafo_cosetpar_dS} can be rewritten as
+%
+\begin{displaymath}
+	(i\xi\cdot P)^{-1} \sinh(i\xi\cdot P) \wedge \delta\xi\cdot P 
+	= \cosh(i\xi\cdot P) \wedge \epsilon\cdot P~,
+\end{displaymath}
+which reduces to
+%
+\begin{displaymath}
+	z^{-1}\sinh z \Big(\delta\xi\cdot P - \frac{\xi\cdot \delta\xi 
+		\xi\cdot P}{\xi^2}\Big) + \frac{\xi\cdot \delta\xi \xi\cdot 
+		P}{\xi^2}
+	= \cosh z \Big(\epsilon\cdot P - \frac{\xi\cdot\epsilon 
+		\xi\cdot P}{\xi^2}\Big) + \frac{\xi\cdot\epsilon \xi\cdot 
+		P}{\xi^2}~.
+\end{displaymath}
+This result relies on the power series expansion of the 
+hyperbolic sine, which is convergent for all values of its 
+argument. It is readily checked that the 
+solution~\eqref{eq:sol_inftrafo_cosetpar_dS} satisfies the above 
+equation. Therefore, we may conclude 
+that~\eqref{eq:sol_inftrafo_cosetpar_dS} is the right solution. 
+
+\blankline
+Given the de Sitter algebra, it is also possible to compute 
+$\delta h = \tfrac{i}{2} \delta h^{ab} M_{ab}$ explicitly.  
+From~\eqref{eq:inftrafo_h} it follows that the element of 
+$\mathfrak{h}$, corresponding to an infinitesimal de Sitter 
+translation, is a solution of
+%
+\begin{equation}\label{eq:inftrafo_h_dS}
+	\tfrac{1}{2} \sinh(i\xi\cdot P) \wedge \delta h \cdot M = 
+	(\mathbb{1}-\cosh(i\xi\cdot P)) \wedge \epsilon\cdot P~.
+\end{equation}
+The right hand side is readily found by 
+reconsidering~\eqref{eq:cosh_transl_dS}, implying that
+%
+\begin{displaymath}
+	(\mathbb{1} - \cosh(i\xi\cdot P)) \wedge \epsilon\cdot P
+	= (1 - \cosh z)\bigg(\epsilon\cdot P - \frac{\xi\cdot\epsilon 
+		\xi\cdot P}{\xi^2}\bigg)~.
+\end{displaymath}
+From the power series expansion of the hyperbolic sine,
+%
+\begin{displaymath}
+	\sinh(i\xi\cdot P) = \sum_{n=0}^\infty \frac{(i\xi\cdot 
+		P)^{2n+1}}{(2n+1)!}~,
+\end{displaymath}
+and from~\eqref{eq:id_dS_comm.4}, it follows that
+%
+\begin{displaymath}
+\begin{split}
+	\sinh(i\xi\cdot P) \wedge \delta h \cdot M
+	&= \delta h^{ab} \sum_{n=0}^\infty \frac{z^{2n}}{(2n+1)!} 
+	(\xi_a P_b - \xi_b P_a ) \\
+	&= z^{-1} \sinh z\, \delta h^{ab} (\xi_a P_b - \xi_b P_a ) \\
+	&= 2 z^{-1} \sinh z\, \delta h^{ab} \xi_a P_b~.
+\end{split}
+\end{displaymath}
+Putting these equations together,~\eqref{eq:inftrafo_h_dS} is 
+rewritten as
+%
+\begin{displaymath}
+\begin{split}
+	\delta h^{ab} \xi_a P_b &= \frac{z (1-\cosh z)}{\sinh z} 
+	\bigg(\epsilon^b - \frac{\xi^a \epsilon_ a \xi^b}{\xi^2} 
+	\bigg)P_b \\
+	&= (l\xi)^{-1} \frac{1-\cosh z}{\sinh z} (\epsilon^b\xi^a - 
+	\epsilon^a\xi^b) \xi_a P_b~,
+\end{split}
+\end{displaymath}
+from which it can be concluded that the sought-after quantities 
+are
+\begin{equation}
+	\delta h = \tfrac{i}{2}\delta h^{ab} M_{ab} = \frac{i}{2l^2} 
+	\frac{\cosh z - 1}{z\sinh z} (\epsilon^a\xi^b - 
+	\epsilon^b\xi^a) M_{ab}~.
+\end{equation}
+
+
+\subsection{Nonlinear de Sitter-Cartan geometry}
+\label{ssec:nonlin_dSC_geom}
+
+As motivated in the introductory section of this chapter, we will 
+use the theory of nonlinear realizations to construct a nonlinear 
+de Sitter-Cartan geometry. In doing so, it will become clear that 
+local de Sitter invariance is restored while preserving the spin 
+connection and vierbein.
+This treatment closely follows the original work of Stelle and 
+West, see \cite{Stelle:1979va,stelle.west:1980ds}. In this 
+discussion however, the cosmological constant of the local de 
+Sitter spaces is not assumed to be the same at any point in 
+spacetime. Rather, we allow for a spacetime varying 
+\emph{cosmological function} $\Lambda(x)$.
+
+\blankline
+Remember that a de Sitter-Cartan connection on a principal 
+$H$-bundle is induced from a $G$-connection on a principal 
+$G$-bundle, by reducing the $G$-bundle upon choosing a section 
+$\xi$ in the associated bunlde of homogeneous de Sitter spaces 
+$G/H$. This induced Cartan connection is to be realized 
+nonlinearly. Accordingly let us begin by considering a principal 
+de Sitter bundle $Q(M,G)$ over spacetime $M$.  Additionaly a 
+geometry is introduced by in the form of a local Ehresmann 
+connection $A \in \Omega^1(M, \mathfrak{g})$, that is directly on 
+spacetime. The connection is further characterized by its 
+curvature 
+\begin{displaymath}
+F = dA + \tfrac{1}{2}[A,A] \in \Omega^2(M,\mathfrak{g})~.
+\end{displaymath}
+These $\mathfrak{g}$-valued differential forms can be decomposed 
+with respect to their $\mathfrak{h}$-~and $\mathfrak{p}$-valued 
+parts, i.e.~
+%
+\begin{displaymath}
+	A = A_\mathfrak{h} + A_\mathfrak{p}
+	= \tfrac{i}{2} A^{ab} M_{ab} + iA^a P_a
+	\quad\text{and}\quad
+	F = F_\mathfrak{h} + F_\mathfrak{p}
+	= \tfrac{i}{2} F^{ab} M_{ab} + iF^a P_a~,
+\end{displaymath}
+where as usual $P_a = M_{a4}/l(x)$. This relation implies that 
+$A^a$ and $F^a$ have dimensions of length. Due to the symmetric 
+nature of $SO(1,4)$, one may express $F^{ab}$ and $F^{a}$ in 
+terms of $A^{ab}$ and $A^a$, which leads to the following 
+equations: 
+%
+\begin{subequations}
+	\label{eq:curv_lin_dS}
+\begin{align}
+	F^{ab} &= dA^{ab} + A\ind{^a_c} \wedge A^{cb} + \frac{1}{l^2} 
+	A^a \wedge A^b~,
+	\\
+	F^a &= dA^a + A\ind{^a_b} \wedge A^b - \frac{1}{l} dl \wedge 
+	A^a ~.
+\end{align}
+\end{subequations}
+Although it is not a coincidence that the above expressions 
+remind one of the corresponding expressions for curvature and the 
+torsion of a Cartan connection, it must be emphasized that the 
+quantities~\eqref{eq:curv_lin_dS} are by no means the curvature 
+or torsion of some geometric object. At this point there is only 
+a curvature $F$ of the Ehresmann connection $A$ in play, while 
+for the latter torsion is not defined. Furthermore, remark that 
+the decomposition of $F$ ($A$) into $F_\mathfrak{h}$ 
+($A_\mathfrak{h}$) and $F_\mathfrak{p}$ ($A_\mathfrak{p}$) is not 
+well-defined with respect to the geometry, in the sense that 
+local gauge transformations mix up the $\mathfrak{h}$-~and 
+$\mathfrak{p}$-valued parts. Stated equivalently, $A$ and $F$ 
+each transform irreducibly under $G$.  As a result the 
+decompositions are not respected by the symmetries of the 
+geometry, so that it would be difficult to atribute it any 
+physical meaning.
+
+This observation is very important, since it is the main 
+motivation to make use of nonlinear realizations. The symmetric 
+splitting of $A$ and $F$ leads directly to the structure of a 
+Cartan geometry on a principal Lorentz bundle. This splitting is 
+invariant under local Lorentz transformations and the 
+corresponding projections make up true geometric objects. We, 
+however, want to retain the full symmetry of local de Sitter 
+transformations \emph{together} with the symmetric splitting of 
+$A$ and $F$. The solution to this situation is using nonlinear 
+realizations. After we have constructed the nonlinear versions of 
+$A$ and $F$, we will come back once more to the physical reasons 
+of why it is necessary to have both the symmetric splitting and 
+local de Sitter invariance.
+{\blu \it [The motivation for nonlinear realization and the role 
+	of symmetry breaking (choosing a section $\xi$) and (vs.?)  
+	nonlinear realization should be carefully explained.]}
+
+Remember from our previous discussion on nonlinear realizations 
+that, in order to construct such objects, it is necessary to 
+single out an arbitrary section $\xi : M \to P[G/H]$ of the 
+associated bundle of de Sitter spaces. Given a linearly 
+tranforming quantity and such a section $\xi$, the general 
+prescription to obtain a nonlinearly transforming object from the 
+linear one is summarized in
+Eq.~\eqref{eq:def_nonlinear_field}.
+Because we are interested in finding the nonlinear versions of 
+$A$ and $F$, it is useful to write down their transformation 
+behaviour under the action of the de Sitter group. For a local 
+gauge transformation $g_0 \in \Omega^0(M,G)$ of an associated 
+vector bundle, it is well-known that this behaviour is given 
+by\footnote{The fibres of the principal bundle transforms with 
+	the inverse.}
+%
+\begin{subequations}
+\begin{equation}
+	\label{eq:trafo_conn_dS}
+	A \mapsto g_0 A g_0^{-1} + g_0  dg_0^{-1} = \Ad(g_0)\cdot(A + 
+	d)~,
+\end{equation}
+\text{respectevily}
+\begin{equation}
+	\label{eq:trafo_curv_dS}
+	F \mapsto g_0 F g_0^{-1} = \Ad(g_0) \cdot F~.
+\end{equation}
+\end{subequations}
+These transformation laws together with the 
+prescription~\eqref{eq:def_nonlinear_field} allow us to find 
+their nonlinear counterparts relatively straightforward.
+
+First let us construct the nonlinear version of the 
+$G$-connection $A$. Its nonhomogeneous way of 
+tranforming~\eqref{eq:trafo_conn_dS} leads one to define the 
+corresponding nonlinear de Sitter connection as
+%
+\begin{equation}
+	\label{eq:A_nonlin}
+	\bar{A} := \mathrm{Ad}(\exp(-i\xi\cdot P))\cdot(A + d)~.
+\end{equation}
+The resulting object is once again a $\mathfrak{g}$-valued 
+differential form on $M$, for which the symmetric splitting takes 
+the form $\bar{A} =\bar{A}_\mathfrak{h} + 
+\bar{A}_\mathfrak{p}$.\footnote{It is worthwhile to emphasize 
+	that this denotes the splitting of $\bar{A}$, rather than the 
+	sum of the nonlinear versions of $A_\mathfrak{h}$ and 
+	$A_\mathfrak{p}$. The latter are not even defined, since they 
+	separately do not form a linear representation of the de 
+	Sitter group.}
+The crucial difference with the splitting of the linear 
+connection $A$ is that the decomposition for $\bar{A}$ is 
+invariant under the whole de Sitter group. This will be the 
+subject of a more thorough discussion in the next section, where 
+the importance of this fact will be further explained.  
+Especially, it will become clear that $\bar{A}_\mathfrak{h}$ and 
+$\bar{A}_\mathfrak{p}$ are the genuine spin connection, 
+respectively vierbein, for a locally de Sitter invariant theory 
+of gravity. Anticipating on this interpretation we introduce the 
+notation $\omega := \bar{A}_\mathfrak{h}$ and $e := 
+\bar{A}_\mathfrak{p}$.
+
+Next we use the definition of the nonlinear connection $\bar{A}$ 
+to explicitely calculate the spin connection $\omega$ and $e$ in 
+terms of $\xi$, $A_\mathfrak{h}$ and $A_\mathfrak{p}$. It follows 
+from Eq.~\eqref{eq:A_nonlin} that
+\begin{displaymath}
+	\tfrac{i}{2} \omega^{ab} M_{ab} + i e^a P_a
+	= \Ad(\exp(-i\xi\cdot P)) \Big( \tfrac{i}{2} A^{ab} M_{ab} + i 
+	A^a P_a + d \Big)~.
+\end{displaymath}
+Invoking Hadamard's formula~\eqref{eq:Had} and the 
+Campbell-Poincar\'e fundamental identity~\eqref{eq:CP} the 
+right-hand side can be rewritten as\footnote{The operation 
+	$\wedge : \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g} : 
+	(X,Y) \mapsto \mathrm{ad}_X (Y)$ should not be confused with 
+	the wedge product for differential forms. See also 
+	App.~\ref{app:nested_comm.not}.}
+\begin{displaymath}
+	\exp(-i\xi\cdot P) \wedge \big( \tfrac{i}{2} A^{ab} M_{ab} + i 
+	A^a P_a \big) + \frac{1 - \exp(-i\xi\cdot P)}{i\xi\cdot P} 
+	\wedge d (i\xi\cdot P)~.
+\end{displaymath}
+This expression has to be worked out and separated in two parts, 
+one valued in the Lorentz algebra $\mathfrak{h}$ and a second 
+taking values in the subspace of transvections $\mathfrak{p}$.  
+That such a decomposition can be done explicitely follows from 
+the symmetric nature of the de Sitter algebra: for any two 
+elements $X$ and $Y$ in $\mathfrak{h}$ or $\mathfrak{p}$, the 
+element $X \wedge Y$ is in $\mathfrak{h}$ or $\mathfrak{p}$.  In 
+order to carry out the calculation, one must use the results of 
+App.~\ref{app:nested_comm.dS_results}. Then it is found 
+successively:
+\begin{gather*}
+\begin{multlined}[b][\linewidth-2\multlinegap]
+	\exp(-i\xi\cdot P) \wedge \tfrac{i}{2} A^{ab} M_{ab}
+	= \tfrac{i}{2} \big( A^{ab} + \frac{\cosh z - 1}{l^2 z^2} 
+	\xi_c ( \xi^b A^{ac} - \xi^a A^{bc} ) \big) M_{ab} \\
+	+ i \big( z^{-1} \sinh z A\ind{^a_b} \xi^b \big) P_a~,
+\end{multlined}
+\\
+\begin{multlined}[b][\linewidth-2\multlinegap]
+	\exp(-i\xi\cdot P) \wedge i A^a P_a = \tfrac{i}{2} \bigg( 
+	\frac{\sinh z}{l^2 z} (A^a \xi^b - A^b \xi^a ) \bigg) M_{ab} 
+	\\
+	+ i \bigg( A^a + (\cosh z - 1) \bigg(A^a - \frac{\xi^b A_b 
+		\xi^a}{\xi^2}  \bigg) \bigg) P_a~,
+\end{multlined}
+\\
+\begin{multlined}[b][\linewidth-2\multlinegap]
+	\frac{1 - \exp(-i\xi\cdot P)}{i\xi\cdot P} \wedge d (i\xi\cdot 
+	P) = \tfrac{i}{2} \bigg( \frac{\cosh z - 1}{l^2 z^2} (d\xi^a 
+	\xi^b - d\xi^b \xi^a) \bigg) M_{ab} \\
+	+ i \bigg( \frac{\sinh z}{z} \bigg( d\xi^a - \frac{\xi^b 
+		d\xi_b \xi^a}{\xi^2} \bigg) + \frac{\xi^b d\xi_b 
+		\xi^a}{\xi^2} - \frac{dl}{l} \xi^a \bigg) P_a~.
+\end{multlined}
+\end{gather*}
+Collecting these different contributions and seperating terms 
+according to whether they are valued in $\mathfrak{h}$, 
+respectively $\mathfrak{p}$, one gets the explicit expressions 
+for the spin connection $\omega^{ab}$ and vierbein $e^a$:
+\begin{subequations}
+\label{eqs:nonlin_spin_vier}
+\begin{gather}
+\label{eq:nonlin_spinconn}
+\begin{multlined}[b][\linewidth-8\multlinegap]
+	\omega^{ab} = A^{ab} - \frac{\cosh z - 1}{l^2 z^2} \big( \xi^a 
+	(d\xi^b + A\ind{^b_c} \xi^c) - \xi^b (d\xi^a + A\ind{^a_c} 
+	\xi^c) \big) \\
+	- \frac{\sinh z}{l^2 z} (\xi^a A^b - \xi^b A^a)
+\end{multlined}~,
+\\
+\label{eq:nonlin_vierbein}
+\begin{multlined}[b][\linewidth-8\multlinegap]
+	e^a = A^a + \frac{\sinh z}{z}( d\xi^a + A\ind{^a_b} \xi^b) - 
+	\frac{dl}{l} \xi ^a \\
+	+ (\cosh z - 1) \bigg( A^a - \frac{\xi^b A_b \xi^a}{\xi^2} 
+	\bigg) - \bigg( \frac{\sinh z}{z} - 1 \bigg) \frac{\xi^b 
+		d\xi_b \xi^a}{\xi^2}
+\end{multlined}~.
+\end{gather}
+\end{subequations}
+These expressions are almost equal to the corresponding objects 
+found by Stelle and West~\cite{stelle.west:1980ds}. The crucial 
+difference is that we have a new term $l^{-1} dl\,\xi^a$ in the 
+expression~\eqref{eq:nonlin_vierbein} for the vierbein. This term 
+is present in the given geometry, since we have allowed the 
+tangent de Sitter spaces to have cosmological constants that are 
+not necessarily equal along spacetime. More specifically, one has 
+to take in account that the length scale defined for the elements 
+in $\mathfrak{p}$ may vary. On the other hand, the results 
+of~\cite{stelle.west:1980ds} rely on the assumption that the 
+local de Sitter spaces have the same pseudo-radius at any point 
+in spacetime. The extra contribution is proportional to the 
+dimensionless factor $l^{-1} d l$, which will be noticeable only 
+if the variation is relatively vast. In case $l$ is a constant 
+function, one of course recovers the results 
+of~\cite{stelle.west:1980ds}.
+As mentioned already before, the main reason for their relevance 
+is that $\omega^{ab}$ and $e^a$ transform irreducibily under 
+local de Sitter transformations, an argument that will be 
+underpinned further in the next section.  
+
+After having constructed the nonlinear connection $\bar{A}$ and 
+consequently the spin connection and vierbein of the geometry, we 
+turn attention to the nonlinear curvature $\bar{F}$. From the 
+definition of $F$ and its transformation 
+behaviour~\eqref{eq:trafo_curv_dS} under local de Sitter 
+transformations, it follows that the nonlinear curvature equals 
+the curvature of the nonlinear connection, i.e.
+%
+\begin{equation}
+\label{eq:F_nonlin}
+	\bar{F} := \Ad(\exp(-i\xi\cdot P)) \cdot F = d\bar{A} + 
+	\tfrac{1}{2}[\bar{A},\bar{A}]~.
+\end{equation}
+This is a $\mathfrak{g}$-valued $2$-form on spacetime, which we 
+decompose once more according to~$\bar{F} = \bar{F}_\mathfrak{h} 
++ \bar{F}_\mathfrak{p}$. Due to the nonlinear nature of 
+$\bar{F}$, the reductive split is invariant under local gauge 
+transformations. Being similar to the discussion on the nonlinear 
+connection $\bar{A}$, the covariant nature of the decomposition 
+suggests that $F_\mathfrak{h}$ and $F_\mathfrak{p}$ must be 
+considered the curvature and torsion of the given geometry.  
+Therefore, let us make use of the suggestive notation~$R := 
+F_\mathfrak{h}$ and~$T := F_\mathfrak{p}$.
+
+Let us then look for expressions that give the curvature $R$ and 
+torsion $T$ in terms of $\xi$, $F_\mathfrak{h}$ and 
+$F_\mathfrak{p}$. Equivalently to the derivation outlined above 
+in finding the spin connection and vierbein, one considers the 
+definition for the nonlinear curvature $\bar{F}$, i.e.
+\begin{displaymath}
+	\tfrac{i}{2} R^{ab} M_{ab} + i T^a P_a
+	= \Ad(\exp(-i\xi\cdot P)) \Big( \tfrac{i}{2} F^{ab} M_{ab} + i 
+	F^a P_a \Big)~,
+\end{displaymath}
+after which the right-hand side of this equation must be written 
+as the sum of an $\mathfrak{h}$-valued and a 
+$\mathfrak{p}$-valued part. This calculation is to a large extend 
+identical to the one done for $\bar{A}$ and leads to the 
+following quantities:
+\begin{subequations}
+\label{eqs:nonlin_curv_tors}
+\begin{align}
+\label{eq:nonlin_curv}
+	R^{ab} &= F^{ab} - \frac{\cosh z - 1}{l^2 z^2} \xi^c (\xi^a 
+	F\ind{^b_c} -  \xi^b F\ind{^a_c}) - \frac{\sinh z}{l^2 z} 
+	(\xi^a F^b - \xi^b F^a)~,
+\\
+\label{eq:nonlin_tors}
+	T^a &= \frac{\sinh z}{z} \xi^b F\ind{^a_b} + \cosh z\, F^a + 
+	(1 - \cosh z) \frac{\xi_b F^b \xi^a}{\xi^2}~.
+\end{align}
+\end{subequations}
+Note that Eq.~\eqref{eq:F_nonlin} implies that these expressions 
+can equally be obtained by calculating $d\bar{A} + 
+\tfrac{1}{2}[\bar{A},\bar{A}]$ directly. More precisely, 
+decomposing Eq.~\eqref{eq:F_nonlin} according to the reductive 
+splitting of the de Sitter algebra, it follows that
+\begin{gather*}
+	R^{ab} = d\omega^{ab} + \omega\ind{^a_c} \wedge \omega^{cb} + 
+	\frac{1}{l^2} e^a \wedge e^b~,
+	\\
+	T^a = de^a + \omega\ind{^a_b} \wedge e^b - \frac{1}{l} dl 
+	\wedge e^a~,
+\end{gather*}
+after which one can substitute for 
+Eqs.~\eqref{eq:nonlin_spinconn} and~\eqref{eq:nonlin_vierbein} to 
+obtain $R^{ab}$ and $T^a$. These equations, which express the 
+curvature and torsion in terms of the spin connection and 
+vierbein, are the ones expected for a Cartan geometry. In this 
+manner, we constructed a de Sitter-Cartan geometry on a principal 
+Lorentz bundle. Because elements of $SO(1,4)$ that are not in 
+$SO(1,3)$ are nonlinearly realized, we actually have $SO(1,4)$ 
+invariance of the geometry, while having a well-defined spin 
+connection and vierbein at hand. This will be studied in more 
+detail in the next section.
+
+To conclude this section, Table~\ref{tbl:not_nonlin_cartan_geo} 
+summarizes the various symbols used to denote the linear and 
+nonlinear quantities introduced above.
+\begin{table}[th]
+	\caption{Notation for the linear and nonlinear Cartan 
+		connection and curvature and their reductive 
+		decomposition.}
+	\label{tbl:not_nonlin_cartan_geo}
+	\centering
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{cc}
+		linear	& nonlinear	\\
+		\hline
+		\hline
+		$A = \tfrac{i}{2}A^{ab} M_{ab} + iA^a P_a$
+			& $\bar{A} = \tfrac{i}{2}\omega^{ab} M_{ab} + ie^a P_a$
+		\\
+		\hline
+		$F = \tfrac{i}{2}F^{ab} M_{ab} + iF^a P_a$
+			& $\bar{F} = \tfrac{i}{2}R^{ab} M_{ab} + iT^a P_a$
+	\end{tabular}
+\end{table}
+
+\subsection{Transformation behaviour: linear vs.~nonlinear}
+\label{ssec:trafo_beh}
+
+In the last subsection a nonlinear Cartan geometry for the de 
+Sitter algebra has been introduced. We claimed that the nonlinear 
+de Sitter-Cartan connection gives rise to a genuine spin 
+connection and vierbein, while its Cartan curvature breaks up in 
+a well-defined Lorentz curvature and torsion tensor. This led us 
+to introduce the suggestive notation for the respective objects 
+as it is summarized in Table~\ref{tbl:not_nonlin_cartan_geo}. The 
+reason for having to use the nonlinear fields is that their 
+reductive decomposition is invariant under local de Sitter 
+transformations, which should be compared with the merely local 
+Lorentz invariance of their linear counterparts. Since we wish 
+local de Sitter invariance to be at the heart of any theory of 
+gravity, $\omega^{ab}$ and $e^{a}$ are objects that are 
+well-defined in light of such a principle. In the following 
+paragraphs and at risk of being overprecise, we therefore review 
+the transformation properties of the linear and nonlinear fields 
+and confirm their particular behaviour under the action of the 
+Lorentz and de Sitter groups.
+
+From the general relation between a linear field and its 
+nonlinear realization, see Eq.~\eqref{eq:def_nonlinear_field}, 
+one deduces that they belong to the same representation space.  
+The difference between them is that the nonlinear field becomes 
+reducible under the action of the gauge group $G$, even if the 
+linear field transforms irreducibly. More precisely, the 
+nonlinear field is acted upon only with respect to its 
+$H$-indices, since elements in $G$ that are not in the subgroup 
+$H$ are nonlinearly realized by elements of the latter.  
+Naturally the same is true for the fields at interest, namely the 
+Cartan connection and its curvature. Notwithstanding being a 
+special case of the situation just described, let us take a 
+closer look at the transformation rules of the linear connection 
+and curvature, after which we will turn attention to the 
+nonlinear ones.
+
+\blankline
+Under local de Sitter transformations the connection $A$ changes 
+according to Eq.~\eqref{eq:trafo_conn_dS}. If the action is 
+restricted to be an element of the Lorentz subgroup $H$, the 
+reductive splitting $A = A_\mathfrak{h} + A_\mathfrak{p}$ is 
+invariant. Due to the symmetric nature of $\mathfrak{so}(1,4)$ it
+is readily inferred that $A_\mathfrak{h}$ and $A_\mathfrak{p}$ 
+transform according to
+\begin{displaymath}
+	A_\mathfrak{h} \mapsto \Ad(h_0) \cdot (A_\mathfrak{h} + d)
+	\quad	\text{and} \quad
+	A_\mathfrak{p} \mapsto \Ad(h_0) \cdot A_\mathfrak{p}~,
+\end{displaymath}
+where $h_0 \in H$.
+If only local Lorentz invariance were required, these objects 
+would be adequate as a spin connection and vierbein.  Since we 
+additionally desire local de Sitter invariance, such a 
+decomposition will not be satisfying. This is so because the 
+symmetric splitting is not respected under a generic 
+$G$-transformation. To see this explicitely, consider an 
+infinitesimal pure de Sitter translation $e + i \epsilon\cdot P$.
+To first order in the transformation parameter $\epsilon$, one 
+finds that
+\begin{displaymath}
+	\delta_\epsilon A
+		= i[\epsilon\cdot P,A] -i d(\epsilon\cdot P) \\
+		= i[\epsilon\cdot P,A] -i d\epsilon\cdot P + \frac{dl}{l} i 
+		\epsilon\cdot P~.
+\end{displaymath}
+To find the variations of $A^{ab}$ and $A^a$, one further works 
+out the right-hand side and separates $\mathfrak{h}$- and 
+$\mathfrak{p}$-valued parts. The variations due to the action of 
+an infinitesimal de Sitter translation are then concluded to be
+\begin{subequations}
+	\label{eqs:var_lin_Ah_Ap}
+\begin{align}
+	\delta_\epsilon A^{ab} &= \frac{1}{l^2}(\epsilon^a A^b - 
+	\epsilon^b A^a)~, \\
+	\delta_\epsilon A^a &= -d\epsilon^a - A\ind{^a_b}\epsilon^b + 
+	\frac{dl}{l}\epsilon^a~.
+\end{align}
+\end{subequations}
+These results show manifestly how $A^{ab}$ and $A^a$ form an 
+irreducible multiplet for the de Sitter group.
+
+The variations~\eqref{eqs:var_lin_Ah_Ap} could equally have been 
+found by reconsidering the calculation of $\bar{A}$ in 
+section~\ref{ssec:nonlin_dSC_geom}. Remember that the definition 
+of the nonlinear connection is given by $\Ad(\exp(-i\xi\cdot 
+P))\cdot(A + d)$. This is nothing but the transformation of $A$ 
+under a pure de Sitter translation with transformation parameter 
+$\alpha = -\xi$. The calculation of $\bar{A}$ can hence be used 
+here to find the transformations of $A^{ab}$ and $A^a$ under a 
+finite pure de Sitter translation $\exp(i\alpha\cdot P)$. More 
+precisely and according to the logic just explained, we may copy 
+the results of Eqs.~\eqref{eqs:nonlin_spin_vier} together with 
+the substitution~$\xi \to -\alpha$. This leads to the finite 
+transformations laws:
+\begin{subequations}
+\begin{gather}
+\begin{multlined}[b][\linewidth-8\multlinegap]
+	\label{eq:transvec_fin_Ah}
+	A^{ab} \mapsto A^{ab} + \frac{1 - \cosh z}{l^2 z^2} \big( 
+	\alpha^a (d\alpha^b + A\ind{^b_c} \alpha^c) - \alpha^b 
+	(d\alpha^a + A\ind{^a_c} \alpha^c) \big) \\
+	+ \frac{\sinh z}{l^2 z} (\alpha^a A^b - \alpha^b A^a)
+\end{multlined}~,
+	\\
+\begin{multlined}[b][\linewidth-8\multlinegap]
+	\label{eq:transvec_fin_Ap}
+	A^a \mapsto A^a - \frac{\sinh z}{z}( d\alpha^a + A\ind{^a_b} 
+	\alpha^b) + \frac{dl}{l} \alpha ^a \\
+	+ (\cosh z - 1) \bigg( A^a - \frac{\alpha^b A_b 
+		\alpha^a}{\alpha^2} \bigg)
+	+ \bigg( \frac{\sinh z}{z} - 1 \bigg) \frac{\alpha^b d\alpha_b 
+		\alpha^a}{\alpha^2}
+\end{multlined}~.
+\end{gather}
+\end{subequations}
+The infinitesimal variations~\eqref{eqs:var_lin_Ah_Ap} are 
+recovered straightforwardly after taking the limit $\alpha \to 
+\epsilon$.
+
+The discussion can be extended to the linear curvature $F$ in an 
+evident way. This object transforms in a covariant way under 
+gauge transformations, as written down in 
+Eq.~\eqref{eq:trafo_curv_dS}. In case we only consider elements 
+$h_0$ that belong to the subgroup of Lorentz rotations, the 
+reductive splitting $F = F_\mathfrak{h} + F_\mathfrak{p}$ is 
+invariant and both projections rotate independently according to
+\begin{displaymath}
+	F_\mathfrak{h} \mapsto \Ad(h_0)\cdot F_\mathfrak{h}
+	\quad \text{and} \quad
+	 F_\mathfrak{p}\mapsto \Ad(h_0)\cdot F_\mathfrak{p}~.
+\end{displaymath}
+On the other hand, this reducible behaviour is not present if the 
+action is governed by a generic element of the de Sitter group.  
+To see this in an explicit way, let us have a look at the 
+transformations of $F_\mathfrak{h}$ and $F_\mathfrak{p}$ under a 
+pure de Sitter translation $\exp(i\alpha\cdot P)$. Again it is 
+possible to recycle the calculation for the nonlinear $\bar{F}$.  
+Indeed, the transformed linear curvature $\Ad(\exp(\alpha\cdot 
+P))\cdot F$ is equal to the nonlinear $\bar{F}$ with $\xi$ 
+replaced by $-\alpha$, which can be seen from 
+Eq.~\eqref{eq:F_nonlin}. The transformation of the 
+$\mathfrak{h}$-~and $\mathfrak{p}$-valued parts of $F$ are then 
+given by considering this replacement in the 
+Eqs.~\eqref{eqs:nonlin_curv_tors}, yielding
+\begin{subequations}
+\label{eqs:transvec_Fh_Fp}
+\begin{gather}
+\label{eq:transvec_Fh}
+	F^{ab} \mapsto F^{ab} - \frac{\cosh z - 1}{l^2 z^2} \alpha^c 
+	(\alpha^a F\ind{^b_c} -  \alpha^b F\ind{^a_c}) + \frac{\sinh z}{l^2 
+		z} (\alpha^a F^b - \alpha^b F^a)~,
+\\
+\label{eq:transvec_Fp}
+	F^a \mapsto -\frac{\sinh z}{z} \alpha^b F\ind{^a_b} + \cosh 
+	z\, F^a + (1 - \cosh z) \frac{\alpha_b F^b 
+		\alpha^a}{\alpha^2}~.
+\end{gather}
+\end{subequations}
+To be complete, the infinitesimal variations of $F_\mathfrak{h}$ 
+and $F_\mathfrak{p}$ are also written down. These are obtained 
+from the finite transformations after taking $\alpha \to 
+\epsilon$ and retaining terms up to first order. One directly 
+concludes:
+\begin{subequations}
+\begin{align}
+	\delta_\epsilon R^{ab}_{~~\mu\nu} &= \frac{1}{l^2}(\epsilon^a 
+	T^b_{~\mu\nu} - \epsilon^b T^a_{~\mu\nu})~, \\
+	\delta_\epsilon T^a_{~\mu\nu} &= -\epsilon^b R^a_{~b\mu\nu}~.
+\end{align}
+\end{subequations}
+
+Consequent to the way in which the reductive projections of $A$ 
+and $F$ transform under the de Sitter group, they cannot be given 
+well-defined meaning consistent with a principle of local de 
+Sitter invariance. Repeatedly mentioned in this text, this is the 
+place where the theory of nonlinear realizations shows its 
+usefulness. As we will make plain in the following paragraphs, 
+the nonlinear fields $\bar{A}$ and $\bar{F}$ possess a reductive 
+splitting that is invariant under local de Sitter 
+transformations, and which allows us to pin down the real 
+geometric objects that can be used in a theory of gravity that is 
+locally de Sitter invariant.
+
+Being a generic property of nonlinear realizations, the nonlinear 
+connection $\bar{A}$ and curvature $\bar{F}$ belong to the same 
+representation space as $A$ and $F$, respectivily.  
+Notwithstanding this similarity in the way of transforming, the 
+nonlinear fields are reducible, whereas their linear versions 
+obviously are not. This is so because any element of the de 
+Sitter group $G$ acting on the nonlinear fields is realized 
+through an element of its subgroup $H$ of Lorentz 
+transformations. As a consequence, the nonlinear connection and 
+curvature are acted upon only through their $H$-components, even 
+if the element considered belongs to the enclosing de Sitter 
+group. To verify the transformation behavior of $\bar{A}$, note 
+first that its definition~\eqref{eq:A_nonlin} indicates that 
+$\Ad(e)(A+d) = \Ad(\exp(i\xi\cdot P))(\bar{A}+d)$. It follows 
+that under the action of an element $g_0$ of the de Sitter group:
+%
+\begin{displaymath}
+\begin{multlined}[b][\linewidth-12\multlinegap]
+	\bar{A} \mapsto  \Ad(\exp(-i\xi'\cdot P))\Ad(g_0)(A+d) \\
+	\begin{aligned}
+	&= \Ad(\exp(-i\xi'\cdot P) g_0) \Ad(\exp(i\xi'\cdot P)) 
+	(\bar{A}+d) \\
+	&= \Ad(h'(\xi,g_0))(\bar{A}+d)~.
+	\end{aligned}
+\end{multlined}
+\end{displaymath}
+This reconfirms the way a nonlinear field transforms, where a 
+generic de Sitter transformation is realized by a Lorentz 
+rotation. In particular do we conclude that the 
+$\mathfrak{g}$-valued $1$-form $\bar{A}$ behaves as a Cartan 
+connection on a principal Lorentz bundle.\footnote{[{\blu\it It 
+		seems very plausible that it is (the pull-back of) a Cartan 
+		connection on $P(M,H)$ Check this: see the base definition 
+		of the latter as given in	\cite{sharpe1997diff_geo}].}}
+If the element $g_0$ belongs to the Lorentz group $H$, the 
+transformation becomes linear.\footnote{Note that a Cartan 
+	connection is defined on a principal $H$-bundle, and that is 
+	only demanded that the connection transforms in a certain way 
+	under the action of $H$ gauge transformations.  Whether the 
+	elements of $H$ form a linear or nonlinear realization is not 
+	relevant.}
+Because any element of the de Sitter group is realized as a 
+Lorentz transformation, the reductive splitting $\bar{A} = \omega 
++ e$ is preserved under local de Sitter transformations.
+Indeed reconsidering the transformation of $\bar{A}$ explicitely 
+for its reductive decompositions, namely 
+%
+\begin{displaymath}
+	\omega + e \mapsto \Ad(h'(\xi,g_0))\cdot (\omega + e + d)~,
+\end{displaymath}
+it directly follows that
+%
+\begin{equation}
+	\label{eq:trafo_nonlin_omega_e}
+	\omega \mapsto \Ad(h'(\xi,g_0)) \cdot (\omega + d)
+	\quad\text{and}\quad
+	e \mapsto \Ad(h'(\xi,g_0)) \cdot e~,
+\end{equation}
+as a result of the symmetric nature of $\mathfrak{g} = 
+\mathfrak{h} + \mathfrak{p}$.
+It is manifest that $\omega$ and $e$ do not mix under local de 
+Sitter transformations. Note that $\omega$ is an 
+$\mathfrak{h}$-valued spin connection, while $e$ is a 
+$\mathfrak{p}$-valued $1$-form that transforms covariantly. In 
+case the gauge transfromations are restricted to be elements of 
+the Lorentz subgroup, the nonlinear fields transform identical to 
+their linear counterparts. 
+
+These conclusions are equally drawn for the 
+$\mathfrak{g}$-curvature $\bar{F}$ and its projections $R$ and 
+$T$. Both $2$-forms transform covariantly in the adjoint 
+representation of the group, and do not mix up in this process.  
+Therefore it is clear that $R$ and $T$ are true geometric 
+objects, for the splitting is a gauge independent construction.  
+They are referred to as the curvature and torsion of the 
+geometry.
+
+
+\subsection{Interpretation of the vielbein $\bar{e}$}
+
+Stelle and West \cite{Stelle:1979va,stelle.west:1980ds} claim 
+that the vierbein $\bar{e}$ is a smooth mapping between the 
+tangent space to spacetime at any $p \in M$  and the tangent 
+space to the internal de Sitter space at $\xi(p)$. Unfortunately, 
+a concrete argument did not seem to be included following this 
+statement.  Furthermore, under local $H$ gauge transformations 
+the vierbein $\bar{e}$ transforms as a vector with an element $h 
+\in H_o$, as can be seen from \eqref{eq:trafo_nonlin_omega_e}.  
+This indicates that its $SO(3,1)$-indices belong to the tangent 
+space at the origin $(\xi = 0)$ of $dS$. To verify its 
+transformation behavior under local $G$ transformations, let us 
+explicitly reconsider its construction.  
+
+The vierbein is defined as the $\mathfrak{p}$-valued part of the 
+Cartan connection $\bar{A} \in \Omega^1(M,\mathfrak{g})$ on 
+$P(M,H)$. To give this statement a precise notation, we consider 
+the natural projection $\pi : G \to G/H_o : g \mapsto gH_o$. The 
+differential of this mapping is a projection of $T_eG = 
+\mathfrak{g}$ onto $\mathfrak{p} \simeq T_o dS$. The vierbein is 
+obtained from the connection by invoking this projection, 
+i.e.~$\bar{e} = \pi_\ast \bar{A}$. This shows clearly that the 
+vierbein is a 1-form on $M$ with values in $T_odS$. Nonetheless, 
+let us also concentrate on the definition  of $\bar{A}$ itself to 
+understand what happens with a tangent vector to spacetime under 
+the action of $\bar{e}$, before it ends up in $T_o dS$. The 
+definition  was given in Eq.~\eqref{eq:A_nonlin}, which we 
+rewrite here for $g = \exp(-\xi\cdot P)$, i.e.~
+\begin{displaymath}
+	\bar{A} \equiv \Ad(g)\cdot A + (g^{-1})^\ast \theta~.
+\end{displaymath}
+It should be understood that the adjoint action acts on the 
+algebra $\mathfrak{g}$, that $\theta$ is the Maurer-Cartan form 
+on $G$ and that $g^\ast$ is the pullback that comes from the 
+mapping $g: M \to G : p \mapsto g$. Consider next a vector $X \in 
+T_pM$. One then finds,
+\begin{align*}
+	\bar{A}(X) &= \Ad(g)\cdot A(X) + \theta(g^{-1}_\ast X) \\
+		&= L_{g\ast}\Big(R_{g^{-1}\ast}\cdot A(X) + g^{-1}_\ast X 
+		\Big)~.
+\end{align*}
+Denote by $X^\star$ the left invariant vector field on $G$ so 
+that
+\begin{displaymath}
+	X^\star_{g^{-1}} = R_{g^{-1}\ast}\cdot A(X) + g^{-1}_\ast X~.
+\end{displaymath}
+It follows directly that $\bar{A}(X) = X^\star_e$. Since $\pi 
+\circ L_g = \tau_g \circ \pi$, one also has
+\begin{displaymath}
+	\bar{e}(X) = \pi_\ast L_{g\ast} X^\star_{g^{-1}}
+	= \tau_{g\ast} \pi_\ast X^\star_{g^{-1}}~.
+\end{displaymath}
+Recall that $g = \exp(-\xi\cdot P)$ so that $g^{-1} = 
+\exp(\xi\cdot P)$. This implies that $\pi_\ast X^\star_{g^{-1}} 
+\in T_\xi dS$, since $\exp(\xi\cdot P)o = \xi \in dS$. The 
+element $\bar{e}(X) \in T_o dS$ is the parallel transported 
+vector of $\pi_\ast X^\star_{g^{-1}}$, with respect to the 
+canonical connection on $G/H_o$ (See Ch. X in 
+\cite{kob1996found}).  Therefore, it is understandable that one 
+may interpret $\bar{e}$ to be a mapping from the tangent space to 
+$M$ at $p$ onto the tangent space to $dS$ at $\xi$, confirming 
+the interpretation given by Stelle and West.
+
+
+
+\subsection{Discussion}
+
+To conclude let us retrace our steps and try to understand what 
+has been going on. We started by introducing a $G$-connection on 
+a principal $G$-bundle $P(M,G)$. This contains information about 
+a geometry for which the internal symmetry group is $G$. Since 
+one is interested in describing a spacetime, whose local geometry 
+is invariant under the action of the de Sitter group, this seems 
+a good starting point.  However, one does not have a 
+canonical---i.e.~consistent with the geometry---spin connection 
+and vielbein. This is a crucial shortcoming, as it will not be 
+possible to relate the local geometry of the gauge field to the 
+geometry of spacetime (no soldering).  By means of a section 
+$\xi$, which takes its values in the associated bundle $P 
+\times_G G/H$, the principle bundle $P(M,G)$ is reduced to a 
+bundle $P(M,H)$.\footnote{For an enlightning proof, see 
+	\cite{kob1996found}.} Choosing a section breaks the symmetry 
+from $G$ to $H$. As shown in the previous section, $\xi$ can be 
+used to construct a Cartan connection $\bar{A}$ on $P(M,H)$ from 
+the Ehresmann connection $A$ on $P(M,G)$. This is shown 
+schematically in the following diagram:
+\begin{displaymath}
+	\xymatrix@R=6pt@C=8pt{
+			&	\omega & & & \bar{\omega}
+		\\
+		A
+			\ar[ru]^-{\mathfrak{h}}
+			\ar[rd]_-{\mathfrak{p}}
+			\ar[dddd]
+			& & & {\bar{A}}
+							\ar[ru]^-{\mathfrak{h}}
+							\ar[rd]_-{\mathfrak{p}}
+							\ar[dddd]
+		\\
+			& e & & & \bar{e}
+		\\
+			& & {\xrightarrow{\hspace*{0.5cm}\xi\hspace*{0.5cm}}}
+		\\
+			& {R = d\omega + \tfrac{1}{2}[\omega,\omega] + 
+				\tfrac{1}{2}[e,e]}
+				& & & {\bar{R} = d\bar{\omega} +
+							\tfrac{1}{2}[\bar{\omega},\bar{\omega}] +							
+							\tfrac{1}{2}[\bar{e},\bar{e}]}
+		\\
+		F
+			\ar[ru]^-{\mathfrak{h}}
+			\ar[rd]_-{\mathfrak{p}}
+			& & & \bar{F}
+							\ar[ru]^-{\mathfrak{h}}
+							\ar[rd]_-{\mathfrak{p}}
+		\\
+			& {T = de + [\omega,e]}
+				& & & {\bar{T} = d\bar{e} + [\bar{\omega},\bar{e}]}
+	}
+\end{displaymath}
+The broken symmetries act through a nonlinear realization with 
+the elements $h'(\xi,g_0)$, and merely change the point of 
+tangency between the local de Sitter fibres and spacetime. On the 
+other hand, the unbroken symmetries ($H$) leave the point of 
+tangency fixed and act through a linear representation.
+Note that the Cartan connection gives rise to a well defined spin 
+connection and vierbein, i.e.~they do \emph{not} form an 
+irreducible multiplet under the action of $G$. Due to the 
+existence of a vierbein $\bar{e}$, spacetime is soldered to the 
+de Sitter fibres and one is able to pull back all geometric 
+information onto the tangent bundle of spacetime---the arena in 
+which takes place gravity. Crucially, one had to make the 
+realization nonlinear to have soldering.
+
+
+
+\newpage
+\appendix
+\section{Nested commutators}
+\label{app:nested_comm}
+
+\subsection{Notation}
+\label{app:nested_comm.not}
+
+For any two elements $X$ and $Y$ of a Lie algebra we define
+%
+\begin{displaymath}
+	X \wedge Y \equiv \mathrm{ad}_X (Y) = [X,Y]
+\end{displaymath}
+and consequently
+\begin{displaymath}
+	X^k \wedge Y \equiv \mathrm{ad}_X^k (Y) = 
+	[X,[X,\ldots[X,Y]\ldots]]~.
+\end{displaymath}
+This can be extended to arbitrary functions, where a function is 
+considered a power series in $X$, that is
+%
+\begin{displaymath}
+	f(X) \wedge Y = \sum_k c_k X^k \wedge Y~.
+\end{displaymath}
+Consider a second function $g(X) = \sum_l d_l X^l$. One obtains
+%
+\begin{displaymath}
+	g(X)\wedge f(X)\wedge X = \sum_{kl} c_k d_l 
+	\mathrm{ad}_X^l(\mathrm{ad}_X^k(Y)) = \sum_{kl} c_k d_l 
+	X^{k+l} \wedge Y = g(X)f(X) \wedge Y~,
+\end{displaymath}
+where we used the linearity of the adjoint action.
+From this result it follows that the equation $f(X) \wedge Y = Z$ 
+can be solved for $Y = f(X)^{-1} \wedge Z$. Note that the inverse 
+function also is supposed to be expressed as a power series.
+
+To conclude we write down two identities, using the introduced 
+notation.  The first is Hadamard's formula
+%
+\begin{equation}\label{eq:Had}
+	\exp(X) Y \exp(-X) = \exp(X) \wedge Y~,
+\end{equation}
+the other is the Campbell-Poincar\'e fundamental identity,
+\begin{equation}\label{eq:CP}
+	\exp(-X) \delta\exp(X) = \frac{1-\exp(-X)}{X}\wedge \delta X~.
+\end{equation}
+
+\subsection{de Sitter algebra: some results}
+\label{app:nested_comm.dS_results}
+In this subsection, we compute some intermediary results that are 
+used troughout the text. The commutatation relations considered 
+are those given by~\eqref{eq:comm_rels_dS}, for the convention 
+$\mathfrak{s} = -1$.
+
+The first identity to be verified is
+%
+\begin{equation}\label{eq:id_dS_comm.1}
+	(i\xi\cdot P)^{2n} \wedge \epsilon\cdot P = z^{2n} 
+	\bigg(\epsilon\cdot P - \frac{\xi\cdot\epsilon \xi\cdot 
+		P}{\xi^2} \bigg)~;\quad n \geqslant 1~.
+\end{equation}
+Therefore, we compute the sequence
+\begin{align*}
+	i\xi\cdot P \wedge \epsilon\cdot P
+	&= i\xi^a\epsilon^b [P_a,P_b] = l^{-2} \xi^a\epsilon^b 
+	M_{ab}~;
+	\\
+	(i\xi\cdot P)^2 \wedge \epsilon\cdot P
+	&= i\xi^c P_c \wedge l^{-2} \xi^a\epsilon^b M_{ab} \\
+	&= -il^{-2} \xi^a\epsilon^b\xi^c [M_{ab},P_c] \\
+	&= l^{-2}\xi^a\epsilon^b\xi^c (\eta_{ac}P_b - \eta_{bc}P_a) \\
+	&= l^{-2} \xi^2 \left(\epsilon\cdot P - \frac{\xi\cdot\epsilon 
+			\xi\cdot P}{\xi^2} \right)~;
+	\\
+	(i\xi\cdot P)^4 \wedge \epsilon\cdot P
+	&= l^{-2}\xi^2(i\xi\cdot P)^2 \wedge \left(\epsilon\cdot P - 
+		\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} \right) \\
+	&= l^{-2}\xi^2(i\xi\cdot P)^2 \wedge \epsilon\cdot P \\
+	&= (l^{-2}\xi^2)^2 \left(\epsilon\cdot P - 
+		\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} \right)~; \\
+	&~\,\vdots
+	\\
+	(i\xi\cdot P)^{2n} \wedge \epsilon\cdot P
+	&= (l^{-2}\xi^2)^n \left(\epsilon\cdot P - 
+		\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} \right)~.
+\end{align*}
+The identity follows by letting $z \equiv 
+l^{-1}(\xi^a\xi_a)^{1/2}$.
+
+From~\eqref{eq:id_dS_comm.1} it follows that
+%
+\begin{displaymath}
+\begin{split}
+	(i\xi\cdot P)^{2n+1} \wedge \epsilon\cdot P
+	&= (i\xi\cdot P) \wedge z^{2n} \bigg(\epsilon\cdot P - 
+	\frac{\xi\cdot\epsilon \xi\cdot P}{\xi^2} \bigg) \\
+	&= l^{-2}z^{2n} \xi^a \epsilon^b M_{ab}~,
+\end{split}
+\end{displaymath}
+hence, another useful identity is given by
+%
+\begin{equation}\label{eq:id_dS_comm.2}
+	(i\xi\cdot P)^{2n+1} \wedge \epsilon\cdot P = 
+	\tfrac{1}{2}l^{-2}z^{2n} (\xi^a\epsilon^b - \xi^b\epsilon^a) 
+	M_{ab}~;\quad n \geqslant 0~.
+\end{equation}
+
+Finally, the following two identities are derived\footnote{Note 
+	that $\delta h \cdot M = \delta h^{ab} M_{ab}$.}
+%
+\begin{align}
+	\label{eq:id_dS_comm.3}
+	(i\xi\cdot P)^{2n} \wedge \delta h \cdot M &= \delta h^{ab} 
+	l^{-2}z^{2n-2} \xi^c(\xi_b M_{ac} - \xi_a M_{bc})~;\quad n 
+	\geqslant 1~, \\
+	\label{eq:id_dS_comm.4}
+	(i\xi\cdot P)^{2n+1} \wedge \delta h \cdot M &= \delta h^{ab} 
+	z^{2n} (\xi_a P_b - \xi_b P_a)~;\quad n \geqslant 0~.
+\end{align}
+To verify them consider the following series of equations.
+%
+\begin{align*}
+	(i\xi\cdot P)\wedge \delta h \cdot M
+	&= \delta h^{ab} \xi^c (-i)[M_{ab},P_c] = \delta h^{ab} (\xi_a 
+	P_b - \xi_b P_a)~; \\
+	(i\xi\cdot P)^2\wedge \delta h \cdot M
+	&= 2 \delta h^{ab} i\xi\cdot P \wedge \xi_a P_b \\
+	&= 2 \delta h^{ab} \xi_a \xi^c (-i) [P_b,P_c] \\
+	&= 2 \delta h^{ab} l^{-2} \xi_a \xi^c M_{cb} \\
+	&= \delta h^{ab} l^{-2} \xi^c (\xi_b M_{ac} - \xi_a M_{bc})~; 
+	\\
+	(i\xi\cdot P)^4 \wedge \delta h \cdot M
+	&= 2\delta h^{ab} l^{-2} \xi_b \xi^c (i\xi\cdot P)^2 \wedge 
+	M_{ac} \\
+	&= 2\delta h^{ab} l^{-2} \xi_b \xi^c l^{-2} \xi^d (\xi_c 
+	M_{ad} - \xi_a M_{cd}) \\
+	&= 2 \delta h^{ab} l^{-2} z^2 \xi^d \xi_b M_{ad} \\
+	&= \delta h^{ab} l^{-2} z^2 \xi^c (\xi_b M_{ac} - \xi_a 
+	M_{bc}) \\
+	&~\,\vdots
+	\\
+	(i\xi\cdot P)^{2n} \wedge \delta h \cdot M
+	&= \delta h^{ab} l^{-2} z^{2n-2} \xi^c (\xi_b M_{ac} - \xi_a 
+	M_{bc}) \\
+	(i\xi\cdot P)^{2n+1} \wedge \delta h \cdot M
+	&= 2\delta h^{ab} l^{-2} z^{2n-2} \xi^c \xi_b (-i) 
+	[M_{ac},P_d] \\
+	&= 2\delta h^{ab} l^{-2} z^{2n-2} (\xi_b\xi_a \xi\cdot P - 
+	\xi^2 \xi_b P_a) \\
+	&= \delta h^{ab} z^{2n} (\xi_a P_b - \xi_b P_a)~.
+\end{align*}
+
+
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{../../references/All}
+%\bibliography{/home/hendrik/research/drafts/All.bib}
+\end{document}
+

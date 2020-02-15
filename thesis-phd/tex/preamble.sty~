@@ -1,0 +1,140 @@
+%KOMA-script general settings
+\flushbottom
+\addtokomafont{caption}{\small}
+\setkomafont{captionlabel}{\sffamily}
+\setcapindent{1em}
+\setcapwidth[l]{0.9\textwidth}
+
+%KOMA-script headings
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead{\headmark}
+\ifoot{DRAFT:~\today}
+\ofoot{\pagemark}
+
+%Color
+\usepackage[dvipsnames]{xcolor}
+
+%Input encoding / Font settings
+\usepackage[latin1]{inputenc}
+\usepackage{lmodern}	%latin computer modern
+
+%Microtypographic extensions
+\usepackage{microtype}
+
+%Language settings
+\usepackage[english]{babel}
+\uchyph=0 %no hyphenation of capitalized words
+
+%Hyperref
+\usepackage[hidelinks]{hyperref}
+
+%Natbib package - bibliography settings
+\usepackage[square,numbers,sort&compress]{natbib}
+\setlength{\bibsep}{5pt}
+
+%Appendix package
+\usepackage[title,titletoc]{appendix}
+
+%AMS packages
+\usepackage{mathtools} %Includes amsmath
+\let\openbox\relax %openbox defined in two places
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%->Vertical whitespace around math environments
+\AtBeginDocument{%
+ \abovedisplayskip=7pt plus 3pt minus 3pt
+ \abovedisplayshortskip=0pt plus 2pt
+ \belowdisplayskip=7pt plus 3pt minus 3pt
+ \belowdisplayshortskip=5pt plus 2pt minus 2pt
+}
+
+
+%Extra math stuff
+\usepackage{dsfont} %Blackboard symbols - use \mathds
+\usepackage{mathrsfs} %Script symbols - use \mathsc
+\usepackage{mathabx} %Mathabx symbols - enhancement of font,
+							%see doc
+
+%Math-related tweaking
+\allowdisplaybreaks %math envs. are broken up over pages
+\numberwithin{equation}{section} %numbering of equations
+\newcommand{\nla}{\mathrel{\hphantom{=}}}
+	%nla = new line align
+	%Ensures vertical alignment when breaking up a long equations 
+	%in align/split environment. \mathrel is to assure consistent 
+	%spacing around "=". Should be trailed by "{}" if next symbol 
+	%is binary operator to have consistent spacing around this 
+	%symbol.
+
+
+%Useful commands
+\newcommand{\blankline}{\vspace{\baselineskip}}
+
+%Tensor package - to facilitate index placement
+\usepackage{tensor}
+\newcommand{\ind}{\indices}
+
+%Tikz
+\usepackage{tikz}
+%Tikz-cd - Commutative diagrams (Tikz)
+\usetikzlibrary{cd}
+\tikzset{%document wide settings
+	%append settings to 'every label':
+	/tikz/commutative diagrams/labels={font=\normalsize},
+	%append options to the style 'every arrow'
+	/tikz/commutative diagrams/arrows={-stealth}
+}
+
+%Line spread
+\usepackage{setspace}
+\setstretch{1.05}
+
+\usepackage{enumitem}
+\setlist[itemize]{
+	noitemsep,
+	topsep=3pt
+}
+
+%Theorem tools 
+\usepackage{thmtools}
+\declaretheoremstyle[
+	bodyfont=\normalfont
+]{definition}
+\declaretheorem[
+	style=definition,
+	numbered=no
+]{definition}
+\declaretheorem[numberwithin=section]{proposition}
+\declaretheorem[style=remark,numberwithin=section,qed=$\lozenge$]{remark}
+\let\proof\relax
+\declaretheorem[style=remark,numbered=no,qed=$\square$]{proof}
+\declaretheoremstyle[
+	bodyfont=\normalfont
+]{example}
+\declaretheorem[
+	style=example,
+	numbered=no
+]{example}
+
+%User-defined commands
+%---------------------
+
+%General stuff
+\def\ad{\mathrm{ad}}
+\def\Ad{\mathrm{Ad}}
+\def\mrm{\mathrm}
+\def\ip{\rfloor}
+\def\mc{\mathcal}
+\def\mf{\mathfrak}
+\def\pd{\partial}
+
+%---
+
+%Comment environment
+\usepackage{comment}
+
+%\usepackage{showframe}

@@ -1,0 +1,1134 @@
+% This file was created with JabRef 2.10.
+% Encoding: ISO8859_1
+
+
+@Book{Abramowitz:1968mf,
+  Title                    = {Handbook of Mathematical Functions},
+  Address                  = {New York},
+  Author                   = {M. Abramowitz and I. A. Segun},
+  Publisher                = {Dover Publications},
+  Year                     = {1968}
+}
+
+@Article{Ade:2015xua,
+  Title                    = {Planck 2015 results. XIII. {C}osmological parameters},
+  Author                   = {Ade, P. A. R. and others},
+  Year                     = {2015},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1502.01589},
+  Primaryclass             = {astro-ph.CO},
+
+  Slaccitation             = {%%CITATION = ARXIV:1502.01589;%%}
+}
+
+@Article{Aldrovandi:2006vr,
+  Title                    = {{d}e {S}itter special relativity},
+  Author                   = {Aldrovandi, R. and Beltran Almeida, J.~P. and Pereira, J.~G.},
+  Journal                  = {Class. Quantum Grav.},
+  Pages                    = {1385-1404},
+  Volume                   = {24},
+  Year                     = {2007},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0606122},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1088/0264-9381/24/6/002},
+  Slaccitation             = {%%CITATION = GR-QC/0606122;%%}
+}
+
+@Book{aldrovandi:2012tele,
+  Title                    = {Teleparallel Gravity: An Introduction},
+  Address                  = {Dordrecht},
+  Author                   = {Aldrovandi, R. and Pereira, J. G.},
+  Publisher                = {Springer},
+  Year                     = {2012},
+
+  ISBN                     = {978-94-007-5142-2},
+  Lccn                     = {2012945747}
+}
+
+@Article{Aldrovandi:2003pa,
+  Title                    = {Gravitation without the equivalence principle},
+  Author                   = {Aldrovandi, R. and Pereira, J. G. and Vu, K. H.},
+  Journal                  = {Gen. Rel. Grav.},
+  Pages                    = {101-110},
+  Volume                   = {36},
+  Year                     = {2004},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0304106},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1023/B:GERG.0000006696.98824.4d},
+  Slaccitation             = {%%CITATION = GR-QC/0304106;%%}
+}
+
+@Article{Aldrovandi:2003xu,
+  Title                    = {Selected topics in teleparallel gravity},
+  Author                   = {Aldrovandi, R. and Pereira, J. G. and Vu, K. H.},
+  Journal                  = {Braz. J. Phys.},
+  Pages                    = {1374-1380},
+  Volume                   = {34},
+  Year                     = {2004},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0312008},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1590/S0103-97332004000700014},
+  Slaccitation             = {%%CITATION = GR-QC/0312008;%%}
+}
+
+@Article{Alekseevsky:1995cc,
+  Title                    = {Differential geometry of {C}artan connections},
+  Author                   = {Alekseevsky, D. V. and Michor, P. W.},
+  Journal                  = {Publ. Math. Debrecen},
+  Pages                    = {349-375},
+  Volume                   = {47},
+  Year                     = {1995},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {math/9412232},
+  Primaryclass             = {math.DG}
+}
+
+@Article{deAndrade:2000kr,
+  Title                    = {Gravitational energy-momentum density in teleparallel gravity},
+  Author                   = {de Andrade, V. C. and Guillen, L. C. T. and Pereira, J. G.},
+  Journal                  = {Phys. Rev. Lett.},
+  Pages                    = {4533-4536},
+  Volume                   = {84},
+  Year                     = {2000},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0003100},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1103/PhysRevLett.84.4533},
+  Reportnumber             = {IFT-P-032-2000},
+  Slaccitation             = {%%CITATION = GR-QC/0003100;%%}
+}
+
+@Article{deAndrade:2000sf,
+  Title                    = {Teleparallel gravity: an overview},
+  Author                   = {de Andrade, V. C. and Guillen, L. C. T. and Pereira, J. G. },
+  Year                     = {2000},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0011087},
+  Primaryclass             = {gr-qc},
+
+  Slaccitation             = {%%CITATION = GR-QC/0011087;%%}
+}
+
+@Article{deAndrade:1997qt,
+  Title                    = {Gravitational Lorentz force and the description of the gravitational interaction},
+  Author                   = {de Andrade, V. C. and Pereira, J. G.},
+  Journal                  = {Phys. Rev.},
+  Pages                    = {4689-4695},
+  Volume                   = {D56},
+  Year                     = {1997},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/9703059},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1103/PhysRevD.56.4689},
+  Slaccitation             = {%%CITATION = GR-QC/9703059;%%}
+}
+
+@Article{Arcos:2005ec,
+  Title                    = {Torsion gravity: a reappraisal},
+  Author                   = {Arcos, H. I. and Pereira, J. G.},
+  Journal                  = {Int. J. Mod. Phys.},
+  Pages                    = {2193-2240},
+  Volume                   = {D13},
+  Year                     = {2004},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0501017},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1142/S0218271804006462},
+  Slaccitation             = {%%CITATION = GR-QC/0501017;%%}
+}
+
+@Article{Bergmann:1968ve,
+  Title                    = {Comments on the scalar tensor theory},
+  Author                   = {Bergmann, Peter G.},
+  Journal                  = {Int. J. Theor. Phys.},
+  Pages                    = {25-36},
+  Volume                   = {1},
+  Year                     = {1968},
+
+  Doi                      = {10.1007/BF00668828},
+  Slaccitation             = {%%CITATION = IJTPB,1,25;%%}
+}
+
+@Article{Borisov:1974bn,
+  Title                    = {{Theory of Dynamical Affine and Conformal Symmetries as Gravity Theory}},
+  Author                   = {Borisov, A. B. and Ogievetsky, V. I.},
+  Journal                  = {Theor.Math.Phys.},
+  Pages                    = {1179},
+  Volume                   = {21},
+  Year                     = {1975},
+
+  Doi                      = {10.1007/BF01038096},
+  Reportnumber             = {JINR-E2-7684},
+  Slaccitation             = {%%CITATION = TMPHA,21,1179;%%}
+}
+
+@Article{Brans:1961sx,
+  Title                    = {{M}ach's principle and a relativistic theory of gravitation},
+  Author                   = {Brans, C. and Dicke, R.H.},
+  Journal                  = {Phys. Rev.},
+  Pages                    = {925-935},
+  Volume                   = {124},
+  Year                     = {1961},
+
+  Doi                      = {10.1103/PhysRev.124.925},
+  Slaccitation             = {%%CITATION = PHRVA,124,925;%%}
+}
+
+@Article{Brill:1957fx,
+  Title                    = {{Interaction of neutrinos and gravitational fields}},
+  Author                   = {Brill, Dieter R. and Wheeler, John A.},
+  Journal                  = {Rev.Mod.Phys.},
+  Pages                    = {465-479},
+  Volume                   = {29},
+  Year                     = {1957},
+
+  Doi                      = {10.1103/RevModPhys.29.465},
+  Slaccitation             = {%%CITATION = RMPHA,29,465;%%}
+}
+
+@Article{Callan:1969sn,
+  Title                    = {Structure of phenomenological {L}agrangians.~{II}},
+  Author                   = {Callan, Jr., Curtis G. and Coleman, Sidney and Wess, J. and Zumino,Bruno},
+  Journal                  = {Phys. Rev.},
+  Pages                    = {2247-2250},
+  Volume                   = {177},
+  Year                     = {1969},
+
+  Doi                      = {10.1103/PhysRev.177.2247},
+  Slaccitation             = {%%CITATION = PHRVA,177,2247;%%}
+}
+
+@Book{carroll:sg,
+  Title                    = {Spacetime and Geometry: an Introduction to General Relativity},
+  Address                  = {San Francisco},
+  Author                   = {S. Carroll},
+  Publisher                = {Addison Wesly},
+  Year                     = {2004}
+}
+
+@Book{cartan:1935rm,
+  Title                    = {La M{\'e}thode du Rep{\`e}re Mobile, la Th{\'e}orie des Groupes Continus et les {\'E}spaces G{\'e}n{\'e}ralis{\'e}s},
+  Address                  = {Paris},
+  Author                   = {Cartan, {\'E}lie},
+  Publisher                = {Hermann},
+  Year                     = {1935},
+  Number                   = {5},
+  Series                   = {Expos{\'e}s de G{\'e}om{\'e}trie}
+}
+
+@Article{Cartan:1926gh,
+  Title                    = {Les groupes d'holonomie des espaces g{\'e}n{\'e}ralis{\'e}s},
+  Author                   = {Cartan, {\'E}lie},
+  Journal                  = {Acta Math.},
+  Pages                    = {1-42},
+  Volume                   = {48},
+  Year                     = {1926},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.1007/BF02629755},
+  Date-modified            = {2014-11-06 15:01:16 +0000},
+  Doi                      = {10.1007/BF02629755},
+  ISSN                     = {0001-5962},
+  Language                 = {French},
+  Publisher                = {Springer Netherlands}
+}
+
+@Article{cartan:1923cc,
+  Title                    = {Les espaces {\'a} connexion conforme},
+  Author                   = {Cartan, {\'E}lie},
+  Journal                  = {Ann. Soc. Polon. Math.},
+  Pages                    = {171--221},
+  Volume                   = {2},
+  Year                     = {1923}
+}
+
+@Book{Cartan:1939sj,
+  Title                    = {Selecta Jubil\'{e} Scientifique},
+  Address                  = {Paris},
+  Author                   = {Cartan, \'{E}lie},
+  Publisher                = {Gauthier},
+  Year                     = {1939}
+}
+
+@Article{Cartan:1924yea,
+  Title                    = {Sur les vari{\'e}t{\'e}s {\`a} connexion affine et la th{\'e}orie de la relativit{\'e} g{\'e}n{\'e}ralis{\'e}e. (premi{\`e}re partie) (Suite).},
+  Author                   = {Cartan, \'{E}lie},
+  Journal                  = {Ann. {\'E}c. Norm. Super.},
+  Pages                    = {1-25},
+  Volume                   = {41},
+  Year                     = {1924},
+  Number                   = {Series 3},
+
+  Date-added               = {2014-04-18 15:32:24 +0000},
+  Date-modified            = {2014-04-18 15:32:24 +0000},
+  Slaccitation             = {%%CITATION = ASENA,41,1;%%}
+}
+
+@Article{Cartan:1923zea,
+  Title                    = {Sur les vari{\'e}t{\'e}s {\`a} connexion affine et la th{\'e}orie de la relativit{\'e} g{\'e}n{\'e}ralis{\'e}e. (premi{\`e}re partie)},
+  Author                   = {Cartan, \'{E}lie},
+  Journal                  = {Ann. {\'E}c. Norm. Super.},
+  Pages                    = {325-412},
+  Volume                   = {40},
+  Year                     = {1923}
+}
+
+@Article{Chern:1990wg,
+  Title                    = {What is geometry?},
+  Author                   = {Chern, Shiing-Shen},
+  Journal                  = {Amer. Math. Monthly},
+  Pages                    = {679--686},
+  Volume                   = {97},
+  Year                     = {1990},
+
+  Doi                      = {10.2307/2324574}
+}
+
+@Article{Cho:1975dh,
+  Title                    = {Einstein {L}agrangian as the translational {Y}ang--{M}ills {L}agrangian},
+  Author                   = {Cho, Y.M.},
+  Journal                  = {Phys. Rev.},
+  Pages                    = {2521},
+  Volume                   = {D14},
+  Year                     = {1976},
+
+  Doi                      = {10.1103/PhysRevD.14.2521},
+  Reportnumber             = {EFI 75-61-CHICAGO},
+  Slaccitation             = {%%CITATION = PHRVA,D14,2521;%%}
+}
+
+@Article{Coleman:1969sm,
+  Title                    = {Structure of phenomenological {L}agrangians.~{I}},
+  Author                   = {Coleman, Sidney R. and Wess, J. and Zumino, Bruno},
+  Journal                  = {Phys. Rev.},
+  Pages                    = {2239-2247},
+  Volume                   = {177},
+  Year                     = {1969},
+
+  Doi                      = {10.1103/PhysRev.177.2239},
+  Slaccitation             = {%%CITATION = PHRVA,177,2239;%%}
+}
+
+@Article{Copeland:2006wr,
+  Title                    = {Dynamics of dark energy},
+  Author                   = {Copeland, Edmund J. and Sami, M. and Tsujikawa, Shinji},
+  Journal                  = {Int. J. Mod. Phys.},
+  Pages                    = {1753-1936},
+  Volume                   = {D15},
+  Year                     = {2006},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {hep-th/0603057},
+  Primaryclass             = {hep-th},
+
+  Doi                      = {10.1142/S021827180600942X},
+  Slaccitation             = {%%CITATION = HEP-TH/0603057;%%}
+}
+
+@Article{DiCasola:2013iia,
+  Title                    = {Nonequivalence of equivalence principles},
+  Author                   = {Di Casola, E. and Liberati, S. and Sonego, S.},
+  Journal                  = {Am. J. Phys.},
+  Pages                    = {39-46},
+  Volume                   = {83},
+  Year                     = {2015},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1310.7426},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {dx.doi.org/10.1119/1.4895342},
+  Slaccitation             = {%%CITATION = ARXIV:1310.7426;%%}
+}
+
+@Article{Dicke:1961gz,
+  Title                    = {{M}ach's principle and invariance under transformation of units},
+  Author                   = {Dicke, R.H.},
+  Journal                  = {Phys. Rev.},
+  Pages                    = {2163-2167},
+  Volume                   = {125},
+  Year                     = {1962},
+
+  Doi                      = {10.1103/PhysRev.125.2163},
+  Slaccitation             = {%%CITATION = PHRVA,125,2163;%%}
+}
+
+@InCollection{Dirac:1958er,
+  Title                    = {The electron wave equation in {R}iemann space},
+  Author                   = {P. A. M. Dirac},
+  Booktitle                = {Max Planck Festschrift},
+  Publisher                = {VEB Deutscher Verlag der Wissenschaften},
+  Year                     = {1958},
+
+  Address                  = {Berlin},
+  Editor                   = {B. Kockel and W. Macke and A. Papapetrou},
+  Pages                    = {339--344}
+}
+
+@Article{Edelstein:2006a,
+  Title                    = {({S}uper-){G}ravities of a different sort},
+  Author                   = {Edelstein, {Jos\'e} D. and Zanelli, Jorge},
+  Journal                  = {J. Phys.: Conf. Ser.},
+  Pages                    = {83-94},
+  Volume                   = {33},
+  Year                     = {2006},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {hep-th/0605186},
+
+  Doi                      = {10.1088/1742-6596/33/1/008},
+  Slaccitation             = {%%CITATION = HEP-TH/0605186;%%}
+}
+
+@InCollection{ehresmann:1950,
+  Title                    = {Les connexions infinit{\'e}simales dans un espace fibr{\'e} diff{\'e}rentiable},
+  Author                   = {Charles Ehresmann},
+  Booktitle                = {Colloque de topologie (espaces fibr{\'e}s), {B}ruxelles, 1950},
+  Publisher                = {G.~Thone, Li{\'e}ge},
+  Year                     = {1951},
+  Pages                    = {29--55}
+}
+
+@Article{Geng:2011ka,
+  Title                    = {Observational constraints on teleparallel dark energy},
+  Author                   = {Geng, Chao-Qiang and Lee, Chung-Chi and Saridakis, Emmanuel N.},
+  Journal                  = {JCAP},
+  Pages                    = {002},
+  Volume                   = {1201},
+  Year                     = {2012},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1110.0913},
+  Primaryclass             = {astro-ph.CO},
+
+  Doi                      = {10.1088/1475-7516/2012/01/002},
+  Slaccitation             = {%%CITATION = ARXIV:1110.0913;%%}
+}
+
+@Article{Geng:2011aj,
+  Title                    = {'Teleparallel' dark energy},
+  Author                   = {Geng, Chao-Qiang and Lee, Chung-Chi and Saridakis, Emmanuel N. and Wu, Yi-Peng},
+  Journal                  = {Phys. Lett.},
+  Pages                    = {384-387},
+  Volume                   = {B704},
+  Year                     = {2011},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1109.1092},
+  Primaryclass             = {hep-th},
+
+  Doi                      = {10.1016/j.physletb.2011.09.082},
+  Slaccitation             = {%%CITATION = ARXIV:1109.1092;%%}
+}
+
+@Article{gibbons:2009b,
+  Title                    = {Deformed General Relativity and Torsion},
+  Author                   = {Gibbons, Gary W. and Gielen, Steffen},
+  Journal                  = {Class. Quantum Grav.},
+  Pages                    = {135005},
+  Volume                   = {26},
+  Year                     = {2009},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {0902.2001},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1088/0264-9381/26/13/135005},
+  Reportnumber             = {DAMTP-2009-9},
+  Slaccitation             = {%%CITATION = ARXIV:0902.2001;%%}
+}
+
+@Book{Gilmore:2002Lg,
+  Title                    = {Lie Groups, Lie Algebras, and Some of Their Applications},
+  Address                  = {New York},
+  Author                   = {R. Gilmore},
+  Publisher                = {Dover},
+  Year                     = {2002}
+}
+
+@Book{hawking:1973ls,
+  Title                    = {The large scale structure of space--time},
+  Author                   = {Hawking, S. W. and Elis, G. F. R.},
+  Publisher                = {Cambridge University Press},
+  Year                     = {1973}
+}
+
+@Article{Hayashi:1967se,
+  Title                    = {Extended translation invariance and associated gauge fields},
+  Author                   = {Hayashi, K. and Nakano, T.},
+  Journal                  = {Prog. Theor. Phys.},
+  Pages                    = {491-507},
+  Volume                   = {38},
+  Year                     = {1967},
+
+  Doi                      = {10.1143/PTP.38.491},
+  Slaccitation             = {%%CITATION = PTPKA,38,491;%%}
+}
+
+@Book{Hehl:2013gtg,
+  Title                    = {{Gauge theories of gravitation}},
+  Address                  = {London},
+  Author                   = {Hehl, Friedrich W and Blagojevic, Milutin},
+  Publisher                = {Imperial College Press},
+  Year                     = {2013}
+}
+
+@Article{Hehl:1976grs,
+  Title                    = {General relativity with spin and torsion: {F}oundations and prospects},
+  Author                   = {Hehl, F. W. and Von Der Heyde, P. and Kerlick, G. D. and Nester, J. M.},
+  Journal                  = {Rev. Mod. Phys.},
+  Pages                    = {393-416},
+  Volume                   = {48},
+  Year                     = {1976},
+
+  Doi                      = {10.1103/RevModPhys.48.393},
+  Slaccitation             = {%%CITATION = RMPHA,48,393;%%}
+}
+
+@Book{helgasson:1978dg,
+  Title                    = {Differential Geometry, {L}ie Groups, and Symmetric Spaces},
+  Address                  = {New York},
+  Author                   = {Helgason, Sigurdur},
+  Publisher                = {Academic Press},
+  Year                     = {1978}
+}
+
+@Book{husemoller:1966fibre,
+  Title                    = {Fibre Bundles},
+  Address                  = {New York},
+  Author                   = {Husem{\"o}ller, D.},
+  Publisher                = {Springer},
+  Year                     = {1966}
+}
+
+@Book{husemoller.etal:2008bbt,
+  Title                    = {Basic Bundle Theory and K-Cohomology Invariants},
+  Address                  = {Berlin Heidelberg},
+  Author                   = {Husem{\"o}ller, D. and Joachim, M. and Jur{\v{c}}o, B. and Schottenloher, M.},
+  Publisher                = {Springer},
+  Year                     = {2008},
+  Series                   = {Lecture Notes in Physics},
+  Volume                   = {726}
+}
+
+@Article{Inonu:1953sp,
+  Title                    = {On the contraction of groups and their represenations},
+  Author                   = {In{\"o}n{\"u}, E. and Wigner, Eugene P.},
+  Journal                  = {Proc. Nat. Acad. Sci.},
+  Pages                    = {510-524},
+  Volume                   = {39},
+  Year                     = {1953},
+
+  Doi                      = {10.1073/pnas.39.6.510},
+  Slaccitation             = {%%CITATION = PNASA,39,510;%%}
+}
+
+@Article{Isham:1971dv,
+  Title                    = {{Nonlinear realizations of space-time symmetries. Scalar and tensor gravity}},
+  Author                   = {Isham, C.J. and Salam, Abdus and Strathdee, J.A.},
+  Journal                  = {Annals Phys.},
+  Pages                    = {98-119},
+  Volume                   = {62},
+  Year                     = {1971},
+
+  Doi                      = {10.1016/0003-4916(71)90269-7},
+  Reportnumber             = {IC-70-5},
+  Slaccitation             = {%%CITATION = APNYA,62,98;%%}
+}
+
+@Article{Jennen:2014mba,
+  Title                    = {{Cartan geometry of spacetimes with a nonconstant cosmological function $\Lambda$}},
+  Author                   = {Jennen, Hendrik},
+  Journal                  = {Phys.Rev.},
+  Pages                    = {084046},
+  Volume                   = {D90},
+  Year                     = {2014},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1406.2621},
+  Number                   = {8},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1103/PhysRevD.90.084046},
+  Slaccitation             = {%%CITATION = ARXIV:1406.2621;%%}
+}
+
+@Article{Kibble:1961ba,
+  Title                    = {Lorentz invariance and the gravitational field},
+  Author                   = {Kibble, T.W.B.},
+  Journal                  = {J. Math. Phys.},
+  Pages                    = {212-221},
+  Volume                   = {2},
+  Year                     = {1961},
+
+  Doi                      = {10.1063/1.1703702},
+  Slaccitation             = {%%CITATION = JMAPA,2,212;%%}
+}
+
+@Article{Klein:1893,
+  Title                    = {A comparative review of recent researches in geometry},
+  Author                   = {Klein, Felix},
+  Journal                  = {Bull. New York Math. Soc.},
+  Pages                    = {215-249},
+  Volume                   = {2},
+  Year                     = {1893},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.1090/S0002-9904-1893-00147-X},
+  Doi                      = {10.1090/S0002-9904-1893-00147-X},
+  Note                     = {Translated by M.W.~Haskell}
+}
+
+@Article{kobayashi:1957tc,
+  Title                    = {Theory of connections},
+  Author                   = {Kobayaschi, Shoshichi},
+  Journal                  = {Annali di Matematica Pura ed Applicata},
+  Pages                    = {119-194},
+  Volume                   = {43},
+  Year                     = {1957},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.1007/BF02411907},
+  Doi                      = {10.1007/BF02411907},
+  ISSN                     = {0373-3114},
+  Language                 = {English},
+  Publisher                = {Springer-Verlag},
+  Url                      = {http://dx.doi.org/10.1007/BF02411907}
+}
+
+@Book{kob1996found,
+  Title                    = {Foundations of Differential Geometry},
+  Address                  = {New York},
+  Author                   = {Kobayashi, S. and Nomizu, K.},
+  Publisher                = {Wiley-Interscience},
+  Year                     = {1996},
+  Note                     = {Reprint of the 1963 original},
+  Volume                   = {1}
+}
+
+@Book{kob1996found2,
+  Title                    = {Foundations of Differential Geometry},
+  Address                  = {New York},
+  Author                   = {Kobayashi, S. and Nomizu, K.},
+  Publisher                = {Wiley-Interscience},
+  Year                     = {1996},
+  Note                     = {Reprint of the 1969 original},
+  Volume                   = {2}
+}
+
+@Article{levicivita:1916,
+  Title                    = {Nozione di parallelismo in una variet{\`a} qualunque e conseguente specificazione geometrica della curvatura riemanniana},
+  Author                   = {Levi-Civita, Tullio},
+  Journal                  = {Rend. Circ. Mat. Palermo},
+  Pages                    = {173--204},
+  Volume                   = {42},
+  Year                     = {1916},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.1007/BF03014898},
+  Doi                      = {10.1007/BF03014898},
+  ISSN                     = {0009-725X},
+  Language                 = {Italian},
+  Publisher                = {Springer-Verlag},
+  Url                      = {http://dx.doi.org/10.1007/BF03014898}
+}
+
+@Book{loomis:1990ac,
+  Title                    = {Advanced Calculus},
+  Address                  = {Boston},
+  Author                   = {L. Loomis and S. Sternberg},
+  Publisher                = {Jones and Bartlett},
+  Year                     = {1990}
+}
+
+@Book{loos:1969ss,
+  Title                    = {Symmetric Spaces},
+  Author                   = {Loos, O.},
+  Publisher                = {Benjamin},
+  Year                     = {1969}
+}
+
+@Article{Moller:1961ap,
+  Title                    = {Conservation laws and absolute parallelism in general relativity},
+  Author                   = {M{\o}ller, C.},
+  Journal                  = {Mat. Fys. Dan. Vid. Selsk.},
+  Pages                    = {1--50},
+  Volume                   = {1},
+  Year                     = {1961}
+}
+
+@Article{Mansouri:2002cg,
+  Title                    = {Nonvanishing cosmological constant $\Lambda$, phase
+ transitions, and $\Lambda$-dependence of high-energy
+ processes},
+  Author                   = {Mansouri, Freydoon},
+  Journal                  = {Phys. Lett.},
+  Pages                    = {239-245},
+  Volume                   = {B538},
+  Year                     = {2002},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {hep-th/0203150},
+  Primaryclass             = {hep-th},
+
+  Doi                      = {10.1016/S0370-2693(02)02022-1},
+  Reportnumber             = {UCTP101-02},
+  Slaccitation             = {%%CITATION = HEP-TH/0203150;%%}
+}
+
+@Book{nakahara:2003gt,
+  Title                    = {Geometry, Topology and Physics},
+  Address                  = {Bristol},
+  Author                   = {Nakahara, M.},
+  Publisher                = {IOP Publishing},
+  Year                     = {1990},
+  Series                   = {Graduate student series in physics},
+
+  ISBN                     = {9780750306065},
+  Lccn                     = {2003282202}
+}
+
+@Article{Otalora:2014aoa,
+  Title                    = {A novel teleparallel dark energy model},
+  Author                   = {Otalora, G.},
+  Year                     = {2014},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1402.2256},
+  Primaryclass             = {gr-qc},
+
+  Slaccitation             = {%%CITATION = ARXIV:1402.2256;%%}
+}
+
+@Article{Padmanabhan:1987au,
+  Title                    = {Limitations on the Operational Definition of Spacetime
+ Events and Quantum Gravity},
+  Author                   = {Padmanabhan, T.},
+  Journal                  = {Class. Quant. Grav.},
+  Pages                    = {L107-L113},
+  Volume                   = {4},
+  Year                     = {1987},
+
+  Doi                      = {10.1088/0264-9381/4/4/007},
+  Slaccitation             = {%%CITATION = CQGRD,4,L107;%%}
+}
+
+@Article{Peebles:2003cc,
+  Title                    = {The cosmological constant and dark energy},
+  Author                   = {Peebles, P. J. E. and Ratra, Bharat},
+  Journal                  = {Rev. Mod. Phys.},
+  Pages                    = {559-606},
+  Volume                   = {75},
+  Year                     = {2003},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {astro-ph/0207347},
+  Primaryclass             = {astro-ph},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.1103/RevModPhys.75.559},
+  Doi                      = {10.1103/RevModPhys.75.559},
+  Reportnumber             = {KSUPT-02-3},
+  Slaccitation             = {%%CITATION = ASTRO-PH/0207347;%%}
+}
+
+@Article{Perlmutter:1998np,
+  Title                    = {Measurements of $\Omega$ and $\Lambda$ from 42 high-redshift
+ supernovae},
+  Author                   = {Perlmutter, S. and others},
+  Journal                  = {Astrophys. J.},
+  Pages                    = {565-586},
+  Volume                   = {517},
+  Year                     = {1999},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {astro-ph/9812133},
+  Primaryclass             = {astro-ph},
+
+  Doi                      = {10.1086/307221},
+  Reportnumber             = {LBNL-41801, LBL-41801},
+  Slaccitation             = {%%CITATION = ASTRO-PH/9812133;%%}
+}
+
+@Misc{riemann:1854,
+  Title                    = {{\"U}ber die {H}ypothesen, welche der {G}eometrie zu {G}runde liegen},
+
+  Author                   = {Riemann, Bernhard},
+  Year                     = {1854},
+
+  Bdsk-url-1               = {http://www.maths.tcd.ie/pub/HistMath/People/Riemann/Geom/},
+  Url                      = {http://www.maths.tcd.ie/pub/HistMath/People/Riemann/Geom/}
+}
+
+@Article{Riess:1998cb,
+  Title                    = {Observational evidence from supernovae for an
+ accelerating universe and a cosmological constant},
+  Author                   = {Riess, Adam G. and others},
+  Journal                  = {Astron. J.},
+  Pages                    = {1009-1038},
+  Volume                   = {116},
+  Year                     = {1998},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {astro-ph/9805201},
+  Primaryclass             = {astro-ph},
+
+  Doi                      = {10.1086/300499},
+  Slaccitation             = {%%CITATION = ASTRO-PH/9805201;%%}
+}
+
+@Article{Salam:1969rq,
+  Title                    = {Nonlinear realizations. I. The Role of {G}oldstone bosons},
+  Author                   = {Salam, Abdus and Strathdee, J.A.},
+  Journal                  = {Phys.Rev.},
+  Pages                    = {1750-1759},
+  Volume                   = {184},
+  Year                     = {1969},
+
+  Doi                      = {10.1103/PhysRev.184.1750},
+  Reportnumber             = {IC-68-105},
+  Slaccitation             = {%%CITATION = PHRVA,184,1750;%%}
+}
+
+@Article{Sciama:1964wt,
+  Title                    = {The physical structure of general relativity},
+  Author                   = {Sciama, Dennis W.},
+  Journal                  = {Rev. Mod. Phys.},
+  Pages                    = {463-469},
+  Volume                   = {36},
+  Year                     = {1964},
+
+  Doi                      = {10.1103/RevModPhys.36.1103},
+  Slaccitation             = {%%CITATION = RMPHA,36,463;%%}
+}
+
+@Book{sharpe1997diff_geo,
+  Title                    = {Differential Geometry: {C}artan's Generalization of {K}lein's {E}rlangen Program},
+  Address                  = {New York},
+  Author                   = {Sharpe, R. W.},
+  Publisher                = {Springer},
+  Year                     = {1997}
+}
+
+@Article{Sotiriou:2008rp,
+  Title                    = {$f(R)$ theories of gravity},
+  Author                   = {Sotiriou, Thomas P. and Faraoni, Valerio},
+  Journal                  = {Rev. Mod. Phys.},
+  Pages                    = {451-497},
+  Volume                   = {82},
+  Year                     = {2010},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {0805.1726},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1103/RevModPhys.82.451},
+  Slaccitation             = {%%CITATION = ARXIV:0805.1726;%%}
+}
+
+@InCollection{Spradlin:2002ds,
+  Title                    = {De {S}itter Space},
+  Author                   = {Spradlin, M. and Strominger, A. and Volovich, A.},
+  Booktitle                = {Unity from Duality: Gravity, Gauge Theory and Strings},
+  Publisher                = {Springer Berlin Heidelberg},
+  Year                     = {2002},
+  Editor                   = {Bachas, C. and Bilal, A. and Douglas, M. and Nekrasov, N. and David, F.},
+  Pages                    = {423-453},
+  Series                   = {Les Houches - Ecole d'Ete de Physique Theorique},
+  Volume                   = {76},
+
+  Archiveprefix            = {arXiv},
+  Doi                      = {10.1007/3-540-36245-2_6},
+  Eprint                   = {hep-th/0110007},
+  Primaryclass             = {hep-th}
+}
+
+@Article{stelle.west:1980ds,
+  Title                    = {Spontaneously broken de~{S}itter symmetry and the gravitational holonomy group},
+  Author                   = {Stelle, K. S. and West, P. C.},
+  Journal                  = {Phys. Rev. D},
+  Pages                    = {1466-1488},
+  Volume                   = {21},
+  Year                     = {1980},
+
+  Doi                      = {10.1103/PhysRevD.21.1466},
+  Issue                    = {6},
+  Publisher                = {American Physical Society}
+}
+
+@Article{Stelle:1979va,
+  Title                    = {{d}e~{S}itter gauge invariance and the geometry of the {E}instein-{C}artan Theory},
+  Author                   = {Stelle, K. S. and West, P. C.},
+  Journal                  = {J. Phys. A},
+  Pages                    = {L205-L210},
+  Volume                   = {12},
+  Year                     = {1979},
+
+  Doi                      = {10.1088/0305-4470/12/8/003},
+  Slaccitation             = {%%CITATION = INSPIRE-146713;%%}
+}
+
+@Article{Tiemblo:2005js,
+  Title                    = {{Gauge theories of gravity: The Nonlinear framework}},
+  Author                   = {Tiemblo, A. and Tresguerres, R.},
+  Journal                  = {Recent Res. Devel. Phys.},
+  Pages                    = {1255},
+  Volume                   = {5},
+  Year                     = {2004},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0510089},
+  Primaryclass             = {gr-qc},
+
+  Slaccitation             = {%%CITATION = GR-QC/0510089;%%}
+}
+
+@InCollection{Trautman:2006ec,
+  Title                    = {{E}instein--{C}artan Theory},
+  Author                   = {A. Trautman},
+  Booktitle                = {Encyclopedia of Mathematical Physics},
+  Publisher                = {Academic Press},
+  Year                     = {2006},
+
+  Address                  = {Oxford},
+  Editor                   = {Jean-Pierre Fran{\c{c}}oise and Gregory L. Naber and Tsou Sheung Tsun},
+  Pages                    = {189-195},
+
+  Archiveprefix            = {arXiv},
+  Doi                      = {http://dx.doi.org/10.1016/B0-12-512666-2/00014-6},
+  Eprint                   = {gr-qc/0606062},
+  Primaryclass             = {gr-qc}
+}
+
+@Article{Tresguerres:2008jf,
+  Title                    = {{Dynamically broken Anti-de Sitter action for gravity}},
+  Author                   = {Tresguerres, Romualdo},
+  Journal                  = {Int. J. Geom. Meth. Mod. Phys.},
+  Pages                    = {171-183},
+  Volume                   = {5},
+  Year                     = {2008},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {0804.1129},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1142/S0219887808002692},
+  Slaccitation             = {%%CITATION = ARXIV:0804.1129;%%}
+}
+
+@Article{Tsujikawa:2010zza,
+  Title                    = {Modified gravity models of dark energy},
+  Author                   = {Tsujikawa, Shinji},
+  Journal                  = {Lect. Notes Phys.},
+  Pages                    = {99-145},
+  Volume                   = {800},
+  Year                     = {2010},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1101.0191},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1007/978-3-642-10598-2_3},
+  Slaccitation             = {%%CITATION = ARXIV:1101.0191;%%}
+}
+
+@Article{Volkov:1973vd,
+  Title                    = {Phenomenological {L}agrangians},
+  Author                   = {Volkov, Dmitri V.},
+  Journal                  = {Fiz. Elem. Chastits At. Yadra},
+  Pages                    = {3-41},
+  Volume                   = {4},
+  Year                     = {1973},
+
+  Note                     = {[Sov. J. Part. Nucl.]},
+  Slaccitation             = {%%CITATION = FECAA,4,3;%%}
+}
+
+@Article{Wagner:2012ui,
+  Title                    = {Torsion-balance tests of the weak equivalence principle},
+  Author                   = {Wagner, T. A. and Schlamminger, S. and Gundlach, J. H. and Adelberger, E. G.},
+  Journal                  = {Class. Quant. Grav.},
+  Pages                    = {184002},
+  Volume                   = {29},
+  Year                     = {2012},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1207.2442},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1088/0264-9381/29/18/184002},
+  Slaccitation             = {%%CITATION = ARXIV:1207.2442;%%}
+}
+
+@Book{Wald:1984gr,
+  Title                    = {General Relativity},
+  Address                  = {Chicago},
+  Author                   = {R. W. Wald},
+  Publisher                = {The University of Chicago Press},
+  Year                     = {1984}
+}
+
+@Book{Weinberg:2008bc,
+  Title                    = {Cosmology},
+  Author                   = {Steven Weinberg},
+  Publisher                = {Oxford University Press},
+  Year                     = {2008}
+}
+
+@Book{Weinberg:1972gc,
+  Title                    = {Gravitation and Cosmology: Principles and Applications of the General Theory of Relativity},
+  Address                  = {New York},
+  Author                   = {Steven Weinberg},
+  Publisher                = {Wiley},
+  Year                     = {1972}
+}
+
+@Book{Weitz:1923it,
+  Title                    = {Invariantentheorie},
+  Address                  = {Groningen},
+  Author                   = {R. Weitzenb{\"o}ck},
+  Publisher                = {Noordhoff},
+  Year                     = {1923}
+}
+
+@Book{wess:1992ss,
+  Title                    = {Supersymmetry and Supergravity},
+  Address                  = {Princeton},
+  Author                   = {Julius Wess and Jonathan Bagger},
+  Publisher                = {Princeton University Press},
+  Year                     = {1992}
+}
+
+@Article{Westman:2014yca,
+  Title                    = {An introduction to the physics of {C}artan gravity},
+  Author                   = {Westman, Hans F. and Zlosnik, T. G.},
+  Year                     = {2014},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1411.1679},
+  Primaryclass             = {gr-qc},
+
+  Slaccitation             = {%%CITATION = ARXIV:1411.1679;%%}
+}
+
+@Article{Westman:2012xk,
+  Title                    = {Gravity, {C}artan geometry, and idealized waywisers},
+  Author                   = {Westman, H. F. and Zlosnik, T. G.},
+  Year                     = {2012},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1203.5709},
+  Primaryclass             = {gr-qc},
+
+  Date-added               = {2014-11-06 15:34:51 +0000},
+  Date-modified            = {2014-11-06 15:34:51 +0000},
+  Slaccitation             = {%%CITATION = ARXIV:1203.5709;%%}
+}
+
+@Article{Wise:2011-sym.br,
+  Title                    = {The geometric role of symmetry breaking in gravity},
+  Author                   = {Wise, Derek K.},
+  Journal                  = {J. Phys.: Conf. Ser.},
+  Pages                    = {012017},
+  Volume                   = {360},
+  Year                     = {2012},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1112.2390},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1088/1742-6596/360/1/012017},
+  Slaccitation             = {%%CITATION = ARXIV:1112.2390;%%}
+}
+
+@Article{Wise:2010sm,
+  Title                    = {{M}ac{D}owell-{M}ansouri gravity and {C}artan geometry},
+  Author                   = {Wise, Derek K.},
+  Journal                  = {Class. Quantum Grav.},
+  Pages                    = {155010},
+  Volume                   = {27},
+  Year                     = {2010},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {gr-qc/0611154},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.1088/0264-9381/27/15/155010},
+  Doi                      = {10.1088/0264-9381/27/15/155010},
+  Slaccitation             = {%%CITATION = GR-QC/0611154;%%}
+}
+
+@Article{Wise:2009fu,
+  Title                    = {Symmetric space {C}artan connections and gravity in three and four dimensions},
+  Author                   = {Wise, Derek K.},
+  Journal                  = {SIGMA},
+  Pages                    = {080},
+  Volume                   = {5},
+  Year                     = {2009},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {0904.1738},
+  Primaryclass             = {math.DG},
+
+  Bdsk-url-1               = {http://dx.doi.org/10.3842/SIGMA.2009.080},
+  Doi                      = {10.3842/SIGMA.2009.080},
+  Slaccitation             = {%%CITATION = ARXIV:0904.1738;%%}
+}
+
+@Article{Wu:1998ad,
+  Title                    = {The large-scale smoothness of the Universe},
+  Author                   = {Wu, Kelvin K.S. and Lahav, Ofer and Rees, Martin J.},
+  Journal                  = {Nature},
+  Pages                    = {225-230},
+  Volume                   = {397},
+  Year                     = {1999},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {astro-ph/9804062},
+  Primaryclass             = {astro-ph},
+
+  Doi                      = {10.1038/16637},
+  Reportnumber             = {OL-07-98},
+  Slaccitation             = {%%CITATION = ASTRO-PH/9804062;%%}
+}
+
+@Article{Xu:2012jf,
+  Title                    = {Phase-space analysis of teleparallel dark energy},
+  Author                   = {Xu, Chen and Saridakis, Emmanuel N. and Leon, Genly},
+  Journal                  = {JCAP},
+  Pages                    = {005},
+  Volume                   = {1207},
+  Year                     = {2012},
+
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1202.3781},
+  Primaryclass             = {gr-qc},
+
+  Doi                      = {10.1088/1475-7516/2012/07/005},
+  Slaccitation             = {%%CITATION = ARXIV:1202.3781;%%}
+}
+
+@Article{Zumino:1977nl,
+  Title                    = {Non-linear realization of supersymmetry in anti de~{S}itter space},
+  Author                   = {Bruno Zumino},
+  Journal                  = {Nucl. Phys.},
+  Pages                    = {189-201},
+  Volume                   = {B127},
+  Year                     = {1977},
+
+  Doi                      = {10.1016/0550-3213(77)90211-5},
+  ISSN                     = {0550-3213}
+}
+

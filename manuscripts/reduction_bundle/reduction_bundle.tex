@@ -1,0 +1,266 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+
+\title{Reduction of principal bundles}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We review the reduction of principal bundles and the relation 
+	between a Cartan and Ehresmann connection.
+\end{abstract}
+
+\section{Reduction of a principal bundle}
+
+In this section the reduction process of a principal bundle is 
+reviewed. Since our discussion is mostly based on the works 
+\cite{husemoller:1966fibre,husemoller.etal:2008bbt,kob1996found}, 
+we would like to refer the reader to these in case a more 
+complete and certainly rigorous treatment of the subject is 
+desired.
+
+Let $H$ and $G$ be Lie groups and consider an injective group 
+homomorphism
+\begin{displaymath}
+	i : H \to G~.
+\end{displaymath}
+It will be assumed that $i(H)$ is isomorphic to $H$, from which 
+it follows that $H$ is a subgroup of $G$.  This inclusion of $H$ 
+into $G$ is generally possible in different ways.  In other 
+words, the short exact sequence
+\begin{displaymath}
+\begin{tikzcd}
+	e \rar & H \rar{i} & G \rar & \dfrac{G}{i(H)} \rar & e
+\end{tikzcd}
+\end{displaymath}
+is not canonically given. Of course, any differently chosen 
+inclusion results in isomorphic subgroups of $G$.  Therefore it 
+might seem overprecise to refer to the specific inclusion by 
+using the notation $i(H)$, rather than just denoting any of them 
+by the letter $H$. We, however, adhere to this precision, since 
+these isomorphic subgroups $i(H)$ may have quite a different 
+physical meaning.
+
+Indeed, consider the homogeneous space $S$ that is symmetric 
+under the left action of $G$ and for which the isotropy subgroup 
+of any point is isomorphic with $H$. The isomorphism $S \simeq 
+G/H$ becomes manifest when choosing an origin $o \in S$ so that 
+an element $gH_o \in G/H_o$ is identified with $\tau_g(o) \in S$.  
+By denoting $H_o = i(H)$ this establishes the isomorphism $S 
+\simeq G/i(H)$. If another origin $\xi = \tau_a(o)$ is chosen, 
+$S$ will be identified with $G/H_\xi$, where the isotropy group 
+of $\xi$ is related to the isotropy group of $o$ through the 
+adjoint action
+\begin{displaymath}
+	H_\xi = a H_o a^{-1} = \Ad(a)(H_o)~.
+\end{displaymath}
+In both cases the origin singles out a subgroup $i(H)$ in $G$ 
+that are evidently isomorphic, nonetheless physically variant, 
+being the isotropy subgroups of different points. It is also said 
+that by prefering some point as the origin of $S$, the symmetry 
+group $G$ is \emph{broken} to a subgroup $i(H)$.
+
+\begin{proposition}\label{prop:corr_section_map}
+	Let $Q(M,G)$ be a principal $G$-bundle and let $F$ be a left 
+	$G$-space. There is a one-to-one correspondence between 
+	sections of $Q[F] = Q \times_G F$ and maps $\varphi : Q \to F$ 
+	that are $G$-equivariant, i.e.~they satisfy $R^\ast_g\varphi = 
+	g^{-1}\cdot\varphi$.
+\end{proposition}
+
+\begin{remark}
+A proof of this statement is given in 
+\cite{husemoller:1966fibre}, Sec.~4.8 on pg.~46. The bijective
+correspondence between such sections and $G$-equivariant mappings 
+is as follows. In case $\varphi$ is a map that satisfies 
+$\varphi(qg) = g^{-1}\cdot\varphi(q)$, a section $M \to Q 
+\times_G F$ is given by $\sigma(\pi(q)) \equiv [q, \varphi(q)]$ 
+for any $q \in Q$.  This is a well-defined construction because 
+for any $g \in G$
+\begin{displaymath}
+	\sigma(\pi(qg)) = [qg,\varphi(qg)] = [q,\varphi(q)] = 
+	\sigma(\pi(q))~.
+\end{displaymath}
+Conversely, let $\sigma$ be a section of $Q \times_G F$. There is 
+a map $\varphi : Q \to F$ so that
+\begin{displaymath}
+	\sigma(\pi(q)) = [q,\varphi(q)] = [qg,g^{-1}\cdot\varphi(q)]~.
+\end{displaymath}
+Since $\sigma(\pi(q)) = \sigma(\pi(qg)) = [qg,\varphi(qg)]$ for 
+any $g \in G$, it follows that $\varphi$ is $G$-equivariant.
+\end{remark}
+
+Denote by $Q/i(H)$ the space of equivalence classes with respect 
+to the right action of $i(H) \subset G$ on $Q$. This quotient 
+space can be identified with the associated $G$-bundle $Q[S] = Q 
+\times_G S$, where $S$ is the homogeneous space $G/i(H)$. More 
+precisely, the correspondence is governed by the 
+map\footnote{This map is an isomorphism between fibre bundles; 
+	see e.g.~\cite{husemoller:1966fibre}, Sec.~6.1 on pg.~70.}
+\begin{displaymath}
+	Q/i(H) \to Q[S] : [q] \mapsto [q,\xi_a] = [q,a\xi_o]~,
+\end{displaymath}
+where $\xi_a$ is the origin of $G/i(H)$, hence $i(H) = H_a = 
+aH_oa^{-1}$.  
+
+\begin{definition}
+	Let $Q(M,G)$ and $P(M,H)$ be a principal $G$-~and $H$-bundle, 
+	respectivily, and for which $i(H)$ is a closed subgroup of 
+	$G$. Let $\imath : P \to Q$ be an injection so that 
+	$\imath(ph) = \imath(p)i(h)$ for each $p \in P$ and $h \in H$.  
+	Then $Q$ is an extension of $P$ and $P$ is a restriction of 
+	$Q$. The group $G$ is said to be reduced to the group $H 
+	\simeq i(H)$.
+\end{definition}
+
+Given a principal $H$-bundle $P$ with $H$ being a subgroup of 
+$G$, it is always possible to extend to a principal $G$-bundle.  
+Since there is a natural left action of $H$ on $G$, one also has 
+the associated bundle $P[G] = P \times_H G$, whose elements are 
+the equivalence classes
+\begin{displaymath}
+	[p,g] = \{(ph,i(h)g)~|~h \in H \}~.
+\end{displaymath}
+There is a natural right $G$-action on this bundle, given by 
+$[p,g]g' = [p,gg']$. Because the left and right actions commute, 
+this is a well-defined principal $G$-bundle. We will write 
+$Q(M,G) = P \times_{i(H)} G$. The extension of $Q$ is then given 
+by the natural injection
+\begin{equation}
+	\imath : P \to Q : p \mapsto [p,e]~.
+\end{equation}
+
+On the other hand, it is not always possible to reduce a 
+principal $G$-bundle to a principal $H$-bundle. This is the 
+subject of discussion in the following proposition.
+
+\begin{proposition}
+	A principal $G$-bundle $Q$ is reducible to a principal 
+	$H$-bundle $P$ if and only if the associated bundle $Q[S] = Q 
+	\times_G S$, with $S \simeq G/H$, admits a globally defined 
+	section.
+\end{proposition}
+\begin{proof}
+	Let $\imath : P \to Q$ be a reduction. The composition 
+	$\tilde{\sigma} \equiv \mu \circ \imath$, where $\mu : Q \to 
+	Q/i(H) \simeq Q[S]$ is the natural projection $q \mapsto [q] = 
+	[q,a\xi_o]$, is constant on the fibres of $P$;
+	\begin{displaymath}
+		\tilde{\sigma}(ph)  = \mu(\imath(p)i(h)) = 
+		\tilde{\sigma}(p)~,\quad h \in H~.
+	\end{displaymath}
+	Hence, $\tilde{\sigma}$ defines a section $M \to Q \times_G S$ 
+	by $\sigma(x) = \tilde{\sigma}(p)$ for any $p \in 
+	\pi^{-1}(x)$, since $\pi \circ \sigma = \mathrm{id}_M$.
+
+	Conversely, let $\sigma$ be a section of $Q[S]$. From 
+	Proposition~\ref{prop:corr_section_map} it follows that there 
+	is a corresponding $G$-equivariant map $\varphi : Q \to S$.  
+	Let $\imath(P) \equiv \varphi^{-1}(\xi_a)$, where at each $x 
+	\in M$ we have that $i(H)(\xi_a) = \xi_a$. Consider the 
+	restriction of $\pi : Q \to M$ to $\imath(P)$ and let 
+	$\imath(p_1)$ and $\imath(p_2)$ be two elements in $\imath(P)$ 
+	for which
+	\begin{displaymath}
+		\pi|_{\imath(P)}(\imath(p_1)) = 
+		\pi|_{\imath(P)}(\imath(p_2))~.
+	\end{displaymath}
+	There exists an element $g \in G$ for which $\imath(p_1) = 
+	\imath(p_2)g$, so that
+	\begin{displaymath}
+		\xi_a = \varphi(\imath(p_1)) = g^{-1}\varphi(\imath(p_2)) = 
+		g^{-1}\xi_a~.
+	\end{displaymath}
+	Hence, $g$ must be an element of $i(H)$ and $\imath : P \to Q$ 
+	is a reduction from $G$ to $i(H)$.
+\end{proof}
+
+To conclude this section, let us summarize the reduction process 
+in the following diagram.
+\begin{displaymath}
+\begin{tikzcd}[column sep=2cm]
+	{}			&	& S \simeq G/H									\\
+	P(M,H)	\arrow{r}[color=red]{\imath}
+				\arrow[end anchor=north west]{ddr}
+				&  Q(M,G)
+					\arrow[start anchor=north east]{ur}{\varphi}
+					\arrow[start anchor=south east]{dr}{\mu}
+					\arrow{dd}										\\
+				&	& Q \times_G S
+						\arrow[end anchor=north east]{dl}	\\
+				& M \arrow[dashed,bend right,
+						start anchor={[xshift=+2pt]real east},
+						end anchor={[xshift=+10pt]south west}
+						]{ur}[swap,color=red]{\sigma}
+\end{tikzcd}
+\end{displaymath}
+
+\section{Induced Cartan connection}
+
+Given a reduction $\imath : P \to Q$ one can wonder how Ehresmann 
+connections on $Q$ are related to Cartan connections on the 
+reduced bundle $P$. In the following proposition we explain how 
+an Ehresmann connection on $Q$ may be interpreted as a Cartan 
+connection on $P$, for a certain subclass of reductions $\imath$ 
+\cite{sharpe1997diff_geo}. It will be assumed that the dimension 
+of $P$ equals the dimension of $G$.
+
+\begin{proposition}
+	Let $\gamma \in \Omega(Q,\mathfrak{g})$ be an Ehresmann 
+	connection on $Q$. If
+	\begin{displaymath}
+		\mathrm{ker}~\gamma \cap \imath_\ast(TP) = 0~,
+	\end{displaymath}
+	then
+	\begin{equation}
+		\kappa \equiv \imath^\ast\gamma : TP \to \mathfrak{g}
+	\end{equation}
+	is a Cartan connection on $P$.
+\end{proposition}
+\begin{proof}
+	Because $\mathrm{ker}~\gamma \cap \imath_\ast(TP) = 0$, 
+	$\imath^\ast\gamma$ is a $\mathfrak{g}$-valued one-form on $P$ 
+	that has no kernel. We verify the three defining properties of 
+	a Cartan connection for $\kappa$:
+	\begin{itemize}
+		\item[(i)] Since $\dim P = \dim G$ and because $\imath$ is an 
+			injection, $\imath^\ast \gamma$ is an isomorphism.
+		\item[(ii)] Let $\zeta_X$ be the fundamental vector field on 
+			$P$ corresponding to $X \in \mathfrak{h}$, i.e.~$\zeta_X f 
+			= \dot{f}(p\exp(tX))$ for $f$ a function on $P$. It follows 
+			that $\imath_\ast \zeta_X f = \dot{f}(\imath(p) 
+			i(\exp(tX)))$, which is a fundamental vector field on $Q$ 
+			corresponding to $i(X) \in i(\mathfrak{h}) \simeq 
+			\mathfrak{h}$.  It follows that $\kappa(\zeta_X) = i(X)$ 
+			for any $X \in \mathfrak{h}$.
+		\item[(iii)] Since for any $p \in P$
+			\begin{displaymath}
+				\imath \circ R_h(p) = [ph,e] = [p,i(h)] = R_{i(h)} \circ 
+				\imath(p)~,
+			\end{displaymath}
+			it follows that
+			\begin{displaymath}
+				R^\ast_h \imath^\ast \gamma =	\imath^\ast R^\ast_{i(h)} 
+				\gamma = \imath^\ast (\Ad(i(h^{-1})) \cdot \gamma) = 
+				\Ad(i(h^{-1})) \cdot \imath^\ast \gamma~.
+			\end{displaymath}
+			One concludes that $R^\ast_h \kappa = \Ad(i(h^{-1}))\cdot 
+			\kappa$.
+	\end{itemize}
+	The proof is completed when identifying $H$ with $i(H)$.
+\end{proof}
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{../../references/All.bib}
+\end{document}
+

@@ -1,0 +1,332 @@
+\documentclass[11pt]{article}
+
+%Package declarations
+%--------------------
+\usepackage{setspace}
+\setstretch{1.1}
+\usepackage[a4paper]{geometry}
+\geometry{left=3.5cm,right=3.5cm,top=3.5cm,bottom=3.5cm}
+
+\usepackage[english]{babel}
+\usepackage{color}
+
+\usepackage{../Tex_files/preamble_one}
+%\newcommand{\mcA}{\mcal{A}} %Local connection 1-from
+%\newcommand{\mfg}{\mfrak{g}} %Lie algebra
+
+%\numberwithin{equation}{section}
+
+\usepackage{pifont}
+
+\author{}
+\title{Noether's theorem in curved spaces}
+\date{}
+
+\begin{document}
+\maketitle
+
+We consider a scalar field $\phi$ on a curved spacetime---that 
+is, coupled to gravity---described by an action where the 
+Lagrangian depends on $\phi$, its first order derivatives and on 
+the inverse metric $g^{-1}$,\footnote{The kinetic regime for 
+	gravity itself is not included for the moment. We assume the 
+	metric as ``given'', while only focusing on the matter content 
+	in the theory.}
+%
+\begin{equation}\label{eq:action}
+	S[\phi] = \int_M dg\,\mcal{L}(\phi,d\phi,g^{-1})
+\end{equation}
+The invariant volume element $dg$ is given by $dg = 
+\sqrt{|g|}dx^0\wedge \ldots dx^3$ and $\mcal{L}$ is a scalar 
+($0$-form), such that the integral is well defined. The explicit 
+indication of the inverse of the metric in the Lagrangian may 
+seem exagerated. However, since $\mcal{L}$ depends on $\phi$ and 
+$d\phi$, it can \emph{only} depend on $g$ through the inverse if 
+$\mcal{L}$ were to be a function.
+
+\section{Euler-Lagrange equations}
+
+It is a standard procedure in modern physics---and interestingly 
+enough, a technique finding its roots in classical 
+mechanics---that the equations of motion can be obtained from an 
+action \eqref{eq:action}, more precisely by invoking the 
+\emph{action principle}.
+\begin{quote}
+	``The actual evolution of physical variables is so that the 
+	action, describing the corresponding system, attains an 
+	extremal value.''
+\end{quote}
+In other words, the equations of motions are given such that its 
+solutions extremize the system's action.
+
+Therefore, assuming the physical fields are given by $\phi$ the 
+equations of motion are equivalent to the condition
+%
+\begin{equation}\label{eq:ELeqs_cond}
+	\left.\tfrac{d}{d\varepsilon} S[\phi + 
+	\varepsilon\eta]\right|_{\varepsilon=0} = 0~,
+\end{equation}
+where $\eta : M \to \mbb{R}$ is an arbitrary function that 
+vanishes on $\pd M$. Then,
+%
+\begin{align*}
+	\left.\tfrac{d}{d\varepsilon} S[\phi + 
+	\varepsilon\eta]\right|_{\varepsilon=0}
+	&= \int_M dg\, \left(\frac{\pd\mcal{L}}{\pd(\phi + 
+			\varepsilon\eta)} \left.\tfrac{d}{d\varepsilon}(\phi + 
+		\varepsilon\eta)\right|_{\varepsilon=0} +
+		\frac{\pd\mcal{L}}{\pd\pd_i(\phi+\varepsilon\eta)} 
+		\left.\tfrac{d}{d\varepsilon}\pd_i(\phi + 
+		\varepsilon\eta)\right|_{\varepsilon=0} \right) \\
+	&= \int_M dg\, \left(\frac{\pd\mcal{L}}{\pd\phi}\eta + 
+		\frac{\pd\mcal{L}}{\pd\pd_i\phi} \pd_i\eta \right) 
+\end{align*}
+The second term can be further worked out as
+%
+\begin{displaymath}
+	\int_M d^4x \sqrt{g} \frac{\pd\mcal{L}}{\pd\pd_i\phi} 
+	\pd_i\eta = \int_M d^4x \pd_i\Big(\sqrt{g} 
+	\frac{\pd\mcal{L}}{\pd\pd_i\phi} \eta \Big) - \int_M d^4x 
+	\pd_i \Big(\sqrt{g} \frac{\pd\mcal{L}}{\pd\pd_i\phi}\Big) \eta 
+\end{displaymath}
+or, more elegantly written
+%
+\begin{equation}\label{eq:EL_deriv1}
+	\int_M dg\, \frac{\pd\mcal{L}}{\pd d\phi} d\eta
+	= \underbrace{\int_M dg\, \mathrm{div}\Big( 
+		\frac{\pd\mcal{L}}{\pd d\phi}\eta \Big)}_\text{\ding{172}} 
+	- \int_M dg\, \mathrm{div}\Big( \frac{\pd\mcal{L}}{\pd d\phi} 
+	\Big)\eta
+\end{equation}
+where $\frac{\pd\mcal{L}}{\pd d\phi}$ is the vector field with 
+components $\frac{\pd\mcal{L}}{\pd\pd_i\phi}$ and the divergence 
+of a vector field is defined through\footnote{Note that 
+	$\mathrm{div}(X) = \nabla_i X^i$, where covariant 
+	differentiation is understood w.r.t.~the Levi-Civita 
+	connection.}
+\begin{equation}\label{eq:div_def}
+	\mcal{L}_X dg = \frac{1}{\sqrt{g}} \pd_i(\sqrt{g}X^i)dg =:
+	\mathrm{div}(X)dg.
+\end{equation}
+
+Remember a version of Stokes' theorem for Riemannian spacetimes, 
+that is
+%
+\begin{equation}
+	\int_M dg\, \mathrm{div}(X) = \int_{\pd M} d\tilde{g}\, 
+	g(X,\hat{n})
+\end{equation}
+where $d\tilde{g}$ is the volume element on $\pd M$ and $\hat{n}$ 
+is the outward pointing unit vector field along $\pd M$. Since 
+$\eta_{\pd M} = 0$, the first term \ding{172} in 
+\eqref{eq:EL_deriv1} vanishes. Then the condition 
+\eqref{eq:ELeqs_cond} is found to be
+%
+\begin{displaymath}
+	\left.\tfrac{d}{d\varepsilon}S[\phi + 
+	\varepsilon\eta]\right|_{\varepsilon=0}
+	= \int_M dg\, \Big( \frac{\pd \mcal{L}}{\pd \phi} - 
+	\mathrm{div}\Big( \frac{\pd\mcal{L}}{\pd d\phi}\Big)\Big) \eta 
+	= 0
+\end{displaymath}
+Since $\eta$ was chosen to be arbitrary in the bulk of $M$, we 
+find the Euler-Lagrange equation corresponding to the system 
+\eqref{eq:action}, namely
+%
+\begin{subequations}
+	\begin{align}
+		\label{eq:ELeqs}
+		\frac{\pd \mcal{L}}{\pd \phi} - \mathrm{div}\Big( 
+		\frac{\pd\mcal{L}}{\pd d\phi}\Big) &= 0,~\text{or} \\
+		\label{eq:ELeqs_bis}
+		\frac{\pd \mcal{L}}{\pd \phi} - \frac{1}{\sqrt{g}} 
+		\pd_i\Big(\sqrt{g} \frac{\pd\mcal{L}}{\pd \pd_i\phi}\Big) 
+		&= 0~.
+	\end{align}
+\end{subequations}
+
+
+\section{Noether's theorem: diffeomorphism invariance}
+
+In this section we will consider the diffeomorphism invariance of 
+\eqref{eq:action} and investigate what currents are conserved due 
+to this symmetry.
+
+Let $\varphi_t : M \to M$ be a one-parameter group of 
+diffeomorphism. By construction of the action \eqref{eq:action}, 
+we have a one-parameter group of symmetries of the theory, i.e.~
+%
+\begin{displaymath}
+	\int_M dg\, \mcal{L}(\phi,d\phi,g^{-1}) = \int_M 
+	\varphi^\ast_t\big(dg\, \mcal{L}(\phi,d\phi,g^{-1})\big)
+\end{displaymath}
+Dividing this equation by $t$ and considering the limit $t\to 0$ 
+implies that
+%
+\begin{equation}\label{eq:diff_symm_action}
+	\int_M \mcal{L}_X \big( dg\, \mcal{L}(\phi,d\phi,g^{-1})\big) 
+	= 0~,
+\end{equation}
+where $X = \dot{\varphi}_t$ compactly supported on $M$. This is 
+the infinitesimal version of the fact that our theory be 
+diffeomorphism covariant.
+
+The LHS of \eqref{eq:diff_symm_action} is now computed. Invoking 
+the Leibniz and chain rule for Lie differentiation, one 
+finds\footnote{Remember that $dg$ is a top-form, so that any 
+	other combinations of tensors and differential forms are 
+	assumed to be contracted. For example $dg\, \omega\, t \equiv 
+	dg\, t_{i_1\cdots i_r}\omega^{i_1\cdots i_r}$.} 
+%
+\begin{displaymath}
+	\int_M dg\, \Big( \frac{\pd \mcal{L}}{\pd \phi} \mcal{L}_X\phi 
+	+ \underbrace{\frac{\pd \mcal{L}}{\pd d\phi} 
+		\mcal{L}_Xd\phi}_\text{\ding{172}} + \frac{\pd 
+		\mcal{L}}{\pd g^{-1}}\mcal{L}_Xg^{-1} \Big) + \int_M 
+	\mcal{L}\mcal{L}_X dg
+\end{displaymath}
+Let us first consider \ding{172}. Since Lie and exterior 
+differentiation commutes we have
+%
+\begin{displaymath}
+	\text{\ding{172}} = \int d^4x \sqrt{g} \frac{\pd 
+		\mcal{L}}{\pd\pd_i\phi} \pd_i \mcal{L}_X\phi = 
+	\underbrace{\int_M dg\, \mathrm{div}\Big(\frac{\pd 
+			\mcal{L}}{\pd d\phi} \mcal{L}_X\phi 
+		\Big)}_\text{\ding{173}} - \int_M dg\, \mathrm{div} \Big( 
+	\frac{\pd \mcal{L}}{\pd d\phi}\Big) \mcal{L}_X\phi~.
+\end{displaymath}
+Invoking Stokes' theorem for \ding{173} learns us that this term 
+is zero (due to the fact that $X$ is compactly supported on $M$).  
+Also making use of the definition for the divergence of a vector 
+field \eqref{eq:div_def}, \eqref{eq:diff_symm_action} becomes
+%
+\begin{displaymath}
+	\int_M dg\, \Big\{\Big( \frac{\pd \mcal{L}}{\pd \phi} 
+		-\mathrm{div}\Big(\frac{\pd\mcal{L}}{\pd d\phi}\Big)\Big) 
+		\mcal{L}_X\phi + \underbrace{\frac{\pd\mcal{L}}{\pd 
+				g^{-1}}\mcal{L}_X g^{-1} + \mcal{L} 
+			\,\mathrm{div}(X)}_\text{\ding{174}}\Big\} = 0~.
+\end{displaymath}
+
+To go on we take a closer look at \ding{174}. The tensor $g^{-1}$ 
+has components $(g^{-1})^{ij} =g^{ij}$. Furthermore, let the 
+contraction $C(g\otimes g^{-1}) := g_{ik}g^{kj} = \delta^j_i$.  
+Then it is clear that
+%
+\begin{displaymath}
+	0 = \mcal{L}_X C(g\otimes g^{-1}) = C(\mcal{L}_X g \otimes 
+	g^{-1}) + C(g \otimes \mcal{L}_X g^{-1})~,
+\end{displaymath}
+so that $(\mcal{L}_X g)_{ik}g^{kj} = -g_{ik} (\mcal{L}_X 
+g^{-1})^{kj}$ and
+%
+\begin{equation}\label{eq:rel_LieD_g-ginv}
+	(\mcal{L}_X g)^{ij} = -(\mcal{L}_X g^{-1})^{ij}~.
+\end{equation}
+%
+It is a straightforward computation that
+%
+\begin{equation}\label{eq:rel_div_LieD}
+	\mathrm{div}(X) = \tfrac{1}{2}g_{ij}(\mcal{L}_Xg)^{ij}~.
+\end{equation}
+Then substituting \ding{174} for \eqref{eq:rel_LieD_g-ginv} and 
+\eqref{eq:rel_div_LieD}, one finds
+%
+\begin{displaymath}
+	\text{\ding{174}} = \Big(\tfrac{1}{2}g_{ij}\mcal{L} - 
+	\frac{\pd \mcal{L}}{\pd g^{ij}} \Big)(\mcal{L}_X g)^{ij}.
+\end{displaymath}
+
+At this point, one usually defines the \emph{energy-momentum 
+	tensor}
+\begin{equation}
+	T_{ij} :=  \frac{\pd \mcal{L}}{\pd g^{ij}} - 
+	\tfrac{1}{2}g_{ij}\mcal{L} ~,
+\end{equation}
+so that \eqref{eq:diff_symm_action} becomes
+%
+\begin{displaymath}
+	\int_M dg\, \Big\{\Big( \frac{\pd \mcal{L}}{\pd \phi} 
+		-\mathrm{div}\Big(\frac{\pd\mcal{L}}{\pd d\phi}\Big)\Big) 
+		\mcal{L}_X\phi - \underbrace{T_{ij}(\mcal{L}_X 
+			g)^{ij}}_\text{\ding{175}} \Big\} = 0~.
+\end{displaymath}
+%
+Finally, let us exploit some last mathematical identities to 
+rewrite \ding{175}. Therefore, we first show that 
+$(\mcal{L}_Xg)^{ij} = 2\nabla^{(i}X^{j)}$, where covariant 
+differentiation is w.r.t.~the Levi-Civita connection. To do this 
+the LHS and RHS are calculated consecutively and are shown to be 
+equal.
+%
+\begin{displaymath}
+	(\mcal{L}_Xg)^{ij} = -(\mcal{L}_X g^{-1})^{ij}
+	= -X^l\pd_l g^{ij} + g^{il}\pd_l X^j + g^{lj}\pd_l X^i
+\end{displaymath}
+On the other side of the equation we have
+%
+\begin{align*}
+	\nabla^iX^j + \nabla^jX^i &= g^{il}(\pd_l X^j + 
+	\Gamma^j_{lk}X^k) + [i \leftrightarrow j] \\
+	&= g^{il}(\pd_l X^j + \tfrac{1}{2}g^{jm}(\pd_lg_{mk} + 
+	\pd_kg_{ml} - \pd_mg_{lk})X^k) + [i \leftrightarrow j] \\
+	&= g^{il}\pd_lX^j + g^{jl}\pd_lX^i + 
+	2g^{i(l}g^{m)j}\pd_{[l}g_{m]k}X^k + 
+	g^{i(l}g^{m)j}\pd_kg_{ml}X^k \\
+	&= g^{il}\pd_lX^j + g^{jl}\pd_lX^i + 
+	g^{il}g^{mj}\pd_kg_{ml}X^k \\
+	&= g^{il}\pd_lX^j + g^{jl}\pd_lX^i - \pd_kg^{ij}X^k
+\end{align*}
+So we find the sought after identity,
+%
+\begin{equation}
+	(\mcal{L}_Xg)^{ij} = 2 \nabla^{(i}X^{j)}~.
+\end{equation}
+Inserting this in \ding{175} and using the symmetry of $T_{ij}$, 
+it follows that
+%
+\begin{displaymath}
+	\text{\ding{175}} = \int_M dg\, 2T^i_{~j}\nabla_i X^j = \int_M 
+	dg\, \Big\{ 2 \mathrm{div}\big(T^i_{~j} X^j \big) - 
+		\nabla^iT_{ij}X^j \Big\}
+\end{displaymath}
+
+Once again invoking Stokes' theorem for the first term in the 
+last integral, invariance of the action under infinitesimal 
+diffeomorphism \eqref{eq:diff_symm_action} translates into
+%
+\begin{equation}
+	\int_M dg\, \Big\{ \Big( \frac{\pd \mcal{L}}{\pd \phi} 
+		-\mathrm{div}\Big(\frac{\pd\mcal{L}}{\pd d\phi}\Big)\Big) 
+		\mcal{L}_X\phi + \nabla^iT_{ij} X^j \Big\} = 0~.
+\end{equation}
+
+Since the vector field $X$ considered is arbitrary, the 
+energy-momentum tensor $T_{ij}$ is conserved
+%
+\begin{equation}
+	\nabla^i T_{ij} = 0
+\end{equation}
+if and only if the equations of motion \eqref{eq:ELeqs} are 
+satisfied, that is the matter fields are \emph{on-shell}. This 
+shows that the covariant conservation of the Noether current 
+associated with diffeomorphism invariance is a dynamical 
+conservation equation.\footnote{Dynamical here means that the 
+	covariant conservation is only true for the fields on-shell.}
+However, this covariant conservation does not necessarily lead to 
+a conservation law.
+
+The fact that the energy momentum tensor is divergenceless 
+\emph{only with the matter fields on-shell} is an important point 
+to keep in mind. We could have added the Einstein-Hilbert term to 
+the action \eqref{eq:action} and solve for the equations of 
+motion for the metric components. Then the energy-momentum tensor 
+of the matter fields will appear as a source in Einstein's 
+equations. The latter are divergenceless because of the 
+Bianchi-identity---a geometric identity. Then Einstein's 
+equations only make sense for all the fields on-shell, since for 
+the matter fields \emph{off-shell} the right hand side (the 
+energy-momentum tensor) has non-vanishing divergence, 
+contradicting the Bianchi identity on the left hand side.
+\end{document}

@@ -1,0 +1,198 @@
+\documentclass[10pt]{article}
+
+%Package declarations
+%--------------------
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{setspace}
+\setstretch{1.1}
+\usepackage[a4paper]{geometry}
+\geometry{left=3.5cm,right=3.5cm,top=3cm,bottom=3cm}
+
+\usepackage[english]{babel}
+\usepackage{color}
+
+
+
+\title{Cosmology}
+\date{\today}
+\author{Hendrik}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	This is to be a rough survey of introductory concepts in 
+	Cosmology.  \end{abstract}
+
+\section{Kinematics due to the Cosmological Principle}
+
+From the Cosmological Principle, which is the assumption that 
+space is homogeneous and isotropic on large scales, one is lead 
+to the Friedmann-Lema\^itre-Robertson-Walker metric,
+%
+\begin{equation}
+	ds^2 = -dt^2 + a^2(t) d\Sigma_3
+\end{equation}
+%
+where $d\Sigma_3$ is a three-dimensional space of constant 
+curvature. It can be expressed as
+[Expand this by argumentating the form; fundamental observers, 
+etc. See ... ]
+%
+\begin{equation}
+	d\Sigma_3 = d\chi^2 + S^2(\chi)(d\theta^2 + \sin^2 \theta 
+	d\phi^2)
+\end{equation}
+%
+\begin{equation}
+	S(\chi) =
+	\begin{cases}
+		\sin\chi & \text{positive spatial curvature}\\
+		\chi & \text{no spatial curvature}\\
+		\sinh\chi & \text{negative spatial curvature}
+	\end{cases}
+\end{equation}
+Note that the \emph{comoving} coordinates---the coordinates of 
+fundamental observers---$\chi,\theta,\phi$ are constants in time. 
+These observers will move relative to eachother because their 
+seperation distances change due to the time dependence of the 
+scale factor $a(t)$, but their coordinate distance is 
+independepent of time.
+
+Due to the timedependent scale factor in the FRW--metric, 
+identical photons which are emitted at different cosmic time will 
+generally have different energies when observed on earth. This 
+can be understood by noting that because of the changing scale 
+factor, the distance between two wavecrests will increase. The 
+relative change in wavelength is called the redshift factor $z$ 
+and is given by
+%
+\begin{equation}
+	z = \frac{\Delta \lambda}{\lambda_e} = \frac{a(t_o)}{a(t_e)}-1
+\end{equation}
+Note that for an increasing scale factor photons are redshifted 
+$(z>0)$, while for a decreasing factor photons are blueshifted 
+$(z<0)$.
+
+The scale factor $a(t)$ is not known at all cosmic times. One 
+therefore starts with a Taylor series expansion around 
+``now'',\footnote{Note that if photons are emitted very close to 
+	now, that this also implies that the emitting object is nearby 
+	in space.  Of course what is considered close is to be defined 
+	with respect to the overall scale. This is also reflected in 
+	taking a taylor series w.r.t.\ a-priori dimensionful 
+	quantities. For example, when expanding around now, the 
+	quantity $\delta t = t - t_o$ is really $t - t_o / t_o$.} i.e.  
+$t_o$.  Doing so one finds,
+%
+\begin{displaymath}
+	\frac{a(t)}{a(t_o)} = 1 - \frac{\dot{a}(t_o)}{a(t_o)}(t_o - t) 
+	+ \tfrac{1}{2} \ddot{a}(t_o)(t_o -t)^2 + O(3)
+\end{displaymath}
+%
+The Hubble parameter $H(t)$ and decelaration parameter $q(t)$ are 
+then defined as
+%
+\begin{align}
+	H(t) &\equiv \frac{\dot{a}(t)}{a(t)} \\
+	q(t) &\equiv -\frac{\ddot{a}(t)a(t)}{\dot{a}^2(t)}
+\end{align}
+%
+Hence, the scale parameter can be recast in the form
+%
+\begin{equation}
+	\frac{a(t)}{a(t_o)} = 1 - H_o(t_o-t) + \tfrac{1}{2} q_o H^2_o 
+	(t_o-t)^2 + O(3)
+\end{equation}
+
+It is a same exercise to find the redshift of a photon emitted at 
+time $t$, as a Taylor expansion around $t_0$;
+%
+\begin{equation}
+	z(t) = H_o(t_o-t) + H^2_o(1+\tfrac{1}{2}q_o) (t_o-t)^2 + O(3)
+\end{equation}
+%
+For nearby objects, the cosmological redshift is $z \approx H_o 
+(t_o-t)$. Since for such objects $(t_o-t)$ is approximately equal 
+to the proper distance between us and the object ($t$ being the 
+time the photon was emitted), one has \emph{Hubble's Law}, that 
+is
+%
+\begin{equation}
+	z \approx H_o d_P
+\end{equation}
+
+\paragraph{Proper distance}
+
+A photon travels along a null geodesic such that along its 
+worldline, one always has $dt = \pm a(t)d\chi$. The proper 
+distance between two fundamental observers at time $t_o$ is given 
+by
+\begin{equation}
+	d_P \equiv \int_{0}^{\chi} a(t_o) d\chi
+\end{equation}
+%
+Let $t_e$ be the time at which a photon was emitted at $\chi = 
+\chi_e$ that has arrived now at the earth. One can rewrite the 
+proper distance then as
+%
+\begin{equation}
+	d_P = a(t_o) \int_{t_e}^{t_o} \frac{dt}{a(t)}
+\end{equation}
+%
+Using the relation $dt = -H^{-1}(1+z)^{-1}dz$, this integral may 
+be rewritten as
+%
+\begin{equation}
+	d_P = - \int_{z}^0 \frac{dz}{H(z)} = \int_0^z \frac{dz}{H(z)}
+\end{equation}
+%
+Which is the proper distance between us (as a fundamental 
+observer) and another fundamental observer seen at redshift $z$.
+
+\paragraph{Luminosity distance}
+
+Let $L$ be the \emph{absolute luminosity} radiated by a 
+fundamental observer $(\chi_e)$ and let $f$ be the \emph{observed 
+	flux}. The \emph{luminosity distance} is the distance defined 
+as
+%
+\begin{equation}
+	d_L = \left( \frac{L}{4\pi f} \right)^{1/2}
+\end{equation}
+%
+The observed flux will depend on the large scale geometry of 
+spacetime.  Indeed, it is the observed luminosity divided by the 
+area of a sphere surrounding the emitting object. The observed 
+luminosity will be redshifted twice: once because the photons are 
+redshifted and once because the arrival rate will be affected by 
+the same rate--the latter can be understood by imagining that the 
+space \emph{between} photons is scaled with a factor $1+z$. Since 
+the area of a sphere is given by $4\pi a^2(t_o)S^2(\chi_e)$, one 
+finds that the observed flux is given by
+%
+\begin{displaymath}
+	f = \frac{L(1+z)^{-2}}{4 \pi a^2(t_o)S^2(\chi_e)}
+\end{displaymath}
+%
+One concludes that the luminosity distance to an object at 
+coordinate $\chi$ and redshift $z$ is given by
+%
+\begin{equation}
+	d_L = a(t_o)S(\chi)(1+z)
+\end{equation}
+%
+Note that for flat spacelike sections $S(\chi) = \chi$ and one 
+finds
+that
+%
+\begin{displaymath}
+	d_L = d_P (1+z) = (1+z)\int_0^z \frac{d\bar{z}}{H(\bar{z})}
+\end{displaymath}
+
+\section{Dynamics due to general relativity}
+
+%\bibliographystyle{plain}
+%\bibliography{cosm_bib.bib}
+\end{document}

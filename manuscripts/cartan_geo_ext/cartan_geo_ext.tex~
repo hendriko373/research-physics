@@ -1,0 +1,926 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+
+\usepackage{mathtools}
+
+\usepackage[all]{xy}
+
+\title{Cartan geometry}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We give an extended discussion on Cartan geometry.
+\end{abstract}
+
+\section{Introduction and definition}
+
+{\blu[
+
+	Introduction has to be expanded and must include
+	\begin{itemize}
+		\item A note on the relation to Klein geometries, which 
+			should make our motivation for using Cartan geometries 
+			clear. The reduction of the latter to the former must be 
+			pointed out in the definitions.
+		\item References used or interesting for further readings: 
+			including Sharpe's book, Michor's and Wise's papers.
+		\item A short note on history: Cartan's original articles.  
+			This is related to the first point.
+	\end{itemize}]
+}
+
+Let $G \supset H$ be a Lie group with $H$ a closed subgroup and 
+let $P(M,H)$ denote the principal bundle $\pi : P \to M$ with 
+typical fibre $H$. We begin this short review by writing down the 
+formal definition of a Cartan geometry as given in 
+\cite{sharpe1997diff_geo}.
+
+\subsection{Definition}
+
+\begin{definition}[Cartan geometry]
+	\label{def:cartan_geo}
+	A \textbf{Cartan geometry $(P,\kappa)$ modeled on 		
+		$(\mathfrak{g},H)$} consists of a principal bundle $P(M,H)$ 
+	together with a $\mathfrak{g}$-valued 1-form $\kappa$ on $P$, 
+	satisfying the following properties:
+	\begin{itemize}
+		\item[(i)] for each $p \in P$, the linear map $\kappa_p : 
+			T_pP \to \mathfrak{g}$ is an isomorphism;
+		\item[(ii)] $\kappa(\zeta_X) = X$, for each fundamental 
+			vector field $\zeta_X$ corresponding to $X \in 
+			\mathfrak{h}$;
+		\item[(iii)] $R_h^\ast \kappa = \mathrm{Ad}(h^{-1}) \cdot 
+			\kappa$ for each $h \in H$.
+	\end{itemize}
+	The 1-form $\kappa$ is called the \textbf{Cartan connection} of 
+	the geometry.
+\end{definition}
+
+Since $\kappa : TP \to \mathfrak{g}$ defines an isomorphism at 
+any point in $P$, it follows that $\dim P = \dim G$ and one 
+obtains that
+\begin{displaymath}
+	\dim M = \dim G/H~.
+\end{displaymath}
+The second property in the definition implies that a Cartan 
+connection $\kappa$ restricts to the Maurer-Cartan form on the 
+fibers of $P$, i.e.~$\kappa|_H = \kappa_H$, a proof of which can 
+be found in \cite{sharpe1997diff_geo}.
+The bijective mapping $\kappa_p$ can be inverted, i.e.
+\begin{displaymath}
+	\kappa^{-1}_p : \mathfrak{g} \to T_pP~,
+\end{displaymath}
+and for which the equivariance property of $\kappa$ implies that
+\begin{displaymath}
+	\kappa^{-1}_{uh}(X) = R_{h\ast}\,\kappa^{-1}_u(\mathrm{Ad}(h) 
+	X)~.
+\end{displaymath}
+This can be understood by considering the commuting diagram that 
+represents the equivariance property of $\kappa$, namely
+%
+\begin{displaymath}
+\begin{tikzcd}[row sep=1.75cm,column sep=2.8cm]
+	T_u P		\arrow{r}{R_{h \ast}}
+				\arrow{d}{\kappa_u}
+		& T_{uh} P
+				\arrow{d}{\kappa_{uh}}
+	\\
+	\mathfrak{g}
+				\arrow{r}{\Ad(h^{-1})}
+		& \mathfrak{g}
+\end{tikzcd}~,
+\end{displaymath}
+which is easily inverted to obtain the equivariance of 
+$\kappa^{-1}$.
+
+The \textbf{Cartan curvature} $K$ of a Cartan connection is the 
+$\mathfrak{g}$-valued 2-form on $P$ defined by
+\begin{equation}\label{eq:cartan-curvature}
+	K = d\kappa + \frac{1}{2}[\kappa,\kappa]~.
+\end{equation}
+This curvature form is horizontal, which means that it vanishes 
+when any of its arguments is tangent to the fibers of $P$. This 
+may be understood by noting that $\kappa$ restricts to $\kappa_H$ 
+in the direction of the fibers, for which the curvature is 
+nothing but the structure equation \cite{kob1996found}.  
+Explicitly this can be checked as follows.  Because $K(\xi,\eta)$ 
+is antisymmetric in its arguments, it is sufficient to show that 
+$K(\xi,\eta) = 0$ where $\xi$ is a vertical and $\eta$ a vector 
+field on $P$. Being vertical, at any given point one has that 
+$\xi = \kappa^{-1}(X) = \zeta_X$ for some $X \in \mathfrak{h}$.  
+One is able to verify that 
+%
+\begin{displaymath}
+	\begin{split}
+		K(\kappa^{-1}(X),\eta) &= 
+		d\kappa(\kappa^{-1}(X),\eta) + 
+		[\kappa(\kappa^{-1}(X)),\kappa(\eta)] 
+		\\
+		&= i_{\kappa^{-1}(X)} \circ d\kappa(\eta) + 
+		[X,\kappa(\eta)]~,
+	\end{split}
+\end{displaymath}
+where $i_{\kappa^{-1}(X)} \circ d\kappa(\eta) = d 
+\circ i_{\kappa^{-1}(X)}\kappa(\eta) - 
+\mathcal{L}_{\kappa^{-1}(X)}\kappa(\eta) = 
+-\mathcal{L}_{\kappa^{-1}(X)}\kappa(\eta)$. The 
+last equality is due to the constancy of the function 
+$i_{\kappa^{-1}(X)}\kappa$. Next consider the equalities
+%
+\begin{displaymath}
+	\begin{split}
+		\mathcal{L}_{\kappa^{-1}(X)}\kappa(\eta)
+		&= \lim_{t \to 0} \frac{1}{t} (R^\ast_{x_t}\kappa - \kappa) 
+		\\
+		&= \lim_{t \to 0} \frac{1}{t} (\Ad(x^{-1}_t) \cdot \kappa - 
+		\kappa) \\
+		&=	\mathrm{ad}_X \kappa~,
+	\end{split}
+\end{displaymath}
+where $x_t = \exp(tX)$ is the one-parameter subgroup of $H$ that 
+is generated by $X$.  Gathering this information we find that the 
+curvature is indeed horizontal, that is
+%
+\begin{displaymath}
+	K(\xi,\eta) = -\mathrm{ad}_X \kappa(\eta) 
+	+ \mathrm{ad}_X \kappa(\eta) = 0~.
+\end{displaymath}
+
+The \textbf{torsion} $\Theta$ of the Cartan connection is a 
+$\mathfrak{g}/\mathfrak{h}$-valued 2-form on $P$ obtained by 
+composing the curvature form with the canonical projection 
+$\mathfrak{g} \to \mathfrak{g}/\mathfrak{h}$, that is
+\begin{displaymath}
+\begin{tikzcd}[column sep=1.2cm]
+	T^{(2,0)} P
+				\arrow{r}{K}
+				\arrow[bend right,swap]{rr}{\Theta}
+		& \mathfrak{g}
+				\arrow{r}
+		& \mathfrak{g}/\mathfrak{h}
+\end{tikzcd}
+\end{displaymath}
+
+By taking the exterior derivative of the curvature, one finds the 
+\textbf{Bianchi identity}
+\begin{equation}\label{eq:cartan_bianchi}
+	dK + [\kappa,K] = 0~.
+\end{equation}
+
+\subsection{Reductive Cartan geometry}
+
+A Cartan geometry $(P,\kappa)$ modeled on $(\mathfrak{g},H)$ is 
+reductive if there is an $H$-module decomposition $\mathfrak{g} = 
+\mathfrak{h} \oplus \mathfrak{p}$, i.e.~a splitting of the 
+algebra $\mathfrak{g}$ in $\mathrm{Ad}(H)$-invariant subspaces.  
+Corresponding to the reductive splitting, the Cartan connection 
+is expanded as a sum of an $\mathfrak{h}$-valued and a 
+$\mathfrak{p}$-valued part:
+%
+\begin{displaymath}
+	\kappa = \omega + e~;\quad
+	\text{with}
+	\quad\left\{
+	\begin{aligned}
+		\omega &:= \mathrm{pr}_\mathfrak{h}\circ\kappa \in 
+		\Omega^1(P,\mathfrak{h})~, \\
+		e &:= \mathrm{pr}_\mathfrak{p}\circ\kappa \in 
+		\Omega^1(P,\mathfrak{p})~.
+	\end{aligned}
+	\right.
+\end{displaymath}
+These projections make sense, since by definition the reductive 
+splitting is preserved under gauge transformations. The issue is 
+further discussed in the following proposition.
+
+\begin{proposition}
+	Let $(P,\kappa)$ be a reductive Cartan geometry with a 
+	corresponding splitting of the connection $\kappa = \omega + 
+	e$. The one-form $\omega$ is an Ehresmann connection on $P$, 
+	while $e$ is a displacement form, i.e.~$H$-equivariant and 
+	strictly horizontal.
+\end{proposition}
+%%%
+\begin{proof}
+	By the $H$-equivariance of $\kappa$, i.e.~$R_h^\ast \kappa = 
+	\Ad(h^{-1})\cdot\kappa$, it follows that
+	\begin{displaymath}
+		R_h^\ast\omega + R_h^\ast e = \Ad(h^{-1}) \cdot \omega + 
+		\Ad(h^{-1}) \cdot e~,
+	\end{displaymath}
+	since the splitting is reductive.
+	Rearranging this equation,
+	\begin{displaymath}
+		R_h^\ast \omega - \Ad(h^{-1}) \cdot \omega = -R_h^\ast e + 
+		\Ad(h^{-1}) \cdot e~,
+	\end{displaymath}
+	the left-hand side is $\mathfrak{h}$-valued, while the     
+	right-hand side is $\mathfrak{p}$-valued. The equality makes 
+	sense only when both sides equal zero. This proves the 
+	equivariance of both $\omega$ and $e$.
+	
+	Next let $\zeta_X$ be the fundamental vector field 
+	corresponding to $X \in \mathfrak{h}$. Then
+	\begin{displaymath}
+		X = \kappa(\zeta_X) = \omega(\zeta_X) + e(\zeta_X)~,
+	\end{displaymath}
+	or
+	\begin{displaymath}
+		X - \omega(\zeta_X) = e(\zeta_X)~.
+	\end{displaymath}
+	The left-hand side is valued in $\mathfrak{h}$, while the 
+	right-hand side is valued in $\mathfrak{p}$. This implies that 
+	$\omega(\zeta_X) = X$ and $e(\zeta_X) =0$ for any $X \in 
+	\mathfrak{h}$.
+\end{proof}
+
+Note that a vector field $X$ on $P$, which at every point maps 
+into $\mathfrak{p}$ under $\kappa$, is horizontal with respect to 
+the Ehresmann connection $\omega$. This is easily shown to be 
+true by considering $\omega(X) = \mathrm{pr}_\mathfrak{h} \circ 
+\kappa(X) = 0$. 
+
+\blankline
+The Cartan curvature can likewise consistently be written as the 
+sum of an $\mathfrak{h}$-, respectively $\mathfrak{p}$-valued 
+differential form:
+%
+\begin{displaymath}
+	K = R + T~;\quad
+	\text{with}
+	\quad\left\{
+	\begin{aligned}
+		R &:= \mathrm{pr}_\mathfrak{h} \circ K \in 
+		\Omega^2(P,\mathfrak{h})~,\\
+		T &:= \mathrm{pr}_\mathfrak{p} \circ K\in 
+		\Omega^2(P,\mathfrak{p})~.
+	\end{aligned}
+	\right.
+\end{displaymath}
+%
+The definition for the Cartan curvature allows us to find 
+explicit expressions for $R$ and $T$ in terms of $\omega$ and 
+$e$.  Therefore we substitute $\kappa$ in 
+Eq.~\eqref{eq:cartan-curvature} for the latter two and take into 
+account the reductive nature of the geometry, which results in 
+%
+\begin{displaymath}
+	K = \underbrace{d\omega + 
+		\frac{1}{2}[\omega,\omega]}_{\mathfrak{h}\text{-valued}}
+		+ \underbrace{\vphantom{\frac{1}{2}} de + 
+			[\omega,e]}_{\mathfrak{p}\text{-valued}} +
+	\underbrace{\frac{1}{2}[e,e]}_{\mathfrak{g}\text{-valued}}~.
+\end{displaymath}
+For a reductive algebra two elements in $\mathfrak{p}$ commute 
+into a generic element of $\mathfrak{g}$, so that the last term 
+generally contributes in part to both $R$ and $T$. However, in 
+case $\mathfrak{g}$ is not only a reductive but also a 
+\emph{symmetric} Lie algebra, elements of the form $[e,e]$ are 
+$\mathfrak{h}$-valued and it follows that
+\begin{align*}
+	R &= d\omega + \frac{1}{2}[\omega,\omega]  + 
+	\frac{1}{2}[e,e]
+	= B + \tfrac{1}{2}[e,e]~,\\
+	T &= de + [\omega,e]~.
+\end{align*}
+Here we recognized $B \equiv d\omega + 
+\tfrac{1}{2}[\omega,\omega]$ as the exterior covariant derivative 
+of the Ehresmann connection $\omega$. One therefore concludes 
+that a flat Cartan geometry $(K=0)$ does not necessarily imply 
+that the curvature of $\omega$ vanishes $(B=0)$, but rather that 
+$B = -\tfrac{1}{2}[e,e]$.
+A Cartan geometry for which $T$ vanishes is said to be 
+\textbf{torsion-free}.
+
+Given a reductive Cartan connection, the corresponding Bianchi 
+identity~\eqref{eq:cartan_bianchi} may also be seperated in an 
+$\mathfrak{h}$-valued and a $\mathfrak{p}$-valued part. This 
+results in two Bianchi identities, namely
+%
+\begin{subequations}
+\begin{alignat}{2}
+	dB + [\omega,B] &\equiv 0 
+	&\qquad\quad&(\text{1st identity})~,\\
+	dT + [\omega,T] + [e,B] &\equiv 0 &&(\text{2nd identity})~.
+\end{alignat}
+\end{subequations}
+The first identity is $\mathfrak{p}$-valued, while the second is 
+$\mathfrak{h}$-valued.
+Note that the first Bianchi identity is just the usual identity 
+for the Ehresmann connection $\omega$.
+
+\section{The coframe field\dots just the Vielbein!}
+
+{\blu [This section must be reviewed. Especially, notation should 
+	be made consistent with other parts of the documents.]
+}
+
+The above introduced solder form or coframe field $\theta : TP 
+\to \mathfrak{p}$ seems to be a quiet different mapping then the 
+coframe or \emph{vielbein} generally used by physicists. Given an 
+associated bundle $E = P \times_H \mathfrak{p}$, the Vielbein is 
+a $E$-valued 1-form on $M$, as in the following diagram
+%
+\begin{displaymath}
+	\xymatrix{
+		TM
+			\ar[rr]^-{e}
+			\ar[dr]
+		& & E
+			\ar[dl]^-{\pi_E}
+		\\
+		& M &
+	}
+\end{displaymath}
+Locally, $e$ maps a vector of $T_pM$ into $\pi^{-1}_E(p) \simeq
+\mathfrak{p}$, such that it gives a local isomorphism $e : T_pM 
+\to \mathfrak{p}$, for any $p \in M$. In the following it is 
+shown that $\theta$ and $e$ are in fact two different 
+descriptions of the same mapping \cite{Wise:2010sm}.
+
+Suppose a tetrad $e:TM \to E$ is given so that a corresponding 
+solder form $\theta:TP \to \mathfrak{p}$ is constructed as 
+follows.  For any $v \in T_uP$, $e(\pi(v)) \in \pi^{-1}_E(p)$, 
+where $\pi(u) = p$.  Hence, one can write $e(\pi(v)) = [u',X]$ 
+for $u' \in \pi^{-1}(p)$ and $X \in 
+\mathfrak{p}$.\footnote{$[\cdot,\cdot]$ an element of the 
+	equivalence classes $E$, that is $(u,X) \sim 
+	(uh,Ad_{h^{-1}}X)$.} Then define $\theta(v)$ to be the unique 
+element in $\mathfrak{p}$ such that
+%
+\begin{displaymath}
+	e(\pi(v)) = [u,\theta(v)]~.
+\end{displaymath}
+This construction is well-defined if $\theta$ is $H$-equivariant.  
+Indeed, for
+%
+\begin{displaymath}
+	e(\pi(v)) = [u,\theta(v)] = [uh,\mathrm{Ad}_{h^{-1}} 
+	\theta(v)]~,
+\end{displaymath}
+but also
+\begin{displaymath}
+	e(\pi(v)) = e(\pi(R_h(v)) = [uh,\theta(R_h(v))]~,
+\end{displaymath}
+so that consistency requires $R^\ast_h \theta = 
+\mathrm{Ad}_{h^{-1}} \theta$. Furthermore, $\theta$ is strictly 
+horizontal because if $v \in V_uP$, $e(\pi(v)) = 0 = 
+[u,\theta(v)]$, hence $\theta(v) = 0$. Since the thus constructed 
+form $\theta: TP \to \mathfrak{p}$ is a $H$-equivariant 
+horizontal form, it is a legitimate solder form.
+
+Next we start with a given solder form $\theta$ and define a 
+corresponding frame field $e$ as follows. Remember also that a 
+reductive Cartan geometry canonically incorporates a connection 
+$\omega$ on $P$. Let $\pi(v) \in T_pM$ and for any $u \in 
+\pi^{-1}(p)$ let $v \in T_uP$ be its horizontal lift with respect 
+to $\omega$. Define then $e$ trough (set $w = \pi(v))$
+%
+\begin{displaymath}
+	e(w) = \pi(v)) = [u,\theta(v)]~,
+\end{displaymath}
+which is clearly an element of $\pi^{-1}_E(p)$. Note how it is 
+manifestly the inverse construction of the one before, but that 
+now we had to make use of a connection to unambiguously pick out 
+a $v \in H_uP$. We check again consistency of this construction.  
+If $uh$ were chosen then $v_{uh} = R_h v_u$, due to the right 
+invariance of a horizontal lift, so that
+%
+\begin{displaymath}
+	e(w) = [uh,\theta(R_h v_u)] = [uh,\mathrm{Ad}_{h^{-1}} 
+	\theta(v)] = [u,\theta(v)]~.
+\end{displaymath}
+
+These results are nicely summarized in the following commuting 
+diagram:
+\begin{displaymath}
+	\xymatrix{
+		T_uP
+			\ar[r]^-{\theta}
+			\ar[d]^-{\pi}
+		& \mathfrak{p}
+			\ar[d]^-{[u,\cdot]}
+		\\
+		T_pM
+			\ar[r]^-{e}
+		& \pi^{-1}_E(p)
+	}
+\end{displaymath}
+
+
+\section{Riemann-Cartan geometry}
+\label{sec:RC_geometry}
+
+In this section we discuss in some detail Riemann-Cartan 
+geometry. This geometry is the mathematical framework that 
+underlies Einstein-Cartan theory, General Relativity in the 
+Palatini formalism and Teleparellel Gravity, although the latter 
+two only use part of its available structure. It does not include 
+the description of the so-called metric-affine theories of 
+gravity, since Riemann-Cartan geometry is automatically metric, 
+as will become clear in the following.
+
+The relevant Cartan geometry\footnote{Let us make clear that in 
+	what follows we will work directly on the base manifold $M$.  
+	More precisely, given some section $\sigma : M \to P$, the 
+	Cartan connection is a 1-form $A = \sigma^\ast \kappa$ on $M$, 
+	while we will denote the pulled back Cartan curvature by $F = 
+	\sigma^\ast K = dA + \tfrac{1}{2} [A,A]$.}
+is modeled on $(\mathfrak{iso}(1,3),SO(1,3))$, where
+\begin{displaymath}
+	\mathfrak{iso}(1,3) = \mathfrak{so}(1,3) \oplus 
+	\mathbb{R}^{3,1}
+\end{displaymath}
+is the Poincar\'e algebra,\footnote{Therefore, a correcter 
+	nomenclature for the Riemann-Cartan geometry could be 
+	\emph{Poinar\'e-Cartan geometry}.} whose commutation relations 
+are given by~\eqref{eq:comm_relations_so(1,4)} for the 
+contraction $l \to \infty$. The corresponding Cartan connection 
+is a 1-form $A$ on spacetime that is valued in the Poincar\'e 
+algebra,\footnote{Note that the relevant Cartan connection for 
+	metric-affine theories of gravity is valued in the affine 
+	algebra, which directly results in loosing the metricity of 
+	the geometry.} which we split according to the symmetric 
+nature of the algebra as
+\begin{displaymath}
+	A = \omega + e = \tfrac{i}{2} \omega^{ab} M_{ab} + i e^a P_a~.
+\end{displaymath}
+
+Since the Poincar\'e algebra is reductive, the 1-form 
+$\omega^{ab}$ is an Ehresmann connection for the Lorentz algebra, 
+i.e. a \emph{spin connection}. A corresponding covariant 
+derivative $D := d + \omega$ is readily defined.  Furthermore, 
+the 1-forms $e^{a}$ define a symmetric 2-form $g$ on $M$---the 
+metric---given by
+\begin{equation}
+	g_{\mu \nu} := e\ind{^a_\mu} e\ind{^b_\nu} \eta_{ab}~.
+\end{equation}
+The forms $e\ind{^a_\mu} dx^\mu$ are called the coframe 
+fields---there is one for each $a$. It is then useful to define a 
+set of dual vector fields $\vartheta\ind{_a^\mu} \pd_\mu$ through 
+$\vartheta_a \ip e^b = \delta^b_a$, which generally are given the 
+name of a \emph{vierbein} or tetrad. From the definition of the 
+metric it follows that $g_{\mu\nu} \vartheta\ind{_a^\nu} = 
+e_{a\mu}$.  Therefore in the case of the matrix $e\ind{^a_\mu}$ 
+being non-degenerate, an inverse of the metric exists and the 
+coframe field and the vielbein are related by raising or lowering 
+spacetime indices. The use of $\vartheta_a$ to denote the 
+vielbein is then obsolete and will be referred to in the 
+following by $e_a$. It then follows directly that $e\ind{^a_\mu} 
+e\ind{_a^\nu} = \delta^\nu_\mu$ and that $g^{\mu\nu} = 
+e\ind{^{a\mu}} e\ind{_a^\nu}$.
+
+Furthermore, given the spin covariant derivative $D$ and the 
+vierbein, it is possible to define covariant differentiation of 
+world tensors. The corresponding derivative $\nabla = d + \Gamma$ 
+is defined such that $\nabla_\mu V^\rho = e\ind{_a^\rho} D_\mu 
+V^a$. This implies that the relation between the spin and linear 
+connections is given by
+\begin{displaymath}
+	\Gamma\ind{^\mu_{\nu\rho}} = e\ind{_a^\mu} D_\rho 
+	e\ind{^a_\nu} \quad \mathrm{and} \quad
+	\omega\ind{^a_{b\rho}} = e\ind{^a_\mu} \nabla_\rho 
+	e\ind{_b^\mu}~.
+\end{displaymath}
+and that the vierbein postulate is true, i.e. $D_\rho 
+e\ind{^a_\mu} - \Gamma\ind{^\nu_{\mu \rho}} e\ind{^a_\nu} \equiv 
+0$. Furthermore, for such a geometry one has that
+\begin{align*}
+	\nabla_\rho g_{\mu\nu} &= -\omega\ind{^a_{b\rho}} 
+	e\ind{^b_\mu} e\ind{_{a\nu}} - \omega\ind{_{ab\rho}} 
+	e\ind{^b_\nu} e\ind{_{a\mu}}
+	\\
+	&= (\omega\ind{_{ba\rho}} - \omega\ind{_{ab\rho}} ) 
+	e\ind{^b_\mu} e\ind{^a_\nu} \equiv 0~,
+\end{align*}
+since $\omega$ is valued in the Lorentz algebra. One concludes 
+that Riemann-Cartan geometry is \emph{metric}, as would be any 
+reductive Cartan geometry where the subalgebra $\mathfrak{h}$ is 
+the Lorentz algebra.
+
+\blankline
+The Cartan curvature can equally be written as a sum of a 
+Lorentz-, respectively translation-valued part, i.e.
+\begin{displaymath}
+	F = R + T = \tfrac{i}{2} R^{ab} M_{ab} + i T^a P_a~.
+\end{displaymath}
+The curvature and torsion of the geometry are given by
+\begin{subequations}
+\begin{alignat}{3}
+	\label{eq:curv_RC}
+	R &= d\omega + \tfrac{1}{2} [\omega,\omega]
+		&\quad&\text{or}
+		&\quad
+		R^{ab} &= d\omega^{ab} + \omega\ind{^a_c} \wedge 
+		\omega^{cb}~,\\
+	\label{eq:tors_RC}
+	T &= de + [\omega,e]
+		&\quad&\text{or}
+		&\quad
+		T^a &= de^a + \omega\ind{^a_b} \wedge e^b~,
+\end{alignat}
+\end{subequations}
+while the Bianchi idendities for the Cartan connection are 
+expressed as functions of the curvature and torsion:
+\begin{subequations}
+\label{eq:bianchiISO_hp}
+\begin{alignat}{3}
+	\label{eq:bianchiISO_h}
+	dR + [\omega,R] &\equiv 0
+		&\quad&\text{or}
+		&\quad
+		dR^{ab} + \omega\ind{^a_c} \wedge R^{cb} + \omega\ind{^b_c} 
+		\wedge R^{ac} &\equiv 0~, \\
+	\label{eq:bianchiISO_p}
+	dT + [\omega,T] + [e,R] &\equiv 0
+		&\quad&\text{or}
+		&\quad
+		dT^a + \omega\ind{^a_b} \wedge T^b + e^c \wedge R\ind{_c^a} 
+		&\equiv 0~.
+\end{alignat}
+\end{subequations}
+
+The expression~\eqref{eq:tors_RC} for the torsion can be solved 
+for the spin connection, which yields
+\begin{equation}
+	\label{eq:decomp_contortion}
+	\omega\ind{^a_{b\mu}} = \tfrac{1}{2} e_{c\mu} 
+	(\Omega\ind{_b^{ca}} + \Omega\ind{_b^{ac}} - 
+	\Omega\ind{^{ac}_b} ) + K\ind{^a_{b\mu}}
+	= \mathring{\omega}\ind{^a_{b\mu}} + K\ind{^a_{b\mu}}~.
+\end{equation}
+In this expression $\mathring{\omega}$ is the torsionless 
+Levi-Civita connection, while we introduced the coefficients of 
+anholonomy $\Omega_{abc} := e_b \ip e_a \ip de_c = e\ind{_a^\mu} 
+e\ind{_b^\nu} (\pd_\mu e\ind{_{c\nu}} - \pd_\nu e\ind{_{c\mu}})$ 
+and the \emph{contortion} $K$ of $\omega$:
+\begin{equation}
+	K\ind{^a_{b\mu}} := \tfrac{1}{2} ( T\ind{^a_{\mu b}} + 
+	T\ind{_\mu^a_b} + T\ind{_b^a_\mu} )~.
+\end{equation}
+
+\begin{remark}
+	 Cartan's beautiful language to describe a Riemann-Cartan 
+	 geometry makes the distinction between local Lorentz 
+	 transformations and diffeomorphisms manifest. Mathematically, 
+	 the former are given by sections of the principal Lorentz 
+	 bundle over spacetime, while the latter are 1-to-1 mappings 
+	 of spacetime to itself. Physically, only local Lorentz 
+	 transformations have a non-trivial meaning. At any point in 
+	 spacetime they relate the reference frames of observers that 
+	 have a relative velocity. Diffeomorphisms, on the other hand, 
+	 represent coordinate transformations of spacetime. They 
+	 merely relate different ways of labeling space and time, and 
+	 as such are lacking any deeper meaning.
+\end{remark}
+
+\begin{remark}
+	The geometric setting used to describe the Palatini formalism 
+	of General Relativity singles out the zero-torsion Levi-Civita 
+	spin connection $\mathring{\omega}$. The contortion vanishes 
+	naturally and the connection is determined fully by the 
+	vierbein, i.e. the gravitational field. The presence of a 
+	gravitational interaction is quantified by the curvature 
+	$\mathring{R}^{ab}$. This is what is meant when saying that 
+	the gravitational interaction is geometrized.  There is a 
+	price that has to be paid, however. The spin connection does 
+	not only represent the gauge freedom of local Lorentz 
+	transformations but also contains information whether there is 
+	a gravitational field present or not, so that it is impossible 
+	to seperate inertial effects from gravitation. There are 
+	arguments to see this as a shortcoming from a conceptual point 
+	of view, since they might be quite different 
+	\emph{physically}.  Inertial forces certainly can be created 
+	and get rid of by considering local Lorentz transformations.  
+	On the contrary, the presence of a gravitational field, 
+	encoded in the covariant object $\mathring{R}^{ab}$, is 
+	objective.
+
+	It is usually argued that choosing a reference frame for which 
+	the Levi-Civita connection vanishes at some point yields a 
+	\emph{local inertial reference frame}.  The reason for such 
+	nomenclature is of course the reduction of covariant 
+	derivatives to ordinary derivatives at that point, so that the 
+	laws of physics recover their special relativistic form.  
+	Since inertial and gravitational motion is identical for 
+	infinitesimal objects, the gravitational interaction is said 
+	to be inertial, and as such the gravitational field determines 
+	inertial motion.\footnote{For a clear discussion on this and 
+		related points, see Chapter~2 in~\cite{rovelli2004-QG}} 
+	Having a look at processes that take place on a finite region 
+	in spacetime however, the freely falling observer will notice 
+	the consequences of tidal effects, present when 
+	$\mathring{R}^{ab} \neq 0$ and which cannot be accounted for 
+	by changing reference frame. Mathematically, the spin 
+	connection cannot be gauged away over a finite region in 
+	spacetime, so that this notion of inertial frames in General 
+	Relativity can at most be a \emph{local} concept.	
+
+	{\blu[[} In this manner, one has to give up the idea of 
+	inertial effects being a non-local manifestation of the 
+	observer's motion. Otherwise, the identification of 
+	gravitational and inertial forces is not tenable, since 
+	curvature cannot be gauged away and tidal effects will be 
+	present for any class of observers.  One can wonder about the 
+	usefulness of this modified notion for inertial motion and 
+	desire to understand inertial forces as a result of one's 
+	motion, which can be eliminated everywhere by a suitable 
+	Lorentz rotation. These fictious forces are very different in 
+	nature of the covariant gravitational interaction. As 
+	mentioned already, such point of view cannot be taken in 
+	General Relativity, since the spin connection includes both 
+	types of ineraction at any point in spacetime. In fact, the 
+	possibility to seperate them consistently at the mathematical 
+	level lies at the heart of Teleparallel Gravity.
+	{\blu]]}
+	
+	To conclude, let us specify the Bianchi identities for the 
+	geometry underlying General Relativity, i.e.
+	\begin{subequations}
+	\begin{gather*}
+		d\mathring{R} + [\mathring{\omega},\mathring{R}] \equiv 
+		0~,\\
+		[e,\mathring{R}] \equiv 0~.
+	\qedhere
+	\end{gather*}
+	\end{subequations}
+\end{remark}
+
+\begin{remark}
+	In Teleparallel Gravity the connection considered is flat and 
+	is related to the Levi-Civita spin connection through 
+	Eq.~\eqref{eq:decomp_contortion}. This relation together with 
+	the geometry of General Relativity gives rise to the geometric 
+	structure of Teleparallel Gravity, as it is derived 
+	in~\cite{aldrovandi:2012tele}. From the discussion 
+	in~\verb+equiv_bianchi_GR_TG.pdf+ it follows that this 
+	geometric framework is a special case of Riemann-Cartan 
+	geometry, with vanishing curvature but non-zero torsion.
+
+	The spin connection is flat, i.e. $d\omega\ind{^{ab}} + 
+	\omega\ind{^a_c} \wedge \omega\ind{^{cb}} = 0$, a condition 
+	very different in nature of the one for vanishing torsion in 
+	General Relativity. By the fundamental theorem of calculus,  
+	it follows that the spin connection is pure gauge, which means 
+	that $\omega\ind{^{ab}} = \Lambda\ind{_c^a} 
+	d\Lambda\ind{^{cb}}$ in which $\Lambda\ind{^a_b} \in 
+	\Omega^0(M, \mathfrak{so}(1,3))$ is a local Lorentz 
+	transformation. The spin connection then accounts only for 
+	inertial effects and one can choose a class of inertial 
+	observers, so that $\omega^{ab} = 0$ everywhere. In this 
+	theory, the presence of a gravitational field is encoded in a 
+	non-vanishing torsion. The obvious advantage is that inertial 
+	and gravitational effects are not mixed up in the spin 
+	connection so that both the physically very important concepts 
+	of inertial forces and the gravitational interaction have a 
+	clear well-distincted description.
+\end{remark}
+
+Finally, the geometry of Einstein-Cartan theory is 
+\emph{a-priori} a generic Riemann-Cartan geometry, i.e.~having 
+non-vanishing curvature and torsion. Also note that the geometry 
+only fixes the kinematics of the respective theories, and that 
+their ultimate content is determined further once an action 
+describing their dynamics is postulated.
+
+
+\section{de Sitter-Cartan geometry}
+\label{sec:dSC_geometry}
+
+The Cartan geometry that is modeled on $(\mathfrak{so}(1,4), 
+SO(1,3))$, will be given the name of a \emph{de Sitter-Cartan 
+	geometry}. It is a slight generalization of Riemann-Cartan 
+geometry, in the sense that in some well-defined limit the latter 
+can be recovered from it. The Cartan connection for this geometry 
+is a 1-form valued in the de Sitter algebra $\mathfrak{so}(1,4)$, 
+which is characterized by its commutation relations\footnote{We 
+	adhere to the convention $\eta_{ab} = (+,-,-,-)$.}
+\begin{equation}
+\label{eq:comm_relations_so(1,4)}
+\begin{split}
+	-i[M_{ab},M_{cd}] &= \eta_{ac}M_{bd} - \eta_{ad}M_{bc} + 
+	\eta_{bd}M_{ac} - \eta_{bc}M_{ad} \\
+	-i[M_{ab},P_c] &= \eta_{ac}P_b- \eta_{bc}P_a\\
+	-i[P_a,P_b] &= -l^{-2}M_{ab}~,
+  \end{split}
+\end{equation}
+The de Sitter transvections are defined by $P_a \equiv M_{a4}/l$, 
+where it should be emphasized that the length scale $l(x)$ is 
+\emph{a-priori} allowed to be a function on $M$. From these 
+brackets it is manifest that the algebra is symmetric, hence 
+reductive.  The corresponding reductive splitting reads as
+\begin{displaymath}
+	\mathfrak{so}(1,4) = \mathfrak{so}(1,3) \oplus \mathfrak{p}~,
+\end{displaymath}
+where $\mathfrak{so}(1,3) = \mathrm{span}\{M_{ab}\}$ is the 
+Lorentz subalgebra and $\mathfrak{p} = \mathrm{span}\{P_a\}$ the 
+subspace of de Sitter transvections, or de Sitter translations.  
+This Cartan decomposition can be carried through to the 
+connection and curvature forms, denoted by
+\begin{subequations}
+\begin{gather}
+	A = \omega + e = \tfrac{i}{2} \omega^{ab} M_{ab} + i e^a P_a~, 
+	\\
+	F = R + T = \tfrac{i}{2} R^{ab} M_{ab} + i T^a P_a~.
+\end{gather}
+\end{subequations}
+Due to the reductive nature of the de Sitter algebra, 
+$\omega^{ab}$ is a spin connection. Identical to the discussion 
+in Section~\ref{sec:RC_geometry}, $SO(1,3)$-covariant 
+differentiation can be defined and a metric structure 
+constructed. We would like to refer to the discourse there, which 
+is equally valid here.
+
+Given the commutation 
+relations~\eqref{eq:comm_relations_so(1,4)}, one is able to 
+compute the curvature~$R^{ab}$ and the torsion~$T^{a}$ for de 
+Sitter-Cartan geometry, namely
+\begin{subequations}
+\begin{gather}
+	\label{eq:curv_dSC}
+	R^{ab} = d\omega^{ab} + \omega\ind{^a_c} \wedge \omega^{cb} + 
+	\frac{1}{l^2} e^a \wedge e^b
+		=: B^{ab} + \frac{1}{l^2} e^a \wedge e^b ~,
+	\\
+	\label{eq:tors_dSC}
+	T^a = de^a + \omega\ind{^a_b} \wedge e^b - \frac{1}{l} dl 
+	\wedge e^a =: G^a - \frac{1}{l} dl \wedge e^a~.
+\end{gather}
+\end{subequations}
+In these equations the exterior covariant derivative of the spin 
+connection and vierbein are denoted by $B^{ab}$ and $G^a$, 
+respectively. Some further remarks concerning these results are 
+in place. Note that in the limit of a diverging length scale $l$, 
+the expressions reduce to the curvature~$B^{ab}$ and 
+torsion~$G^{a}$ for a Riemann-Cartan geometry. In the generic 
+case however, the curvature and torsion are not given by the 
+exterior covariant derivative of the spin connection and 
+vierbein. The extra term in the expression~\eqref{eq:curv_dSC} 
+represents the curvature of the local de Sitter space. This 
+contribution is present because the commutator of two de Sitter 
+transvections equals a Lorentz rotation. In the 
+expression~\eqref{eq:tors_dSC} for the torsion, there is a new 
+term when the length scale is not a constant function. This term 
+comes about as follows. Remember that torsion is the 
+$\mathfrak{p}$-valued $2$-form $de + [\omega,e]$.  The first 
+contribution to this expression really means
+\begin{displaymath}
+	de = d(i e^a P_a) = d(i l^{-1} e^a M_{a4} ) = ide^a P_a - i 
+	(l^{-1} dl \wedge e^a) P_a~,
+\end{displaymath}
+since $l$ is allowed to change along $M$.
+
+As in the case of a Riemann-Cartan geometry, 
+expression~\eqref{eq:tors_dSC} can be solved for the spin 
+connection. It is found that $\omega\ind{^a_{b\mu}} = 
+\mathring{\omega}\ind{^a_{b\mu}} + K\ind{^a_{b\mu}}$, where 
+$\mathring{\omega}^{ab}$ is the Levi-Civita spin connection for 
+which the covariant exterior derivative $\mathring{G}^{a}$ 
+vanishes, while the contortion is given by
+\begin{displaymath}
+	K\ind{^a_{b\mu}} := \tfrac{1}{2} ( G\ind{^a_{\mu b}} + 
+	G\ind{_\mu^a_b} + G\ind{_b^a_\mu} )~.
+\end{displaymath}
+These results are identical to the corresponding in a 
+Riemann-Cartan geometry, since the torsion there is just the 
+exterior covariant derivative of the vierbein, which here is 
+denoted by $G^a$. Note that the torsion $\mathring{T}^a$ does not 
+vanish for the Levi-Civita connection in a de Sitter-Cartan 
+geometry, rather is its torsion equal to~$\mathring{T}^a = 
+-l^{-1} dl \wedge e^a$.
+
+\blankline
+The Bianchi identities for the given de Sitter-Cartan geometry 
+are of the form
+\begin{subequations}
+\begin{gather}
+	\begin{gathered}
+	\label{eq:bianchidS_expl_h}
+	dR^{ab} + \omega\ind{^a_c} \wedge R^{cb} + \omega\ind{^b_c} 
+	\wedge R^{ac} + \frac{1}{l^2} e^{[a} \wedge T^{b]} \equiv 0 \\
+	\text{or}\quad
+	dB^{ab} + \omega\ind{^a_c} \wedge B^{cb} + \omega\ind{^b_c} 
+	\wedge B^{ac} \equiv 0~,
+	\end{gathered}
+	\\
+	\label{eq:bianchidS_expl_p}
+	dT^a + \omega\ind{^a_b} \wedge T^b + e^c \wedge R\ind{_c^a} - 
+	\frac{1}{l} dl \wedge T^a \equiv 0~.
+\end{gather}
+\end{subequations}
+The first Bianchi identity~\eqref{eq:bianchidS_expl_h} is the 
+usual identity for the Ehresmann connection~$\omega$.
+
+
+\begin{remark}
+	Consider for a moment the gauge invariant condition
+	\begin{displaymath}
+		R \equiv 0 \quad \text{or} \quad B \equiv -\frac{1}{2} 
+		[e,e]~.
+	\end{displaymath}
+	The Bianchi identity for the 
+	torsion~\eqref{eq:bianchidS_expl_p} clearly reduces to
+	\begin{displaymath}
+		dT^a + \omega\ind{^a_b} \wedge T^b - \frac{1}{l} dl \wedge 
+		T^a = 0~.
+	\end{displaymath}
+	From the first Bianchi identity~\eqref{eq:bianchidS_expl_h} 
+	one concludes that $[e,T] \equiv 0$ or
+	\begin{equation}
+		\label{eq:bianchidSTG_expl_h}
+		\frac{1}{l^2} e^{[a} \wedge T^{b]} = 0~.
+	\end{equation}
+	Note that this restriction does carry through upon taking the 
+	contraction limit to the Riemann-Cartan geometry, since there 
+	$[e,T] = 0$ so that~\eqref{eq:bianchidS_expl_h} would be 
+	trivially satisfied.
+
+	Next consider the interior product\footnote{For any vector 
+		field $X$ on $M$ the interior product of a differential 
+		form with respect to $X$ will be denoted by
+		\begin{displaymath}
+			X \ip \omega := i_X \omega~.
+		\end{displaymath}
+		It then follows that $e_a \ip e^b = \delta^b_a$.}
+	of the left-hand side of Eq.~\eqref{eq:bianchidSTG_expl_h}:
+	\begin{align*}
+		e_a \ip \Big( e^{[a} \wedge T^{b]} \Big)
+		&= 4 T^b - e^a \wedge e_a \ip T^b - T^b + e^b \wedge e_a 
+		\ip T^a \\
+		&= T^b + e^b \wedge e_a \ip T^a~.
+	\end{align*}
+	Here we made use of the Leibniz rule $e_a \ip (\alpha \wedge 
+	\beta) = e_a \ip \alpha \wedge \beta + (-)^p \alpha \wedge e_a 
+	\ip \beta$, where $\alpha$ is assumed to be a $p$-form. It is 
+	also implied that $e^a \wedge e_a \ip T^b = 2T^b$. A second 
+	contraction gives
+	\begin{displaymath}
+		e_b \ip e_a \ip \Big( e^{[a} \wedge T^{b]} \Big)
+		=  e_b \ip T^b + 4 e_a \ip T^a - e^b \wedge e_b \ip e_a \ip 
+		T^a = 4 e_a \ip T^a~.
+	\end{displaymath}
+	In this result one should consider that $e_a \ip T^a = e^b 
+	\wedge e_b \ip e_a \ip T^a$, which can be verified by a direct 
+	calculation. Gathering these results one finds that the second 
+	Bianchi identity~\eqref{eq:bianchidSTG_expl_h} leads to
+	\begin{displaymath}
+		l^{-2} e_a \ip T^a = l^{-2} T\ind{^a_{a\mu}} dx^\mu = 0~,
+	\end{displaymath}
+	hence that the torsion is \emph{traceless}. Furthermore, from 
+	the first contraction it followed that
+	\begin{displaymath}
+		T^b = -e^b \wedge e_a \ip T^a = 0~.
+	\end{displaymath}
+
+	It is a quite remarkable result, but setting the curvature $R$ 
+	to zero forces the geometry to have vanishing torsion. The 
+	resulting geometry describes a Klein geometry 
+	$SO(1,4)/SO(1,3)$.
+\end{remark}
+
+\begin{remark}
+	It is equally possible to consider a de Sitter-Cartan geometry 
+	for which the spin curvature $B^{ab}$ is constrained to be 
+	zero, i.e.
+	\begin{displaymath}
+		B^{ab} \equiv 0~.
+	\end{displaymath}
+	This means that the exterior covariant derivative of 
+	$\omega^{ab}$ is zero, a condition well known to render the 
+	Weitzenb\"ock connection. Note that in de Sitter-Cartan 
+	geometry the Weitzenb\"ock connection has a non-vanishing 
+	curvature $R^{ab} = l^{-2} e^a \wedge e^b$. This is similar to 
+	the conclusion that the torsion of the Levi-Civita connection 
+	is non-zero in a de Sitter-Cartan geometry. Nonetheless, as 
+	explained above, both connection are identical to those 
+	considered in a Riemann-Cartan geometry.
+	
+	Note that the condition that the spin curvature should be 
+	equal to zero is gauge invariant, since $B^{ab}$ transform 
+	covariantly under local Lorentz transformations. The first 
+	Bianchi identity~\eqref{eq:bianchidS_expl_h} is trivially 
+	satisfied, while the second reduces 
+	to~\eqref{eq:bianchidS_expl_p} for $e\ind{^b} \wedge 
+	R\ind{_b^a} = e\ind{^b} \wedge B\ind{_b^a} = 0$. It can be 
+	seen from these expression that they do not put any further 
+	restriction on the given geometry.
+
+	This kind of geometry will be used in formulating de Sitter 
+	Teleparallel Gravity.
+\end{remark}
+
+
+%\bibliography{/home/hendrik/research/drafts/references/All.bib}
+\bibliographystyle{plain}
+\bibliography{../../references/All}
+
+\end{document}

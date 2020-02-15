@@ -1,0 +1,593 @@
+\documentclass[10pt]{article}
+
+%Package declarations
+%--------------------
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage[a4paper]{geometry}
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+
+\usepackage[english]{babel}
+\usepackage{color}
+
+%User defined commands
+%---------------------
+\newcommand{\mcal}{\mathcal}
+\newcommand{\mfrak}{\mathfrak}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\pd}{\partial}
+\newcommand{\sfr}{\mathfrak{s}}
+\newcommand{\blankline}{\vspace{\baselineskip}}
+\newcommand{\spc}{\ }
+\newcommand{\red}{\color{red}}
+\newcommand{\blu}{\color{blue}}
+
+\title{De Sitter relativity and stereographic coordinates: 
+	introduction}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{de Sitter space time: stereographic coordinates}
+
+Let $E^{1,4}$ be the five-dimensional flat spacetime with 
+Lorentzian signature.
+De Sitter spacetime is the hypersurface defined by
+\begin{equation}\label{eq:dS_embedded}
+	\eta_{AB}\chi^A\chi^B = \eta_{\mu\nu}\chi^{\mu}\chi^{\nu} + 
+	\sfr (\chi^4)^2 = \sfr l^2
+\end{equation}
+where $A=0\ldots4$ and $\mu=0\ldots3$.
+
+In fact, this hypersurface both describes a de Sitter spacetime 
+$dS$ as well as an anti de Sitter spacetime $AdS$, depending on 
+the value of $\sfr \equiv \eta_{44}$. Table \ref{tab:signConv} 
+gives a resum\'e for these values when different sign conventions 
+are used. In the following we will denote these surfaces as a de 
+Sitter spacetime, however the treatment will be equally valid for 
+anti de Sitter spacetimes as well through the free parameter 
+$\sfr$.
+%
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c|c c}
+	& $\sfr = -1$ & $\sfr = +1$ \\
+	\hline
+	$\eta_{AB} = (+,-)$ & $dS$ & $AdS$ \\
+	$\eta_{AB} = (-,+)$ & $AdS$ & $dS$
+	\end{tabular}
+	\caption{Sign convention resum\'e}
+	\label{tab:signConv}
+\end{table}
+  
+A useful coordinate system parametrizing $dS(1,4)$ is given by
+stereographic coordinates. This chart is defined in the following 
+way. Consider
+the north pole $(N)$ at $(0,0,0,0,l)$ and the hyperplane $\chi^4 
+= -l$, which
+contains the south pole of $dS(1,4)$. We project a point $P$ of 
+de Sitter
+spacetime onto a point $p$ of the hyperplane by taking the line 
+through $N$ and
+$P$ which gives the projected point $p$, there where the line 
+meets the
+hyperplane.
+
+Since $N$, $P$ and $p$ always lie on a straight line we have
+\begin{displaymath}
+\frac{\chi(P)-\chi(N)}{\chi(p)-\chi(N)} = n
+\end{displaymath}
+where $n$ will depend on the considered projection line. The 
+projected point $p$
+lies in the subspace $E^{(1,3)}$ (i.e. $\chi^4=-l$), with 
+coordinates $x^\mu$
+where $(\mu=0\ldots 3)$. Hence, we have
+\begin{displaymath}
+\frac{\chi^\mu-0}{x^\mu-0} = n,\quad \frac{\chi^4-l}{-l-l}=n
+\end{displaymath}
+such that we find
+\begin{align}
+\chi^\mu &= n x^\mu \\
+\chi^4 &= l(1-2n) \label{eq:chi4_stereo}
+\end{align}
+
+Remembering the fact that we consider points $P$ on the $dS(1,4)$ 
+we have to add
+the defining equation \eqref{eq:dS_embedded} for this 
+hypersurface, namely
+\begin{equation}\label{eq:chi4_dS}
+(\chi^{4})^{2} = l^2 - \sfr n^2\eta_{\mu\nu}x^\mu x^\nu
+\end{equation}
+Substituting \eqref{eq:chi4_stereo} and \eqref{eq:chi4_dS} for 
+$\chi^4$ we find
+a defining equation for $n$ in function of the other four 
+coordinates, i.e.\footnote{We define $\sigma^2=\eta_{\mu\nu}x^\mu 
+	x^\nu$.}
+\begin{equation}
+n^2(4l^2 + \sfr \sigma^2)-4nl^2 = 0
+\end{equation}
+which has two real solutions, given by $n=0$ (for the projection 
+of the north pole) and
+\begin{equation}
+	n = \left(1 + \sfr\frac{\sigma^2}{4l^2}\right)^{-1} =: 
+	\Omega(x)
+\end{equation}
+which is the factor used in projecting all other points.
+
+The stereographic coordinates $x^\mu$ are then given by
+\begin{align}
+	\chi^\mu &= \Omega(x)x^\mu \\
+	\chi^4 &= -l\Omega(x)\left(1-\sfr\frac{\sigma^2}{4l^2}\right)
+\end{align}
+which is defined for all points on $dS(1,4)$ but the north pole.
+
+The inverse transformations are easily found to be
+\begin{equation}
+	x^\mu = \Omega^{-1}\chi^\mu \quad \mrm{with} \quad \Omega = 
+	-\frac{1}{2} \left( \frac{\chi^4}{l} - 1 \right)
+\end{equation}
+
+\section{Geometric quantities}
+
+In this section some objects will be derived, describing the 
+geometric structure of de Sitter spacetime.
+
+\paragraph{Metric tensor}
+First we calculate the line element on $dS$ in terms of 
+stereographic coordinates.  This line element is induced from the 
+flat metric $\eta_{AB}$ on $E^{(1,4)}$, hence
+\begin{equation}
+	ds^2 = \eta_{AB}d\chi^A d\chi^B \quad \text{with} \quad
+	\chi^4 = \pm(l^2 -\sfr \eta_{\mu\nu} \chi^\mu 
+	\chi^\nu)^{\frac{1}{2}}
+\end{equation}
+
+Our task now is to calculate the differentials appearing in this 
+line element in terms
+of the stereographic coordinates $x^\mu$. It will be useful to 
+use the following
+relations between $\Omega$, $\sigma$ and its differentials
+\begin{displaymath}
+	\sigma^2 = \sfr 4l^2 \frac{1 - \Omega}{\Omega}\, ,\quad
+	d(\sigma^2)= -\sfr\frac{4l^2}{\Omega^2}d\Omega
+\end{displaymath}
+substituting the Cartesian coordinates for the stereographic 
+ones, we find
+\begin{align} \eta_{\mu\nu}d\chi^\nu d\chi^\nu
+	&=\eta_{\mu\nu}d(\Omega(x)x^\mu)d(\Omega(x)x^\nu) \\
+	&=d\Omega^2 \sigma^2 + \Omega d\Omega d(\sigma)^2 + \Omega^2 
+	\sigma^2
+\end{align}
+and
+\begin{equation}
+	(d\chi^4)^2 = d(l - 2l\Omega)^2 = 4l^2 d\Omega^2
+\end{equation}
+
+Combining these results we find that the line element of de 
+Sitter spacetime
+\begin{equation}
+	ds^2 = \Omega^2(x)\eta_{\mu\nu}dx^\mu dx^\nu
+	\label{eq:dS_le_stereo}
+\end{equation}
+which shows that the Sitter spacetime is conformally flat.
+\blankline
+
+Although this line element is conformally flat, de Sitter 
+spacetime does not have the
+same causal structure as Minkowski spacetime. [Question: What is 
+the explanation for
+this apparent paradox?] [Possible answer: the transformation is 
+singular at $\sigma^2
+= 4l^2$. In fact this three-dimensional hypersurface is the image 
+of past and future
+null infinity, since for these points $\Omega$ goes to infinity 
+and we have that the $\chi^\mu$ go to infinity as 
+$\mcal{O}(\Omega)$. From the equation of $dS$ it follows that 
+$\chi^4$ goes to infinity, at the same rate. For these points $l$ 
+is essentially zero, such that its tangent space is the lightcone 
+of the embedding Minkowski space. Hence, we are considering 
+null-like infinity, which turns out to be three-dimensional. Note 
+also that the transformation does not make a difference between 
+such a point at infinity and its spacetime inversion, such that 
+these two points are represented by the same stereographic 
+coordinate.]
+
+\paragraph{Christoffel symbol}
+Given the metric tensor, one obtains the corresponding 
+Christoffel symbol
+\begin{displaymath}
+	\Gamma^{\rho}_{\spc\mu\nu} = \frac{1}{2}g^{\rho\sigma} \left( 
+		\pd_\mu g_{\nu\sigma} + \pd_\nu g_{\mu\sigma} - \pd_\sigma 
+		g_\mu\nu \right)
+\end{displaymath}
+A rather short calculation shows that the symbol is given by
+\begin{equation}
+	\Gamma^{\rho}_{\spc\mu\nu} = \left( \delta_\nu^\rho 
+		\delta_\mu^\sigma + \delta_\mu^\rho \delta_\nu^\sigma - 
+		\eta^{\rho\sigma} \eta_{\mu\nu} \right) \pd_\sigma \ln 
+	|\Omega(x)|
+\end{equation}
+
+\paragraph{Riemann tensor}
+The Riemann curvature tensor can be defined through the 
+Christoffel symbol as
+\begin{displaymath}
+	R^\mu_{\spc\nu\rho\sigma} = \pd_\rho 
+	\Gamma^{\mu}_{\spc\nu\sigma} - \pd_\sigma 
+	\Gamma^{\mu}_{\spc\nu\rho} + \Gamma^{\mu}_{\spc\alpha\rho} 
+	\Gamma^{\alpha}_{\spc\nu\sigma} + 
+	\Gamma^{\mu}_{\spc\alpha\sigma} \Gamma^{\alpha}_{\spc\nu\rho}
+\end{displaymath}
+After a somewhat lengthier calculation one finds the familier 
+curvature tensor for a maximally symmetric space
+\begin{equation}
+	R^\mu_{\spc\nu\rho\sigma} = \frac{\mfrak{s}}{l^2} \left( 
+		\delta_\rho^\mu g_{\sigma\nu} - \delta_\sigma^\mu g_{\nu\rho} 
+	\right)
+\end{equation}
+
+\paragraph{Ricci tensor}
+Contracting the first with the third index of the Riemann tensor, 
+one defines the Ricci tensor
+\begin{equation}
+	R_{\mu\nu} = \frac{3\mfrak{s}}{l^2}g_{\mu\nu}
+\end{equation}
+
+\paragraph{Ricci scalar}
+Finally, upon contracting the two indices of the Ricci tensor, 
+the Ricci scalar is found, namely
+\begin{equation}
+	R = \frac{12 \mfrak{s}}{l^2}
+\end{equation}
+
+
+
+\section{de Sitter space as a homogeneous space}
+
+De Sitter spacetime can be constructed as a pseudo-Riemannian 
+symmetric space $dS = SO(1,4)/\mcal{L}$.\footnote{[{\blu Doubt}] 
+	The involution defining a Cartan decomposition is probably the 
+	spacetime inversion - algebraically the generators $L_{\mu4}$ 
+	span the eigenspace corresponding to -1.} This directly implies 
+it is a homogeneous space, transitive under the elements 
+generated by the Lie algebra 
+$\mfrak{p}=\mfrak{so}(1,4)\bmod\mfrak{so}(1,3)$.  It is also a 
+principal bundle $P(\mcal{L},dS)$ where the fibers are the 
+Lorentz rotations.
+
+This identification between de Sitter spacetime and its Lie group 
+of isometries gives us some interesting tools to investigate its 
+structure. For example, it is possible to derive geometric 
+properties of the de Sitter spacetime from the Cartan-Killing 
+form defined on the de Sitter Lie algebra. It also gives one a 
+natural way to find the limiting spacetimes when varying the 
+cosmological constant. Indeed, through an In\"on\"u-Wigner 
+contraction of the Lie algebra the corresponding 
+pseudo-Riemannian spacetime can be constructed.
+
+\paragraph{de Sitter spacetime - finite $\Lambda$}
+Since de Sitter spacetime can be identified with the homogeneous 
+space
+\begin{equation}
+	dS(1,4) \equiv \frac{SO(1,4)}{\mcal{L}}
+\end{equation}
+it is transitive under the elements generated by (the basis 
+elements of $\mfrak{so}(1,4) \bmod \mfrak{so}(1,3)$)
+\begin{equation}
+	L_{\mu 4} = \sfr l P_\mu + \frac{1}{4l} K_\mu
+\end{equation}
+
+\paragraph{Minkowski spacetime - zero $\Lambda$} $(l\rightarrow 
+\infty)$
+Performing an adequate In\"on\"u-Wigner contraction of the de 
+Sitter group (through its algebra) one finds the Poincar\'e group 
+$\mcal{P}$, which is the semidirect product of the Lorentz group 
+and ordinary translations. Hence, the de Sitter spacetime has 
+been contracted to
+\begin{equation}
+	M \equiv \frac{\mcal{L}\rtimes \mcal{T}}{\mcal{L}}
+\end{equation}
+a homogeneous space transitive under ordinary translations 
+(generated by $P_\mu$), Minkowski spacetime.
+
+\paragraph{Conic spacetime - infinite $\Lambda$} $(l\rightarrow 
+0)$
+In this limit one contracts $SO(4,1)$ to the conformal Poincar\'e 
+group $\mcal{Q}$, the semidirect product of the Lorentz group and 
+the special conformal group. The de Sitter space then becomes a 
+(homogeneous) cone-spacetime
+\begin{equation}
+	N \equiv \frac{\mcal{L} \rtimes \mcal{C}}{\mcal{L}}
+\end{equation}
+which is transitive under special conformal transformations 
+(generated by $K_\mu$).
+
+\paragraph{{\blu Remark}}
+Transitivity on spacetime is not longer obtained through ordinary 
+translations, but through a combination of translations and 
+special conformal transformations (in stereographic coordinates).  
+This will have deep implications. A direct consequence is that 
+the notion of differentiation will change; indeed, ordinary 
+differentiation of functions on manifolds is based on an 
+underlying movement of translations, i.e.
+\begin{equation}
+	\partial_\mu f(x^\mu) \equiv \lim_{\varepsilon \rightarrow 0}
+	\frac{1}{\varepsilon}\left[f(x^\mu + 
+		\delta^\mu_{(\nu)}\varepsilon^\nu) - f(x^\mu) \right]
+\end{equation}
+
+The tangent space at a point $p$ of a manifold $M$ is the space 
+spanned by a maximal set of linearly independent differential 
+operators at the given point.  Usually these diferential 
+operators are the ordinary derivatives, the generators of 
+translations. If the manifold $M$ is pseudo-Riemannian, the 
+tangent space obtained in this way will be flat. [Through what 
+argument? Work out.  Probably it has to do with a submanifold 
+generated by translations in the embedding manifold, which has 
+the same signature as M.]
+
+However, we could span the tangent space with a different set of 
+linearly independent differential operators $\hat{\pd}$
+\begin{equation}
+	\hat{\pd}_\mu f(x^\mu)\equiv \lim_{\varepsilon \rightarrow 0} 
+	\frac{1}{\varepsilon}\left[f(x^\mu + 
+		\xi^\mu_{(\nu)}(x)\varepsilon^\nu) - f(x^\mu) \right]
+\end{equation}
+which would be a space transitive under the elements generated by 
+$\hat{\pd}$.
+
+If one takes the differential operators to be the de Sitter 
+translations $L_{\mu4}$, the tangent space at some manifold $M$, 
+would be given by de Sitter spacetime $dS$. Note that a de Sitter 
+spacetime, would be locally de Sitter - as a Minkowski spacetime 
+is locally Minkowski. It gives a very precise meaning on how the 
+equivalence principle changes in a de Sitter general relativity - 
+and how it is the only change being made. General relativity 
+still presumes that spacetime is a four-dimensional manifold with 
+Lorentzian signature, where the metric is a solution to 
+Einstein's equations. However, the modified equivalence principle 
+states that one always can find a coordinate system in which the 
+laws of physics are locally given by the laws of de Sitter 
+special relativity.  Indeed, the tangent space (the local 
+structure) at a spacetime point is a de Sitter spacetime. \hfill 
+{\blu $\blacksquare$}
+
+\section{Spacetime inversion: duality between $M$ and $N$}
+
+Let us begin with introducing the \emph{spacetime inversion} on 
+stereographic coordinates
+%
+\begin{equation}
+	\label{eq:st_inversion}
+	x^\mu \rightarrow \bar{x}^\mu \equiv -\frac{x^\mu}{\sigma^2}
+\end{equation}
+%
+where as usual, $\sigma^2 = \eta_{\mu\nu}x^\mu x^\nu$. A first 
+interesting question that may be posed is how this quantity 
+behaves under the inversion \eqref{eq:st_inversion}. It is 
+helpful to note that the notation $\eta_{\mu\nu}x^\mu x^\nu$ was 
+introduced as a shorthand for $-(x^0)^2 + (x^i)^2$, rather than 
+having a geometric meaning. For example, $\sigma^2$ in general is 
+\emph{not} the invariant length of $x^\mu$. Therefore, it is 
+plausible to assume the following transformation behaviour of 
+$\sigma^2$ under the spacetime inversion, that is
+%
+\begin{equation}
+	\sigma^2 \rightarrow \bar{\sigma}^2 = \eta_{\mu\nu}\bar{x}^\mu 
+	\bar{x}^\nu = \frac{\eta_{\mu\nu}x^\mu x^\nu}{\sigma^4} = 
+	\frac{1}{\sigma^2}
+\end{equation}
+%
+[Hence, the $\eta_{\mu\nu}$ in $\sigma^2$ should \emph{not} be 
+thought of as the Minkowski tensor and considered constant under 
+the inversion---the assumption is important for finding the 
+inverse of the inversion and the consequences thereof].
+The inverse transformation of \eqref{eq:st_inversion} is then 
+easily found to be
+%
+\begin{equation}
+	\label{eq:inv_st_inversion}
+	\bar{x}^\mu \rightarrow x^\mu = 
+	-\frac{\bar{x}^\mu}{\bar{\sigma}^2}
+\end{equation}
+%
+where, as discussed, $\bar{\sigma}^2 = \eta_{\mu\nu}\bar{x}^\mu 
+\bar{x}^\nu$.
+
+Given these facts, it is possible to find how the vector fields 
+$P_\mu$ and $K_\mu$ transform. More specifically, invoking the 
+chain rule for partial differentiation and 
+\eqref{eq:inv_st_inversion} one calculates,
+%
+\begin{displaymath}
+	\begin{split}
+		\bar{P}_\mu &= \frac{\pd}{\pd\bar{x}^\mu}
+		= \frac{\pd x^\mu}{\pd\bar{x}^\mu} \frac{\pd}{\pd x^\nu}\\
+		&= -(\bar{\sigma}^{-2} \delta^\nu_\mu - \bar{x}^\nu
+			\bar{\sigma}^4 2\eta_{\rho\sigma}\delta^\rho_\mu 
+			\bar{x}^\sigma) \frac{\pd}{\pd x^\nu} \\
+		&= (2\eta_{\mu\rho}x^\rho x^\nu - \sigma^2
+			\delta^\nu_\mu) \frac{\pd}{\pd x^\nu}
+		= K_\mu
+	\end{split}
+\end{displaymath}
+and
+\begin{displaymath}
+	\begin{split}
+		\bar{K}_\mu &= (2\eta_{\mu\rho} \bar{x}^\rho
+			\bar{x}^\lambda - \bar{\sigma}^2 \delta^\lambda_\mu)
+			\bar{\pd}_{\lambda} \\
+		&= (2\eta_{\mu\rho}\frac{x^\rho x^\lambda}{\sigma^4}
+			-\sigma^{-2}\delta^\lambda_\mu) (2\eta_{\lambda\sigma} 
+			x^\sigma x^\nu -\sigma^2 \delta^\nu_\lambda) \pd_{\nu} \\
+		&= (4\eta_{\mu\rho}x^\rho x^\nu \sigma^{-2}
+			- 2\eta_{\mu\rho} x^\rho x^\nu \sigma^{-2} - 
+			2\eta_{\mu\sigma} x^\sigma x^\nu \sigma^{-2} + 
+			\delta^\nu_\mu) \pd_{\nu} \\
+		&= \frac{\pd}{\pd x^\mu} = P_\mu
+	\end{split}
+\end{displaymath}
+%
+Furthermore, the vector fields $L_{\mu\nu}$ generating Lorentz 
+transformations transform as
+%
+\begin{displaymath}
+	\begin{split}
+		\bar{L}_{\mu\nu} &= \eta_{\mu\lambda}\bar{x}^\lambda
+			\bar{\pd}_\nu - \eta_{\nu\lambda}\bar{x}^\lambda 
+			\bar{\pd}_\mu \\
+		&= - \eta_{\mu\lambda}x^\lambda\sigma^{-2}
+			(2\eta_{\nu\sigma}x^\sigma x\rho - \sigma^2 
+			\delta^\rho_\nu) \pd_\nu - [\mu \leftrightarrow \nu] \\
+		&= \eta_{\mu\lambda} x^\lambda \pd_\nu - \eta_{\nu\lambda}
+			x^\lambda \pd_\mu = L_{\mu\nu}
+	\end{split}
+\end{displaymath}
+
+One concludes that translations and special conformal 
+transformations are interchanged under a spacetime inversion, 
+while Lorentz rotations are unchanged, that is
+%
+\begin{equation}
+	\label{eq:duality_PK}
+	\begin{split}
+		P_\mu &\rightarrow \bar{P}_\mu = K_\mu \\
+		K_\mu &\rightarrow \bar{K}_\mu = P_\mu \\
+		L_{\mu\nu} &\rightarrow \bar{L}_{\mu\nu} = L_{\mu\nu}
+	\end{split}
+\end{equation}
+%
+Because of the above alluded homogeneous character of $M$ and 
+$N$, these transformation properties directly imply the 
+interchange of $M$ and $N$ under a spacetime inversion 
+\eqref{eq:inv_st_inversion}. In this sense, they are said to be 
+dual to eachother and the duality relation is given through 
+\eqref{eq:duality_PK}.
+
+Given this duality we might wonder what happens with the 
+Minkowski line element under a spacetime inversion. Since $M$ 
+goes into $N$ under this transformation, the resulting line 
+element may be interpreted as the invariant line element on $N$.  
+Therefore,
+%
+\begin{displaymath}
+	dx^\mu \rightarrow d\bar{x}^\mu = d(-x^\mu \sigma^{-2})
+		= -\frac{dx^\mu}{\sigma^2} + \frac{x^\mu}{\sigma^4} 
+		2\eta_{\mu\nu}dx^\mu x^\nu
+\end{displaymath}
+%
+which we use for calculating
+%
+\begin{align*}
+	\eta_{\mu\nu} d\bar{x}^\mu d\bar{x}^\nu
+	&= \eta_{\mu\nu}(-\sigma^{-2}dx^\mu + 2\sigma^{-4}x^\mu 
+	\eta_{\rho\sigma} dx^\rho x^\sigma) (-\sigma^{-2}dx^\nu + 
+	2\sigma^{-4}x^\nu \eta_{\alpha\beta} dx^\alpha x^\beta) \\
+	\begin{split}
+		&=\eta_{\mu\nu}\sigma^{-4} dx^\mu dx^\nu - 2\eta_{\mu\nu} 
+		\sigma^{-6}dx^\mu x^\nu \eta_{\alpha\beta} dx^\alpha 
+		x^\beta\\ &\qquad
+		-2\eta_{\mu\nu} \sigma^{-6}dx^\nu x^\mu \eta_{\rho\sigma} 
+		dx^\rho x^\sigma +4\sigma^{-8} x^\mu x^\nu \eta_{\rho\sigma} 
+		\eta_{\alpha\beta} dx^\rho x^\sigma dx^\alpha x^\beta
+	\end{split}\\
+	&= \eta_{\mu\nu}\sigma^{-4} dx^\mu x^\nu
+\end{align*}
+%
+We thus have the following behaviour of the line element $ds^2$ 
+under a spacetime inversion,
+%
+\begin{equation}
+	ds^2 = \eta_{\mu\nu} dx^\mu dx^\nu \rightarrow d\bar{s}^2 = 
+	\eta_{\mu\nu} d\bar{x}^\mu d\bar{x}^\nu =	
+	\frac{\eta_{\mu\nu}}{\sigma^4} dx^\mu dx^\nu
+\end{equation}
+A simpler [and equivalent?] derivation would be $\sigma^2 
+\rightarrow \sigma^{-2} = \sigma^{-4}\eta_{\mu\nu}x^\mu x^\nu$.
+Note that we did not consider any transformation on the Minkowski 
+matrix $\eta_{\mu\nu}$. Of course, if one would consider the 
+spacetime inversion as a diffeomorphism under which the Minkowski 
+matrix transforms as a tensor, the line element would be a 
+scalar.
+
+Next we show that the above introduced matrix $\eta_{\mu\nu} 
+\sigma^{-4}$ is invariant under special conformal 
+transformations. A special conformal transformation (SCT) is 
+composed of an inversion, followed by a translation and another 
+inversion. Therefore, we first calculate the transformation 
+behaviour of $\eta_{\mu\nu}$ under a spacetime inversion. To make 
+it clear: now we do consider it as a tensor, i.e.\ the inversion 
+acts once for each index. The reason is that the object 
+$\eta_{\mu\nu}\sigma^{-4}$ is to be interpreted as the 
+\emph{metric tensor} on $N$. As will be shown, it is invariant 
+under SCTs (and LTs) and therefore can be considered defining the 
+conformal Poincar\'e group as the group leaving
+$\eta_{\mu\nu}\sigma^{-4}$ invariant. Because a second rank 
+tensor transforms as
+%
+\begin{displaymath}
+	\eta_{\mu\nu} \rightarrow \frac{\pd x^\alpha}{\pd\bar{x}^\mu} 
+	\frac{\pd x^\beta}{\pd\bar{x}^\nu} \eta_{\alpha\beta}
+\end{displaymath}
+and since $\pd x^\alpha/\pd \bar{x}^\mu = 2\eta_{\mu\rho} x^\rho 
+x^\alpha - \sigma^2 \delta^\alpha_\mu$, one finds
+%
+\begin{align*}
+	\bar{\eta}_{\mu\nu} &= (2\eta_{\mu\sigma} x^\sigma x^\alpha - 
+	\sigma^2 \delta^\alpha_\mu) (2\eta_{\nu\rho} x^\rho x^\beta - 
+	\sigma^2 \delta^\beta_\nu) \eta_{\alpha\beta} \\
+	&= 4\eta_{\mu\sigma} \eta_{\nu\rho} x^\sigma x^\rho - 2 
+	\sigma^2 \eta_{\mu\sigma} \eta_{\alpha\nu} x^\sigma x^\alpha - 
+	2 \sigma^2 \eta_{\mu\beta} \eta_{\nu\rho} x^\beta x^\rho + 
+	\sigma^4 \eta_{\mu\nu}
+\end{align*}
+Interpreted as a second rank tensor, $\eta_{\mu\nu}$ thus 
+transforms under a spacetime inversion according to
+%
+\begin{equation}
+	\eta_{\mu\nu} \rightarrow \bar{\eta}_{\mu\nu} = \sigma^4 
+	\eta_{\mu\nu}
+\end{equation}
+
+Before calculating the behaviour of $\eta_{\mu\nu}\sigma^{-4}$ 
+under special conformal transformations, let us remind that 
+$\sigma^2$ does not behave as a scalar under spacetime 
+inversions. By the argument given in the beginning of the 
+section, it is mapped into $\sigma^{-2}$. Applying the first 
+inversion, we have
+%
+\begin{displaymath}
+	\frac{\eta_{\mu\nu}}{\sigma^4} \rightarrow \sigma^8 
+	\eta_{\mu\nu}
+\end{displaymath}
+The second operation in the special conformal transformation is 
+an ordinary translation. {\blu Since the first inversion mapped 
+	the conic space into Minkowski space, the object $\sigma^8 
+	\eta_{\mu\nu}$ is a scalar under translations.} Therefore, we 
+can directly go to the third part of the special conformal 
+transformation: another inversion. This maps us again into the 
+conic spacetime and the metric tensor is mapped accordingly as
+%
+\begin{displaymath}
+	\sigma^8 \eta_{\mu\nu} \rightarrow 
+	\frac{\eta_{\mu\nu}}{\sigma^4}
+\end{displaymath}
+This shows that $\sigma^{-4} \eta_{\mu\nu}$ is invariant under 
+arbitrary special conformal transformations. [The above 
+discussion makes us guess that its invariance on $N$ is in some 
+sence ``dual'' to the invariance of the Minkowski metric on the 
+dual space $M$.]
+
+
+
+
+
+
+%\bibliographystyle{plain}
+%\bibliography{$RS/References/All.bib}
+\end{document}

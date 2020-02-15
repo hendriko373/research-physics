@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+
+\usepackage{mathtools}
+
+\usepackage[all]{xy}
+
+\title{Cartan geometry}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Lie algebra-valued differential forms}
+\label{app:Lie_val_forms}
+
+Let $\mathcal{M}$ be an $m$-dimensional smooth manifold and let 
+$\mathfrak{g}$ be a Lie algebra with Lie bracket $[\cdot,\cdot] : 
+\mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}$. The space of 
+$\mathfrak{g}$-valued differential $p$-forms on $\mathcal{M}$, 
+i.e.,~$\mathfrak{g} \otimes \Omega^p(\mathcal{M})$, is denoted by 
+$\Omega^p(\mathcal{M},\mathfrak{g})$. An element $\eta \in 
+\Omega^p(\mathcal{M},\mathfrak{g})$ may be expanded in a basis 
+$E_a$ for $\mathfrak{g}$ as $\eta = \eta^a \otimes E_a$, also 
+written as $\eta^a E_a$, and where each $\eta^a \in 
+\Omega^p(\mathcal{M})$. 
+
+For any two elements $\eta \in \Omega^p(\mathcal{M},\mathfrak{g})$ and 
+$\theta \in \Omega^q(\mathcal{M},\mathfrak{g})$ with $p + q \leq m$, a Lie 
+bracket is defined by
+\begin{displaymath}
+	[.,.] : \Omega^p(\mathcal{M},\mathfrak{g}) \times 
+	\Omega^q(\mathcal{M},\mathfrak{g}) \to \Omega^{p+q}(\mathcal{M},\mathfrak{g})
+	: (\eta,\theta) \mapsto [\eta,\theta] = \eta^a \wedge \theta^b 
+	\otimes [E_a,E_b],
+\end{displaymath}
+where the bracket in the last term is of course the ordinary Lie 
+bracket of $\mathfrak{g}$. It is easily verified that this 
+operation is a graded commutator, namely,
+\begin{displaymath}
+	[\eta,\theta] = (-1)^{pq + 1} [\theta,\eta].
+\end{displaymath}
+The Jacobi identity for $\mathfrak{g}$ consequently generalizes 
+to a graded Jacobi identity (let $\omega \in 
+\Omega^r(\mathcal{M},\mathfrak{g})$:
+\begin{displaymath}
+	(-1)^{rp}[[\eta,\theta],\omega] + 
+	(-1)^{pq}[[\theta,\omega],\eta] +
+	(-1)^{qr}[[\omega,\eta],\theta] \equiv 0.
+\end{displaymath}
+
+The exterior derivative $d : \Omega^p(\mathcal{M}) \to 
+\Omega^{p+1}(\mathcal{M})$ of differential forms can equally be 
+defined an operation on the space of $\mathfrak{g}$-valued 
+differential forms, by limiting its action on the form parts, 
+i.e.,
+\begin{displaymath}
+	d : \Omega^p(\mathcal{M},\mathfrak{g}) \to \Omega^{p+1}(\mathcal{M},\mathfrak{g})
+	: \eta \mapsto d\eta = d\eta^a \otimes E_a.
+\end{displaymath}
+This derivative respects a graded Leibniz rule:
+\begin{displaymath}
+	d[\eta,\theta] = [d\eta,\theta] + (-1)^p [\eta,d\theta].
+\end{displaymath}
+
+\end{document}

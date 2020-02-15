@@ -1,0 +1,477 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{HVDHKN76}
+
+\bibitem[A{\etalchar{+}}15]{Ade:2015xua}
+P.~A.~R. Ade et~al., \textsl{ Planck 2015 results. XIII. {C}osmological
+  parameters},
+\newblock (2015), {1502.01589}.
+
+\bibitem[ABAP07]{Aldrovandi:2006vr}
+R.~Aldrovandi, J.~P. Beltran~Almeida and J.~G. Pereira, \textsl{ {d}e {S}itter
+  special relativity},
+\newblock Class. Quantum Grav. \textbf{ 24}, 1385--1404 (2007),
+  {gr-qc/0606122}.
+
+\bibitem[AJP{\etalchar{+}}15]{Araujo:2015oqa}
+A.~Araujo, H.~Jennen, J.~G. Pereira, A.~C. Sampson and L.~L. Savi, \textsl{ {On
+  the spacetime connecting two aeons in conformal cyclic cosmology}},
+\newblock Gen. Rel. Grav. \textbf{ 47}, 151 (2015), {1503.05005}.
+
+\bibitem[AM95]{Alekseevsky:1995cc}
+D.~V. Alekseevsky and P.~W. Michor, \textsl{ Differential geometry of {C}artan
+  connections},
+\newblock Publ. Math. Debrecen \textbf{ 47}, 349--375 (1995), {math/9412232}.
+
+\bibitem[AP04]{Arcos:2005ec}
+H.~I. Arcos and J.~G. Pereira, \textsl{ Torsion gravity: a reappraisal},
+\newblock Int. J. Mod. Phys. \textbf{ D13}, 2193--2240 (2004), {gr-qc/0501017}.
+
+\bibitem[AP12]{aldrovandi:2012tele}
+R.~Aldrovandi and J.~G. Pereira,
+\newblock \textsl{ Teleparallel Gravity: An Introduction},
+\newblock Springer, Dordrecht, 2012.
+
+\bibitem[APV04a]{Aldrovandi:2003pa}
+R.~Aldrovandi, J.~G. Pereira and K.~H. Vu, \textsl{ Gravitation without the
+  equivalence principle},
+\newblock Gen. Rel. Grav. \textbf{ 36}, 101--110 (2004), {gr-qc/0304106}.
+
+\bibitem[APV04b]{Aldrovandi:2003xu}
+R.~Aldrovandi, J.~G. Pereira and K.~H. Vu, \textsl{ Selected topics in
+  teleparallel gravity},
+\newblock Braz. J. Phys. \textbf{ 34}, 1374--1380 (2004), {gr-qc/0312008}.
+
+\bibitem[AS68]{Abramowitz:1968mf}
+M.~Abramowitz and I.~A. Segun,
+\newblock \textsl{ Handbook of Mathematical Functions},
+\newblock Dover Publications, New York, 1968.
+
+\bibitem[BD61]{Brans:1961sx}
+C.~Brans and R.~Dicke, \textsl{ {M}ach's principle and a relativistic theory of
+  gravitation},
+\newblock Phys. Rev. \textbf{ 124}, 925--935 (1961).
+
+\bibitem[Ber68]{Bergmann:1968ve}
+P.~G. Bergmann, \textsl{ Comments on the scalar tensor theory},
+\newblock Int. J. Theor. Phys. \textbf{ 1}, 25--36 (1968).
+
+\bibitem[BO75]{Borisov:1974bn}
+A.~B. Borisov and V.~I. Ogievetsky, \textsl{ {Theory of Dynamical Affine and
+  Conformal Symmetries as Gravity Theory}},
+\newblock Theor. Math. Phys. \textbf{ 21}, 1179 (1975).
+
+\bibitem[BW57]{Brill:1957fx}
+D.~R. Brill and J.~A. Wheeler, \textsl{ {Interaction of neutrinos and
+  gravitational fields}},
+\newblock Rev. Mod. Phys. \textbf{ 29}, 465--479 (1957).
+
+\bibitem[Car23a]{cartan:1923cc}
+{\'E}.~Cartan, \textsl{ Les espaces {\'a} connexion conforme},
+\newblock Ann. Soc. Polon. Math. \textbf{ 2}, 171--221 (1923).
+
+\bibitem[Car23b]{Cartan:1923zea}
+E.~Cartan, \textsl{ Sur les vari{\'e}t{\'e}s {\`a} connexion affine et la
+  th{\'e}orie de la relativit{\'e} g{\'e}n{\'e}ralis{\'e}e. (premi{\`e}re
+  partie)},
+\newblock Ann. {\'E}c. Norm. Super. \textbf{ 40}, 325--412 (1923).
+
+\bibitem[Car24]{Cartan:1924yea}
+E.~Cartan, \textsl{ Sur les vari{\'e}t{\'e}s {\`a} connexion affine et la
+  th{\'e}orie de la relativit{\'e} g{\'e}n{\'e}ralis{\'e}e. (premi{\`e}re
+  partie) (Suite).},
+\newblock Ann. {\'E}c. Norm. Super. \textbf{ 41}, 1--25 (1924).
+
+\bibitem[Car26]{Cartan:1926gh}
+{\'E}.~Cartan, \textsl{ Les groupes d'holonomie des espaces
+  g{\'e}n{\'e}ralis{\'e}s},
+\newblock Acta Math. \textbf{ 48}, 1--42 (1926).
+
+\bibitem[Car35]{cartan:1935rm}
+{\'E}.~Cartan,
+\newblock \textsl{ La M{\'e}thode du Rep{\`e}re Mobile, la Th{\'e}orie des
+  Groupes Continus et les {\'E}spaces G{\'e}n{\'e}ralis{\'e}s},
+\newblock Number~5 in Expos{\'e}s de G{\'e}om{\'e}trie, Hermann, Paris, 1935.
+
+\bibitem[Car04]{carroll:sg}
+S.~Carroll,
+\newblock \textsl{ Spacetime and Geometry: an Introduction to General
+  Relativity},
+\newblock Addison Wesly, San Francisco, 2004.
+
+\bibitem[CCWZ69]{Callan:1969sn}
+C.~G. Callan, Jr., S.~Coleman, J.~Wess and B.~Zumino, \textsl{ Structure of
+  phenomenological {L}agrangians.~{II}},
+\newblock Phys. Rev. \textbf{ 177}, 2247--2250 (1969).
+
+\bibitem[Che90]{Chern:1990wg}
+S.-S. Chern, \textsl{ What is geometry?},
+\newblock Amer. Math. Monthly \textbf{ 97}, 679--686 (1990).
+
+\bibitem[Cho76]{Cho:1975dh}
+Y.~Cho, \textsl{ Einstein {L}agrangian as the translational {Y}ang--{M}ills
+  {L}agrangian},
+\newblock Phys. Rev. \textbf{ D14}, 2521 (1976).
+
+\bibitem[CLS15]{Capozziello:2015rda}
+S.~Capozziello, O.~Luongo and E.~N. Saridakis, \textsl{ {Transition redshift in
+  $f(T)$ cosmology and observational constraints}},
+\newblock Phys. Rev. \textbf{ D91}, 124037 (2015), {1503.02832}.
+
+\bibitem[CST06]{Copeland:2006wr}
+E.~J. Copeland, M.~Sami and S.~Tsujikawa, \textsl{ Dynamics of dark energy},
+\newblock Int. J. Mod. Phys. \textbf{ D15}, 1753--1936 (2006),
+  {hep-th/0603057}.
+
+\bibitem[CWZ69]{Coleman:1969sm}
+S.~R. Coleman, J.~Wess and B.~Zumino, \textsl{ Structure of phenomenological
+  {L}agrangians.~{I}},
+\newblock Phys. Rev. \textbf{ 177}, 2239--2247 (1969).
+
+\bibitem[dAGP00a]{deAndrade:2000kr}
+V.~C. de~Andrade, L.~C.~T. Guillen and J.~G. Pereira, \textsl{ Gravitational
+  energy-momentum density in teleparallel gravity},
+\newblock Phys. Rev. Lett. \textbf{ 84}, 4533--4536 (2000), {gr-qc/0003100}.
+
+\bibitem[dAGP00b]{deAndrade:2000sf}
+V.~C. de~Andrade, L.~C.~T. Guillen and J.~G. Pereira,
+\newblock Teleparallel gravity: An Overview,
+\newblock in \textsl{ {Recent developments in theoretical and experimental
+  general relativity, gravitation and relativistic field theories. Proceedings,
+  9th Marcel Grossmann Meeting, MG'9, Rome, Italy, July 2-8, 2000. Pts. A-C}},
+  2000.
+
+\bibitem[dAP97]{deAndrade:1997qt}
+V.~C. de~Andrade and J.~G. Pereira, \textsl{ Gravitational Lorentz force and
+  the description of the gravitational interaction},
+\newblock Phys. Rev. \textbf{ D56}, 4689--4695 (1997), {gr-qc/9703059}.
+
+\bibitem[DCLS15]{DiCasola:2013iia}
+E.~Di~Casola, S.~Liberati and S.~Sonego, \textsl{ Nonequivalence of equivalence
+  principles},
+\newblock Am. J. Phys. \textbf{ 83}, 39--46 (2015), {1310.7426}.
+
+\bibitem[Dic62]{Dicke:1961gz}
+R.~Dicke, \textsl{ {M}ach's principle and invariance under transformation of
+  units},
+\newblock Phys. Rev. \textbf{ 125}, 2163--2167 (1962).
+
+\bibitem[Dir58]{Dirac:1958er}
+P.~A.~M. Dirac,
+\newblock The electron wave equation in {R}iemann space,
+\newblock in \textsl{ Max Planck Festschrift}, edited by B.~Kockel, W.~Macke
+  and A.~Papapetrou, pages 339--344, VEB Deutscher Verlag der Wissenschaften,
+  Berlin, 1958.
+
+\bibitem[Ehr51]{ehresmann:1950}
+C.~Ehresmann,
+\newblock Les connexions infinit{\'e}simales dans un espace fibr{\'e}
+  diff{\'e}rentiable,
+\newblock in \textsl{ Colloque de topologie (espaces fibr{\'e}s), {B}ruxelles,
+  1950}, pages 29--55, G.~Thone, Li{\'e}ge, 1951.
+
+\bibitem[EZ06]{Edelstein:2006a}
+J.~D. Edelstein and J.~Zanelli, \textsl{ ({S}uper-){G}ravities of a different
+  sort},
+\newblock J. Phys.: Conf. Ser. \textbf{ 33}, 83--94 (2006), {hep-th/0605186}.
+
+\bibitem[GG09]{gibbons:2009b}
+G.~W. Gibbons and S.~Gielen, \textsl{ Deformed General Relativity and Torsion},
+\newblock Class. Quantum Grav. \textbf{ 26}, 135005 (2009), {0902.2001}.
+
+\bibitem[Gil02]{Gilmore:2002Lg}
+R.~Gilmore,
+\newblock \textsl{ Lie Groups, Lie Algebras, and Some of Their Applications},
+\newblock Dover, New York, 2002.
+
+\bibitem[GLS12]{Geng:2011ka}
+C.-Q. Geng, C.-C. Lee and E.~N. Saridakis, \textsl{ Observational constraints
+  on teleparallel dark energy},
+\newblock JCAP \textbf{ 1201}, 002 (2012), {1110.0913}.
+
+\bibitem[GLSW11]{Geng:2011aj}
+C.-Q. Geng, C.-C. Lee, E.~N. Saridakis and Y.-P. Wu, \textsl{ 'Teleparallel'
+  dark energy},
+\newblock Phys. Lett. \textbf{ B704}, 384--387 (2011), {1109.1092}.
+
+\bibitem[HB13]{Hehl:2013gtg}
+F.~W. Hehl and M.~Blagojevic,
+\newblock \textsl{ {Gauge theories of gravitation}},
+\newblock Imperial College Press, London, 2013.
+
+\bibitem[HE73]{hawking:1973ls}
+S.~W. Hawking and G.~F.~R. Elis,
+\newblock \textsl{ The large scale structure of space--time},
+\newblock Cambridge University Press, 1973.
+
+\bibitem[Hel78]{helgasson:1978dg}
+S.~Helgason,
+\newblock \textsl{ Differential Geometry, {L}ie Groups, and Symmetric Spaces},
+\newblock Academic Press, New York, 1978.
+
+\bibitem[HJJS08]{husemoller.etal:2008bbt}
+D.~Husem{\"o}ller, M.~Joachim, B.~Jur{\v{c}}o and M.~Schottenloher,
+\newblock \textsl{ Basic Bundle Theory and K-Cohomology Invariants}, volume 726
+  of \textsl{ Lecture Notes in Physics},
+\newblock Springer, Berlin Heidelberg, 2008.
+
+\bibitem[HN67]{Hayashi:1967se}
+K.~Hayashi and T.~Nakano, \textsl{ Extended translation invariance and
+  associated gauge fields},
+\newblock Prog. Theor. Phys. \textbf{ 38}, 491--507 (1967).
+
+\bibitem[Hus66]{husemoller:1966fibre}
+D.~Husem{\"o}ller,
+\newblock \textsl{ Fibre Bundles},
+\newblock Springer, New York, 1966.
+
+\bibitem[HVDHKN76]{Hehl:1976grs}
+F.~W. Hehl, P.~Von Der~Heyde, G.~D. Kerlick and J.~M. Nester, \textsl{ General
+  relativity with spin and torsion: {F}oundations and prospects},
+\newblock Rev. Mod. Phys. \textbf{ 48}, 393--416 (1976).
+
+\bibitem[ISS71]{Isham:1971dv}
+C.~Isham, A.~Salam and J.~Strathdee, \textsl{ {Nonlinear realizations of
+  space-time symmetries. Scalar and tensor gravity}},
+\newblock Annals Phys. \textbf{ 62}, 98--119 (1971).
+
+\bibitem[IW53]{Inonu:1953sp}
+E.~In{\"o}n{\"u} and E.~P. Wigner, \textsl{ On the contraction of groups and
+  their represenations},
+\newblock Proc. Nat. Acad. Sci. \textbf{ 39}, 510--524 (1953).
+
+\bibitem[Jen14]{Jennen:2014mba}
+H.~Jennen, \textsl{ {Cartan geometry of spacetimes with a nonconstant
+  cosmological function $\Lambda$}},
+\newblock Phys. Rev. \textbf{ D90}, 084046 (2014), {1406.2621}.
+
+\bibitem[JP16]{Jennen:2015bxa}
+H.~Jennen and J.~G. Pereira, \textsl{ Dark energy as a kinematic effect},
+\newblock Phys. Dark Univ. \textbf{ 11}, 49--53 (2016), {1506.02012}.
+
+\bibitem[Kib61]{Kibble:1961ba}
+T.~Kibble, \textsl{ Lorentz invariance and the gravitational field},
+\newblock J. Math. Phys. \textbf{ 2}, 212--221 (1961).
+
+\bibitem[Kie07]{Kiefer:2007ria}
+C.~Kiefer,
+\newblock \textsl{ {Quantum Gravity}},
+\newblock Oxford University Press, New York, 2007.
+
+\bibitem[Kle93]{Klein:1893}
+F.~Klein, \textsl{ A comparative review of recent researches in geometry},
+\newblock Bull. New York Math. Soc. \textbf{ 2}, 215--249 (1893),
+\newblock Translated by M.W.~Haskell.
+
+\bibitem[KN96a]{kob1996found}
+S.~Kobayashi and K.~Nomizu,
+\newblock \textsl{ Foundations of Differential Geometry}, volume~1,
+\newblock Wiley-Interscience, New York, 1996,
+\newblock Reprint of the 1963 original.
+
+\bibitem[KN96b]{kob1996found2}
+S.~Kobayashi and K.~Nomizu,
+\newblock \textsl{ Foundations of Differential Geometry}, volume~2,
+\newblock Wiley-Interscience, New York, 1996,
+\newblock Reprint of the 1969 original.
+
+\bibitem[Kob57]{kobayashi:1957tc}
+S.~Kobayaschi, \textsl{ Theory of connections},
+\newblock Annali di Matematica Pura ed Applicata \textbf{ 43}, 119--194 (1957).
+
+\bibitem[LC16]{levicivita:1916}
+T.~Levi-Civita, \textsl{ Nozione di parallelismo in una variet{\`a} qualunque e
+  conseguente specificazione geometrica della curvatura {R}iemanniana},
+\newblock Rend. Circ. Mat. Palermo \textbf{ 42}, 173--204 (1916).
+
+\bibitem[Loo69]{loos:1969ss}
+O.~Loos,
+\newblock \textsl{ Symmetric Spaces},
+\newblock Benjamin, 1969.
+
+\bibitem[LS90]{loomis:1990ac}
+L.~Loomis and S.~Sternberg,
+\newblock \textsl{ Advanced Calculus},
+\newblock Jones and Bartlett, Boston, 1990.
+
+\bibitem[Man02]{Mansouri:2002cg}
+F.~Mansouri, \textsl{ Nonvanishing cosmological constant $\Lambda$, phase
+  transitions, and $\Lambda$-dependence of high-energy processes},
+\newblock Phys. Lett. \textbf{ B538}, 239--245 (2002), {hep-th/0203150}.
+
+\bibitem[M{\o}l61]{Moller:1961ap}
+C.~M{\o}ller, \textsl{ Conservation laws and absolute parallelism in general
+  relativity},
+\newblock Mat. Fys. Dan. Vid. Selsk. \textbf{ 1}, 1--50 (1961).
+
+\bibitem[Nak90]{nakahara:2003gt}
+M.~Nakahara,
+\newblock \textsl{ Geometry, Topology and Physics},
+\newblock Graduate student series in physics, IOP Publishing, Bristol, 1990.
+
+\bibitem[Ota16]{Otalora:2014aoa}
+G.~Otalora, \textsl{ {A novel teleparallel dark energy model}},
+\newblock Int. J. Mod. Phys. \textbf{ D25}, 1650025 (2016), {1402.2256}.
+
+\bibitem[P{\etalchar{+}}99]{Perlmutter:1998np}
+S.~Perlmutter et~al., \textsl{ Measurements of $\Omega$ and $\Lambda$ from 42
+  high-redshift supernovae},
+\newblock Astrophys. J. \textbf{ 517}, 565--586 (1999), {astro-ph/9812133}.
+
+\bibitem[Pad87]{Padmanabhan:1987au}
+T.~Padmanabhan, \textsl{ Limitations on the operational definition of spacetime
+  events and quantum gravity},
+\newblock Class. Quantum Grav. \textbf{ 4}, L107--L113 (1987).
+
+\bibitem[PR03]{Peebles:2003cc}
+P.~J.~E. Peebles and B.~Ratra, \textsl{ The cosmological constant and dark
+  energy},
+\newblock Rev. Mod. Phys. \textbf{ 75}, 559--606 (2003), {astro-ph/0207347}.
+
+\bibitem[R{\etalchar{+}}98]{Riess:1998cb}
+A.~G. Riess et~al., \textsl{ Observational evidence from supernovae for an
+  accelerating universe and a cosmological constant},
+\newblock Astron. J. \textbf{ 116}, 1009--1038 (1998), {astro-ph/9805201}.
+
+\bibitem[Rie54]{riemann:1854}
+B.~Riemann,
+\newblock {\"U}ber die {H}ypothesen, welche der {G}eometrie zu {G}runde liegen,
+  1854.
+
+\bibitem[Sci64]{Sciama:1964wt}
+D.~W. Sciama, \textsl{ The physical structure of general relativity},
+\newblock Rev. Mod. Phys. \textbf{ 36}, 463--469 (1964).
+
+\bibitem[SF10]{Sotiriou:2008rp}
+T.~P. Sotiriou and V.~Faraoni, \textsl{ $f(R)$ theories of gravity},
+\newblock Rev. Mod. Phys. \textbf{ 82}, 451--497 (2010), {0805.1726}.
+
+\bibitem[Sha97]{sharpe1997diff_geo}
+R.~W. Sharpe,
+\newblock \textsl{ Differential Geometry: {C}artan's Generalization of
+  {K}lein's {E}rlangen Program},
+\newblock Springer, New York, 1997.
+
+\bibitem[SS69]{Salam:1969rq}
+A.~Salam and J.~Strathdee, \textsl{ Nonlinear realizations. I. The Role of
+  {G}oldstone bosons},
+\newblock Phys. Rev. \textbf{ 184}, 1750--1759 (1969).
+
+\bibitem[SSV02]{Spradlin:2002ds}
+M.~Spradlin, A.~Strominger and A.~Volovich,
+\newblock De {S}itter Space,
+\newblock in \textsl{ Unity from Duality: Gravity, Gauge Theory and Strings},
+  edited by C.~Bachas, A.~Bilal, M.~Douglas, N.~Nekrasov and F.~David,
+  volume~76 of \textsl{ Les Houches - \'Ecole d'\'Et\'e de Physique Theorique},
+  pages 423--453, Springer Berlin Heidelberg, 2002.
+
+\bibitem[SW79]{Stelle:1979va}
+K.~S. Stelle and P.~C. West, \textsl{ {d}e~{S}itter gauge invariance and the
+  geometry of the {E}instein-{C}artan Theory},
+\newblock J. Phys. A \textbf{ 12}, L205--L210 (1979).
+
+\bibitem[SW80]{stelle.west:1980ds}
+K.~S. Stelle and P.~C. West, \textsl{ Spontaneously broken de~{S}itter symmetry
+  and the gravitational holonomy group},
+\newblock Phys. Rev. \textbf{ D21}, 1466--1488 (1980).
+
+\bibitem[Tra06]{Trautman:2006ec}
+A.~Trautman,
+\newblock {E}instein--{C}artan Theory,
+\newblock in \textsl{ Encyclopedia of Mathematical Physics}, edited by J.-P.
+  Fran{\c{c}}oise, G.~L. Naber and T.~S. Tsun, pages 189--195, Academic Press,
+  Oxford, 2006.
+
+\bibitem[Tre08]{Tresguerres:2008jf}
+R.~Tresguerres, \textsl{ {Dynamically broken Anti-de Sitter action for
+  gravity}},
+\newblock Int. J. Geom. Meth. Mod. Phys. \textbf{ 5}, 171--183 (2008),
+  {0804.1129}.
+
+\bibitem[Tsu10]{Tsujikawa:2010zza}
+S.~Tsujikawa, \textsl{ Modified gravity models of dark energy},
+\newblock Lect. Notes Phys. \textbf{ 800}, 99--145 (2010), {1101.0191}.
+
+\bibitem[TT04]{Tiemblo:2005js}
+A.~Tiemblo and R.~Tresguerres, \textsl{ {Gauge theories of gravity: The
+  Nonlinear framework}},
+\newblock Recent Res. Devel. Phys. \textbf{ 5}, 1255 (2004), {gr-qc/0510089}.
+
+\bibitem[Vis05]{Visser:2004bf}
+M.~Visser, \textsl{ {Cosmography: Cosmology without the Einstein equations}},
+\newblock Gen. Rel. Grav. \textbf{ 37}, 1541--1548 (2005), {gr-qc/0411131}.
+
+\bibitem[Vol73]{Volkov:1973vd}
+D.~V. Volkov, \textsl{ Phenomenological {L}agrangians},
+\newblock Fiz. Elem. Chastits At. Yadra \textbf{ 4}, 3--41 (1973),
+\newblock [Sov. J. Part. Nucl.].
+
+\bibitem[Wal84]{Wald:1984gr}
+R.~W. Wald,
+\newblock \textsl{ General Relativity},
+\newblock The University of Chicago Press, Chicago, 1984.
+
+\bibitem[WB92]{wess:1992ss}
+J.~Wess and J.~Bagger,
+\newblock \textsl{ Supersymmetry and Supergravity},
+\newblock Princeton University Press, Princeton, 1992.
+
+\bibitem[Wei23]{Weitz:1923it}
+R.~Weitzenb{\"o}ck,
+\newblock \textsl{ Invariantentheorie},
+\newblock Noordhoff, Groningen, 1923.
+
+\bibitem[Wei72]{Weinberg:1972gc}
+S.~Weinberg,
+\newblock \textsl{ Gravitation and Cosmology: Principles and Applications of
+  the General Theory of Relativity},
+\newblock Wiley, New York, 1972.
+
+\bibitem[Wei08]{Weinberg:2008bc}
+S.~Weinberg,
+\newblock \textsl{ Cosmology},
+\newblock Oxford University Press, 2008.
+
+\bibitem[Wis09]{Wise:2009fu}
+D.~K. Wise, \textsl{ Symmetric space {C}artan connections and gravity in three
+  and four dimensions},
+\newblock SIGMA \textbf{ 5}, 080 (2009), {0904.1738}.
+
+\bibitem[Wis10]{Wise:2010sm}
+D.~K. Wise, \textsl{ {M}ac{D}owell-{M}ansouri gravity and {C}artan geometry},
+\newblock Class. Quantum Grav. \textbf{ 27}, 155010 (2010), {gr-qc/0611154}.
+
+\bibitem[Wis12]{Wise:2011-sym.br}
+D.~K. Wise, \textsl{ The geometric role of symmetry breaking in gravity},
+\newblock J. Phys.: Conf. Ser. \textbf{ 360}, 012017 (2012), {1112.2390}.
+
+\bibitem[WLR99]{Wu:1998ad}
+K.~K. Wu, O.~Lahav and M.~J. Rees, \textsl{ The large-scale smoothness of the
+  Universe},
+\newblock Nature \textbf{ 397}, 225--230 (1999), {astro-ph/9804062}.
+
+\bibitem[WSGA12]{Wagner:2012ui}
+T.~A. Wagner, S.~Schlamminger, J.~H. Gundlach and E.~G. Adelberger, \textsl{
+  Torsion-balance tests of the weak equivalence principle},
+\newblock Class. Quantum Grav. \textbf{ 29}, 184002 (2012), {1207.2442}.
+
+\bibitem[WZ12]{Westman:2012xk}
+H.~F. Westman and T.~G. Zlosnik, \textsl{ Gravity, {C}artan geometry, and
+  idealized waywisers},
+\newblock (2012), {1203.5709}.
+
+\bibitem[WZ14]{Westman:2014yca}
+H.~F. Westman and T.~G. Zlosnik, \textsl{ An introduction to the physics of
+  {C}artan gravity},
+\newblock (2014), {1411.1679}.
+
+\bibitem[XSL12]{Xu:2012jf}
+C.~Xu, E.~N. Saridakis and G.~Leon, \textsl{ Phase-space analysis of
+  teleparallel dark energy},
+\newblock JCAP \textbf{ 1207}, 005 (2012), {1202.3781}.
+
+\bibitem[Zum77]{Zumino:1977nl}
+B.~Zumino, \textsl{ Non-linear realization of supersymmetry in anti de~{S}itter
+  space},
+\newblock Nucl. Phys. \textbf{ B127}, 189--201 (1977).
+
+\end{thebibliography}

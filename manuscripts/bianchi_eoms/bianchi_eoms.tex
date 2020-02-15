@@ -1,0 +1,275 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+
+\usepackage{mathtools}
+\mathtoolsset{centercolon}
+
+
+
+\usepackage[all]{xy}
+
+\title{Contracted Bianchi identities -- Field equations}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Teleparallel Gravity}
+
+As discussed in the document \verb+cartan_geo_ext.pdf+ the 
+geometric setting underlying Teleparallel Gravity is that of a 
+Riemann-Cartan geometry with vanishing curvature. The Bianchi 
+identities for a generic Riemann-Cartan\footnote{RC geometry.}  
+geometry are given by
+\begin{gather*}
+	dR + [\omega,R] \equiv 0~,\\
+	dT + [\omega,T] + [e,R] \equiv0~,
+\end{gather*}
+which in the case of Teleparallel Gravity reduce to
+\begin{gather*}
+	0 \equiv 0~,\\
+	dT + [\omega,T] \equiv0~.
+\end{gather*}
+Apart from these Bianchi identities for the torsion $T$, there 
+are two identities at hand for the corresponding contortion $K$.  
+The latter is defined through the splitting $\omega = 
+\mathring{\omega} + K$, where $\mathring{\omega}$ is the unique 
+Levi-Civita spin connection, i.e., the spin connection without 
+torsion.  Introducing the $\mathfrak{so}(1,3)$-valued two form $Q 
+:= dK + [\omega,K] - \tfrac{1}{2}[K,K]$, these identities are of 
+the form (for a generic RC geometry)
+\begin{gather*}
+	dQ + [\omega, Q] - [K,Q] + [K,R] \equiv 0~,\\
+	[e,Q] - [e,R] \equiv 0~.
+\end{gather*}
+Specializing for Teleparallel Gravity, one finds that
+\begin{subequations}
+\begin{gather}
+	\label{eq:bianchi_ISO_DQ}
+	dQ + [\omega, Q] - [K,Q] \equiv 0~,\\
+	\label{eq:bianchi_ISO_eQ}
+	[e,Q] \equiv 0~.
+\end{gather}
+\end{subequations}
+Of course, the two sets of Bianchi identities for $\omega$ and 
+$K$ are related by considering the identities for the Levi-Civita 
+connection $\mathring{\omega}$.
+
+Introducing the notation $\mathring{D} := d + \mathring{\omega}$, 
+the first identity~\eqref{eq:bianchi_ISO_DQ} can be expanded as 
+$\mathring{D}_{[\rho} Q\ind{^{ab}_{\mu\nu]}} \equiv 0$.
+Contracting this equation twice with the vielbein results in
+\begin{displaymath}
+	\mathring{D}_\rho \mathcal{Q} - 2 \mathring{D}_\rho 
+	e\ind{_a^\mu} Qi\ind{^a_\mu} + 2 e\ind{_a^\mu} 
+	\mathring{D}_\mu Qi\ind{^a_\rho} - 2 e\ind{_a^\mu} 
+	\mathring{D}_\mu e\ind{_b^\nu} Q\ind{^{ab}_{\nu\rho}} \equiv 
+	0~,
+\end{displaymath}
+where the notation $\mathcal{Q} := Q\ind{^{ab}_{\mu\nu}}
+e\ind{_a^\mu} e\ind{_b^\nu}$ and $Qi\ind{^a_\mu} := 
+Q\ind{^{ab}_{\mu\nu}} e\ind{_b^\nu}$ has been used.\footnote{Let 
+	us note, \emph{en passant}, that due to the 
+	identity~\eqref{eq:bianchi_ISO_eQ}, $Qi_{\mu \nu}$ is a
+	symmetric tensor.}
+The vielbein postulate $D_\rho e\ind{_a^\mu} = 
+-\Gamma\ind{^\mu_{\nu\rho}} e\ind{_a^\nu}$ allows us to eliminate 
+the covariant derivatives on the tetrads, which renders
+\begin{align*}
+	0 &\equiv
+	e\ind{_a^\mu} \mathring{D}_\mu Qi\ind{^a_\rho} - e\ind{_a^\mu} 
+	\mathring{\Gamma}\ind{^\sigma_{\mu \rho}} Qi\ind{^a_\sigma} - 
+	\tfrac{1}{2} \pd_\rho \mathcal{Q} \\
+	&\equiv \mathring{\nabla}_\mu( Qi\ind{^\mu_\rho} - 
+	\tfrac{1}{2} \delta^\mu_\rho \mathcal{Q} )~.
+\end{align*}
+This equation can be rewritten as follows:
+\begin{align*}
+	0 &\equiv
+	\mathring{\nabla}_\mu Qi\ind{^\mu_a} e\ind{^a_\rho} + 
+	Qi\ind{^\mu_a} \mathring{\nabla}_\mu e\ind{^a_\rho} - 
+	\tfrac{1}{2} \mathring{\nabla}_\mu e\ind{^a_\rho} 
+	e\ind{_a^\mu} \mathcal{Q} - \tfrac{1}{2} e\ind{^a_\rho} 
+	\mathring{\nabla}_\mu e\ind{_a^\mu} \mathcal{Q} - 
+	\tfrac{1}{2}e\ind{^a_\rho} e\ind{_a^\mu} \pd_\mu \mathcal{Q}\\
+	&= \pd_\mu Qi\ind{^\mu_a} e\ind{^a_\rho} + \pd_\mu \ln e\, 
+	Qi\ind{^\mu_a} e\ind{^a_\rho} - Qi\ind{^\mu_a} 
+	\mathring{\omega}\ind{^a_{b\mu}} e\ind{^b_\rho} + \tfrac{1}{2} 
+	\mathring{\omega}\ind{^a_{b\mu}} e\ind{^b_\rho} e\ind{_a^\mu} 
+	\mathcal{Q} \\
+	&\nla{}- \tfrac{1}{2} e\ind{^a_\rho} \pd_\mu e\ind{_a^\mu} 
+	\mathcal{Q} - \tfrac{1}{2} e\ind{^a_\rho} \pd_\mu \ln e\, 
+	e\ind{_a^\mu} \mathcal{Q} - \tfrac{1}{2}e\ind{^a_\rho} 
+	e\ind{_a^\mu} \pd_\mu \mathcal{Q} \\
+	&= e\ind{^a_\rho} \big( \pd_\mu \ln e\, Qi\ind{^\mu_a} + 
+	\mathring{D}_\mu Qi\ind{^\mu_a} - \tfrac{1}{2} \pd_\mu \ln e\, 
+	e\ind{_a^\mu} \mathcal{Q} - \tfrac{1}{2} \mathring{D}_\mu 
+	e\ind{_a^\mu} \mathcal{Q} - \tfrac{1}{2} e\ind{_a^\mu} \pd_\mu 
+	\mathcal{Q} \big)~,
+\end{align*}
+which, given that the vierbein be invertible, is true if and only 
+if
+\begin{equation}
+	\label{eq:contr_bianchi_DQ}
+	\mathring{D}_\mu \big( e\, Qi\ind{^\mu_a} - \tfrac{1}{2} e\, 
+	e\ind{_a^\mu} \mathcal{Q} \big) \equiv 0~.
+\end{equation}
+
+To conclude what conditions the contracted Bianchi 
+identity~\eqref{eq:contr_bianchi_DQ} puts on the field equations 
+of Teleparallel Gravity, we further work out the tensors 
+$Qi\ind{^\mu_a}$ and $\mathcal{Q}$. These were defined as 
+contractions of the Lorentz algebra valued two-form
+\begin{displaymath}
+	Q\ind{^{ab}_{\mu\nu}} = D_\mu K\ind{^{ab}_\nu} - D_\nu 
+	K\ind{^{ab}_\mu} - K\ind{^a_{c\mu}} K\ind{^{cb}_\nu} + 
+	K\ind{^a_{c\nu}} K\ind{^{cb}_\mu}~.
+\end{displaymath}
+Let us first calculate the scalar function $\mathcal{Q} = 
+Q\ind{^{ab}_{\mu\nu}} e\ind{_a^\mu} e\ind{_b^\nu}$:
+\begin{align*}
+	\mathcal{Q} &= \pd_\mu K\ind{^{\mu\nu}_\nu} - D_\mu 
+	e\ind{_a^\mu} K\ind{^{a\nu}_\nu} - D_\mu e\ind{_b^\nu} 
+	K\ind{^{\mu b}_\nu} - \pd_\nu K\ind{^{\mu\nu}_\mu} + D_\nu 
+	e\ind{_a^\mu} K\ind{^{a\nu}_\mu}  \\
+	&\nla{}+ D_\nu e\ind{_b^\nu} K\ind{^{\mu b}_\mu} - 
+	K\ind{^\mu_{\rho \mu}} K\ind{^{\rho\nu}_\nu} + 
+	K\ind{^\mu_{\rho \nu}} K\ind{^{\rho\nu}_\mu} \\
+	&= 2 \pd_\mu K\ind{^{\mu\nu}_\nu} + \Gamma\ind{^\mu_{\rho\mu}} 
+	e\ind{_a^\rho} K\ind{^{a\nu}_\nu} + \Gamma\ind{^\nu_{\rho\mu}} 
+	e\ind{_b^\rho} K\ind{^{\mu b}_\nu} - 
+	\Gamma\ind{^\mu_{\rho\nu}} e\ind{_a^\rho} K\ind{^{a \nu}_\mu} 
+	\\
+	&\nla{}- \Gamma\ind{^\nu_{\rho\nu}} e\ind{_b^\rho}
+	K\ind{^{\mu b}_\mu} - K\ind{^\mu_{\rho \mu}} 
+	K\ind{^{\rho\nu}_\nu} + K\ind{^\mu_{\rho \nu}} 
+	K\ind{^{\rho\nu}_\mu} \\
+	&= 2 \pd_\mu K\ind{^{\mu\nu}_\nu} + 2 
+	\mathring{\Gamma}\ind{^\mu_{\rho\mu}} K\ind{^{\rho\nu}_\nu} + 
+	2 K\ind{^\mu_{\rho \mu}} K\ind{^{\rho\nu}_\nu} + 2 
+	\mathring{\Gamma}\ind{^\nu_{\rho\mu}} K\ind{^{\mu\rho}_\nu} + 
+	2 K\ind{^\nu_{\rho\mu}} K\ind{^{\mu\rho}_\nu} \\
+	&\nla{}- K\ind{^\mu_{\rho \mu}} K\ind{^{\rho\nu}_\nu} + 
+	K\ind{^\mu_{\rho \nu}} K\ind{^{\rho\nu}_\mu} \\
+	&= \frac{2}{e} \pd_\mu( e K\ind{^{\mu\nu}_\nu}) + 
+	K\ind{^\nu_{\rho\mu}} K\ind{^{\mu\rho}_\nu} - K\ind{^\mu_{\rho 
+			\mu}} K\ind{^{\nu\rho}_\nu}~.
+\end{align*}
+Subsequently we take a better look at $Qi\ind{^\mu_a} =
+Q\ind{^{cb}_{\rho\nu}} e\ind{_c^\mu} e\ind{_a^\rho} 
+e\ind{_b^\nu}$:
+\begin{align*}
+	Qi\ind{^\mu_a} &= D_\rho( e\ind{_a^\rho}  K\ind{^{\mu\nu}_\nu} 
+	) -  D_\rho e\ind{_c^\mu} e\ind{_a^\rho} K\ind{^{c\nu}_\nu} - 
+	D_\rho e\ind{_a^\rho} K\ind{^{\mu\nu}_\nu} - e\ind{_a^\rho} 
+	D_\rho e\ind{_b^\nu} K\ind{^{\mu b}_\nu} - D_\nu 
+	K\ind{^{\mu\nu}_a} \\
+	&\nla{}+  D_\nu e\ind{_c^\mu} K\ind{^{c\nu}_a} + D_\nu 
+	e\ind{_a^\rho} K\ind{^{\mu\nu}_\rho} + D_\nu e\ind{_b^\nu} 
+	K\ind{^{\mu b}_a} - K\ind{^\mu_{\rho a}} K\ind{^{\rho\nu}_\nu} 
+	+ K\ind{^\mu_{\rho \nu}} K\ind{^{\rho\nu}_a}
+	\\
+	&= D_\nu K\ind{^{\nu\mu}_a} - \Gamma\ind{^\nu_{\rho\nu}} 
+	e\ind{_b^\rho} K\ind{^{\mu b}_a} + D_\rho( e\ind{_a^\rho}  
+	K\ind{^{\mu\nu}_\nu} ) + \Gamma\ind{^\rho_{\sigma\rho}} 
+	e\ind{_a^\sigma} K\ind{^{\mu\nu}_\nu} + 
+	\Gamma\ind{^\mu_{\sigma\rho}} e\ind{_c^\sigma} e\ind{_a^\rho} 
+	K\ind{^{c\nu}_\nu} \\
+	&\nla{} + e\ind{_a^\rho} \Gamma\ind{^\nu_{\sigma\rho}} 
+	e\ind{_b^\sigma} K\ind{^{\mu b}_\nu} - 
+	\Gamma\ind{^\mu_{\rho\nu}} e\ind{_c^\rho} K\ind{^{c\nu}_a} - 
+	\Gamma\ind{^\rho_{\sigma\nu}} e\ind{_a^\sigma} 
+	K\ind{^{\mu\nu}_\rho} - K\ind{^\mu_{\rho a}} 
+	K\ind{^{\rho\nu}_\nu} \\
+	&\nla{}+ K\ind{^\mu_{\rho \nu}} K\ind{^{\rho\nu}_a}
+	\\
+	&= e^{-1} D_\nu (e K\ind{^{\nu\mu}_a} ) + 
+	K\ind{^\nu_{\rho\nu}} K\ind{^{\rho\mu}_a} + e^{-1} D_\nu ( e\,
+	e\ind{_a^\nu} K\ind{^{\mu\rho}_\rho} ) + K\ind{^\rho_{a\rho}} 
+	K\ind{^{\mu\nu}_\nu}	\\
+	&\nla{}+ e\ind{_a^\rho} \Gamma\ind{^\mu_{\sigma\rho}} 
+	K\ind{^{\sigma\nu}_\nu} + e\ind{_a^\rho} ( 
+	\Gamma\ind{^\nu_{\sigma\rho}} - \Gamma\ind{^\nu_{\rho\sigma}} 
+	) K\ind{^{\mu\sigma}_\nu} - K\ind{^\mu_{\rho\nu}} 
+	K\ind{^{\rho\nu}_a} - K\ind{^\mu_{\rho a}} 
+	K\ind{^{\rho\nu}_\nu} \\
+	&\nla{}+ K\ind{^\mu_{\rho \nu}} K\ind{^{\rho\nu}_a}
+	\\
+	&= e^{-1} D_\nu( e K\ind{^{\nu\mu}_a} + e\, e\ind{_a^\nu} 
+	K\ind{^{\mu\rho}_\rho} ) +  T\ind{^\nu_{\sigma a}}	
+	K\ind{^{\sigma\mu}_\nu} + e\ind{_a^\rho} 
+	\Gamma\ind{^\mu_{\sigma\rho}} K\ind{^{\sigma\nu}_\nu} + 
+	K\ind{^\rho_{a\rho}} K\ind{^{\mu\nu}_\nu}~.
+\end{align*}
+One may consider the difference
+\begin{align*}
+	Qi\ind{^\mu_a} - &\tfrac{1}{2} e\ind{_a^\mu} \mathcal{Q}
+	\\
+	&= e^{-1} D_\nu( e K\ind{^{\nu\mu}_a} + e\, e\ind{_a^\nu} 
+	K\ind{^{\mu\rho}_\rho} ) +  T\ind{^\nu_{\sigma a}}	
+	K\ind{^{\sigma\mu}_\nu} + e\ind{_a^\rho} 
+	\Gamma\ind{^\mu_{\sigma\rho}} K\ind{^{\sigma\nu}_\nu} + 
+	K\ind{^\rho_{a\rho}} K\ind{^{\mu\nu}_\nu} \\
+	&\nla{}- e^{-1} \pd_\nu( e\, e\ind{_a^\mu} 
+	K\ind{^{\nu\rho}_\rho} ) + \pd_\nu e\ind{_a^\mu} 
+	K\ind{^{\nu\rho}_\rho} - \tfrac{1}{2} e\ind{_a^\mu} 
+	K\ind{^\nu_{\rho\sigma}} K\ind{^{\sigma\rho}_\nu} + 
+	\tfrac{1}{2} e\ind{_a^\mu}	K\ind{^\sigma_{\rho \sigma}} 
+	K\ind{^{\nu\rho}_\nu}
+	\\
+	&= e^{-1} D_\nu( e K\ind{^{\nu\mu}_a} + e\, e\ind{_a^\nu} 
+	K\ind{^{\mu\rho}_\rho} - e\, e\ind{_a^\mu} 
+	K\ind{^{\nu\rho}_\rho} ) +  T\ind{^b_{\sigma a}}	
+	K\ind{^{\sigma\mu}_b} + K\ind{^\rho_{a\rho}} 
+	K\ind{^{\mu\nu}_\nu} \\
+	&\nla{}+ e\ind{_a^\rho}( \Gamma\ind{^\mu_{\sigma\rho}} - 
+	\Gamma\ind{^\mu_{\rho\sigma}} ) K\ind{^{\sigma\nu}_\nu} - 
+	\tfrac{1}{2} e\ind{_a^\mu} \mathcal{L}_\mathrm{tg} \\
+	&= \tfrac{1}{2} e^{-1} D_\nu (e\, W\ind{_a^{\nu\mu}} )
+	+ T\ind{^b_{\sigma a}} K\ind{^{\sigma\mu}_b} - 
+	T\ind{^\mu_{\sigma a}} K\ind{^{\sigma\nu}_\nu} + 
+	K\ind{^\rho_{a\rho}} K\ind{^{\mu\nu}_\nu} - \tfrac{1}{2} 
+	e\ind{_a^\mu} \mathcal{L}_\mathrm{tg}~,
+\end{align*}
+where the notation $W\ind{_a^{\nu\mu}} = 2( K\ind{^{\nu\mu}_a} + 
+e\ind{_a^\nu} K\ind{^{\mu\rho}_\rho} - e\ind{_a^\mu} 
+K\ind{^{\nu\rho}_\rho} )$ is used in the last line. Since 
+$K\ind{^{a\nu}_\nu} = T\ind{^{\nu a}_\nu}$, one further concludes 
+that
+\begin{align*}
+	Qi\ind{^\mu_a} - &\tfrac{1}{2} e\ind{_a^\mu} \mathcal{Q}
+	\\
+	&= \tfrac{1}{2} e^{-1} D_\nu (e\, W\ind{_a^{\nu\mu}} ) + 
+	T\ind{^b_{\nu a}} K\ind{^{\nu\mu}_b} - T\ind{^b_{\nu a}} 
+	e\ind{_b^\mu} K\ind{^{\nu\rho}_\rho} + T\ind{^\rho_{\rho a}} 
+	K\ind{^{\mu\nu}_\nu} - \tfrac{1}{2} e\ind{_a^\mu} 
+	\mathcal{L}_\mathrm{tg}
+	\\
+	&= \tfrac{1}{2} e^{-1} D_\nu (e\, W\ind{_a^{\nu\mu}} ) + 
+	T\ind{^b_{\nu a}} ( K\ind{^{\nu\mu}_b} + e\ind{_b^\nu} 
+	K\ind{^{\mu\rho}_\rho} - e\ind{_b^\mu} K\ind{^{\nu\rho}_\rho} 
+	) - \tfrac{1}{2} e\ind{_a^\mu} \mathcal{L}_\mathrm{tg}
+	\\
+	&= \tfrac{1}{2} \big[ e^{-1} D_\nu (e\, W\ind{_a^{\nu\mu}} ) + 
+	T\ind{^b_{\nu a}} W\ind{_b^{\nu\mu}} -
+	e\ind{_a^\mu} \mathcal{L}_\mathrm{tg} \big]~.
+\end{align*}
+Finally, the contracted Bianchi 
+identities~\eqref{eq:contr_bianchi_DQ} imply that
+\begin{equation}
+	\mathring{D}_\mu \Big[ D_\nu (e\, W\ind{_a^{\nu\mu}} ) + e\, 
+	T\ind{^b_{\nu a}} W\ind{_b^{\nu\mu}} - e\, e\ind{_a^\mu} 
+	\mathcal{L}_\mathrm{tg} \Big] \equiv 0~.
+\end{equation}
+
+%\bibliography{/home/hendrik/research/drafts/references/All.bib}
+%\bibliographystyle{plain}
+%\bibliography{../../references/All}
+
+\end{document}

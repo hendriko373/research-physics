@@ -1,0 +1,329 @@
+\documentclass[10pt]{article}
+
+%Package declarations
+%--------------------
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage[a4paper]{geometry}
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+
+\usepackage[english]{babel}
+
+%User defined commands
+%---------------------
+\newcommand{\mcal}{\mathcal}
+\newcommand{\mfrak}{\mathfrak}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\pd}{\partial}
+\newcommand{\sfr}{\mathfrak{s}}
+\newcommand{\blankline}{\vspace{\baselineskip}}
+\newcommand{\spc}{\ }
+\newcommand{\red}{\color{red}}
+\newcommand{\blu}{\color{blue}}
+
+%User defined environments
+%-------------------------
+
+
+\title{In\"on\"u-Wigner contraction}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{In\"on\"u-Wigner contraction of a Lie algebra}
+
+Consider an $n$-dimensional Lie algebra $\mfrak{g}=(V,[\cdot,\cdot])$, where $V$ 
+is the underlying vector space over some field $\mbb{F}$ and $[\cdot,\cdot]$ is 
+the Lie bracket, which expressed in a particular basis $X_i$, $i=0\dots n$ is 
+characterized by the structure constants $c_{ij}^{\spc\spc k}$,
+\begin{equation}
+  [X_i,X_j]=c_{ij}^{\spc\spc k} X_k
+  \label{eq:Lie_br_X}
+\end{equation}
+Consider next the continuous function $U:(0,\varepsilon]\rightarrow GL(V)$.  
+Hence $U(\varepsilon)$ is a non-singular linear operator on $V$, which 
+transforms the basis $X_i$ into a new basis $Y_i$, with corresponding Lie 
+bracket
+\begin{equation}
+  [Y_i,Y_j]=\tilde{c}_{ij}^{~~k} Y_k ~.
+  \label{eq:Lie_br_Y}
+\end{equation}
+It is direct consequence of the transformation properties of the $Y_i = 
+U(\varepsilon)_i^{~j}X_j$ that the structure constants transform as a 
+$(1,2)$-tensor, i.e.
+\begin{equation}
+  \tilde{c}_{ij}^{~~k} = U(\varepsilon)_{i}^{~s} U(\varepsilon)_{j}^{~t}
+  c_{st}^{~~r} U^{-1}(\varepsilon)_{r}^{~k}
+\end{equation}
+[QUESTION: The Lie bracket implies that $c_{ij}^{~ ~k} X_k$ is a vector, then 
+how is this to be consistent with the transformation properties of $c$, as these 
+seem to imply that the Lie bracket gives a (1,1)-tensor.]
+
+It is clear that the Lie algebras defined by \eqref{eq:Lie_br_X} and 
+\eqref{eq:Lie_br_Y} are isomorphic, since they are related by a non-singular 
+linear transformation. However, if we consider a mapping $U(\varepsilon)$ which 
+becomes singular for $\varepsilon$ going to zero, a new algebra might be the 
+result. Since an algebra is charecterized completely by its structure constants, 
+one has to investigate their behaviour in the limit of a singular 
+transformation. More precisely, if the limit
+\begin{equation}
+  \lim_{\varepsilon \rightarrow 0} \tilde{c}_{ij}^{~ ~k}
+  \label{eq:lim_contr}
+\end{equation}
+exists, the result is a new Lie algebra $\mfrak{g}_0=(V,[\cdot,\cdot]_0)$ which 
+may or may not be isomorphic with the original algebra. This process of 
+obtaining a new Lie algebra through the limiting procedure \eqref{eq:lim_contr} 
+is referred to as \emph{contraction}. The dimension of the contracted algebra 
+will be equal to the dimension of the original algebra, as we are assuming that 
+the basis elements are well defined for the limiting singular transformation.
+
+There are of course different possibilities to have $U(\varepsilon)$ singular 
+when the parameter approaches zero. However, we will limit our interest to the 
+case where the function is of the form
+\begin{equation}
+  U(\varepsilon) = \mrm{diag}(1,\dots,1,\varepsilon,\dots,\varepsilon)
+\end{equation}
+and the contracting procedure is called \emph{In\"on\"u-Wigner contraction}.
+
+Now, the diagonal form of $U$ implies that the underlying vector space (the 
+algebra) has the direct sum structure
+\begin{equation}
+  \mfrak{g} = \mfrak{h} \oplus \mfrak{p}
+\end{equation}
+where $\mfrak{h}$ is spanned by $X_\alpha$ and $\mfrak{p}$ is spanned by $X_a$, 
+for which we evidently have
+\begin{align*}
+  U(\varepsilon)X_\alpha &= X_\alpha \\
+  U(\varepsilon)X_a &= \varepsilon X_a
+\end{align*}
+The structure constants, on the other hand, transform as
+\begin{equation}
+  \tilde{c}_{ij}^{~ ~k} = \varepsilon^p c_{ij}^{~ ~k}
+\end{equation}
+where $p$ is the difference in covariant and contravariant Latin indexes of the 
+structure constant tensor.\footnote{This number $p$ follows automatically from 
+the diagonal structure of $U$ and the transformation properties of the structure 
+constants.} In contracting the algebra, there will be a problem of convergence 
+if $p=-1$, i.e.~if there are two covariant Greek indices and one contravariant 
+Latin index. Hence, the contraction procedure will only give a well-defined 
+structure constant tensor if for the original algebra $c_{\alpha\beta}^{~ ~ 
+~c}=0$, which means that the commutation relations for $\mfrak{g}$ are given by
+\begin{align}
+  [\mfrak{h},\mfrak{h}] &\subseteq \mfrak{h} \\
+  [\mfrak{h},\mfrak{p}] &\subseteq \mfrak{g} \\
+  [\mfrak{p},\mfrak{p}] &\subseteq \mfrak{g}
+\end{align}
+where the first relation, necessary to have the limit well-defined, means that 
+$\mfrak{h}$ is a subalgebra of $\mfrak{g}$. Let us now finish the contraction 
+procedure and have a look at the resulting algebra $\mfrak{g}_0$. Since
+\begin{equation}
+  \begin{bmatrix}
+    \mfrak{h}_0 \\
+    \mfrak{p}_0
+  \end{bmatrix} =
+  \lim_{\varepsilon \rightarrow 0}
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & \varepsilon
+  \end{bmatrix}
+  \begin{bmatrix}
+    \mfrak{h} \\
+    \mfrak{p}
+  \end{bmatrix}
+\end{equation}
+we find the algebra $\mfrak{g}_0 = \mfrak{h} \oplus_s \mfrak{p}_0$ with 
+commutation relations
+\begin{align}
+  [\mfrak{h},\mfrak{h}] &\subseteq \mfrak{h} \\
+  [\mfrak{h},\mfrak{p}_0] &\subseteq \mfrak{p}_0 \label{eq:bra_contr2} \\
+  [\mfrak{p}_0,\mfrak{p}_0] &= 0
+\end{align}
+where we used that $\lim_{\varepsilon \rightarrow 0} \varepsilon \mfrak{g} = 
+\mfrak{p}_0$ and $\lim_{\varepsilon \rightarrow 0} \varepsilon^2 \mfrak{g} = 0$.  
+The algebra $\mfrak{g}$ has been contracted with respect to the subalgebra 
+$\mfrak{h}$ into the algebra $\mfrak{g}_0$ which has the same subalgebra 
+$\mfrak{h}$, whereas the complement $\mfrak{p}$ of $\mfrak{h}$ in $\mfrak{g}$ 
+has become an Abelian ideal $\mfrak{p}_0$ of $\mfrak{g}_0$, such that the 
+contracted algebra therefore always is non-semisimple. Since the contraction 
+procedure replaces $\mfrak{p}$ by $\mfrak{p}_0$, the Lie bracket 
+\eqref{eq:bra_contr2} is inherited from the original algebra (for the 
+$\mfrak{p}_0$-terms).
+
+
+\section{Example: from de Sitter to Poincar\'e}
+
+In this section, the algebra $\mfrak{so}(1,4)$ will be contracted into the 
+Poincar\'e algebra $\mfrak{iso}(1,3)$. Therefore, we recall the commutation 
+relations for the generators $L_{ij}$, spanning $\mfrak{so}(1,4)$ $(i = 0 \ldots 
+4)$
+\begin{equation}
+  [L_{ij},L_{kl}] = \eta_{il}L_{jk} + \eta_{jk}L_{il} - \eta_{ik}L_{jl} -
+  \eta_{jl}L_{ik}
+  \label{eq:CommRel_SO}
+\end{equation}
+This algebra can be contracted with respect to its subalgebra $\mfrak{so}(1,3)$.  
+Hence we consider the direct sum structure $\mfrak{so}(1,4) = 
+\mfrak{so}(1,3) \oplus \mfrak{p}$, which are spanned respectively by 
+$L_{\alpha\beta}$ and $L_{\alpha 4}$ $(\alpha = 0 \ldots 3)$ and for which we 
+rewrite the commutation relations \eqref{eq:CommRel_SO} explicitly as
+\begin{equation}\label{eq:CommRel_SO_expl}
+  \begin{split}
+    [L_{\alpha\beta},L_{\kappa\lambda}] &= \eta_{\alpha\lambda}L_{\beta\kappa} + 
+    \eta_{\beta\kappa}L_{\alpha\lambda} - \eta_{\alpha\kappa}L_{\beta\lambda} - 
+    \eta_{\beta\lambda}L_{\alpha\kappa} \\
+    [L_{\alpha 4},L_{\kappa\lambda}] &= \eta_{\alpha\lambda}L_{4\kappa} - 
+    \eta_{\alpha\kappa}L_{4\lambda} \\
+    [L_{\alpha 4},L_{\beta 4}] &= \eta_{44}L_{\beta\alpha}
+  \end{split}
+\end{equation}
+Consider the following non-singular basis transformation
+\begin{equation}
+  L_{\alpha\beta}\rightarrow L_{\alpha\beta} \quad \mathrm{and} \quad
+  L_{\alpha 4}\rightarrow \Pi_\alpha \equiv \varepsilon L_{\alpha 4}
+\end{equation}
+
+We now contract the algebra $\mfrak{so}(1,4)$ with respect to $\mfrak{so}(1,3)$.  
+Defining $P_\alpha \equiv lim_{\varepsilon\rightarrow 0} \Pi_\alpha$ we find
+\begin{equation}\label{eq:CommRel_P}
+  \begin{split}
+    [L_{\alpha\beta},L_{\kappa\lambda}] &= \eta_{\alpha\lambda}L_{\beta\kappa} + 
+    \eta_{\beta\kappa}L_{\alpha\lambda} - \eta_{\alpha\kappa}L_{\beta\lambda} - 
+    \eta_{\beta\lambda}L_{\alpha\kappa} \\
+    [P_{\alpha},L_{\kappa\lambda}] &= \eta_{\alpha\kappa}P_\lambda - 
+    \eta_{\alpha\lambda}P_\kappa \\
+    [P_\alpha,P_\beta] &= 0
+  \end{split}
+\end{equation}
+which are commutation relations, defining the Poincar\'e algebra which has the 
+semidirect sum structure $\mfrak{iso}(1,3)=\mfrak{so}(1,3)\oplus_s\mfrak{t}$.
+\blankline
+
+The above discussion is equally valid for the case where we start from the anti 
+de Sitter algebra $\mfrak{so}(2,3)$, since this algebra also has a Lorentz 
+subalgebra. However, this would not be the case for $\mfrak{so}(0,5)$.
+
+\section{From de Sitter to Poincar\'e algebra(s): stereographic coordinates}
+
+In this section we will explicitly consider the IW-contraction of the de Sitter 
+into the Poincar\'e algebra. More precisely, we will consider the realization of 
+the de Sitter algebra as differential operators in stereographic coordinates, 
+after which we will perform an IW-contraction. A first possibility, which gives 
+well defined basis elements in the singular limit, is the contraction from de 
+Sitter rotations into ordinary translations. Interestingly enough, there will be 
+a second possibility for a consistent contraction into a different set of 
+differential operators, namely the special conformal transformations.
+\blankline
+
+To begin with, consider the basis elements of $\mfrak{so}(1,4)$ realized as 
+differential operators on function space, which are given by (in terms of the 
+Cartesian coordinates labeling the embedding pseudo-Euclidean space)
+\begin{align}
+  L_{\mu\nu} &= \eta_{\mu\lambda} \chi^\lambda \pd_\nu - \eta_{\nu\lambda} 
+  \chi^{\lambda} \pd_\mu \label{eq:gen_cart1} \\
+  L_{\mu 4} &= \eta_{\mu\lambda} \chi^\lambda \pd_4-\eta_{44}\chi^4 \pd_\mu 
+  \label{eq:gen_cart2}
+\end{align}
+and which of course solve the usual commutation relations.
+
+Before contractng the algebra it will be useful to express the differential 
+operators in terms of stereographic coordinates $x^\mu$ given by
+\begin{equation}
+  x^\mu = \Omega^{-1}\chi^\mu \quad \mrm{with} \quad \Omega = -\frac{1}{2} 
+  \left( \frac{\chi^4}{l} - 1 \right)
+\end{equation}
+such that upon invoking the chain rule for partial differentiation, one finds
+\begin{align}
+  \frac{\pd}{\pd \chi^\mu} &= \Omega^{-1}(x)\frac{\pd}{\pd x^\mu} \\
+  \frac{\pd}{\pd \chi^4} &= \frac{\Omega^{-1}(x)}{2l} x^\lambda
+  \frac{\pd}{\pd x^\lambda}
+\end{align}
+Hence, substituting these expressions for \eqref{eq:gen_cart1} and 
+\eqref{eq:gen_cart2}, the generators of the de Sitter group are found to be
+\begin{align}
+  L_{\mu\nu} &= \eta_{\mu\lambda} x^\lambda \pd_\nu - \eta_{\nu\lambda} 
+  x^{\lambda} \pd_\mu \\
+  L_{\mu 4} &= \sfr l \pd_\mu + \frac{1}{4l} \left(2\eta_{\mu\rho} x^\rho 
+  x^\lambda - \sigma^2 \delta_\mu^\lambda \right) \pd_\lambda
+\end{align}
+Remember that the generators for ordinary translations $P_\mu$ and special 
+conformal transformations $K_\mu$ are given by
+\begin{equation}
+  P_\mu = \frac{\pd}{\pd x^\mu} \quad \mrm{and} \quad
+  K_\mu = \left(2\eta_{\mu\rho} x^\rho x^\lambda - \sigma^2 \delta_\mu^\lambda 
+  \right) \frac{\pd}{\pd x^\lambda}
+\end{equation}
+such that we can express the generators of the de Sitter group as
+\begin{align}
+  L_{\mu\nu} &= \eta_{\mu\lambda} x^\lambda P_\nu - \eta_{\nu\lambda} 
+  x^{\lambda} P_\mu \\
+  L_{\mu 4} &= \sfr l P_\mu + \frac{1}{4l} K_\mu
+\end{align}
+which solve the Lie brackets \eqref{eq:CommRel_SO_expl}.
+
+Note that the operators $L_{\mu\nu}$ are still readily interpreted as the 
+generators for Lorentz rotations in stereographic coordinates, which leave the 
+origin $x^\mu=0$ fixed, and hence span the subalgebra $\mfrak{so}(1,3)$. On the 
+other hand, the generators $L_{\mu4}$ will move the origin and define the 
+transitivity on de Sitter spacetime. In stereographic coordinates these 
+operators are a combination of ordinary translations and special conformal 
+transformations, although they essantially are rotations as this follows from 
+their Lie brackets.
+\blankline
+
+Let us now consider the In\"onu-Wigner contraction of $\mathfrak{so}(1,4)$ with 
+respect to $\mfrak{so}(1,3)$, i.e. we will consider an adequate non-singular 
+transformation of the base element $L_{\alpha 4}$ and take a well-defined 
+singular limit to end up with a new and non-equivalent algebra. As it turns out 
+there are two possibilies.
+%
+\begin{description}
+  \item[Poincar\'e algebra]
+    Consider the transformation
+    \begin{equation}
+      L_{\mu4} \rightarrow \Pi_\mu \equiv \frac{L_{4 \mu}}{l} = -\sfr P_\mu - 
+      \frac{1}{4l^2} K_\mu
+    \end{equation}
+    where the $\Pi_\mu$ are called \emph{de Sitter translations}.
+    Now we can take the limit where the radius $l$ goes to infinity such that we 
+    find the well-defined differential operators
+    \begin{equation}
+      \lim_{l\rightarrow \infty} \Pi_\mu = -\sfr P_\mu
+    \end{equation}
+    which together with the unchanged $L_{\mu\nu}$ and the commutation relations 
+    \eqref{eq:CommRel_P} span the Poincar\'e algebra 
+    $\mfrak{so}(1,3)\oplus_{s}\mfrak{t}$.
+  %%
+  \item[Conic algebra]
+    As a second possibility transform the $L_{\mu4}$ according to
+    \begin{equation}
+      L_{\mu4} \rightarrow \kappa_\mu \equiv l L_{\alpha4} = \sfr l^2 P_\mu + 
+      \frac{1}{4}K_\mu
+    \end{equation}
+    It is clear that again we can take a limit such that the transformation 
+    becomes singular, now however letting the radius $l$ go to zero. Then one 
+    finds the differential operators
+    \begin{equation}
+      \lim_{l\rightarrow 0} \kappa_\mu = \frac{1}{4}K_\mu
+    \end{equation}
+    which again with $L_{\mu\nu}$ and the Lie brackets \eqref{eq:CommRel_P} span 
+    the algebra $\mfrak{so}(1,3)\oplus_{s}\mfrak{q}$.
+\end{description}
+
+It is interesting to see how two physically very different limits give rise to 
+an identical algebraic structure. From the theoretical discussion on 
+In\"on\"u-Wigner contractions however it is clear that these algebras should 
+have the same commutation relations. The latter are fixed once the subalgebra is 
+chosen to which the algebra is contracted, whilst the basis elements of the 
+complement of the subalgebra are assumed merely to exist in the singular limit.  
+Which possibilities for these basis elements are available---or also, which 
+limits can be taken, after a suitable basis transformation---can be discussed 
+only given a representation (realization). Nonetheless every choice will lead to 
+the same Lie bracket.
+
+
+\end{document}

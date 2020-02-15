@@ -1,0 +1,660 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+
+\usepackage{mathtools}
+
+\usepackage[all]{xy}
+
+\title{de Sitter Teleparallel Gravity}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	In this document we construct de Sitter Teleparallel Gravity.
+\end{abstract}
+
+\section{de Sitter Teleparallel Gravity}
+
+\subsection{Introduction}
+
+In this section we require that the $\mathfrak{h}$-valued part of 
+the Cartan curvature $\bar{F}$ vanishes. In other words, the 
+geometry outlined in the last section should at all times satisfy 
+the following condition, namely
+\begin{equation}
+	\label{eq:cond_Rnonlin0}
+	\bar{R} \equiv 0~.
+\end{equation}
+From the discussion on transformation behavior in 
+\verb+nonlinear.pdf+  it is clear that this condition is 
+consistent with the geometry, i.e.~invariant under $G$-gauge 
+transformations. This construction may result in the 
+mathemathical structure of Teleparallel Gravity in the 
+corresponding limit, i.e.~a diverging length scale $l(x) \to 
+\infty$ at any point in spacetime. In that case, and because of 
+the naturality of the given Cartan geometry together with a 
+vanishing curvature~\eqref{eq:cond_Rnonlin0}, the thus obtained 
+geometry could be seen as the generalization of Teleparallel 
+Gravity, where the local kinematics are those governed by the de 
+Sitter algebra.
+
+\blankline
+Let us begin by taking a closer look at the condition of 
+vanishing curvature, given in 
+Eq.\verb+~\eqref{eq:cond_Rnonlin0},nonlinear.odf+.  Combining 
+this requirement with 
+Eq.\verb+~\eqref{eq:nonlin_curv},nonlinear.pdf+, one finds that
+\begin{displaymath}
+	R^{ab}_{~~\mu\nu} = \frac{\cosh z - 1}{\xi^2} \xi^c (\xi^a 
+	R^b_{~c\mu\nu} - \xi^b R^a_{~c\mu\nu}) + \frac{\sinh z}{l^2 z} 
+	(\xi^a T^b_{~\mu\nu} - \xi^b T^a_{~\mu\nu})~.
+\end{displaymath}
+This expression can be contracted with $\xi$, which results in
+\begin{equation}
+	\cosh z\, \xi^c R^a_{~c\mu\nu} = \frac{\sinh z}{l^2 z} (\xi^a 
+	\xi_b	T^b_{~\mu\nu} - \xi^2 T^a_{~\mu\nu})~.
+\end{equation}
+Substituting this equations into the torsion $\bar{T}$, see 
+Eq.\verb+~\eqref{eq:nonlin_tors},nonlinear.pdf+, one obtains
+\begin{equation}
+	\label{eq:Tnonlinear_Rnl0}
+	\bar{T}^a_{~\mu\nu} = \frac{1}{\cosh z} T^a_{~\mu\nu} + 
+	\bigg(1-\frac{1}{\cosh z}\bigg) \frac{\xi^a\xi_b 
+		T^b_{~\mu\nu}}{\xi^2}~.
+\end{equation}
+Contracting both sides with $\xi$ additionally shows 
+that
+\begin{displaymath}
+	\xi_a \bar{T}^a_{~\mu\nu} = \xi_a T^a_{~\mu\nu}~.
+\end{displaymath}
+\begin{remark}
+	It is interesting to have a look at the limiting situations 
+	for a vanishing, respectively diverging cosmological constant.  
+	In the case of $l(x) \to \infty$, $z$ vanishes and 
+	from~\eqref{eq:Tnonlinear_Rnl0} it is found that
+	\begin{displaymath}
+		\lim_{\Lambda \to 0} \bar{T}^a_{~\mu\nu} = T^a_{~\mu\nu}~,
+	\end{displaymath}
+	while on the other hand for $l(x) \to 0$, $z$ diverges and
+	\begin{displaymath}
+		\lim_{\Lambda \to \infty} \bar{T}^a_{~\mu\nu} = 
+		\frac{\xi^a\xi_b T^b_{~\mu\nu}}{\xi^2}~.
+		\qedhere
+	\end{displaymath}
+\end{remark}
+
+Subsequently let us investigate the additional restriction of a 
+vanishing torsion, i.e.\footnote{To be clear: the condition of a 
+	vanishing curvature is \emph{not} relaxed.}
+\begin{equation}
+	\label{eq:cond_Tnonlin0}
+	\bar{T} = 0~.
+\end{equation}
+From Eq.~\eqref{eq:Tnonlinear_Rnl0} and observing that 
+$\xi\cdot\bar{T} = \xi\cdot T$ one infers that $T$ vanishes. An 
+obvious choice of gauge corresponding to such a geometry is $e = 
+0$, that is
+\begin{displaymath}
+	e = 0 \quad\Rightarrow\quad \bar{T} = 0~.
+\end{displaymath}
+On the other hand, a vanishing torsion does not necessarily imply 
+that $e$ is equal to zero. To find the most general $e$ 
+consistent with the condition~\eqref{eq:cond_Tnonlin0}, it is 
+worthwhile to note that the latter is invariant under local gauge 
+transformations and spacetime diffeomorphisms.  These 
+transformations are the most general at hand and their effect on 
+$e$ will exhaust its values, corresponding to a vanishing 
+torsion.  Since $e$ transforms in a homogeneous way under both 
+spacetime diffeomorphisms and local Lorentz transformations, 
+these will leave $e=0$ invariant. Therefore it is sufficient to 
+consider the action on $e$ due to de Sitter transvections 
+$\exp(i\alpha\cdot P)$ solely.  From the transformation 
+rule\verb+~\eqref{eq:transvec_fin_Ah}+ for $e$ one finds that 
+$e^a = 0$ transforms into
+\begin{equation}
+	\label{eq:e_trivial}
+	e'^a = -\frac{\sinh z}{z} (d\alpha^a + \omega^a_{~b}\alpha^b) + 
+	\frac{dl}{l} \alpha^a + \bigg( \frac{\sinh z}{z} - 1 \bigg) 
+	\frac{\alpha_b d\alpha^b \alpha^a}{\alpha^2}~.
+\end{equation}
+The vierbein $\bar{e}'$ Lorentz rotates according 
+to
+\begin{multline*}
+	\bar{e}'^a = \cosh z' e'^a - (\cosh z' -1) \frac{\xi'_b e'^b 
+		\xi'^a}{\xi'^2}
+	\\
+	+ \frac{\sinh z'}{z'}(d\xi'^a + \omega'^a_{~b}\xi'^b) - 
+	\frac{dl}{l} \xi'^a - \bigg( \frac{\sinh z'}{z'} - 1 \bigg) 
+	\frac{\xi'_b d\xi'^b \xi'^a}{\xi'^2}~,
+\end{multline*}
+while the torsion $\bar{T}'^a$ remains zero. We call a vierbein 
+$\bar{e}$ \emph{trivial} if and only if $e$ is of the 
+form~\eqref{eq:e_trivial}. In the case of a trivial vierbein, it 
+is clear that some gauge transformation will render $e = 0$. But 
+the relevant action is given by de Sitter transvections, which 
+correspond to a shift in the section $\xi$.
+Since $\xi$ is arbitrary, it is then without loss of generality 
+to assume that a trivial vierbein is of the form
+\begin{equation}
+	\bar{e}^a = \frac{\sinh z}{z}(d\xi^a + \omega^a_{~b}\xi^b) - 
+	\frac{dl}{l} \xi^a - \bigg( \frac{\sinh z}{z} - 1 \bigg) 
+	\frac{\xi_b d\xi^b \xi^a}{\xi^2}~.
+\end{equation}
+Hence, the vanishing of torsion entails the triviality of the 
+vierbein. Conversely, in case the vielbein is trivial, the 
+torsion will be equal to zero.
+
+
+\subsection{Equations of motion for a particle}
+
+Given the vielbein $\bar{e}$, it is possible to construct a line 
+element on spacetime that is invariant under local de Sitter 
+transformations.  The quadratic line element is defined as
+\begin{displaymath}
+	d\tau^2 = \bar{e}\ind{^a_\mu} \bar{e}\ind{_{a\nu}} dx^\mu 
+	dx^\nu~,
+\end{displaymath}
+from which the square root is extracted, resulting in
+\begin{equation}
+	d\tau = \bar{u}_a \bar{e}^a~.
+\end{equation}
+In the last expression the nonlinear four-velocity has been 
+introduced, which is given by
+\begin{displaymath}
+	\bar{u}^a = \bar{e}\ind{^a_\mu} u^\mu~.
+\end{displaymath}
+
+The line element has the dimension of length, implying that a 
+possible action for the worldline $x^\mu(\tau)$ of a particle 
+with mass $m$ equals
+\begin{equation}
+	\label{eq:action_particle}
+	\mathcal{S} = -mc \int_{\tau_1}^{\tau_2} d\tau
+		= -mc \int_{\tau_1}^{\tau_2} \bar{u}_a \bar{e}^a~.
+\end{equation}
+The action attains an extremum for the worldline being the 
+physical one. This means that the equations of motion correspond 
+to $\delta \mathcal{S} = 0$, where an infinitisemal variation of 
+the worldline $x^\mu(\tau) \to x^\mu + \delta x^\mu(\tau)$ is 
+considered. Under this deviation, the 
+action~\eqref{eq:action_particle} varies according to
+\begin{displaymath}
+	\delta\mathcal{S} = -mc \int_{\tau_1}^{\tau_2} \delta\bar{u}_a 
+	\bar{e}^a + \bar{u}_a \delta\bar{e}^a
+	= -mc \int_{\tau_1}^{\tau_2} \bar{u}_a \delta\bar{e}^a~.
+\end{displaymath}
+After a rather lengthy calculation, which we wrote down in 
+Appendix~\eqref{ssec:dSTG_var_ue}, one finds
+\begin{displaymath}
+	\delta\mathcal{S} = mc \int_{\tau_1}^{\tau_2} d\tau \delta 
+	x^\mu \bigg\{ \bar{e}\ind{^a_\mu} \bigg( 
+	\frac{d\bar{u}_a}{d\tau} - \bar{\omega}\ind{^b_{a\rho}} 
+	\bar{u}\ind{_b} u^\rho + u^\rho \frac{\pd_\rho l}{l} \bar{u}_a 
+	\bigg) - \bar{T}\ind{^a_{\mu\rho}} \bar{u}\ind{_a} u^\rho - 
+	\frac{\pd_\mu l}{l} \bigg\}~.
+\end{displaymath}
+This quantity should vanish for an arbitrary variation, a 
+condition that leads to the equations of motion:
+\begin{displaymath}
+	u^\rho \bar{D}_\rho (l \bar{u}^a) = l\bar{e}^{a\mu} 
+	\bigg(\bar{T}\ind{^b_{\mu\rho}} \bar{u}\ind{_b} u^\rho + 
+	\frac{\pd_\mu l}{l} \bigg)~,
+\end{displaymath}
+where $\bar{D} \equiv d + \bar{\omega}$ is the covariant 
+derivative with respect to the spin connection $\bar{\omega}$.
+The equations of motion can be rewritten in the form
+\begin{equation}
+	\label{eq:eom_particle_dSTG}
+	u^\rho \bar{D}_\rho \bar{u}^a = \bar{e}\ind{^{a\mu}} 
+	\bar{T}\ind{^b_{\mu\rho}} \bar{u}\ind{_b} u^\rho + 
+	(\bar{e}\ind{^{a\mu}} - \bar{u}^a u^\mu) \frac{\pd_\mu l}{l}~.
+\end{equation}
+
+It is interesting to have a closer look at this equation. First 
+note that in the appropriate limit of a vanishing cosmological 
+function $(l \to \infty)$, the  equation of motion of 
+Teleparallel Gravity for a spinless particle in a gravitational 
+field is recovered \cite{aldrovandi:2012tele}. Similar to the 
+equation there, we still have a force equation at hand in which 
+both the terms on the right-hand side are indeed genuine 
+relativistic forces, being orthogonal to the four-velocity 
+$\bar{u}^a$. The first force is the obvious generalization to the 
+given geometry of the gravitational force in ordinary 
+Teleparallel gravity. The second force term however is new, and 
+will be noticeable only in spacetime regions where the 
+cosmological function varies relativily strong. Observe that the 
+operator $\bar{e}\ind{^{a\mu}} - \bar{u}^a u^\mu$ is a projector, 
+since
+\begin{displaymath}
+	(\bar{e}\ind{^{b\rho}} - \bar{u}^b u^\rho) \bar{e}_{a\rho} 
+	(\bar{e}\ind{^{a\mu}} - \bar{u}^a u^\mu) = \bar{e}\ind{^{b\mu}} 
+	- \bar{u}^b u^\mu~.
+\end{displaymath}
+
+\subsection{Field equations}
+
+In this subsection we look for the equations of motions that 
+specify for the geometry in de Sitter Teleparallel Gravity.  In a 
+first attempt, the free action is the one given by replacing $T 
+\to \bar{T}$ in the action that describes free Poincar\'e 
+Teleparallel Gravity {\blu [Citations]}. It is thus proposed that  
+\begin{equation}
+	\label{eq:action_dSTG}
+	\mathcal{S} = \frac{c^3}{16\pi G} \int \mathrm{Tr}~ \bar{T} 
+	\wedge \star \bar{T} = \frac{c^3}{16\pi G} \int d^4 x \, 
+	\bar{e}\, \mathcal{L}~,
+\end{equation}
+where
+\begin{equation}
+	\label{eq:lagrangian_dSTG}
+	\mathcal{L} = \tfrac{1}{4} \bar{T}\ind{^a_{\mu\nu}} 
+	\bar{T}\ind{_a^{\mu\nu}} + \tfrac{1}{2} 
+	\bar{T}\ind{^a_{\mu\nu}} \bar{T}\ind{^{b\mu}_\lambda} 
+	\bar{e}\ind{_a^\lambda} \bar{e}\ind{_b^\nu} - 
+	\bar{T}\ind{^a_{\mu\nu}} \bar{T}\ind{^{b\mu}_\lambda} 
+	\bar{e}\ind{_a^\nu} \bar{e}\ind{_b^\lambda}~.
+\end{equation}
+The corresponding field equations are found by 
+extremizing~\eqref{eq:action_dSTG} with respect to the vierbein 
+$\bar{e}\ind{^a_\mu}$, i.e.~
+\begin{displaymath}
+\begin{split}
+	0 = \delta\mathcal{S} &= \int d^4x \, \delta\bar{e} \,
+	\mathcal{L} + \int d^4x \, \bar{e} \, \delta\mathcal{L} \\
+	&= \int d^4x \, \bar{e} \, \bar{e}\ind{_a^\mu} \mathcal{L} 
+	\delta\bar{e}\ind{^a_\mu} + \int d^4x \, \bar{e} \bigg( 
+	\frac{\pd \mathcal{L}}{\pd \bar{e}\ind{^a_\mu}} \delta 
+	\bar{e}\ind{^a_\mu} + \frac{\pd \mathcal{L}}{\pd \pd_\rho 
+		\bar{e}\ind{^a_\mu}} \delta \pd_\rho \bar{e}\ind{^a_\mu} 
+	\bigg)~.
+\end{split}
+\end{displaymath}
+After invoking Stokes' theorem together with the assumption that 
+the fields go to zero when approaching infinity,\footnote{{\blu 
+		Is it the fields that go to zero that legitimate the 
+		omitting of the boundary terms, or is it the vanishing of 
+		the variation?}} the equations of motion are
+\begin{equation}
+	\pd_\mu \bigg( \bar{e} \frac{\pd \mathcal{L}}{\pd \pd_\mu 
+		\bar{e}\ind{^a_\nu}} \bigg) - \bar{e} \frac{\pd 
+		\mathcal{L}}{\pd \bar{e}\ind{^a_\nu}} - \bar{e}\, 
+	\bar{e}\ind{_a^\nu} \mathcal{L} = 0~.
+\end{equation}
+For the given Lagrangian it is shown in 
+Appendix~\ref{app:field_eqs} that these equations reduce to
+\begin{displaymath}
+	\pd_\mu (\bar{e}\, \bar{W}\ind{_a^{\mu\nu}}) - \bar{e}\, 
+	\bar{\omega}\ind{^b_{a\mu}} \bar{W}\ind{_b^{\mu\nu}} + \bar{e} 
+	\frac{\pd_\mu l}{l} \bar{W}\ind{_a^{\mu\nu}} + \bar{e}\, 
+	\bar{T}\ind{^b_{\mu a}} \bar{W}\ind{_b^{\mu\nu}} - \bar{e}\, 
+	\bar{e}\ind{_a^\nu} \mathcal{L} = 0~,
+\end{displaymath}
+where we introduced the notation
+\begin{equation}
+	\bar{W}\ind{_a^{\mu\nu}} \equiv \bar{T}\ind{_a^{\mu\nu}} + 
+	\bar{T}\ind{^{\nu\mu}_a} - \bar{T}\ind{^{\mu\nu}_a} - 
+	2\bar{e}\ind{_a^\nu} \bar{T}\ind{^{\lambda\mu}_\lambda} + 
+	2\bar{e}\ind{_a^\mu} \bar{T}\ind{^{\lambda\nu}_\lambda}~.
+\end{equation}
+
+The field equations can be rewritten in a manifestly covariant 
+form as
+\begin{equation}
+	\label{eq:field_eqs_dSTG}
+	\bar{D}_\mu (\bar{e}\, \bar{W}\ind{_a^{\mu\nu}}) + \bar{e} 
+	\frac{\pd_\mu l}{l} \bar{W}\ind{_a^{\mu\nu}} + \bar{e}\, 
+	\bar{t}\ind{_a^\nu} = 0~,
+\end{equation}
+where we denoted the expression
+\begin{displaymath}
+	\bar{t}\ind{_a^\nu} = \bar{T}\ind{^b_{\mu a}} 
+	\bar{W}\ind{_b^{\mu\nu}} - \bar{e}\ind{_a^\nu} \mathcal{L}~.
+\end{displaymath}
+Note further that
+\begin{displaymath}
+	\bar{D}_\nu \bar{D}_\mu (\bar{e}\, \bar{W}\ind{_a^{\mu\nu}})
+	= \frac{1}{2} [\bar{D}_\nu, \bar{D}_\mu] (\bar{e}\, 
+	\bar{W}\ind{_a^{\mu\nu}}) 
+	= \frac{1}{2} \bar{e}\, \bar{B}\ind{_a^b_{\nu\mu}} 
+	\bar{W}\ind{_b^{\mu\nu}}~.
+\end{displaymath}
+For the given geometry one has that $\bar{B}^{ab} = -l^{-2} 
+\bar{e}^a \wedge \bar{e}^b$ so that
+\begin{displaymath}
+	\bar{D}_\nu \bar{D}_\mu (\bar{e}\, \bar{W}\ind{_a^{\mu\nu}})
+	= \frac{1}{l^2} \bar{e}\, \bar{e}\ind{_{a\mu}} 
+	\bar{e}\ind{^b_\nu} \bar{W}\ind{_b^{\mu\nu}}
+	= \frac{1}{l^2} \bar{e}\, \bar{W}\ind{_{ba}^b}~.
+\end{displaymath}
+Since $\bar{W}\ind{_{ba}^b} = -4 \bar{T}\ind{_{ba}^b}$ and 
+because one can infer from the second Bianchi identity that the 
+trace of $\bar{T}$ vanishes, one concludes that
+\begin{equation}
+	\bar{D}_\nu \bar{D}_\mu (\bar{e}\, \bar{W}\ind{_a^{\mu\nu}})
+	= 0~.
+\end{equation}
+It should be emphasized that this result is particular to the 
+geometry at hand. More specifically is it a consequence of the 
+condition $\bar{R} \equiv 0$. From the field 
+equations~\eqref{eq:field_eqs_dSTG} one observes that
+\begin{equation}
+	\bar{D}_\mu(\bar{e}\, \bar{t}\ind{_a^\mu}) = \frac{\pd_\mu 
+		l}{l} \bar{e}\, \bar{t}\ind{_a^\mu}~.
+\end{equation}
+
+
+\newpage
+\appendix
+\section{de Sitter Teleparallel Gravity: intermediate results}
+
+In this section we work out to some extend, results related to de 
+Sitter Teleparallel gravity that were used in the main body of 
+the text.
+
+\subsection{Variation of $\int \bar{u}_a \bar{e}^a$}
+\label{ssec:dSTG_var_ue}
+
+In this calculation the variation of $\int \bar{u}_a \bar{e}^a$ 
+will be verified.  To begin with let us rewrite the expression 
+for a non-trivial vierbein, i.e.
+\begin{multline*}
+	\bar{e}^a = \cosh z\, e^a - (\cosh z -1) \frac{\xi_b e^b 
+		\xi^a}{\xi^2} \\
+		+ \frac{\sinh z}{z}(d\xi^a + \omega^a_{~b}\xi^b) - 
+		\frac{dl}{l} \xi^a - \bigg( \frac{\sinh z}{z} - 1 \bigg) 
+		\frac{\xi_b d\xi^b \xi^a}{\xi^2}~.
+\end{multline*}
+We compute:
+\begin{displaymath}
+\begin{split}
+	\int \bar{u}_a &\delta\bar{e}^a \\
+	&= \int \bar{u}_a \bigg\{ \delta\!\cosh z\, e^a + \cosh z\, 
+	\delta e\ind{^a_\rho} dx^\rho + \cosh z\, e\ind{^a_\rho} 
+	\delta dx^\rho - \delta\!\cosh z \frac{\xi_b e^b \xi^a}{\xi^2} 
+	\\
+	&\nla{} + (\cosh z - 1) \bigg[ \frac{2\delta\xi}{\xi} 
+	\frac{\xi_b e^b \xi^a}{\xi^2} - \frac{\delta\xi_b e^b 
+		\xi^a}{\xi^2} -\frac{\xi\ind{_b} \delta e\ind{^b_\rho} 
+		\xi^a}{\xi^2} dx^\rho - \frac{\xi_b e^b \delta\xi^a}{\xi^2} 
+	\\
+	&\nla{} - \frac{\xi\ind{_b} e\ind{^b_\rho} \xi^a}{\xi^2} 
+	\delta dx^\rho \bigg] + \delta \Big( \frac{\sinh z}{z} \Big) ( 
+	d\xi^a + \omega\ind{^a_b}\xi^b )
+	+ \frac{\sinh z}{z} (\delta d\xi^a + \delta 
+	\omega\ind{^a_{b\rho}} \xi^b dx^\rho
+	\\
+	&\nla{} + \omega\ind{^a_b} \delta\xi^b + 
+	\omega\ind{^a_{b\rho}} \xi^b \delta dx^\rho) + \frac{\delta l 
+		dl}{l^2} \xi^a - \frac{\delta dl}{l} \xi^a - 
+	\frac{1}{l}\delta\xi^a - \delta \Big( \frac{\sinh z}{z} \Big) 
+	\frac{\xi_b d\xi^b \xi^a}{\xi^2}
+	\\
+	&\nla{} + \Big( \frac{\sinh z}{z} -1 \Big) \bigg[ 
+	\frac{2\delta\xi}{\xi} \frac{\xi_b d\xi^b \xi^a}{\xi^2} - 
+	\frac{\delta\xi_b d\xi^b \xi^a}{\xi^2} - \frac{\xi_b \delta 
+		d\xi^b \xi^a}{\xi^2} - \frac{\xi_b d\xi^b \xi^a}{\xi^2} 
+	\bigg]\bigg\}
+\end{split}
+\end{displaymath}
+For any function on $M$, note that $df \to df + d\delta f$ so 
+that $\delta (df) = d(\delta f)$, i.e.
+\begin{equation}
+	[\delta,d] f = 0~.
+\end{equation}
+The following variations also are useful:
+\begin{gather}
+	\delta z = \delta (l^{-1} \xi) = - l^{-2} \delta l\, \xi + 
+	l^{-1} \delta\xi~, \\
+	\delta \xi = \xi^{-1} \xi_a \delta \xi^a~.
+\end{gather}
+The variation is assumed to vanish at the endpoints of the 
+particle's worldline, so that a total derivative over a term 
+containing $\delta x^\rho$ integrates to zero. One first 
+integrates by parts the terms containing variations of the 
+differentials $\delta dx^\rho = d\delta x^\rho$, after which the 
+boundary integrals render zero. Doing so, one obtains
+\begin{displaymath}
+\begin{split}
+	\int \bar{u}_a &\delta\bar{e}^a \\
+	&= \int \bigg[ -d\bar{u}\ind{_a} \bigg\{ \cosh z\, 
+	e\ind{^a_\mu} - (\cosh z - 1) \frac{\xi\ind{_b} e\ind{^b_\mu} 
+		\xi^a}{\xi^2} + \frac{\sinh z}{z}(\pd_\mu \xi^a + 
+	\omega\ind{^a_{b\mu}} \xi^b)
+	\\
+	&\nla{} - \frac{\pd_\mu l}{l} \xi^a - \Big( \frac{\sinh z}{z} 
+	- 1 \Big) \frac{\xi_b \pd_\mu \xi^b \xi^a}{\xi^2} \bigg\} 
+	\delta x^\mu + \bar{u}_a \delta x^\mu dx^\rho \bigg\{ \bigg[ 
+	\frac{\sinh z}{z} \omega\ind{^a_{b\rho}} \Big( \pd_\mu \xi^b
+	\\
+	&\nla{} - \xi^b \frac{\xi_c \pd_\mu \xi^c}{\xi^2} \Big) + 
+	\cosh z\, ( \pd_\rho \xi^a + \omega\ind{^a_{b\rho}} \xi^b )  
+	\frac{\xi_c \pd_\mu \xi^c}{\xi^2} - \pd_\rho \xi^a \frac{\xi_b 
+		\pd_\mu \xi^b}{\xi^2} - \cosh z \Big( \pd_\rho \xi^a
+	\\
+	&\nla{} + \omega\ind{^a_{b\rho}} \xi^b - \xi^a \frac{\xi_b 
+		\pd_\rho \xi^b}{\xi^2} \Big) \frac{\pd_\mu l}{l} + \pd_\rho 
+	\xi^a \frac{\pd_\mu l}{l} - 2(\cosh z - 1) \xi^a \frac{\xi_b 
+		\pd_\rho \xi^b}{\xi^2} \frac{\xi\ind{_c} 
+		e\ind{^c_\mu}}{\xi^2}
+	\\
+	&\nla{} + (\cosh z - 1) \pd_\rho \xi^a \frac{\xi\ind{_b} 
+		e\ind{^b_\mu}}{\xi^2} + (\cosh z - 1) \xi^a \frac{\pd_\rho 
+		\xi\ind{_b} e\ind{^b_\mu}}{\xi^2} + z\sinh z \frac{\xi_c 
+		\pd_\mu \xi^c}{\xi^2} \Big( e\ind{^a_\rho}
+	\\
+	&\nla{} - \xi^a \frac{\xi\ind{_b} e\ind{^b_\rho}}{\xi^2} \Big) 
+	- z \sinh z \Big( e\ind{^a_\rho} - \xi^a \frac{\xi\ind{_b} 
+		e\ind{^b_\rho}}{\xi^2} \Big) \frac{\pd_\mu l}{l} \bigg] - 
+	\bigg[ \rho \leftrightarrow \mu \bigg] \bigg\} + \bar{u}_a 
+		\delta x^\mu dx^\rho \bigg\{
+	\\
+	&\nla{} -\bigg[ \frac{\pd_\rho l}{l} \frac{\sinh z}{z} \Big( 
+	\pd_\mu \xi^a + \omega\ind{^a_{b\mu}} \xi^b - \xi^a 
+	\frac{\xi_b \pd_\mu \xi^b}{\xi^2} \Big) + \frac{\pd_\rho l}{l} 
+	\frac{\pd_\mu l}{l} \xi^a + \cosh z\, \pd_\rho e\ind{^a_\mu}
+	\\
+	&\nla{} - (\cosh z - 1) \xi^a \frac{\xi_b \pd_\rho 
+		e\ind{^b_\mu}}{\xi^2} + \frac{\sinh z}{z} \pd_\rho 
+	\omega\ind{^a_{b\rho}} \xi^b	\bigg] + \bigg[ \rho 
+	\leftrightarrow \mu \bigg] \bigg\} \bigg]
+\end{split}
+\end{displaymath}
+The terms between the first pair of curly brackets is just the 
+vierbein $\bar{e}\ind{^a_\mu}$, while those between the second 
+pair of curly brackets equal
+\begin{multline*}
+	\bigg[ \bar{\omega}\ind{^a_{b\rho}} \bar{e}\ind{^b_\mu} - 
+	\frac{\sinh z}{z} \omega\ind{^a_{b\rho}} \omega\ind{^b_{c\mu}} 
+	\xi^c - \frac{\pd_\rho l}{l} \xi^a \frac{\xi_b \pd_\mu 
+		\xi^b}{\xi^2} - \cosh z\, \omega\ind{^a_{b\rho}} 
+	e\ind{^b_\mu}
+	\\
+	- (\cosh z - 1) \xi^a \frac{\omega\ind{_{bc\rho}} \xi^c 
+		e\ind{^b_\mu}}{\xi^2} - z \sinh z\, e\ind{^a_\rho} 
+	\frac{\xi\ind{_c} e\ind{^c_\mu}}{\xi^2} \bigg] - \bigg[ \rho 
+	\leftrightarrow \mu \bigg]~.
+\end{multline*}
+This permits us to further work out
+\begin{displaymath}
+\begin{split}
+	\int \bar{u}_a &\delta\bar{e}^a \\
+	&= \int \bigg[ -d\bar{u}\ind{_a} \bar{e}\ind{^a_\mu} \delta 
+	x^\mu + \bar{u}_a \delta x^\mu dx^\rho \bigg\{ \bigg[ 
+	\bar{\omega}\ind{^a_{b\rho}} \bar{e}\ind{^b_\mu} - \frac{\sinh 
+		z}{z} \xi^c \Big( \pd_\rho \omega\ind{^a_{c\rho}} + 
+	\omega\ind{^a_{b\rho}} \omega\ind{^b_{c\mu}}
+	\\
+	&\nla{} + \frac{1}{l^2} e\ind{^a_\rho} e\ind{_{c\mu}} \Big) - 
+	\cosh z \Big( \pd_\rho e\ind{^a_\mu} + \omega\ind{^a_{b\rho}} 
+	e\ind{^b_\mu} - \frac{\pd_\rho l}{l} e\ind{^a_\mu} \Big) - (1 
+	- \cosh z) \frac{\xi^a \xi_b}{\xi^2} \Big( \pd_\rho 
+	e\ind{^b_\mu}
+	\\
+	&\nla{} + \omega\ind{^b_{c\rho}} e\ind{^c_\mu} - 
+	\frac{\pd_\rho l}{l} e\ind{^b_\mu} \Big) - \frac{\pd_\rho 
+		l}{l} \bigg( \cosh z\, e\ind{^a_\mu} - (\cosh z - 1) 
+	\frac{\xi\ind{_b} e\ind{^b_\mu} \xi^a}{\xi^2} + \frac{\sinh 
+		z}{z}(\pd_\mu \xi^a
+	\\
+	&\nla{} + \omega\ind{^a_{b\mu}} \xi^b)- \frac{\pd_\mu l}{l} 
+	\xi^a - \Big( \frac{\sinh z}{z} - 1 \Big) \frac{\xi_b \pd_\mu 
+		\xi^b \xi^a}{\xi^2} \bigg) \bigg] - \bigg[ \rho 
+	\leftrightarrow \mu \bigg] \bigg\} \bigg]
+	\\
+	&= \int \delta x^\mu \bigg[ -d\bar{u}\ind{_a} 
+	\bar{e}\ind{^a_\mu} + \bar{u}\ind{_a} 
+	\bar{\omega}\ind{^a_{b\rho}} \bar{e}\ind{^b_\mu} dx^\rho - 
+	\bar{u}\ind{_a} \bar{\omega}\ind{^a_{b\mu}} 
+	\bar{e}\ind{^b_\rho} dx^\rho - \bar{u}_a dx^\rho \bigg( 
+		\frac{\sinh z}{z} \xi^c R\ind{^a_{c\rho\mu}}
+	\\
+	&\nla{} + \cosh z\, T\ind{^a_{\rho\mu}} + (1 - \cosh z) 
+	\frac{\xi^a \xi\ind{_b} T\ind{^b_{\rho\mu}}}{\xi^2} \bigg) - 
+	\frac{\pd_\rho l}{l} \bar{e}\ind{^a_\mu} \bar{u}\ind{_a} 
+	dx^\rho + \frac{\pd_\mu l}{l} \bar{e}\ind{^a_\rho} 
+	\bar{u}\ind{_a} dx^\rho \bigg]
+\end{split}
+\end{displaymath}
+In this expression one recognizes the torsion $\bar{T}$, as given 
+in Eq.\verb+~\eqref{eq:nonlin_tors}+. This leads to the end of 
+this calculation:
+\begin{equation}
+	\int \bar{u}_a \delta\bar{e}^a = \int d\tau \delta x^\mu 
+	\bigg\{ - \bar{e}\ind{^a_\mu} \bigg( \frac{d\bar{u}_a}{d\tau} 
+	- \bar{\omega}\ind{^b_{a\rho}} \bar{u}\ind{_b} u^\rho + u^\rho 
+	\frac{\pd_\rho l}{l} \bar{u}\ind{_a} \bigg) + 
+	\bar{T}\ind{^a_{\mu\rho}} \bar{u}\ind{_a} u^\rho + 
+	\frac{\pd_\mu l}{l} \bigg\}~.
+\end{equation}
+
+
+
+\subsection{Variation of $\mathcal{L}$ with respect to 
+	$\bar{e}$.}
+\label{app:field_eqs}
+
+In this subsection we work out some intermediary results that 
+lead to the functional variation of the 
+Lagrangian~\eqref{eq:lagrangian_dSTG} with respect to the 
+vierbein. More precisely, we calculate the derivatives of 
+$\mathcal{L}$ with respect to $\bar{e}\ind{^c_\sigma}$ and 
+$\pd_\rho \bar{e}\ind{^c_\sigma}$ in turn.  
+From~\eqref{eq:lagrangian_dSTG}:
+\begin{displaymath}
+\begin{split}
+	\frac{\pd \mathcal{L}}{\pd \bar{e}\ind{^c_\sigma}}
+	&= \frac{1}{4} \frac{\pd \bar{T}\ind{^a_{\mu\nu}}}{\pd 
+		\bar{e}\ind{^c_\sigma}} \bar{T}\ind{_a^{\mu\nu}}
+	+ \frac{1}{4} \bar{T}\ind{^a_{\mu\nu}} \frac{\pd 
+		\bar{T}\ind{_a^{\mu\nu}}}{\pd \bar{e}\ind{^c_\sigma}}
+	+ \frac{1}{2} \frac{\pd \bar{T}\ind{^a_{\mu\nu}}}{\pd 
+		\bar{e}\ind{^c_\sigma}} \bar{T}\ind{^{b\mu}_\lambda} 
+	\bar{e}\ind{_a^\lambda} \bar{e}\ind{_b^\nu}
+	+ \frac{1}{2} \bar{T}\ind{^a_{\mu\nu}} \frac{\pd 
+		\bar{T}\ind{^{b\mu}_\lambda}}{\pd \bar{e}\ind{^c_\sigma}} 
+	\bar{e}\ind{_a^\lambda} \bar{e}\ind{_b^\nu}
+	\\
+	&\nla{} + \frac{1}{2} \bar{T}\ind{^a_{\mu\nu}} 
+	\bar{T}\ind{^{b\mu}_\lambda} \frac{\pd( 
+		\bar{e}\ind{_a^\lambda} \bar{e}\ind{_b^\nu})}{\pd 
+		\bar{e}\ind{^c_\sigma}}
+	- \frac{\pd \bar{T}\ind{^a_{\mu\nu}}}{\pd 
+		\bar{e}\ind{^c_\sigma}} \bar{T}\ind{^{b\mu}_\lambda} 
+	\bar{e}\ind{_a^\nu} \bar{e}\ind{_b^\lambda}
+	- \bar{T}\ind{^a_{\mu\nu}} \frac{\pd 
+		\bar{T}\ind{^{b\mu}_\lambda}}{\pd \bar{e}\ind{^c_\sigma}} 
+	\bar{e}\ind{_a^\nu} \bar{e}\ind{_b^\lambda}
+	\\
+	&\nla{} - \bar{T}\ind{^a_{\mu\nu}} 
+	\bar{T}\ind{^{b\mu}_\lambda} \frac{\pd( \bar{e}\ind{_a^\nu} 
+		\bar{e}\ind{_b^\lambda})}{\pd \bar{e}\ind{^c_\sigma}}
+\end{split}
+\end{displaymath}
+It is thus useful to consider first the following equalities:
+\begin{gather*}
+	\frac{\pd \bar{T}\ind{^a_{\mu\nu}}}{\pd \bar{e}\ind{^c_\sigma}}
+	= \big[ \bar{\omega}\ind{^a_{c\mu}} \delta^\sigma_\nu - 
+	\frac{\pd_\mu l}{l} \delta^a_c \delta^\sigma_\nu \big] - \big[ 
+	\mu \leftrightarrow \nu \big]~,
+	\\
+	\frac{\pd g_{\rho\lambda}}{\pd \bar{e}\ind{^c_\sigma}} = 
+	\frac{\pd (\bar{e}\ind{^a_\rho} \bar{e}\ind{_{a\lambda}})}{\pd 
+		\bar{e}\ind{^c_\sigma}} = \bar{e}\ind{_{c\lambda}} 
+	\delta^\sigma_\rho + \bar{e}\ind{_{c\rho}} 
+	\delta^\sigma_\lambda~,
+	\\
+	\frac{\pd g^{\rho\lambda}}{\pd \bar{e}\ind{^c_\sigma}} =
+	- g^{\sigma\rho} \bar{e}\ind{_c^\lambda} - g^{\sigma\lambda} 
+	\bar{e}\ind{_c^\rho}~.
+\end{gather*}
+Subsequently it is possible to obtain
+\begin{gather*}
+	\frac{\pd \bar{e}\ind{_a^\lambda}}{\pd \bar{e}\ind{^c_\sigma}} 
+	= - \bar{e}\ind{_a^\sigma} \bar{e}\ind{_c^\lambda}~,
+	\\
+	\begin{split}
+	\frac{\pd \bar{T}\ind{_a^{\mu\nu}}}{\pd \bar{e}\ind{^c_\sigma}} 
+	&= \big[ \eta_{ab} \bar{\omega}\ind{^b_{c\alpha}} g^{\alpha\mu} 
+	g^{\sigma\nu} - \eta_{ac} \frac{\pd_\lambda l}{l} 
+	g^{\lambda\mu} g^{\sigma\nu} + \bar{T}\ind{_a^{\sigma\mu}} 
+	\bar{e}\ind{_c^\nu} \\
+	&\nla{}+ \bar{T}\ind{_{a\lambda}^\mu} \bar{e}\ind{_c^\lambda} 
+	g^{\sigma\nu} \big] - \big[ \mu \leftrightarrow \nu \big]~,
+	\end{split}
+	\\
+	\begin{split}
+	\frac{\pd \bar{T}\ind{^{b\mu}_\lambda}}{\pd 
+		\bar{e}\ind{^c_\sigma}}
+	&= g^{\rho\mu} \bar{\omega}\ind{^b_{c\rho}} 
+	\delta^\sigma_\lambda - g^{\sigma\mu} 
+	\bar{\omega}\ind{^b_{c\lambda}} - g^{\rho\mu} \frac{\pd_\rho 
+		l}{l} \delta^b_c \delta^\sigma_\lambda + g^{\sigma\mu} 
+	\frac{\pd_\lambda l}{l} \delta^b_c \\
+	&\nla{}- \bar{T}\ind{^b_{\rho\lambda}} \bar{e}\ind{_c^\mu} 
+	g^{\sigma\rho} - \bar{T}\ind{^b_{\rho\lambda}} 
+	\bar{e}\ind{_c^\rho} g^{\sigma\mu}~.
+	\end{split}
+\end{gather*}
+Substituting these equations for $\pd \mathcal{L}/\pd 
+\bar{e}\ind{^c_\sigma}$, it takes some algebra to get the 
+following:
+\begin{equation}
+	\frac{\pd \mathcal{L}}{\pd \bar{e}\ind{^c_\sigma}}
+	= \bar{\omega}\ind{^a_{c\mu}} \bar{W}\ind{_a^{\mu\sigma}} + 
+	\bar{T}\ind{^a_{\mu c}} \bar{W}\ind{_a^{\sigma\mu}} - 
+	\frac{\pd_\mu l}{l} \bar{W}\ind{_c^{\mu\sigma}}~.
+\end{equation}
+
+It is a simpler exercise to find the derivative of the Lagrangian 
+with respect to the first order derivatives of the vierbein. One 
+only needs the expression
+\begin{displaymath}
+	\frac{\pd \bar{T}\ind{^a_{\mu\nu}}}{\pd\pd_\rho 
+		\bar{e}\ind{^c_\sigma}} = \delta^\rho_\mu \delta^\sigma_\nu 
+	\delta^a_c - \delta^\rho_\nu \delta^\sigma_\mu \delta^a_c~.
+\end{displaymath}
+This is sufficient since the derivative operator annihilates the 
+metric $g_{\mu\nu} = \bar{e}\ind{^a_\mu}\bar{e}\ind{_{a\nu}}$ and 
+we can freely raise and lower spacetime indices. Using this 
+information, it is readily found that
+\begin{equation}
+	\frac{\pd \mathcal{L}}{\pd\pd_\rho \bar{e}\ind{^c_\sigma}} = 
+	\bar{W}\ind{_c^{\rho\sigma}}~.
+\end{equation}
+
+
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{../../references/All}
+
+
+\end{document}
+

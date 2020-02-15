@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+
+%Load preamble files
+\usepackage{../../Tex_files/standard}
+\usepackage{../../Tex_files/preamble_one}
+%\usepackage{showframe} %show frame borders
+
+\usepackage{mathtools}
+
+\usepackage[all]{xy}
+
+\title{Nonlinear realizations bis}
+\author{Hendrik}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Omitted appendix of article on cosmological function.
+\end{abstract}
+
+\section{Equations}
+
+\begin{equation}
+	\label{eq:nonlin_trafo_inf}
+	\exp(-i\xi\cdot P) i\epsilon\cdot P \exp(i\xi\cdot P) - 
+	\exp(-i\xi\cdot P) \delta\!\exp(i\xi\cdot P) = \tfrac{i}{2} 
+	\delta h \cdot M.
+\end{equation}
+
+\begin{equation}\label{eq:left_action_group}
+	g_0 \exp(i\xi\cdot P) = \exp(i\xi'\cdot P)h'~;
+	\qquad
+	h' = \tilde{h}'\tilde{h}^{-1},
+\end{equation}
+
+\begin{gather}
+\label{eq:comm_relations_so(1,4)}
+\begin{aligned}
+	-i[M_{ab},M_{cd}] &= \eta_{ac}M_{bd} - \eta_{ad}M_{bc} + 
+	\eta_{bd}M_{ac} - \eta_{bc}M_{ad}, \\
+	-i[M_{ab},P_c] &= \eta_{ac}P_b- \eta_{bc}P_a, \\
+	-i[P_a,P_b] &= -l^{-2}M_{ab}.
+  \end{aligned}
+\end{gather}
+
+\begin{align}
+	\label{eq:inf_tr_xi}
+	\delta\xi^a &= \epsilon^a + \Big(\frac{z\cosh z}{\sinh z} - 
+	1\Big) \bigg(\epsilon^a - \frac{\xi^a \epsilon_b 
+		\xi^b}{\xi^2}\bigg), \\
+	\label{eq:inf_tr_h}
+	\delta h^{ab} &= \frac{1}{l^2} \frac{\cosh z - 1}{z\sinh z} 
+	(\epsilon^a\xi^b - \epsilon^b\xi^a),
+\end{align}
+
+\section{Nonlinear realizations}
+\label{app:nonlin_real}
+
+In this appendix, some intermediate steps that are useful to 
+verify the results of Sec.~4 are explained; see 
+also~\cite{Zumino1977189}.
+
+For any two elements of a Lie algebra $\mathfrak{g}$, the adjoint 
+action is denoted by
+\begin{displaymath}
+	\wedge: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g} : 
+	(X,Y) \mapsto X \wedge Y = \mathrm{ad}_X (Y) = [X,Y].
+\end{displaymath}
+Note that the symbol $\wedge$ for the adjoint action of a Lie 
+algebra is exclusive to this section, and should not be confused 
+with the wedge product of differential forms, which is exclusive 
+to the other sections throughout the text.
+
+Moreover, we write
+\begin{displaymath}
+	X^k \wedge Y = \mathrm{ad}_X^k (Y) = 
+	[X,[X,\ldots[X,Y]\ldots]],
+\end{displaymath}
+so that for a power series $f(X) = \sum_k c_k X^k$
+\begin{displaymath}
+	f(X) \wedge Y = \sum_k c_k X^k \wedge Y.
+\end{displaymath}
+Given a second function $g(X) = \sum_l d_l X^l$, one obtains
+\begin{displaymath}
+	g(X)\wedge f(X)\wedge X = \sum_{kl} c_k d_l 
+	\mathrm{ad}_X^l(\mathrm{ad}_X^k(Y)) = \sum_{kl} c_k d_l 
+	X^{k+l} \wedge Y = g(X)f(X) \wedge Y,
+\end{displaymath}
+because of the linearity of the adjoint action.
+From this result it follows that the equation $f(X) \wedge Y = Z$ 
+can be solved for $Y = f(X)^{-1} \wedge Z$. Note that the inverse 
+function is supposed to be expressed as a power series. The 
+following two identities are useful in carrying out the 
+calculations of this section. The first is Hadamard's formula, 
+namely,
+\begin{equation}\label{eq:Had}
+	\exp(X) Y \exp(-X) = \exp(X) \wedge Y.
+\end{equation}
+The other is the Campbell-Poincar\'e fundamental identity, given 
+by
+\begin{equation}\label{eq:CP}
+	\exp(-X) \delta\!\exp(X) = \frac{1-\exp(-X)}{X}\wedge \delta X.
+\end{equation}
+
+Let us then solve~\eqref{eq:nonlin_trafo_inf} for $\delta\xi\cdot 
+P$ and $\delta h \cdot M$.  Since $\mathfrak{g} = 
+\mathfrak{so}(1,4) = \mathfrak{so}(1,3) \oplus \mathfrak{p}$ is 
+symmetric, there is an involutive automorphism $\sigma : 
+\mathfrak{g} \to \mathfrak{g}$ such that $\mathfrak{so}(1,3)$ is 
+an eigenspace with eigenvalue $1$, while $\mathfrak{p} = 
+\mathfrak{so}(1,4)/\mathfrak{so}(1,3)$ is an eigenspace with 
+eigenvalue $-1$~\cite{kob1996found2}. This automorphism allows 
+one to eliminate $\delta h$ from~\eqref{eq:nonlin_trafo_inf}, 
+which leads to the expression \begin{displaymath}
+\begin{multlined}[b][\linewidth-2\multlinegap]
+	\quad\quad
+	\frac{1-\exp(-i\xi\cdot P)}{i\xi\cdot P} \wedge 
+	i\delta\xi\cdot P - \frac{1-\exp(i\xi\cdot P)}{i\xi\cdot P} 
+	\wedge i\delta\xi\cdot P \\
+	= \exp(-i\xi\cdot P) \wedge i\epsilon\cdot P + \exp(i\xi\cdot 
+	P) \wedge i\epsilon\cdot P,
+	\quad\quad
+\end{multlined}
+\end{displaymath}
+and where we made use of the identities~\eqref{eq:Had} 
+and~\eqref{eq:CP}. This equation is solved for $\delta \xi^a$, 
+which results in
+\begin{equation}\label{eq:inftrafo_cosetpar}
+	i\delta\xi \cdot P = \frac{i\xi\cdot P\,\cosh(i\xi\cdot 
+		P)}{\sinh(i\xi\cdot P)} \wedge i\epsilon\cdot P.
+\end{equation}
+Substituting~\eqref{eq:inftrafo_cosetpar} 
+in~\eqref{eq:nonlin_trafo_inf}, one subsequently solves for 
+$\delta h^{ab}$:
+\begin{equation}\label{eq:inftrafo_h}
+	\tfrac{i}{2}\delta h \cdot M = \frac{1-\cosh(i\xi\cdot 
+		P)}{\sinh(i\xi\cdot P)} \wedge i\epsilon\cdot P,
+\end{equation}
+which relates the infinitesimal element $h'(\xi,\epsilon) = 1 + 
+\delta h$ in~\eqref{eq:left_action_group} to the
+transvection $g_0 = 1 + i\epsilon\cdot P$. In the 
+expressions~\eqref{eq:inftrafo_cosetpar} 
+and~\eqref{eq:inftrafo_h}, the hyperbolic functions are given by 
+the corresponding power series in $i\xi\cdot P$. They act on 
+$i\epsilon\cdot P$ through the adjoint action, which can be 
+worked out explicitly for the commutation 
+relations~\eqref{eq:comm_relations_so(1,4)}. Doing so, the 
+following intermediate results are useful ($z = l^{-1} \xi$ and 
+$\xi = (\eta_{ab} \xi^a \xi^b)^{1/2}$):
+\begin{align*}
+	%\label{eq:id_dS_comm.1}
+	(i\xi\cdot P)^{2n} \wedge \epsilon\cdot P &= z^{2n} 
+	\bigg(\epsilon\cdot P - \frac{\xi\cdot\epsilon \xi\cdot 
+		P}{\xi^2} \bigg)~;\quad n \geqslant 1,
+	\\
+	%\label{eq:id_dS_comm.2}
+	(i\xi\cdot P)^{2n+1} \wedge \epsilon\cdot P &= 
+	\tfrac{1}{2}l^{-2}z^{2n} (\xi^a\epsilon^b - \xi^b\epsilon^a) 
+	M_{ab}~;\quad n \geqslant 0,
+	\\
+	%\label{eq:id_dS_comm.3}
+	(i\xi\cdot P)^{2n} \wedge \delta h \cdot M &= \delta h^{ab} 
+	l^{-2}z^{2n-2} \xi^c(\xi_b M_{ac} - \xi_a M_{bc})~;\quad n 
+	\geqslant 1
+	\\
+	%\label{eq:id_dS_comm.4}
+	\text{and}\quad
+	(i\xi\cdot P)^{2n+1} \wedge \delta h \cdot M &= \delta h^{ab} 
+	z^{2n} (\xi_a P_b - \xi_b P_a)~;\quad n \geqslant 0.
+\end{align*}
+By means of these relations, the 
+variations~\eqref{eq:inftrafo_cosetpar} and~\eqref{eq:inftrafo_h} 
+are found to be given by
+\begin{displaymath}
+	i\delta\xi \cdot P = i\epsilon\cdot P + \bigg(\frac{z\cosh 
+		z}{\sinh z} - 1\bigg) \bigg(i\epsilon\cdot P - 
+	\frac{\xi\cdot\epsilon \, i\xi\cdot P}{\xi^2}\bigg),
+\end{displaymath}
+and
+\begin{displaymath}
+	\tfrac{i}{2}\delta h \cdot M = \frac{i}{2l^2} \frac{\cosh z - 
+		1}{z\sinh z} (\epsilon^a\xi^b - \epsilon^b\xi^a) M_{ab},
+\end{displaymath}
+confirming the equalities~\eqref{eq:inf_tr_xi} 
+and~\eqref{eq:inf_tr_h}.
+
+Next we verify that the spin connection and vierbein in the 
+nonlinear de~Sitter-Cartan geometry are given 
+by~\eqref{eq:nonlin_spinconn} and~\eqref{eq:nonlin_vierbein}.  
+Invoking Hadamard's formula~\eqref{eq:Had} and the 
+Campbell-Poincar\'e fundamental identity~\eqref{eq:CP}, the 
+right-hand side of~\eqref{eq:A_nonlin} can be rewritten as
+\begin{displaymath}
+	\exp(-i\xi\cdot P) \wedge \big( \tfrac{i}{2} A^{ab} M_{ab} + i 
+	A^a P_a \big) + \frac{1 - \exp(-i\xi\cdot P)}{i\xi\cdot P} 
+	\wedge d (i\xi\cdot P).
+\end{displaymath}
+Working out the different terms of this expression, it is found 
+successively that
+\begin{gather*}
+\begin{multlined}[b][0.85\linewidth]
+	\exp(-i\xi\cdot P) \wedge \tfrac{i}{2} A^{ab} M_{ab}
+	= \tfrac{i}{2} \big( A^{ab} + \frac{\cosh z - 1}{l^2 z^2} 
+	\xi_c ( \xi^b A^{ac} - \xi^a A^{bc} ) \big) M_{ab} \\
+	+ i \big( z^{-1} \sinh z A\ind{^a_b} \xi^b \big) P_a,
+\end{multlined}
+\\
+\begin{multlined}[b][0.85\linewidth]
+	\exp(-i\xi\cdot P) \wedge i A^a P_a = \tfrac{i}{2} \bigg( 
+	\frac{\sinh z}{l^2 z} (A^a \xi^b - A^b \xi^a ) \bigg) M_{ab} 
+	\\
+	+ i \bigg( A^a + (\cosh z - 1) \bigg(A^a - \frac{\xi^b A_b 
+		\xi^a}{\xi^2}  \bigg) \bigg) P_a,
+\end{multlined}
+\\
+%\intertext{and}
+\begin{multlined}[b][0.85\linewidth]
+	\frac{1 - \exp(-i\xi\cdot P)}{i\xi\cdot P} \wedge d (i\xi\cdot 
+	P) = \tfrac{i}{2} \bigg( \frac{\cosh z - 1}{l^2 z^2} (d\xi^a 
+	\xi^b - d\xi^b \xi^a) \bigg) M_{ab} \\
+	+ i \bigg( \frac{\sinh z}{z} \bigg( d\xi^a - \frac{\xi^b 
+		d\xi_b \xi^a}{\xi^2} \bigg) + \frac{\xi^b d\xi_b 
+		\xi^a}{\xi^2} - \frac{dl}{l} \xi^a \bigg) P_a.
+\end{multlined}
+\end{gather*}
+Collecting these different contributions and separating terms 
+according to whether they are valued in~$\mathfrak{so}(1,3)$, 
+respectively~$\mathfrak{p}$, one 
+recovers~\eqref{eq:nonlin_spinconn}
+and~\eqref{eq:nonlin_vierbein}.
+
+%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY %
+%%%%%%%%%%%%%%%%
+
+\providecommand{\href}[2]{#2}
+\begingroup\raggedright
+\begin{thebibliography}{1}
+
+\bibitem{Zumino1977189}
+B.~Zumino, ``Non-linear realization of supersymmetry in anti de~{S}itter
+  space,'' \href{http://dx.doi.org/10.1016/0550-3213(77)90211-5}{{\em Nucl.
+  Phys.} {\bfseries B127} (1977) 189--201}.
+
+\bibitem{kob1996found2}
+S.~Kobayashi and K.~Nomizu, {\em Foundations of Differential Geometry}, vol.~2.
+\newblock Wiley-Interscience, New York, 1996.
+\newblock Reprint of the 1969 original.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}
+
